@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPasswordProtection();
     initPageExitTransitions();
     initFloatingActionButtons();
+    initResumeDownloads();
 
     // Check if redirect query parameter exists on page load
     const urlParams = new URLSearchParams(window.location.search);
@@ -851,4 +852,60 @@ function initFloatingActionButtons() {
         document.body.appendChild(leftContainer);
     }
 }
+
+/* ==========================================
+   9. Forced Resume Downloads
+   ========================================== */
+function initResumeDownloads() {
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[download]');
+        if (link && link.getAttribute('href') && link.getAttribute('href').includes('Shubharthi_Roy_Resume.pdf')) {
+            // Under file:// protocol, fetch will fail due to CORS. 
+            // We let target="_blank" handle opening the file in a new tab natively.
+            if (window.location.protocol === 'file:') {
+                return;
+            }
+            
+            e.preventDefault();
+            
+            const url = link.getAttribute('href');
+            const filename = link.getAttribute('download') || 'Shubharthi_Roy_Resume.pdf';
+            
+            // Set visual loading state on custom cursor to give instant feedback
+            const cursorCircle = document.querySelector('.custom-cursor-circle');
+            if (cursorCircle) {
+                cursorCircle.classList.add('cursor-loading');
+            }
+            
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Download request failed');
+                    return response.blob();
+                })
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const tempLink = document.createElement('a');
+                    tempLink.href = blobUrl;
+                    tempLink.download = filename;
+                    document.body.appendChild(tempLink);
+                    tempLink.click();
+                    document.body.removeChild(tempLink);
+                    window.URL.revokeObjectURL(blobUrl);
+                    
+                    if (cursorCircle) {
+                        cursorCircle.classList.remove('cursor-loading');
+                    }
+                })
+                .catch(error => {
+                    console.error('Forced PDF download failed, falling back to direct link:', error);
+                    window.open(url, '_blank');
+                    
+                    if (cursorCircle) {
+                        cursorCircle.classList.remove('cursor-loading');
+                    }
+                });
+        }
+    });
+}
+
 

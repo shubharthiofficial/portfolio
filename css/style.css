@@ -165,6 +165,18 @@ body.hovering-card .custom-cursor-circle {
     border-color: var(--accent-terracotta);
 }
 
+.custom-cursor-circle.cursor-loading {
+    border-top-color: var(--accent-gold);
+    animation: cursor-spin 1s linear infinite;
+    width: 30px;
+    height: 30px;
+}
+
+@keyframes cursor-spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 /* --- Header / Navigation --- */
 header {
     position: fixed;
