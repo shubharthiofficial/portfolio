@@ -1,0 +1,35 @@
+# OS metadata files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Workspace task logs
+task.md
+find_unused_files.py
+delete_unused_files.py
+inspect_pdf_links.py
+verify_links_and_assets.py
+validate_html.py
+a11y_audit.py
+spell_check.py
+crop_screens_perfect.py
+crop_screens_auto.py
+crop_pdf_screenshots.py
+crop_exact_chat.py
+crop_comm_screenshots.py
+detect_card.py
+extract_comm_framework_pdfs.py
+extract_pdf_pages.py
+find_boxes.py
+generate_favicons.py
+ocr.swift
+ocr_132.txt
+ocr_137.txt
+ocr_145.txt
+ocr_147.txt
+slice_logos.py
+analyze_splits.py
