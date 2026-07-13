@@ -1,0 +1,452 @@
+/* 
+   Shubharthi Roy - "Enterprise Landscape" Stylesheet
+   Theme: Apple + Linear + Stripe (Minimalist Slate & Alabaster)
+*/
+
+.work-page {
+    background-color: var(--bg-primary);
+}
+
+.landscape-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 8%;
+    padding-bottom: 8rem;
+}
+
+/* --- Back Link --- */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #657488;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition-snappy);
+    margin-bottom: 2rem;
+}
+
+.back-link:hover {
+    color: #1a1e24;
+}
+
+.back-link svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transform: rotate(180deg);
+}
+
+[data-theme="dark"] .back-link {
+    color: #9aa5b5;
+}
+
+[data-theme="dark"] .back-link:hover {
+    color: #f6f8fa;
+}
+
+/* --- Hero Section --- */
+.landscape-hero {
+    padding: 8rem 0 2.5rem 0;
+    max-width: 850px;
+    border-bottom: 1px solid var(--card-border);
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.landscape-badge {
+    font-family: monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.landscape-title {
+    font-family: var(--font-body);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -1.8px;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.landscape-subtitle {
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* --- Connected Ecosystem Flow (20% visual weight) --- */
+.landscape-main section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ecosystem-map-section {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.map-section-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-tertiary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.ecosystem-map-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.8rem 2.2rem;
+}
+
+@media (max-width: 1024px) {
+    .ecosystem-map-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    .map-journey-title {
+        min-height: auto !important;
+    }
+}
+
+.map-journey-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.map-journey-num {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.map-journey-title {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    min-height: 3.4rem;
+}
+
+.map-journey-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.map-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-tertiary);
+    width: 24px;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+@media (max-width: 1024px) {
+    .map-connector {
+        transform: rotate(90deg);
+        align-self: center;
+    }
+}
+
+/* --- Category Cards (80% visual weight) --- */
+.landscape-categories-section {
+    padding: 6rem 0;
+}
+
+.categories-header-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-tertiary);
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.category-card {
+    position: relative;
+    background-color: var(--bg-secondary);
+    border: 1.5px solid rgba(229, 184, 66, 0.35);
+    border-radius: 14px;
+    overflow: hidden;
+    height: 340px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .category-card {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    background-color: var(--card-hover-bg);
+}
+
+.category-card-inner {
+    padding: 3rem 2.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.category-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.category-card-num {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    font-weight: bold;
+}
+
+.category-card-title {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+}
+
+.category-card-desc {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: auto;
+    margin-top: 1.5rem;
+}
+
+.category-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: var(--transition-snappy);
+}
+
+.cta-arrow {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+}
+
+.category-card:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+/* Card Active Glow effect */
+.card-glow-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 14px;
+    border: 1.5px solid transparent;
+    transition: var(--transition-smooth);
+    z-index: 1;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-gold);
+}
+
+.category-card:hover .card-glow-border {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 25px rgba(229, 184, 66, 0.25);
+}
+
+/* --- Impact Dashboard & Categories Section Compact Overrides --- */
+.landscape-main .impact-dashboard {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding: 2.5rem 3rem;
+    border-radius: 8px;
+}
+
+.landscape-main .impact-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-tertiary);
+}
+
+.landscape-main .metrics-container {
+    gap: 2rem;
+}
+
+.landscape-main .metric-number {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-bottom: 0.2rem;
+}
+
+.landscape-main .metric-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+
+.landscape-main .metric-desc {
+    font-size: 0.82rem;
+    font-family: var(--font-body);
+    font-style: normal;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.landscape-main .landscape-categories-section {
+    padding: 2.5rem 0;
+}
+
+/* --- Lifecycle Journey Primary Users & Tooltips --- */
+.map-journey-users {
+    margin: 0.2rem 0;
+}
+
+.map-users-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-tertiary);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.user-avatars-list {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.user-avatar-item {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.user-avatar-item:hover {
+    background-color: var(--accent-gold);
+    color: #121212;
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+/* Tooltip implementation */
+.user-avatar-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 135%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    padding: 0.75rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    width: 220px;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.08);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+}
+
+/* Tooltip Arrow */
+.user-avatar-item::before {
+    content: '';
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #1a1a1a transparent transparent transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+}
+
+.user-avatar-item:hover::after,
+.user-avatar-item:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -2px) scale(1);
+}

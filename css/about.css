@@ -1,0 +1,247 @@
+/* 
+   Shubharthi Roy - "About Me" Custom Stylesheet
+   Theme: Editorial, Slate-Cadet layout with Georgia headings and grid pursuits.
+*/
+
+.about-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 8%;
+    padding-bottom: 8rem;
+}
+
+.about-main section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.about-hero {
+    padding: 6rem 8% 4rem 8%;
+    max-width: 100%;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 4.5rem;
+    align-items: center;
+}
+
+.about-hero-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-portrait-wrap {
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+}
+
+.portrait-frame {
+    border: 1px solid var(--card-border);
+    padding: 0.8rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] .portrait-frame {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-portrait-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+    .about-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+    .about-portrait-wrap {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+.about-badge {
+    font-family: monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.about-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.about-paragraphs {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* --- Experience & Pursuits Section Layout --- */
+.about-section {
+    padding: 6rem 8%;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.about-section-title {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+}
+
+/* --- Creative Pursuits Grid --- */
+.about-creative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.about-creative-grid .art-card {
+    flex: none;
+    width: 100%;
+    scroll-snap-align: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .about-creative-grid .art-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-creative-grid .art-visual {
+    height: 180px;
+}
+
+.art-canvas-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: var(--transition-smooth);
+}
+
+.art-card:hover .art-canvas-img {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.art-card:hover {
+    border-color: var(--accent-gold);
+}
+
+.about-subheading {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-creative-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- How I Work Section --- */
+.how-i-work-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.how-work-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.how-work-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.how-work-step {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-gold);
+}
+
+.how-work-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.how-work-desc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+
+/* Connectors */
+.how-work-card:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -0.95rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-tertiary);
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@media (max-width: 1200px) {
+    .how-i-work-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    .how-work-card::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .how-i-work-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}

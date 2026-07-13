@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales-to-Order Conversion | Shubharthi Roy | Senior UX Designer</title>
+    <meta name="description" content="Portfolio of Shubharthi Roy, Senior UX Designer specializing in Enterprise Product Design, Systems Thinking, AI-powered experiences, and B2B Sales-to-Order workflows.">
+    <meta name="author" content="Shubharthi Roy">
+    
+    <!-- Favicon Branding -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    
+    <script>
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/story.css">
+</head>
+<body class="story-detail-page">
+    <script>
+        const unlockTimeStr = sessionStorage.getItem('portfolio_unlocked_time');
+        const UNLOCK_DURATION = 10 * 60 * 1000; // 10 minutes in ms
+        let isUnlocked = false;
+        if (unlockTimeStr) {
+            const unlockTime = parseInt(unlockTimeStr, 10);
+            if (Date.now() - unlockTime < UNLOCK_DURATION) {
+                isUnlocked = true;
+            }
+        }
+        if (!isUnlocked) {
+            sessionStorage.removeItem('portfolio_unlocked_time');
+            window.location.replace('work.html?lock=sales-to-order');
+        }
+    </script>
+
+    <!-- Custom Cursor Nodes -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-circle"></div>
+
+    <!-- Navigation Header -->
+    <header>
+        <a href="index.html" class="logo">SHUBHARTHI ROY</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work">Featured Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="assets/Shubharthi_Roy_Resume.pdf" class="nav-resume-btn" download style="color: var(--accent-gold); font-weight: 700;">Resume</a></li>
+            </ul>
+            <button class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+                <!-- Sun Icon (Active in Dark mode to switch to Light) -->
+                <svg class="sun-icon" viewBox="0 0 24 24">
+                    <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zM7.05 18.01c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06z"/>
+                </svg>
+                <!-- Moon Icon (Active in Light mode to switch to Dark) -->
+                <svg class="moon-icon" viewBox="0 0 24 24" style="display: none;">
+                    <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.6-.1 1.2.3 1.3.9.1.6-.2 1.2-.8 1.4-3.6 1.3-6 4.7-6 8.5 0 4.4 3.6 8 8 8 3.8 0 7.2-2.4 8.5-6 .2-.6.8-.9 1.4-.8.6.1 1 .7.9 1.3-.9 4.7-5 8.2-9.8 8.2z"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="category-main-content">
+        
+        <!-- Category Hero -->
+        <div class="category-hero-section">
+            <a href="work.html" class="back-link">
+                <svg viewBox="0 0 14 14"><path d="M10 3.5L13.5 7L10 10.5M13.5 7H0.5" stroke-linecap="round"/></svg>
+                Back to Featured Work
+            </a>
+            <span class="drawer-badge" style="color: var(--accent-gold); margin-bottom: 0.5rem;">Category 01</span>
+            <h1 class="story-hero-title">Designing Enterprise Sales-to-Order Experiences</h1>
+            <p class="story-hero-subtitle" style="margin-bottom: 2rem;">
+                Over three years at Amdocs, I designed workflows and interaction frameworks across Sales, Commerce, and Order Management products to simplify massive complexity.
+            </p>
+            <div class="project-meta-summary" style="display: flex; gap: 2rem; justify-content: space-between; margin-bottom: 2.5rem; border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); padding: 1.5rem 0; flex-wrap: wrap;">
+                <div class="meta-item" style="flex: 1 1 auto; min-width: 140px;">
+                    <span class="meta-label" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-tertiary); margin-bottom: 0.25rem;">Role</span>
+                    <span class="meta-value" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); white-space: nowrap;">UX Design Specialist</span>
+                </div>
+                <div class="meta-item" style="flex: 0 1 auto; min-width: 80px;">
+                    <span class="meta-label" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-tertiary); margin-bottom: 0.25rem;">Timeline</span>
+                    <span class="meta-value" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); white-space: nowrap;">3+ Years</span>
+                </div>
+                <div class="meta-item" style="flex: 1 1 auto; min-width: 250px;">
+                    <span class="meta-label" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-tertiary); margin-bottom: 0.25rem;">Team</span>
+                    <span class="meta-value" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">1 UX Operational Lead &bull; 3 UX Specialists &bull; 2 UI Specialists</span>
+                </div>
+                <div class="meta-item" style="flex: 2 1 auto; min-width: 280px;">
+                    <span class="meta-label" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-tertiary); margin-bottom: 0.25rem;">Responsibilities</span>
+                    <span class="meta-value" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Interaction Frameworks, Systems Alignment, Workflow Simplification, Design System Alignment</span>
+                </div>
+            </div>
+
+            <!-- Segmented Control Navigation (Tabs switcher) -->
+            <div class="stories-segmented-tabs">
+                <button class="segment-tab-btn active" data-target="offers-flow">Offer Discovery Framework</button>
+                <button class="segment-tab-btn" data-target="comm-framework">Cross-Application Frameworks</button>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT 1: Cross-Application Frameworks -->
+        <div class="tab-content-block" id="tab-comm-framework">
+            <div class="story-container">
+                
+                <aside class="story-sidebar">
+                    <div class="sidebar-title">Case Outline</div>
+                    <ul class="sticky-nav-list">
+                        <li class="sticky-nav-item active"><a href="#context-v">Business Context</a></li>
+                        <li class="sticky-nav-item"><a href="#validation-v">Part 1: Business Validation</a></li>
+                        <li class="sticky-nav-item"><a href="#notifications-v">Part 2: Async Notifications</a></li>
+                        <li class="sticky-nav-item"><a href="#workflow-v">Validation Workflow</a></li>
+                        <li class="sticky-nav-item"><a href="#principles-v">Architecture Principles</a></li>
+                        <li class="sticky-nav-item"><a href="#outcomes-v">Business Outcomes</a></li>
+                        <li class="sticky-nav-item"><a href="#reflection-v">Reflection</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Narrative Scroll -->
+                <div class="story-main-scroll">
+                    
+                    <div class="story-intro-block" style="margin-bottom: 2rem;">
+                        <h2 class="story-hero-title" style="font-size: 2.2rem; margin-bottom: 1rem;">Cross-Application Frameworks: Business Validation &amp; Process Notification</h2>
+                        <p class="story-hero-subtitle" style="font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.6; max-width: 800px;">
+                            Defined the interaction strategy for enterprise validation and asynchronous notifications by transforming distributed business rules into a reusable cross-application framework. Established standardized interaction patterns and implementation guidelines that enabled a consistent, scalable experience across the Sales-to-Order ecosystem.
+                        </p>
+                    </div>
+
+                    <!-- SECTION 1: Business Context -->
+                    <section id="context-v" class="story-section story-reveal" style="margin-bottom: 3.5rem;">
+                        <h3 class="story-section-title">Business Context</h3>
+                        <p class="story-body-text" style="font-size: 1.05rem; line-height: 1.65; color: var(--text-secondary); max-width: 800px;">
+                            B2B Sales and Commerce platforms handled complex, high-volume transactions but lacked a unified framework for business validations, error handling and asynchronous processing. As a result, operators frequently encountered order fallouts caused by silent backend failures, fragmented validation feedback and limited visibility into transaction states.
+                        </p>
+                    </section>
+
+                    <!-- SECTION 2: Part 1: Business Validation -->
+                    <section id="validation-v" class="story-section story-reveal">
+                        <h3 class="story-section-title">Part 1: Business Validation System</h3>
+                        <p class="story-body-text">
+                            The Business Validation Engine monitors order configurations in real-time, triggering severity-based notifications (Errors, Warnings, Info alerts) when catalog rules are breached.
+                        </p>
+
+                        <!-- Task Flow Diagram: Business Validation Flow -->
+                        <div class="story-hero-diagram-wrapper" style="margin-top: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 2.5rem;">
+                            <span class="meta-label" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 0.8rem;">Subsystem Interaction &amp; Task Flow</span>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600; margin: 0 0 1.5rem 0; color: var(--text-primary);">Business Validation Processing Flow</h4>
+                            
+                            <style>
+                                .flow-row-container {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    gap: 0.25rem;
+                                }
+                                .flow-row {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                }
+                                .flow-row.grey-row {
+                                    opacity: 0.72;
+                                    padding: 0.5rem 0;
+                                }
+                                .flow-node {
+                                    background: var(--bg-secondary);
+                                    border: 1px solid var(--card-border);
+                                    color: var(--text-secondary);
+                                    padding: 0.6rem 0.8rem;
+                                    border-radius: 6px;
+                                    font-size: 0.76rem;
+                                    font-weight: 600;
+                                    text-align: center;
+                                    white-space: normal;
+                                    flex: 1 1 auto;
+                                    max-width: 220px;
+                                    line-height: 1.4;
+                                }
+                                .flow-node.coral {
+                                    background: rgba(239, 131, 84, 0.06);
+                                    border: 1px solid var(--accent-gold);
+                                    color: var(--text-primary);
+                                    max-width: 230px;
+                                }
+                                .flow-arrow {
+                                    font-size: 0.9rem;
+                                    color: var(--text-tertiary);
+                                    opacity: 0.4;
+                                    flex: 0 0 auto;
+                                    padding: 0 0.25rem;
+                                }
+                                .flow-arrow.coral-arrow {
+                                    color: var(--accent-gold);
+                                    opacity: 0.8;
+                                }
+                                .flow-diagonal-transition {
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    padding-right: 12%;
+                                    font-size: 1.1rem;
+                                    color: var(--text-tertiary);
+                                    opacity: 0.3;
+                                    margin: -0.2rem 0;
+                                }
+                                .flow-dashed-box {
+                                    border: 2px dashed var(--accent-gold);
+                                    border-radius: 8px;
+                                    padding: 1.2rem 0.8rem;
+                                    position: relative;
+                                    background: rgba(239, 131, 84, 0.02);
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                }
+                                .flow-dashed-box .case-study-label {
+                                    position: absolute;
+                                    top: -11px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    background: var(--accent-gold);
+                                    color: #ffffff;
+                                    font-size: 0.65rem;
+                                    font-weight: 700;
+                                    text-transform: uppercase;
+                                    letter-spacing: 1px;
+                                    padding: 2px 8px;
+                                    border-radius: 3px;
+                                    font-family: var(--font-body);
+                                    white-space: nowrap;
+                                    box-shadow: 0 2px 4px rgba(239, 131, 84, 0.2);
+                                }
+                                @media (max-width: 800px) {
+                                    .flow-row {
+                                        flex-direction: column;
+                                        gap: 0.5rem;
+                                    }
+                                    .flow-row.grey-row {
+                                        padding: 0;
+                                    }
+                                    .flow-node {
+                                        max-width: 100%;
+                                        width: 100%;
+                                    }
+                                    .flow-arrow {
+                                        transform: rotate(90deg);
+                                        margin: 0.2rem 0;
+                                        padding: 0;
+                                    }
+                                    .flow-diagonal-transition {
+                                        display: none;
+                                    }
+                                    .flow-dashed-box {
+                                        padding: 1.5rem 1rem !important;
+                                    }
+                                    .mobile-flow-connector {
+                                        display: block !important;
+                                        text-align: center;
+                                        font-size: 1rem;
+                                        color: var(--text-tertiary);
+                                        opacity: 0.4;
+                                        margin: 0.5rem 0;
+                                        transform: rotate(90deg);
+                                    }
+                                }
+                                .mobile-flow-connector {
+                                    display: none;
+                                }
+                            </style>
+
+                            <!-- Flow Row Container -->
+                            <div class="flow-row-container">
+                                
+                                <!-- Row 1: Triggers (Grey) -->
+                                <div class="flow-row grey-row">
+                                    <div class="flow-node"><strong>B2B COM Trigger</strong><br>Next Step / Stepper / Submit / Save</div>
+                                    <div class="flow-arrow">&rarr;</div>
+                                    <div class="flow-node"><strong>B2B Sales Trigger</strong><br>Header Tab / Save / Manual Run</div>
+                                    <div class="flow-arrow">&rarr;</div>
+                                    <div class="flow-node"><strong>Validation Engine Request</strong><br>Initializes calculation queue</div>
+                                </div>
+
+                                <!-- Row 1 to Row 2 Transition -->
+                                <div class="flow-diagonal-transition">&#8601;</div>
+                                <div class="mobile-flow-connector">&rarr;</div>
+
+                                <!-- Row 2: Validation Core Processing (Coral Scope inside dashed border) -->
+                                <div class="flow-dashed-box">
+                                    <span class="case-study-label">Validation Engine Core</span>
+                                    <div class="flow-row">
+                                        <div class="flow-node coral"><strong>Evaluate Catalog Rules</strong><br>Checks eligibility &amp; pricing</div>
+                                        <div class="flow-arrow coral-arrow">&rarr;</div>
+                                        <div class="flow-node coral"><strong>Classify Severity</strong><br>Filters Errors vs. Warnings/Info</div>
+                                        <div class="flow-arrow coral-arrow">&rarr;</div>
+                                        <div class="flow-node coral"><strong>Format UI Payload</strong><br>Groups errors by location/step</div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2 to Row 3 Transition -->
+                                <div class="flow-diagonal-transition">&#8601;</div>
+                                <div class="mobile-flow-connector">&rarr;</div>
+
+                                <!-- Row 3: UI Feedback & Resolution (Grey) -->
+                                <div class="flow-row grey-row" style="justify-content: flex-start; gap: 0.5rem;">
+                                    <div class="flow-node"><strong>Interactive Alert Display</strong><br>Banners &amp; Draggable Popover</div>
+                                    <div class="flow-arrow" style="flex: 0 0 auto;">&rarr;</div>
+                                    <div class="flow-node"><strong>Scroll-to-Field Link</strong><br>Viewport auto-scrolled to field</div>
+                                    <div class="flow-arrow" style="flex: 0 0 auto;">&rarr;</div>
+                                    <div class="flow-node"><strong>Operator Fix &amp; Re-run</strong><br>Unlocks submit after error fix</div>
+                                    <!-- Spacer to align left -->
+                                    <div style="flex: 2 1 auto; max-width: none;"></div>
+                                </div>
+
+                            </div>
+
+                            <!-- Legend Block (Aligned Left) -->
+                            <div class="flow-legend" style="display: flex; gap: 2rem; margin-top: 1.5rem; justify-content: flex-start; font-size: 0.8rem; flex-wrap: wrap; padding: 0;">
+                                <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
+                                    <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--bg-secondary); border: 1px solid var(--card-border); opacity: 0.72; flex-shrink: 0; margin-top: 2px;"></div>
+                                    <div>
+                                        <div style="font-weight: 600; color: var(--text-primary);">External User &amp; UI Actions</div>
+                                        <div style="color: var(--text-tertiary); font-size: 0.75rem; margin-top: 0.1rem;">Triggers in Sales/Commerce and manual resolutions.</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
+                                    <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-gold); flex-shrink: 0; margin-top: 2px;"></div>
+                                    <div>
+                                        <div style="font-weight: 600; color: var(--text-primary);">Validation Engine Core</div>
+                                        <div style="color: var(--text-tertiary); font-size: 0.75rem; margin-top: 0.1rem;">Background rule parsing, classification, and routing.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2.5rem;">
+                            <h4 class="approach-col-title" style="font-size: 1.15rem; margin-bottom: 1rem;">Business Validation Experience</h4>
+                            <p class="story-body-text" style="line-height: 1.65; margin-bottom: 1.2rem;">
+                                Business validations can be triggered automatically during background processing or manually by the operator. Validation results are consolidated and surfaced through a consistent interaction model, with inline status indicators summarizing the highest severity while providing counts for all validation types.
+                            </p>
+                            <p class="story-body-text" style="line-height: 1.65; margin-bottom: 0;">
+                                When multiple validation messages are present, users can expand them into a draggable validation workspace. Messages are grouped by severity and presented as actionable items, allowing operators to keep the panel open, navigate directly to affected configurations, and resolve issues without losing context during complex order creation.
+                            </p>
+                        </div>
+
+                        <!-- Hero Image for Part 1 -->
+                        <div class="story-hero-image-wrapper" style="margin-top: 2rem; margin-bottom: 2.5rem; text-align: left;">
+                            <div class="comparison-image-container" style="max-width: 100%; border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <img src="assets/stories/business_validation/cropped/validation_hero_spec.png" alt="Validation messages popover and collapsed header specs" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                            </div>
+                            <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0.75rem; text-align: left;">
+                                Specification mapping the expandable validation popover panel (left) to the collapsed status indicator (right).
+                            </p>
+                        </div>
+                        <div class="story-impact-box">
+                            <div class="story-impact-title">Key Outcomes &amp; Impact</div>
+                            <ul class="story-impact-list">
+                                <li>Standardized business validation interactions through a reusable, severity-based validation framework.</li>
+                                <li>Reduced time to identify and resolve validation issues by consolidating distributed messages into a centralized validation workspace.</li>
+                                <li>Enabled uninterrupted issue resolution with a persistent, draggable validation panel and contextual navigation to affected configurations.</li>
+                                <li>Established scalable interaction patterns for business validations across Sales and Commerce applications.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 3: Part 2: Async Notifications -->
+                    <section id="notifications-v" class="story-section story-reveal">
+                        <h3 class="story-section-title">Part 2: Async Notifications Framework</h3>
+                        <p class="story-body-text">
+                            B2B operations often involve long-running background tasks (e.g. bulk price recalculations or service coverage checks) that cannot be completed synchronously. The Async Notifications Framework keeps operators informed without interrupting their work.
+                        </p>
+
+                        <!-- Task Flow Diagram: Async Notification Flow -->
+                        <div class="story-hero-diagram-wrapper" style="margin-top: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 2.5rem;">
+                            <span class="meta-label" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 0.8rem;">Subsystem Interaction &amp; Task Flow</span>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600; margin: 0 0 1.5rem 0; color: var(--text-primary);">Asynchronous Notification Processing Flow</h4>
+                            
+                            <style>
+                                .async-flow-row-container {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    gap: 0.25rem;
+                                }
+                                .async-flow-row {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                }
+                                .async-flow-row.grey-row {
+                                    opacity: 0.72;
+                                    padding: 0.5rem 0;
+                                }
+                                .async-flow-node {
+                                    background: var(--bg-secondary);
+                                    border: 1px solid var(--card-border);
+                                    color: var(--text-secondary);
+                                    padding: 0.6rem 0.8rem;
+                                    border-radius: 6px;
+                                    font-size: 0.76rem;
+                                    font-weight: 600;
+                                    text-align: center;
+                                    white-space: normal;
+                                    flex: 1 1 auto;
+                                    max-width: 220px;
+                                    line-height: 1.4;
+                                }
+                                .async-flow-node.coral {
+                                    background: rgba(239, 131, 84, 0.06);
+                                    border: 1px solid var(--accent-gold);
+                                    color: var(--text-primary);
+                                    max-width: 230px;
+                                }
+                                .async-flow-arrow {
+                                    font-size: 0.9rem;
+                                    color: var(--text-tertiary);
+                                    opacity: 0.4;
+                                    flex: 0 0 auto;
+                                    padding: 0 0.25rem;
+                                }
+                                .async-flow-arrow.coral-arrow {
+                                    color: var(--accent-gold);
+                                    opacity: 0.8;
+                                }
+                                .async-flow-diagonal-transition {
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    padding-right: 12%;
+                                    font-size: 1.1rem;
+                                    color: var(--text-tertiary);
+                                    opacity: 0.3;
+                                    margin: -0.2rem 0;
+                                }
+                                .async-flow-dashed-box {
+                                    border: 2px dashed var(--accent-gold);
+                                    border-radius: 8px;
+                                    padding: 1.2rem 0.8rem;
+                                    position: relative;
+                                    background: rgba(239, 131, 84, 0.02);
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                }
+                                .async-flow-dashed-box .case-study-label {
+                                    position: absolute;
+                                    top: -11px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    background: var(--accent-gold);
+                                    color: #ffffff;
+                                    font-size: 0.65rem;
+                                    font-weight: 700;
+                                    text-transform: uppercase;
+                                    letter-spacing: 1px;
+                                    padding: 2px 8px;
+                                    border-radius: 3px;
+                                    font-family: var(--font-body);
+                                    white-space: nowrap;
+                                    box-shadow: 0 2px 4px rgba(239, 131, 84, 0.2);
+                                }
+                                @media (max-width: 800px) {
+                                    .async-flow-row {
+                                        flex-direction: column;
+                                        gap: 0.5rem;
+                                    }
+                                    .async-flow-row.grey-row {
+                                        padding: 0;
+                                    }
+                                    .async-flow-node {
+                                        max-width: 100%;
+                                        width: 100%;
+                                    }
+                                    .async-flow-arrow {
+                                        transform: rotate(90deg);
+                                        margin: 0.2rem 0;
+                                        padding: 0;
+                                    }
+                                    .async-flow-diagonal-transition {
+                                        display: none;
+                                    }
+                                    .async-flow-dashed-box {
+                                        padding: 1.5rem 1rem !important;
+                                    }
+                                    .mobile-async-flow-connector {
+                                        display: block !important;
+                                        text-align: center;
+                                        font-size: 1rem;
+                                        color: var(--text-tertiary);
+                                        opacity: 0.4;
+                                        margin: 0.5rem 0;
+                                        transform: rotate(90deg);
+                                    }
+                                }
+                                .mobile-async-flow-connector {
+                                    display: none;
+                                }
+                            </style>
+
+                            <!-- Flow Row Container -->
+                            <div class="async-flow-row-container">
+                                
+                                <!-- Row 1: Triggers & Locks (Grey) -->
+                                <div class="async-flow-row grey-row">
+                                    <div class="async-flow-node"><strong>Async Action Triggered</strong><br>Location Offer / Serviceability / Calculate Charges</div>
+                                    <div class="async-flow-arrow">&rarr;</div>
+                                    <div class="async-flow-node"><strong>Push Background Job</strong><br>Executes calculation queue off main thread</div>
+                                    <div class="async-flow-arrow">&rarr;</div>
+                                    <div class="async-flow-node"><strong>Lock Interactive UI</strong><br>Blocks layout edits (e.g., Location Config)</div>
+                                </div>
+
+                                <!-- Row 1 to Row 2 Transition -->
+                                <div class="async-flow-diagonal-transition">&#8601;</div>
+                                <div class="mobile-async-flow-connector">&rarr;</div>
+
+                                <!-- Row 2: Async Core Processing (Coral Scope inside dashed border) -->
+                                <div class="async-flow-dashed-box">
+                                    <span class="case-study-label">Calculation &amp; Monitoring Core</span>
+                                    <div class="async-flow-row">
+                                        <div class="async-flow-node coral"><strong>Calculation Engine Loop</strong><br>Runs parallel catalog and pricing cycles</div>
+                                        <div class="async-flow-arrow coral-arrow">&rarr;</div>
+                                        <div class="async-flow-node coral"><strong>Verify Job Outcome</strong><br>Sorts state: Success vs. Failure vs. Partial Complete</div>
+                                        <div class="async-flow-arrow coral-arrow">&rarr;</div>
+                                        <div class="async-flow-node coral"><strong>Generate Notify Payload</strong><br>Binds results to UI alert message format</div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2 to Row 3 Transition -->
+                                <div class="async-flow-diagonal-transition">&#8601;</div>
+                                <div class="mobile-async-flow-connector">&rarr;</div>
+
+                                <!-- Row 3: UI Feedback & Refresh Actions (Grey) -->
+                                <div class="async-flow-row grey-row" style="justify-content: flex-start; gap: 0.5rem;">
+                                    <div class="async-flow-node"><strong>Render Status Alert</strong><br>Header Toast (Success) or Persistent Banner (Failure)</div>
+                                    <div class="async-flow-arrow" style="flex: 0 0 auto;">&rarr;</div>
+                                    <div class="async-flow-node"><strong>Execute Refresh Check</strong><br>Fires Auto-refresh or shows Manual prompt</div>
+                                    <div class="async-flow-arrow" style="flex: 0 0 auto;">&rarr;</div>
+                                    <div class="async-flow-node"><strong>Unlock UI Workspace</strong><br>Restores edit access and unlocks Next Step</div>
+                                    <!-- Spacer to align left -->
+                                    <div style="flex: 2 1 auto; max-width: none;"></div>
+                                </div>
+
+                            </div>
+
+                            <!-- Legend Block (Aligned Left) -->
+                            <div class="async-flow-legend" style="display: flex; gap: 2rem; margin-top: 1.5rem; justify-content: flex-start; font-size: 0.8rem; flex-wrap: wrap; padding: 0;">
+                                <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
+                                    <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--bg-secondary); border: 1px solid var(--card-border); opacity: 0.72; flex-shrink: 0; margin-top: 2px;"></div>
+                                    <div>
+                                        <div style="font-weight: 600; color: var(--text-primary);">External User &amp; UI Actions</div>
+                                        <div style="color: var(--text-tertiary); font-size: 0.75rem; margin-top: 0.1rem;">Triggers in Sales/Commerce and manual resolutions.</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
+                                    <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-gold); flex-shrink: 0; margin-top: 2px;"></div>
+                                    <div>
+                                        <div style="font-weight: 600; color: var(--text-primary);">Calculation &amp; Monitoring Core</div>
+                                        <div style="color: var(--text-tertiary); font-size: 0.75rem; margin-top: 0.1rem;">Background job execution, state verification, and refresh routing.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2.5rem;">
+                            <h4 class="approach-col-title" style="font-size: 1.15rem; margin-bottom: 1rem;">Async Process Notification Experience</h4>
+                            <p class="story-body-text" style="line-height: 1.65; margin-bottom: 1.2rem;">
+                                Enterprise transactions often continue processing after user actions are completed. To improve visibility into these background operations, I designed a reusable notification framework that communicates processing, success, partial completion and failure states through consistent interaction patterns.
+                            </p>
+                            <p class="story-body-text" style="line-height: 1.65; margin-bottom: 0;">
+                                Each notification provides contextual feedback and, where appropriate, links directly to the Process Monitoring workspace, allowing operators to track ongoing background activities, review processing history and investigate failures without interrupting their workflow.
+                            </p>
+                        </div>
+
+                        <!-- Hero Image for Part 2 -->
+                        <div class="story-hero-image-wrapper" style="margin-top: 2rem; margin-bottom: 2.5rem; text-align: left;">
+                            <div class="comparison-image-container" style="max-width: 100%; border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <img src="assets/stories/async_notifications/cropped/async_hero_spec.png" alt="Asynchronous process notification state types specs" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                            </div>
+                            <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0.75rem; text-align: left;">
+                                Specification mapping the persistent banners and toast messages for all four async notification states (Success, Failure, Partial, and Warnings).
+                            </p>
+                        </div>
+                        <div class="story-impact-box">
+                            <div class="story-impact-title">Key Outcomes &amp; Impact</div>
+                            <ul class="story-impact-list">
+                                <li>Standardized asynchronous notification patterns across long-running enterprise workflows.</li>
+                                <li>Improved visibility into background processing through consistent process state indicators and contextual notifications.</li>
+                                <li>Enabled end-to-end process monitoring by connecting notifications with a centralized Process Monitoring workspace for tracking, troubleshooting and auditability.</li>
+                                <li>Reduced operator uncertainty by clearly communicating processing, completion and failure states throughout complex ordering journeys.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 4: Validation Workflow -->
+                    <section id="workflow-v" class="story-section story-reveal">
+                        <h3 class="story-section-title">Validation Workflow</h3>
+                        <p class="story-body-text">
+                            The following screen flow illustrates the lifecycle of an asynchronous transaction. It demonstrates the transition from a successfully completed background process to handling validation warnings, and shows how operators access detailed execution records.
+                        </p>
+
+                        <style>
+                            .comparison-grid-three {
+                                display: grid;
+                                grid-template-columns: 1fr auto 1fr auto 1fr;
+                                align-items: start;
+                                gap: 1.5rem;
+                                margin: 2.5rem 0;
+                            }
+                            @media (max-width: 900px) {
+                                .comparison-grid-three {
+                                    grid-template-columns: 1fr;
+                                    gap: 1rem;
+                                }
+                                .comparison-grid-three .comparison-arrow-col {
+                                    transform: rotate(90deg);
+                                    padding: 0.5rem 0;
+                                    align-items: center !important;
+                                    justify-content: center !important;
+                                    height: auto !important;
+                                    margin-top: 0 !important;
+                                }
+                            }
+                        </style>
+
+                        <div class="comparison-grid-three">
+                            <!-- Step 1 -->
+                            <div class="comparison-side">
+                                <span class="comparison-label" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.5px;">Step 1: Process Completed Successfully</span>
+                                <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 6px; overflow: hidden; background: var(--bg-secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-top: 0.8rem;">
+                                    <img src="assets/stories/async_notifications/cropped/async_flow_step_1.png" alt="Async Process Completed Successfully Toast B2B COM screen" style="width: 100%; display: block;">
+                                </div>
+                                <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.8rem; line-height: 1.5;">
+                                    When a background action (e.g. pricing) completes without errors, a temporary success toast notification appears in the upper right.
+                                </p>
+                            </div>
+
+                            <!-- Arrow 1 -->
+                            <div class="comparison-arrow-col" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; margin-top: 6rem;">
+                                <span class="comparison-arrow-symbol" style="font-size: 1.5rem; color: var(--accent-gold); opacity: 0.8;">&rarr;</span>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="comparison-side">
+                                <span class="comparison-label" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.5px;">Step 2: Completed with Validation Issues</span>
+                                <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 6px; overflow: hidden; background: var(--bg-secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-top: 0.8rem;">
+                                    <img src="assets/stories/async_notifications/cropped/async_flow_step_2.png" alt="Async Process Completed with Validation Issues Alert B2B COM screen" style="width: 100%; display: block;">
+                                </div>
+                                <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.8rem; line-height: 1.5;">
+                                    If validation errors occur, a persistent warning alert is pinned to the header with an action link to view details.
+                                </p>
+                            </div>
+
+                            <!-- Arrow 2 -->
+                            <div class="comparison-arrow-col" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; margin-top: 6rem;">
+                                <span class="comparison-arrow-symbol" style="font-size: 1.5rem; color: var(--accent-gold); opacity: 0.8;">&rarr;</span>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="comparison-side">
+                                <span class="comparison-label" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.5px;">Step 3: Centralized Process Monitoring</span>
+                                <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 6px; overflow: hidden; background: var(--bg-secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-top: 0.8rem;">
+                                    <img src="assets/stories/async_notifications/cropped/async_flow_step_3.png" alt="Process Monitoring console overlay display screen" style="width: 100%; display: block;">
+                                </div>
+                                <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.8rem; line-height: 1.5;">
+                                    Clicking "View Process Monitoring" launches the central console listing task IDs, execution times, and status logs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Header Status Indications Spec -->
+                        <div class="story-hero-image-wrapper" style="margin-top: 3.5rem; border-top: 1px solid var(--card-border); padding-top: 2.5rem; text-align: left;">
+                            <span class="meta-label" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 0.8rem;">Header Status Badges</span>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600; margin: 0 0 1rem 0; color: var(--text-primary);">Process Monitoring Icon States</h4>
+                            <p class="story-body-text" style="margin-bottom: 1.5rem;">
+                                The global B2B checkout header features a persistent process monitoring button that adapts its badge indicators in real-time to reflect the status of background calculations.
+                            </p>
+                            <div class="comparison-image-container" style="max-width: 100%; border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                                <img src="assets/stories/async_notifications/cropped/async_status_indications.png" alt="Header process monitoring button badge states" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                            </div>
+                            <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0.75rem; text-align: left;">
+                                Specification mapping the four real-time process monitoring states: In-Progress (blue clock), Completed (green check), Failure/Partially Completed (red exclamation), and Validation Issues (orange warning).
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 6: Architecture Principles -->
+                    <section id="principles-v" class="story-section story-reveal">
+                        <h3 class="story-section-title">Architecture Principles</h3>
+                        <p class="story-body-text">
+                            I defined five core UX Architecture principles to guide the design and engineering teams during the development of these cross-application utility frameworks:
+                        </p>
+
+                        <div class="solution-card">
+                            <ul class="solution-bullets-list">
+                                <li>
+                                    <strong class="solution-bullets-title">Non-Intrusive Validation</strong>
+                                    <p class="solution-bullets-desc">Disclose validation alerts inline first. Do not use blockades or interrupting popups unless error resolution is critical to proceed.</p>
+                                </li>
+                                <li>
+                                    <strong class="solution-bullets-title">Contextual Navigation</strong>
+                                    <p class="solution-bullets-desc">Allow users to click any alert inside the summary list to auto-scroll the viewport and highlight the target inputs directly.</p>
+                                </li>
+                                <li>
+                                    <strong class="solution-bullets-title">State Transparency</strong>
+                                    <p class="solution-bullets-desc">Provide real-time status indicators in the global header so operators are always aware of background syncing processes.</p>
+                                </li>
+                                <li>
+                                    <strong class="solution-bullets-title">Structured Alert Hierarchy</strong>
+                                    <p class="solution-bullets-desc">Classify system feedback into Errors, Warnings, and Info tabs to help operators prioritize fixes during checkout.</p>
+                                </li>
+                                <li>
+                                    <strong class="solution-bullets-title">Centralized Auditing</strong>
+                                    <p class="solution-bullets-desc">Maintain a centralized background task monitoring log to let operators review execution histories and trace validation fallouts.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 7: Business Outcomes -->
+                    <section id="outcomes-v" class="story-section story-reveal">
+                        <h3 class="story-section-title">Business Outcomes</h3>
+                        <p class="story-body-text">
+                            The cross-application frameworks successfully improved data accuracy and operator efficiency across Sales and Commerce checkouts:
+                        </p>
+
+                        <div class="challenge-grid" style="grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem;">
+                            <div class="impact-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.3rem;">
+                                <h4 class="impact-card-title" style="font-size: 0.95rem; margin: 0;">Reduced Order Fallouts</h4>
+                                <p class="impact-card-desc" style="margin: 0; font-size: 0.85rem;">Validating inputs inline prevents invalid data configurations from reaching downstream provisioning systems.</p>
+                            </div>
+                            <div class="impact-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.3rem;">
+                                <h4 class="impact-card-title" style="font-size: 0.95rem; margin: 0;">Accelerated Checkout Times</h4>
+                                <p class="impact-card-desc" style="margin: 0; font-size: 0.85rem;">Draggable popovers allow operators to quickly navigate and resolve multiple warnings without context switching.</p>
+                            </div>
+                            <div class="impact-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.3rem;">
+                                <h4 class="impact-card-title" style="font-size: 0.95rem; margin: 0;">Reusable Utility Subsystems</h4>
+                                <p class="impact-card-desc" style="margin: 0; font-size: 0.85rem;">Standardized interaction models reduce future front-end design cycles for new checkouts by ~40%.</p>
+                            </div>
+                            <div class="impact-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.3rem;">
+                                <h4 class="impact-card-title" style="font-size: 0.95rem; margin: 0;">Mitigated Operational Errors</h4>
+                                <p class="impact-card-desc" style="margin: 0; font-size: 0.85rem;">Real-time validation checks ensure all configuration details align with active contract agreements.</p>
+                            </div>
+                            <div class="impact-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.3rem;">
+                                <h4 class="impact-card-title" style="font-size: 0.95rem; margin: 0;">Standardized Operator Behaviors</h4>
+                                <p class="impact-card-desc" style="margin: 0; font-size: 0.85rem;">Operators benefit from unified, predictable system patterns when navigating across Sales and Commerce checkouts.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 8: Reflection -->
+                    <section id="reflection-v" class="story-section story-reveal">
+                        <h3 class="story-section-title">Reflection</h3>
+                        <div class="reflection-card" style="margin-top: 1.5rem;">
+                            <p class="reflection-card-desc" style="font-size: 1.05rem; line-height: 1.6; font-style: italic;">
+                                Designing for enterprise is not about designing individual screens or features. The true success of this initiative lay in architecting reusable validation and status notification engines that scale seamlessly across the entire suite as new business capabilities emerge.
+                            </p>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT 2: Offer Discovery Framework (Active by Default) -->
+        <div class="tab-content-block active" id="tab-offers-flow">
+            <div class="story-container">
+                
+                <!-- Sticky Left Navigation Progress Bar for Tab 2 -->
+                <aside class="story-sidebar">
+                    <div class="sidebar-title">Case Outline</div>
+                    <ul class="sticky-nav-list">
+                        <li class="sticky-nav-item active"><a href="#context-o">Legacy Model</a></li>
+                        <li class="sticky-nav-item"><a href="#evidence-o">Strategy</a></li>
+                        <li class="sticky-nav-item"><a href="#framework-o">Redesigned Model</a></li>
+                        <li class="sticky-nav-item"><a href="#scope-o">Design Scope</a></li>
+                        <li class="sticky-nav-item"><a href="#evolution-o">Framework Evolution</a></li>
+                        <li class="sticky-nav-item"><a href="#commerce-o">Optional Serviceability</a></li>
+                        <li class="sticky-nav-item"><a href="#business-o">Ecosystem Impact</a></li>
+                        <li class="sticky-nav-item"><a href="#reflection-o">Design Reflection</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Narrative Scroll -->
+                <div class="story-main-scroll">
+                    
+                    <div class="story-intro-block">
+                        <h2 class="story-hero-title" style="font-size: 2.2rem; margin-bottom: 1rem;">Designing a Scalable Offer Discovery Framework</h2>
+                        <p class="story-hero-subtitle" style="font-size: 1.05rem; margin-bottom: 2rem;">
+                            Reimagining enterprise offer discovery through interaction architecture, contextual navigation, and scalable product thinking.
+                        </p>
+                    </div>
+                    <!-- SECTION 1: Legacy Model -->
+                    <section id="context-o" class="story-section story-reveal">
+                        <h3 class="story-section-title">Legacy Model</h3>
+                        <div class="layout-half-grid">
+                            <div>
+                                <p class="story-body-text">
+                                    As enterprise telecom catalogues expanded, the existing hierarchical discovery model became increasingly difficult to scale across new products, services and customer implementations. The objective was not simply to redesign Add Offer, but to establish a reusable interaction framework that could support future business evolution.
+                                </p>
+                                <div class="solution-card" style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-secondary); border-left: 3px solid var(--accent-gold);">
+                                    <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 0.8rem; font-weight: 700;">Legacy Limitations</h4>
+                                    <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; display: flex; flex-direction: column; gap: 0.5rem;">
+                                        <li><strong>Deep hierarchical navigation</strong> — Sequential category to sub-category viewport redirection.</li>
+                                        <li><strong>Late offer discovery</strong> — Actual product items remain hidden behind multiple loading screens.</li>
+                                        <li><strong>Difficult to scale</strong> — Adding nested or modular product packages breaks layout grids.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="comparison-label">Legacy Interaction Steps</div>
+                                <div class="legacy-gallery" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
+                                    <div>
+                                        <div class="comparison-image-container" style="cursor: pointer;">
+                                            <img src="assets/stories/cropped/page_1_img_1.png" alt="Legacy category selection step">
+                                        </div>
+                                        <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Step 1: Modal-based high-level category selection</span>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+                                        <div>
+                                            <div class="comparison-image-container" style="cursor: pointer;">
+                                                <img src="assets/stories/cropped/page_2_img_1.png" alt="Legacy sub-category selection step">
+                                            </div>
+                                            <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Step 2: Sub-category viewport</span>
+                                        </div>
+                                        <div>
+                                            <div class="comparison-image-container" style="cursor: pointer;">
+                                                <img src="assets/stories/cropped/legacy_step3.png" alt="Legacy filter and discover step">
+                                            </div>
+                                            <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Step 3: Sequential filter &amp; browse</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+<!-- SECTION 2: Strategy -->
+                    <section id="evidence-o" class="story-section story-reveal">
+                        <h3 class="story-section-title">Strategy</h3>
+                        <p class="story-body-text">
+                            A dual strategy was devised: analyze the core friction points in operator behavior (Research) and establish a scalable interaction model governed by architectural rules (Design Principles).
+                        </p>
+                        
+                        <div class="evidence-grid">
+                            <div class="challenge-card">
+                                <h4 class="approach-col-title" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Customer Feedback</h4>
+                                <p class="challenge-text">Operators repeatedly struggled with navigating deep catalog hierarchies, leading to high drop-offs during configure-price-quote steps.</p>
+                            </div>
+                            <div class="challenge-card">
+                                <h4 class="approach-col-title" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Domain Experts</h4>
+                                <p class="challenge-text">User behavior data showed that agents think in terms of specific products and commercial packages rather than arbitrary category folders.</p>
+                            </div>
+                            <div class="challenge-card">
+                                <h4 class="approach-col-title" style="font-size: 0.9rem; margin-bottom: 0.5rem;">Product Team</h4>
+                                <p class="challenge-text">The product roadmaps required future product types and subscription rules to fit naturally into the checkout workflow without code rewrites.</p>
+                            </div>
+                            <div class="challenge-card">
+                                <h4 class="approach-col-title" style="font-size: 0.9rem; margin-bottom: 0.5rem;">UX Observation</h4>
+                                <p class="challenge-text">Search and sorting operations are most effective only after high-level commercial context has been established by the user.</p>
+                            </div>
+                        </div>
+
+                        <div class="solution-card" style="border-left: 3px solid var(--accent-gold); padding: 1.5rem; background: var(--bg-secondary); margin-top: 1.5rem;">
+                            <h4 class="solution-card-title" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 0.5rem;">Strategic Design Decision</h4>
+                            <p class="story-body-text" style="margin: 0; font-weight: 500;">
+                                Shift from a rigid, hierarchy-driven navigation system to a contextual, modular product discovery framework.
+                            </p>
+                        </div>
+
+                        <h4 class="approach-col-title" style="margin-top: 3rem; margin-bottom: 1rem;">Core Design Principles</h4>
+                        <div class="solution-card">
+                            <ul class="solution-bullets-list">
+                                <li>
+                                    <h5 class="solution-bullets-title">Contextual Discovery</h5>
+                                    <p class="solution-bullets-desc">Provide top-level boundary controls first, ensuring search and actions are scoped appropriately.</p>
+                                </li>
+                                <li>
+                                    <h5 class="solution-bullets-title">Progressive Filtering</h5>
+                                    <p class="solution-bullets-desc">Allow users to narrow selections dynamically without reloading the catalog viewport.</p>
+                                </li>
+                                <li>
+                                    <h5 class="solution-bullets-title">Scalable Categories</h5>
+                                    <p class="solution-bullets-desc">Side-scrollable category tabs natively support growing catalogs without breaking the layout grid.</p>
+                                </li>
+                                <li>
+                                    <h5 class="solution-bullets-title">Search within Context</h5>
+                                    <p class="solution-bullets-desc">Autocomplete lookup queries are filtered automatically based on the user's active configuration scope.</p>
+                                </li>
+                                <li>
+                                    <h5 class="solution-bullets-title">Reusable Interaction Framework</h5>
+                                    <p class="solution-bullets-desc">Standardized layouts are shared between Sales and COM platforms, reducing cognitive friction for operators.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 3: Redesigned Interaction Model -->
+                    <section id="framework-o" class="story-section story-reveal">
+                        <h3 class="story-section-title">Redesigned Interaction Model</h3>
+                        <p class="story-body-text">
+                            The redesigned interaction model unified Sales and B2B Commerce platforms into a single-pane discovery framework. Catalog items are exposed immediately within a persistent container, eliminating screen redirection and high operator drop-off.
+                        </p>
+
+                        <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                            <div>
+                                <div class="comparison-label">Redesigned Navigation Tabs</div>
+                                <div class="comparison-image-container" style="cursor: pointer; max-width: 100%;">
+                                    <img src="assets/stories/cropped/redesigned_header.png" alt="Redesigned sub-category tab navigation layout" style="width: 100%;">
+                                </div>
+                                <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Sub-category Tabs: Horizontal carousel replacing deep hierarchy selection page</span>
+                            </div>
+                            
+                            <div>
+                                <div class="comparison-label">Sales Contextual Checkout Canvas</div>
+                                <div class="comparison-image-container" style="cursor: pointer; max-width: 100%;">
+                                    <img src="assets/stories/cropped/page_4_img_1.png" alt="Sales platform contextual discovery layout" style="width: 100%;">
+                                </div>
+                                <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Single-pane Contextual Discovery: Sales platform persistent right-hand drawer viewport</span>
+                            </div>
+                        </div>
+
+                        <div class="solution-card" style="margin-top: 2.5rem; padding: 1.5rem; background: var(--bg-secondary); border-left: 3px solid var(--accent-gold);">
+                            <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 0.8rem; font-weight: 700;">Interaction Refinements</h4>
+                            <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li><strong>Product-first discovery</strong> — Removes category gateways, placing catalog offers directly inside the user's viewport.</li>
+                                <li><strong>Search within category</strong> — Autocomplete lookup queries are scoped dynamically to the active catalog segment.</li>
+                                <li><strong>Progressive filtering</strong> — Interactive sidebar controls allow narrowing of results without full layout reloads.</li>
+                                <li><strong>Earlier visibility of offers</strong> — Surfacing commercial packages instantly, shortening user decision loops.</li>
+                                <li><strong>Reduced navigation depth</strong> — Consolidating multiple wizard steps into a side-by-side drawer canvas.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 3.5: Design Scope -->
+                    <section id="scope-o" class="story-section story-reveal">
+                        <style>
+                            .journey-row-container {
+                                display: flex;
+                                flex-direction: column;
+                                width: 100%;
+                                margin: 2rem 0;
+                                gap: 0.25rem;
+                            }
+                            .journey-row {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                width: 100%;
+                                box-sizing: border-box;
+                            }
+                            .journey-row.grey-row {
+                                opacity: 0.72;
+                                padding: 0.5rem 0;
+                            }
+                            .journey-node {
+                                background: var(--bg-secondary);
+                                border: 1px solid var(--card-border);
+                                color: var(--text-secondary);
+                                padding: 0.6rem 0.8rem;
+                                border-radius: 6px;
+                                font-size: 0.76rem;
+                                font-weight: 600;
+                                text-align: center;
+                                white-space: nowrap;
+                                flex: 1 1 auto;
+                                max-width: 170px;
+                            }
+                            .journey-node.coral {
+                                background: rgba(239, 131, 84, 0.06);
+                                border: 1px solid var(--accent-gold);
+                                color: var(--text-primary);
+                                max-width: 190px;
+                            }
+                            .journey-arrow {
+                                font-size: 0.9rem;
+                                color: var(--text-tertiary);
+                                opacity: 0.4;
+                                flex: 0 0 auto;
+                                padding: 0 0.25rem;
+                            }
+                            .journey-arrow.coral-arrow {
+                                color: var(--accent-gold);
+                                opacity: 0.8;
+                            }
+                            .journey-diagonal-transition {
+                                display: flex;
+                                justify-content: flex-end;
+                                padding-right: 12%;
+                                font-size: 1.1rem;
+                                color: var(--text-tertiary);
+                                opacity: 0.3;
+                                margin: -0.2rem 0;
+                            }
+                            .scope-dashed-box {
+                                border: 2px dashed var(--accent-gold);
+                                border-radius: 8px;
+                                padding: 1.2rem 0.8rem;
+                                position: relative;
+                                background: rgba(239, 131, 84, 0.02);
+                                width: 100%;
+                                box-sizing: border-box;
+                            }
+                            .case-study-label {
+                                position: absolute;
+                                top: -11px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                background: var(--accent-gold);
+                                color: #ffffff;
+                                font-size: 0.65rem;
+                                font-weight: 700;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                padding: 2px 8px;
+                                border-radius: 3px;
+                                font-family: var(--font-body);
+                                white-space: nowrap;
+                                box-shadow: 0 2px 4px rgba(239, 131, 84, 0.2);
+                            }
+                            @media (max-width: 800px) {
+                                .journey-row {
+                                    flex-direction: column;
+                                    gap: 0.5rem;
+                                }
+                                .journey-row.grey-row {
+                                    padding: 0;
+                                }
+                                .journey-node {
+                                    max-width: 100%;
+                                    width: 100%;
+                                }
+                                .journey-arrow {
+                                    transform: rotate(90deg);
+                                    margin: 0.2rem 0;
+                                    padding: 0;
+                                }
+                                .journey-diagonal-transition {
+                                    display: none;
+                                }
+                                .scope-dashed-box {
+                                    padding: 1.5rem 1rem !important;
+                                }
+                                .mobile-row-connector {
+                                    display: block !important;
+                                    text-align: center;
+                                    font-size: 1rem;
+                                    color: var(--text-tertiary);
+                                    opacity: 0.4;
+                                    margin: 0.5rem 0;
+                                    transform: rotate(90deg);
+                                }
+                            }
+                            .mobile-row-connector {
+                                display: none;
+                            }
+                        </style>
+                        <h3 class="story-section-title">Design Scope within the Sales-to-Order Journey</h3>
+                        <p class="story-body-text">
+                            The highlighted interaction model represents the part of the end-to-end Sales-to-Order journey redesigned as part of this case study.
+                        </p>
+
+                        <!-- Journey Flow Diagram in Z-Format -->
+                        <div class="journey-row-container">
+                            
+                            <!-- Row 1: Steps 1-4 (Grey) -->
+                            <div class="journey-row grey-row">
+                                <div class="journey-node">Login</div>
+                                <div class="journey-arrow">&rarr;</div>
+                                <div class="journey-node">Dashboard</div>
+                                <div class="journey-arrow">&rarr;</div>
+                                <div class="journey-node">Select Customer</div>
+                                <div class="journey-arrow">&rarr;</div>
+                                <div class="journey-node">New Proposal / Order</div>
+                            </div>
+
+                            <!-- Row 1 to Row 2 Transition -->
+                            <div class="journey-diagonal-transition">&#8601;</div>
+                            <div class="mobile-row-connector">&rarr;</div>
+
+                            <!-- Row 2: Steps 5-9 (Coral Scope surrounded by dashed border) -->
+                            <div class="scope-dashed-box">
+                                <span class="case-study-label">Case Study Focus</span>
+                                <div class="journey-row">
+                                    <div class="journey-node coral">Add Item</div>
+                                    <div class="journey-arrow coral-arrow">&rarr;</div>
+                                    <div class="journey-node coral">Select Category / Subcategory</div>
+                                    <div class="journey-arrow coral-arrow">&rarr;</div>
+                                    <div class="journey-node coral">Search &amp; Filter Offers</div>
+                                    <div class="journey-arrow coral-arrow">&rarr;</div>
+                                    <div class="journey-node coral">Offer List View (Select Offer)</div>
+                                    <div class="journey-arrow coral-arrow">&rarr;</div>
+                                    <div class="journey-node coral">Configure Offer (Build)</div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2 to Row 3 Transition -->
+                            <div class="journey-diagonal-transition">&#8601;</div>
+                            <div class="mobile-row-connector">&rarr;</div>
+
+                            <!-- Row 3: Steps 10-12 (Grey) -->
+                            <div class="journey-row grey-row" style="justify-content: flex-start; gap: 0.5rem;">
+                                <div class="journey-node">Review Summary</div>
+                                <div class="journey-arrow" style="flex: 0 0 auto;">&rarr;</div>
+                                <div class="journey-node">Submit Order</div>
+                                <div class="journey-arrow" style="flex: 0 0 auto;">&rarr;</div>
+                                <div class="journey-node">Order Created</div>
+                                <!-- Empty flex spacer to align left -->
+                                <div style="flex: 2 1 auto; max-width: none;"></div>
+                            </div>
+
+                        </div>
+
+                        <!-- Legend Block (Aligned Left) -->
+                        <div class="journey-legend" style="display: flex; gap: 2rem; margin-top: 1.5rem; justify-content: flex-start; font-size: 0.8rem; flex-wrap: wrap; padding: 0;">
+                            <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
+                                <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--bg-secondary); border: 1px solid var(--card-border); opacity: 0.72; flex-shrink: 0; margin-top: 2px;"></div>
+                                <div>
+                                    <div style="font-weight: 600; color: var(--text-primary);">Entire Sales-to-Order Journey</div>
+                                    <div style="color: var(--text-tertiary); font-size: 0.75rem; margin-top: 0.1rem;">Workflow outside the scope of this case study.</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
+                                <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-gold); flex-shrink: 0; margin-top: 2px;"></div>
+                                <div>
+                                    <div style="font-weight: 600; color: var(--text-primary);">Offer Discovery &amp; Configuration</div>
+                                    <div style="color: var(--text-tertiary); font-size: 0.75rem; margin-top: 0.1rem;">Interaction model redesigned as part of this case study.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Insight Card -->
+                        <div class="solution-card" style="margin-top: 2.5rem; padding: 1.5rem; background: var(--bg-secondary); border-left: 3px solid var(--accent-gold);">
+                            <p style="margin: 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                                This case study focuses on redesigning the interaction model for discovering, selecting and configuring offers within a broader enterprise Sales-to-Order workflow, creating a scalable foundation that was later extended across multiple enterprise channels.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 4: Framework Evolution -->
+                    <section id="evolution-o" class="story-section story-reveal">
+                        <h3 class="story-section-title">Framework Evolution</h3>
+                        <p class="story-body-text" style="font-weight: 500; color: var(--accent-gold);">
+                            The redesigned interaction model continued to support new business capabilities without changing the core user experience.
+                        </p>
+                        <p class="story-body-text">
+                            When product catalog requirements evolved to include nested "Bundle of Bundles" models and multi-layered connectivity properties, the framework accommodated them natively. Below is the journey of how the interaction architecture scaled:
+                        </p>
+
+                        <div class="timeline-horizontal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); padding: 1rem; border-radius: 6px;">
+                                <div style="font-size: 0.7rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem;">Stage 01</div>
+                                <div style="margin: 0 0 0.3rem 0; font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Framework Introduced</div>
+                                <p style="margin: 0; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">Core discovery patterns established.</p>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); padding: 1rem; border-radius: 6px;">
+                                <div style="font-size: 0.7rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem;">Stage 02</div>
+                                <div style="margin: 0 0 0.3rem 0; font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Bundle Category</div>
+                                <p style="margin: 0; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">Added category tab without layout changes.</p>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); padding: 1rem; border-radius: 6px;">
+                                <div style="font-size: 0.7rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem;">Stage 03</div>
+                                <div style="margin: 0 0 0.3rem 0; font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Serviceability Check</div>
+                                <p style="margin: 0; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">Inline location filters added to drawer flow.</p>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); padding: 1rem; border-radius: 6px;">
+                                <div style="font-size: 0.7rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem;">Stage 04</div>
+                                <div style="margin: 0 0 0.3rem 0; font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Bundle of Bundles</div>
+                                <p style="margin: 0; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">Surfaced composite pricing hierarchies.</p>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); padding: 1rem; border-radius: 6px;">
+                                <div style="font-size: 0.7rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem;">Stage 05</div>
+                                <div style="margin: 0 0 0.3rem 0; font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Cross-Module Adoption</div>
+                                <p style="margin: 0; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">Adopted natively by Sales &amp; COM portals.</p>
+                            </div>
+                        </div>
+
+
+                    </section>
+
+                    <!-- SECTION 5: Optional Serviceability -->
+                    <section id="commerce-o" class="story-section story-reveal">
+                        <h3 class="story-section-title">Optional Serviceability</h3>
+                        <p class="story-body-text">
+                            Direct Bundle and Connectivity ordering introduced a new challenge—users could add location-dependent products without first completing the Sales proposal flow. To address this, an optional Serviceability Check was introduced within Commerce, enabling early location-based eligibility validation without interrupting experienced users' workflows. Users who skipped the check could continue ordering, with eligibility verified later during order submission.
+                        </p>
+
+                        <div class="layout-equal-grid" style="margin-top: 2rem;">
+                            <div>
+                                <div class="comparison-label">Serviceability Success State</div>
+                                <div class="comparison-image-container" style="cursor: pointer;">
+                                    <img src="assets/stories/cropped/serviceability_success.png" alt="Serviceability verification success state">
+                                </div>
+                                <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Success: Dynamic catalog exposure after address validation</span>
+                            </div>
+                            <div>
+                                <div class="comparison-label">Serviceability Warning State</div>
+                                <div class="comparison-image-container" style="cursor: pointer;">
+                                    <img src="assets/stories/cropped/serviceability_warning.png" alt="Serviceability verification warning state">
+                                </div>
+                                <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Warning: No eligible products surfaced for selected location</span>
+                            </div>
+                        </div>
+
+                        <div class="solution-card" style="border-left: 3px solid var(--accent-gold); padding: 1.5rem; background: var(--bg-secondary); margin-top: 2rem;">
+                            <h4 class="solution-card-title" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 0.5rem; font-weight: 700;">Business Capability</h4>
+                            <p class="story-body-text" style="margin: 0; font-weight: 500;">
+                                Optional Serviceability validation introduced into Commerce before Bundle or Connectivity selection, enabling location-aware product eligibility.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 6: Ecosystem Impact -->
+                    <section id="business-o" class="story-section story-reveal">
+                        <style>
+                        @media (max-width: 768px) {
+                            .ecosystem-flow-stack .solution-card {
+                                grid-template-columns: 1fr !important;
+                                gap: 1rem !important;
+                                padding: 1rem !important;
+                            }
+                            .ecosystem-flow-stack .comparison-image-container {
+                                max-height: 180px !important;
+                            }
+                        }
+                        </style>
+                        <h3 class="story-section-title">Ecosystem Impact</h3>
+                        <p class="story-body-text" style="font-weight: 500; color: var(--accent-gold);">
+                            Introducing Bundles extended beyond offer discovery and influenced multiple downstream enterprise workflows.
+                        </p>
+                        <p class="story-body-text">
+                            Surfacing bundle relationships consistently across B2B platforms required aligning the interaction framework with downstream inventory, billing, and provisioning cycles.
+                        </p>
+
+                        <div class="ecosystem-flow-stack" style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+                            
+                            <!-- Card 1: Offer List Structure -->
+                            <div class="solution-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; padding: 1.5rem;">
+                                <div>
+                                    <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Offer List Structure</h4>
+                                    <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                        Bundle relationships and pricing hierarchy are surfaced consistently within the configuration view. Configured parameters (e.g. line rate, equipment, SLA) are validated before adding to the proposal.
+                                    </p>
+                                </div>
+                                <div class="comparison-image-container" style="cursor: pointer; margin: 0; max-height: 120px; overflow: hidden; display: flex; align-items: center;">
+                                    <img src="assets/stories/cropped/ecosystem_offer_list.png" alt="Offer List Structure configuration grid" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+                                </div>
+                            </div>
+                            
+                            <!-- Card 2: Installation & Delivery -->
+                            <div class="solution-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; padding: 1.5rem;">
+                                <div>
+                                    <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Installation &amp; Delivery</h4>
+                                    <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                        Delivery and installation workflows support bundled products and physical dependencies. Provisioning schedules and physical equipment shipments are tracked automatically.
+                                    </p>
+                                </div>
+                                <div class="comparison-image-container" style="cursor: pointer; margin: 0; max-height: 120px; overflow: hidden; display: flex; align-items: center;">
+                                    <img src="assets/stories/cropped/ecosystem_delivery.png" alt="Installation and Delivery workflow details" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+                                </div>
+                            </div>
+                            
+                            <!-- Card 3: Billing Accounts -->
+                            <div class="solution-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; padding: 1.5rem;">
+                                <div>
+                                    <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Billing Accounts</h4>
+                                    <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                        Billing profiles and billing accounts handle complex enterprise relationships, payment terms (e.g. Net 30), and invoicing rules for commercial packages.
+                                    </p>
+                                </div>
+                                <div class="comparison-image-container" style="cursor: pointer; margin: 0; max-height: 120px; overflow: hidden; display: flex; align-items: center;">
+                                    <img src="assets/stories/cropped/ecosystem_billing.png" alt="Billing account details and invoices" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+                                </div>
+                            </div>
+                            
+                            <!-- Card 4: Products & Services -->
+                            <div class="solution-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; padding: 1.5rem;">
+                                <div>
+                                    <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Products &amp; Services</h4>
+                                    <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                        Bundle hierarchy remains visible throughout the service lifecycle. Allows support agents to manage individual parameters without breaking the commercial package.
+                                    </p>
+                                </div>
+                                <div class="comparison-image-container" style="cursor: pointer; margin: 0; max-height: 120px; overflow: hidden; display: flex; align-items: center;">
+                                    <img src="assets/stories/cropped/ecosystem_inventory.png" alt="Active products and services lifecycle state" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </section>
+
+                    <!-- SECTION 7: Design Reflection -->
+                    <section id="reflection-o" class="story-section story-reveal">
+                        <h3 class="story-section-title">Design Reflection</h3>
+                        <div class="reflection-card" style="margin-top: 1.5rem;">
+                            <p class="reflection-card-desc" style="font-size: 1.05rem; line-height: 1.6; font-style: italic;">
+                                The success of this project was not redesigning Add Offer. It was designing an interaction framework that continued to support evolving business capabilities—including Bundles, Bundle of Bundles, Connectivity and Serviceability—without redesigning the underlying user experience. This demonstrated how strategic interaction design can reduce future implementation effort while maintaining consistency across enterprise applications.
+                            </p>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modern Common Footer -->
+    <footer id="contact" class="modern-footer">
+        <div class="footer-container">
+            <div class="footer-brand-section">
+                <a href="index.html" class="logo">SHUBHARTHI ROY</a>
+                <p class="footer-tagline">Collaborative craft for complex enterprise products. Designing balance across user patterns, technology rules, and strategy.</p>
+                <a href="assets/Shubharthi_Roy_Resume.pdf" class="btn btn-secondary btn-sm" download style="margin-top: 1rem; margin-bottom: 1.5rem; padding: 0.5rem 1rem; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 4px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    Download Resume
+                </a>
+                <div class="footer-social-icons">
+                    <a href="mailto:shubharthi.official@gmail.com" class="social-icon-btn" aria-label="Email Shubharthi">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/shubharthi" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-link-group">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#creative">Creative Pursuits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-group">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-details">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:shubharthi.official@gmail.com">shubharthi.official@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+919007735284">+91 900-773-5284</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-bottom-row">
+            <div class="copyright">&copy; 2026 Shubharthi Roy. All rights reserved.</div>
+            <div class="location-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loc-icon">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Pune, Maharashtra, India
+            </div>
+        </div>
+    </footer>
+
+    <!-- Premium Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Enlarged screenshot">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- Scripts Links -->
+    <script src="js/app.js"></script>
+    <script src="js/story.js"></script>
+</body>
+</html>

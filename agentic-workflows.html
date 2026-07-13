@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Workflows | Shubharthi Roy | Senior UX Designer</title>
+    <meta name="description" content="Portfolio of Shubharthi Roy, Senior UX Designer specializing in Enterprise Product Design, Systems Thinking, AI-powered experiences, and B2B Sales-to-Order workflows.">
+    <meta name="author" content="Shubharthi Roy">
+    
+    <!-- Favicon Branding -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    
+    <script>
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/story.css?v=1.2">
+    <link rel="stylesheet" href="css/agentic.css">
+    <link rel="stylesheet" href="css/ai-decision.css?v=1.2">
+</head>
+<body class="story-detail-page">
+    <script>
+        const unlockTimeStr = sessionStorage.getItem('portfolio_unlocked_time');
+        const UNLOCK_DURATION = 10 * 60 * 1000; // 10 minutes in ms
+        let isUnlocked = false;
+        if (unlockTimeStr) {
+            const unlockTime = parseInt(unlockTimeStr, 10);
+            if (Date.now() - unlockTime < UNLOCK_DURATION) {
+                isUnlocked = true;
+            }
+        }
+        if (!isUnlocked) {
+            sessionStorage.removeItem('portfolio_unlocked_time');
+            window.location.replace('work.html?lock=agentic-workflows');
+        }
+    </script>
+
+    <!-- Custom Cursor Nodes -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-circle"></div>
+
+    <!-- Navigation Header -->
+    <header>
+        <a href="index.html" class="logo">SHUBHARTHI ROY</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work">Featured Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="assets/Shubharthi_Roy_Resume.pdf" class="nav-resume-btn" download style="color: var(--accent-gold); font-weight: 700;">Resume</a></li>
+            </ul>
+            <button class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+                <!-- Sun Icon -->
+                <svg class="sun-icon" viewBox="0 0 24 24">
+                    <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zM7.05 18.01c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06z"/>
+                </svg>
+                <!-- Moon Icon -->
+                <svg class="moon-icon" viewBox="0 0 24 24" style="display: none;">
+                    <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.6-.1 1.2.3 1.3.9.1.6-.2 1.2-.8 1.4-3.6 1.3-6 4.7-6 8.5 0 4.4 3.6 8 8 8 3.8 0 7.2-2.4 8.5-6 .2-.6.8-.9 1.4-.8.6.1 1 .7.9 1.3-.9 4.7-5 8.2-9.8 8.2z"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="category-main-content">
+        
+        <!-- Category Hero Header -->
+        <div class="category-hero-section">
+            <a href="work.html" class="back-link">
+                <svg viewBox="0 0 14 14"><path d="M10 3.5L13.5 7L10 10.5M13.5 7H0.5" stroke-linecap="round"/></svg>
+                Back to Featured Work
+            </a>
+            <h1 class="story-hero-title">AI & Design Innovation</h1>
+            <p class="story-hero-subtitle" style="margin-bottom: 2rem;">
+                Exploring how AI can support enterprise UX teams across research, design and documentation while keeping designers in control.
+            </p>
+
+            <!-- Segmented Control Navigation (Tabs switcher) -->
+            <div class="stories-segmented-tabs">
+                <button class="segment-tab-btn active" data-target="augmented-workflow">AI-Augmented UX Workflow</button>
+                <button class="segment-tab-btn" data-target="telecom-genai">AI-Assisted Commercial Decision Making</button>
+            </div>
+        </div>
+
+        <!-- ==========================================================================
+           TAB CONTENT 1: AI-Augmented UX Workflow
+           ========================================================================== -->
+        <div class="tab-content-block active" id="tab-augmented-workflow">
+            <div class="story-container">
+                
+                <!-- Sticky Left Navigation Progress Bar -->
+                <aside class="story-sidebar">
+                    <div class="sidebar-title">Outline</div>
+                    <ul class="sticky-nav-list">
+                        <li class="sticky-nav-item active"><a href="#challenge">The Challenge</a></li>
+                        <li class="sticky-nav-item"><a href="#approach">Our Approach</a></li>
+                        <li class="sticky-nav-item"><a href="#how-it-works">How It Works</a></li>
+                        <li class="sticky-nav-item"><a href="#progress">Current Progress</a></li>
+                        <li class="sticky-nav-item"><a href="#learnings">Key Learnings</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Narrative Scroll -->
+                <div class="story-main-scroll">
+                    
+                    <!-- SECTION 1: The Challenge -->
+                    <section id="challenge" class="story-section story-reveal active">
+                        <div class="challenge-split-layout">
+                            <div class="challenge-text-col">
+                                <h2 class="story-section-title" style="margin-bottom: 1.5rem;">The Challenge</h2>
+                                <div class="story-body-text">
+                                    <p>Designing for complex systems requires balancing deep technical rules with user constraints.</p>
+                                    <p>Simply generating UI layout templates misses the core challenge: alignment with legacy data models and strict business rules.</p>
+                                    <p>To design AI responsibly, we must shift from layout generation to agent-assisted workflow mapping where the human designer remains the final gatekeeper.</p>
+                                    <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-primary); font-weight: 600;">
+                                        How can we establish trust and transparent governance when partnering with AI on complex enterprise workflows?
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="challenge-media-col">
+                                <div class="designer-orbital-canvas">
+                                    <div class="orbital-ring ring-inner"></div>
+                                    <div class="orbital-ring ring-outer"></div>
+                                    
+                                    <div class="orbital-center">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                            <circle cx="9" cy="7" r="4"/>
+                                        </svg>
+                                        <span>Designer</span>
+                                    </div>
+                                    
+                                    <div class="orbital-node node-ds">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+                                        <span>Design System</span>
+                                    </div>
+                                    <div class="orbital-node node-doc">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                        <span>Product Docs</span>
+                                    </div>
+                                    <div class="orbital-node node-lib">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                                        <span>Library</span>
+                                    </div>
+                                    <div class="orbital-node node-stake">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                        <span>Stakeholders</span>
+                                    </div>
+                                    <div class="orbital-node node-figma">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle></svg>
+                                        <span>Figma</span>
+                                    </div>
+                                    <div class="orbital-node node-ai">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 22 8.5 22 12 2 22 2 15.5 22 12 2"></polygon></svg>
+                                        <span>AI Assistant</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 2: Our Approach -->
+                    <section id="approach" class="story-section story-reveal">
+                        <h2 class="story-section-title">Breaking the UX Process into Smaller AI Workflows</h2>
+                        
+                        <div class="process-flow-container">
+                            <!-- Card 1 -->
+                            <div class="process-card">
+                                <div class="process-card-header">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                    <h3>Discovery & Research</h3>
+                                </div>
+                                <ul class="process-icon-list">
+                                    <li class="process-icon-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Research
+                                    </li>
+                                    <li class="process-icon-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        User Insights
+                                    </li>
+                                    <li class="process-icon-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Journey Mapping
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Arrow 1 -->
+                            <div class="process-connector">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                            
+                            <!-- Card 2 -->
+                            <div class="process-card">
+                                <div class="process-card-header">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg>
+                                    <h3>Concept & Structure</h3>
+                                </div>
+                                <ul class="process-icon-list">
+                                    <li class="process-icon-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Information Architecture
+                                    </li>
+                                    <li class="process-icon-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Concept Design
+                                    </li>
+                                    <li class="process-icon-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Experience Exploration
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Arrow 2 -->
+                            <div class="process-connector">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                            
+                            <!-- Card 3 -->
+                            <div class="process-card">
+                                <div class="process-card-header">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line>
+                                    </svg>
+                                    <h3>Detailed Design & Validation</h3>
+                                </div>
+                                <ul class="process-icon-list">
+                                    <li class="process-icon-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        UI Design
+                                    </li>
+                                    <li class="process-icon-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Documentation
+                                    </li>
+                                    <li class="process-icon-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Validation
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="story-body-text">
+                            <p>Instead of asking one AI assistant to perform an entire design project, we explored how smaller AI-assisted workflows could support different stages of the UX process while designers continued making strategic decisions.</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 3: How It Works -->
+                    <section id="how-it-works" class="story-section story-reveal">
+                        <div class="hero-workflow-section">
+                            <h2 class="story-section-title" style="text-align: center; margin-bottom: 2.5rem;">How It Works</h2>
+                            
+                            <div class="workflow-flow-diagram">
+                                <!-- Node 1 -->
+                                <div class="workflow-node">
+                                    <div class="workflow-node-num">1</div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                    <span>Design Request</span>
+                                </div>
+                                <div class="workflow-arrow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                                </div>
+                                <!-- Node 2 -->
+                                <div class="workflow-node">
+                                    <div class="workflow-node-num">2</div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                                    <span>Understand Product Context</span>
+                                </div>
+                                <div class="workflow-arrow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                                </div>
+                                <!-- Node 3 -->
+                                <div class="workflow-node">
+                                    <div class="workflow-node-num">3</div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+                                    <span>Identify Relevant Design System</span>
+                                </div>
+                                <div class="workflow-arrow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                                </div>
+                                <!-- Node 4 -->
+                                <div class="workflow-node">
+                                    <div class="workflow-node-num">4</div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                    <span>Retrieve Components & Guidelines</span>
+                                </div>
+                                <div class="workflow-arrow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                                </div>
+                                <!-- Node 5 -->
+                                <div class="workflow-node">
+                                    <div class="workflow-node-num">5</div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 22 8.5 22 12 2 22 2 15.5 22 12 2"></polygon></svg>
+                                    <span>Generate Design Suggestions</span>
+                                </div>
+                                <div class="workflow-arrow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                                </div>
+                                <!-- Node 6 -->
+                                <div class="workflow-node" style="border-color: var(--accent-gold); background: rgba(239, 131, 84, 0.03);">
+                                    <div class="workflow-node-num" style="background: var(--accent-gold); color: #ffffff;">6</div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--accent-gold);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    <span>Designer Review & Refinement</span>
+                                </div>
+                            </div>
+
+                            <div class="story-body-text" style="max-width: 700px; margin: 0 auto; text-align: center;">
+                                <p>AI is not a replacement for designers, but a productivity enabler that requires structured context to be useful.</p>
+                                <p style="margin-bottom: 0;">By placing human decision-making at the center and establishing strict design system governance, we ensure that agent-assisted suggestions are accurate, transparent, and aligned with enterprise trust standards.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 4: Current Progress -->
+                    <section id="progress" class="story-section story-reveal">
+                        <h2 class="story-section-title">Current Progress</h2>
+                        
+                        <div class="modern-timeline">
+                            <div class="timeline-list">
+                                <!-- Step 1 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-indicator checked"></div>
+                                    <div class="timeline-item-meta">
+                                        <span class="timeline-item-label">Research</span>
+                                    </div>
+                                    <span class="timeline-item-status status-done">✔</span>
+                                </div>
+                                <!-- Step 2 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-indicator checked"></div>
+                                    <div class="timeline-item-meta">
+                                        <span class="timeline-item-label">Workflow Framework</span>
+                                    </div>
+                                    <span class="timeline-item-status status-done">✔</span>
+                                </div>
+                                <!-- Step 3 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-indicator checked"></div>
+                                    <div class="timeline-item-meta">
+                                        <span class="timeline-item-label">Knowledge Architecture</span>
+                                    </div>
+                                    <span class="timeline-item-status status-done">✔</span>
+                                </div>
+                                <!-- Step 4 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-indicator checked"></div>
+                                    <div class="timeline-item-meta">
+                                        <span class="timeline-item-label">Prototype & Experiments</span>
+                                    </div>
+                                    <span class="timeline-item-status status-done">✔</span>
+                                </div>
+                                <!-- Step 5 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-indicator current"></div>
+                                    <div class="timeline-item-meta">
+                                        <span class="timeline-item-label">Workflow Implementation</span>
+                                    </div>
+                                    <span class="timeline-item-status status-current">Current</span>
+                                </div>
+                                <!-- Step 6 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-indicator"></div>
+                                    <div class="timeline-item-meta">
+                                        <span class="timeline-item-label">Continuous Learning</span>
+                                    </div>
+                                    <span class="timeline-item-status status-next">Next</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-body-text">
+                            <p>This exploration is actively evolving.</p>
+                            <p>The detailed design workflow became the first implementation focus because it provided the quickest opportunity to validate ideas with engineering teams.</p>
+                            <p>As the workflow matures, additional UX activities continue to be explored and refined.</p>
+                        </div>
+                        <div class="story-impact-box">
+                            <div class="story-impact-title">Key Outcomes &amp; Impact</div>
+                            <ul class="story-impact-list">
+                                <li>Shifted design workflows from template layout generation to context-driven design exploration.</li>
+                                <li>Reduced time-to-first-draft for complex interfaces using design-system-aware agent prompting.</li>
+                                <li>Maintained human strategic oversight while offloading repetitive pattern rendering tasks.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 5: Key Learnings -->
+                    <section id="learnings" class="story-section story-reveal">
+                        <h2 class="story-section-title">Key Learnings</h2>
+                        
+                        <div class="learnings-insight-grid">
+                            <!-- Card 1 -->
+                            <div class="learning-insight-card">
+                                <div class="learning-card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                </div>
+                                <p>AI performs better with structured context.</p>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="learning-insight-card">
+                                <div class="learning-card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                                </div>
+                                <p>Smaller AI workflows outperform one large prompt.</p>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="learning-insight-card">
+                                <div class="learning-card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                </div>
+                                <p>Enterprise design requires governance, not just generation.</p>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="learning-insight-card">
+                                <div class="learning-card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                                <p>Human judgment remains essential.</p>
+                            </div>
+                            <!-- Card 5 -->
+                            <div class="learning-insight-card">
+                                <div class="learning-card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                </div>
+                                <p>AI should accelerate design—not replace designers.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+        <!-- ==========================================================================
+           TAB CONTENT 2: AI-Assisted Commercial Decision Making
+           ========================================================================== -->
+        <div class="tab-content-block" id="tab-telecom-genai">
+            <div class="story-container">
+                
+                <!-- Sticky Left Navigation Progress Bar -->
+                <aside class="story-sidebar">
+                    <div class="sidebar-title">Outline</div>
+                    <ul class="sticky-nav-list">
+                        <li class="sticky-nav-item active"><a href="#context-c">Business Context</a></li>
+                        <li class="sticky-nav-item"><a href="#simulation-c">P&L Simulation</a></li>
+                        <li class="sticky-nav-item"><a href="#optimization-c">Proposal Optimization</a></li>
+                        <li class="sticky-nav-item"><a href="#principles-c">AI Design Principles</a></li>
+                        <li class="sticky-nav-item"><a href="#reflection-c">Final Reflection</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Narrative Scroll -->
+                <div class="story-main-scroll">
+                    
+                    <!-- SECTION 1: Business Context & Contribution -->
+                    <section id="context-c" class="story-section story-reveal active">
+                        <div class="project-meta-grid" style="margin-top: 0;">
+                            <div class="project-meta-item">
+                                <span class="meta-label">Role</span>
+                                <span class="meta-value">UX Design Specialist / AI Experience Lead</span>
+                            </div>
+                            <div class="project-meta-item">
+                                <span class="meta-label">Timeline</span>
+                                <span class="meta-value">R&D Exploration (2025)</span>
+                            </div>
+                            <div class="project-meta-item">
+                                <span class="meta-label">Team</span>
+                                <span class="meta-value">1 UX Specialist &bull; 1 AI Architect &bull; Product R&D Leads</span>
+                            </div>
+                            <div class="project-meta-item">
+                                <span class="meta-label">Responsibilities</span>
+                                <span class="meta-value">AI Entry Points, Prompt Systems, Scenario Modelling, Explainable AI Interfaces</span>
+                            </div>
+                        </div>
+
+                        <h3 class="story-section-title">Business Context</h3>
+                        <div class="story-body-text">
+                            <p>
+                                Enterprise B2B proposals involve balancing pricing, profitability, approvals and technical configurations before submission. Although users had access to detailed commercial data, evaluating multiple proposal scenarios and identifying improvement opportunities remained a manual, time-intensive activity.
+                            </p>
+                            <p>
+                                We explored how GenAI could become an intelligent decision-support layer—helping sales teams compare commercial options, optimize proposals and improve proposal quality without disrupting existing workflows.
+                            </p>
+                        </div>
+
+                        <h3 class="story-section-title" style="margin-top: 2.5rem;">My Contribution</h3>
+                        <div class="story-body-text">
+                            <p>
+                                I identified high-value AI opportunities within the enterprise sales workflow and designed contextual AI experiences that support commercial decision making. My work included AI entry points, interaction patterns, conversation flows, prompt suggestions and explainable recommendation experiences integrated directly into existing proposal journeys.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 2: P&L Simulation Comparison & Business Insights -->
+                    <section id="simulation-c" class="story-section story-reveal">
+                        <span class="ai-highlight-badge">AI CAPABILITY 01</span>
+                        <h3 class="story-section-title" style="margin-top: 0.5rem;">P&L Simulation Comparison &amp; Business Insights</h3>
+                        
+                        <div class="story-body-text">
+                            <p><strong>Overview</strong></p>
+                            <p>
+                                Enterprise sales teams frequently generate multiple proposal simulations while negotiating pricing, discounts and commercial terms.
+                            </p>
+                            <p>
+                                Although the platform already supported side-by-side financial comparisons, interpreting dozens of commercial metrics across simulations remained a manual exercise.
+                            </p>
+                            <p>
+                                Instead of replacing user decisions, the goal was to enable GenAI to explain differences, identify trade-offs and recommend the strongest commercial scenario.
+                            </p>
+                        </div>
+
+                        <h4 style="margin-top: 2.5rem; margin-bottom: 0.5rem; font-family: var(--font-body); font-weight: 600;">Experience Flow</h4>
+                        <p class="story-body-text" style="font-size: 0.9rem; color: var(--text-tertiary); margin-bottom: 2rem;">
+                            The diagram below outlines the core human-AI interaction loop, showing how sales operators trigger comparisons and ingest key trade-off metrics.
+                        </p>
+
+                        <!-- INTERACTIVE WIDGET 1: P&L Comparison Flow -->
+                        <div class="pl-flow-container" style="margin-bottom: 3.5rem;">
+                            <!-- Node 1: Entry Points -->
+                            <div class="pl-flow-node">
+                                <div class="pl-flow-node-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                                    Entry Points
+                                </div>
+                                <div class="pl-flow-node-body">
+                                    <div class="mock-report-row">
+                                        <span style="font-weight: 600; color: var(--text-primary);">P&L Summary Report</span>
+                                    </div>
+                                    <div class="mock-report-row" style="border-bottom: none; padding-bottom: 0;">
+                                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Simulation Comparison Grid</span>
+                                    </div>
+                                    <button class="mock-report-action-btn">Compare with AI</button>
+                                </div>
+                            </div>
+
+                            <!-- Connector 1 -->
+                            <div class="pl-flow-connector">
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+
+                            <!-- Node 2: Guided Prompt Suggestions -->
+                            <div class="pl-flow-node">
+                                <div class="pl-flow-node-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    Prompt Suggestions
+                                </div>
+                                <div class="pl-flow-node-body">
+                                    <div class="prompt-chips-list">
+                                        <div class="prompt-chip">Compare simulations</div>
+                                        <div class="prompt-chip">Explain profitability diffs</div>
+                                        <div class="prompt-chip">Highlight commercial risks</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Connector 2 -->
+                            <div class="pl-flow-connector">
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+
+                            <!-- Node 3: AI Comparison Response -->
+                            <div class="pl-flow-node">
+                                <div class="pl-flow-node-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                                    AI Response
+                                </div>
+                                <div class="pl-flow-node-body">
+                                    <div class="ai-summary-block">
+                                        <strong>Recommendation:</strong> Scenario B yields 4.2% higher margins with lower risk parameters.
+                                    </div>
+                                    <div class="mini-metric-grid">
+                                        <div class="mini-metric-item">
+                                            <span class="mini-metric-label">Margin delta</span>
+                                            <span class="mini-metric-val" style="color: #10b981;">+4.2%</span>
+                                        </div>
+                                        <div class="mini-metric-item">
+                                            <span class="mini-metric-label">IRR threshold</span>
+                                            <span class="mini-metric-val">18.5%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STRUCTURED FLOW SCREENSHOTS -->
+                        <div class="story-flow-steps">
+                            <!-- P&L Scenario Summary -->
+                            <div class="story-flow-step" style="margin-bottom: 2rem;">
+                                <h4 style="font-family: var(--font-body); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">P&L Summary Report Workspace</h4>
+                                <p class="story-body-text" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 800px;">
+                                    The operator initiates deal evaluation within the main P&L Report workspace, analyzing multiple deal simulations (Proposal, Simulation 1, and Simulation 2) side-by-side to assess baseline margins and cash flow metrics.
+                                </p>
+                                <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: var(--transition-smooth);">
+                                    <img src="assets/stories/cropped/pl_scenario_report.png" alt="P&L Scenario Summary Table Grid" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                </div>
+                            </div>
+
+                            <!-- Side-by-Side AI Drawer Views -->
+                            <div class="story-flow-step" style="margin-bottom: 1rem;">
+                                <h4 style="font-family: var(--font-body); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">Conversational Insights &amp; Parameters Grid</h4>
+                                <p class="story-body-text" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 800px;">
+                                    Upon launching the assistant, the operator receives an executive summary detailing profitability, IRR, and NPV rationales (left). If requested, the drawer loads a structured parameters grid showing detailed baseline comparison matrices (right).
+                                </p>
+                                <div class="story-flow-grid" style="margin-bottom: 2rem;">
+                                    <!-- Column 1: AI Recommendation -->
+                                    <div class="flow-column">
+                                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-tertiary); letter-spacing: 0.5px; margin-bottom: 0.5rem; text-align: left;">AI Recommendation &amp; Rationales</div>
+                                        <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); display: flex; justify-content: center; align-items: center; min-height: 400px;">
+                                            <img src="assets/stories/cropped/ai_analysis_recommendation.png" alt="AI Agent Recommendation & Rationales Chat View" style="max-width: 100%; max-height: 520px; width: auto; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                        </div>
+                                    </div>
+                                    <!-- Column 2: Side-by-Side Comparison -->
+                                    <div class="flow-column">
+                                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-tertiary); letter-spacing: 0.5px; margin-bottom: 0.5rem; text-align: left;">Detailed Side-by-Side Matrix</div>
+                                        <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); display: flex; justify-content: center; align-items: center; min-height: 400px;">
+                                            <img src="assets/stories/cropped/ai_side_by_side_matrix.png" alt="AI Side-by-side Parameters Comparison Table Grid" style="max-width: 100%; max-height: 520px; width: auto; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top: 2.5rem; margin-bottom: 1.5rem; font-family: var(--font-body); font-weight: 600;">AI Experience Details</h4>
+                        
+                        <div class="challenge-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+                            <!-- Card 1 -->
+                            <div class="insight-card" style="padding: 1.5rem;">
+                                <div style="color: var(--ai-accent); margin-bottom: 0.8rem;">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+                                </div>
+                                <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 0.5rem;">1. Contextual Entry Points</span>
+                                <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                    AI can be launched directly from proposal reports or the proposal overview, allowing users to compare simulations without leaving their workflow.
+                                </p>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="insight-card" style="padding: 1.5rem;">
+                                <div style="color: var(--ai-accent); margin-bottom: 0.8rem;">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                                </div>
+                                <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 0.5rem;">2. Guided Prompt Suggestions</span>
+                                <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                    Instead of relying on free-form prompting, the assistant surfaces business-focused suggestions such as comparing simulations or highlighting risks.
+                                </p>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="insight-card" style="padding: 1.5rem;">
+                                <div style="color: var(--ai-accent); margin-bottom: 0.8rem;">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                </div>
+                                <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 0.5rem;">3. AI Business Insights</span>
+                                <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                                    The assistant analyzes pricing, margins, IRR, NPV and metrics to generate summaries, financial comparison grids and recommendations with rationales.
+                                </p>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top: 2.5rem; margin-bottom: 1.2rem; font-family: var(--font-body); font-weight: 600;">Key Outcomes</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 3.5rem;">
+                            <div class="affinity-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                    <strong>Reduced Manual Effort</strong><br>
+                                    Minimized manual checks and calculations required to compare multiple commercial scenarios side-by-side.
+                                </p>
+                            </div>
+                            <div class="affinity-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                    <strong>Accelerated Evaluation</strong><br>
+                                    Enabled rapid proposal review cycles using clear, AI-synthesized qualitative and quantitative insights.
+                                </p>
+                            </div>
+                            <div class="affinity-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                    <strong>Explainable Decisions</strong><br>
+                                    Avoided opaque recommendations by pairing all AI suggestions with explicit commercial trade-off rationales.
+                                </p>
+                            </div>
+                            <div class="affinity-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                    <strong>Operator in Control</strong><br>
+                                    Maintained user authority—the AI presents suggestions but final decision parameters remain manual.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 3: AI-Powered Proposal Optimization -->
+                    <section id="optimization-c" class="story-section story-reveal">
+                        <span class="ai-highlight-badge">AI CAPABILITY 02</span>
+                        <h3 class="story-section-title" style="margin-top: 0.5rem;">AI-Powered Proposal Optimization</h3>
+                        
+                        <div class="story-body-text">
+                            <p><strong>Overview</strong></p>
+                            <p>
+                                Before submitting an enterprise proposal, sales operators must ensure that commercial viability, financial performance and approval complexity are balanced.
+                            </p>
+                            <p>
+                                Proposal Optimization introduces an AI-powered evaluation layer that analyzes proposal health, highlights weaknesses and recommends improvements before submission.
+                            </p>
+                                          <h4 style="margin-top: 2.5rem; margin-bottom: 0.8rem; font-family: var(--font-body); font-weight: 600;">Experience Flow</h4>
+                        <p class="story-body-text" style="font-size: 0.9rem; color: var(--text-tertiary); margin-bottom: 2rem;">
+                            The diagrams and screens below showcase how an operator triggers proposal optimization and resolves quality issues.
+                        </p>
+
+                        <!-- OPTIMIZATION CONTEXT FLOW DIAGRAM -->
+                        <div style="margin-bottom: 3.5rem;">
+                            <h4 style="font-family: var(--font-body); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">Optimization Context Flow</h4>
+                            <p class="story-body-text" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 800px;">
+                                The AI engine scans the proposal parameters across coverage configurations, discount VP policies, and margin thresholds to compile the score and surface recommendations.
+                            </p>
+                            <div class="pl-flow-container">
+                                <!-- Node 1: Trigger -->
+                                <div class="pl-flow-node">
+                                    <div class="pl-flow-node-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                        Trigger
+                                    </div>
+                                    <div class="pl-flow-node-body">
+                                        <div class="mock-report-row" style="border-bottom: none; padding-bottom: 0;">
+                                            <span style="font-weight: 600; color: var(--text-primary);">Optimize Proposals</span>
+                                        </div>
+                                        <button class="mock-report-action-btn" style="background: var(--ai-accent); color: #fff; margin-top: 0.6rem; font-size: 0.7rem; padding: 0.35rem 0.6rem;">Run Optimization</button>
+                                    </div>
+                                </div>
+
+                                <!-- Connector 1 -->
+                                <div class="pl-flow-connector">
+                                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </div>
+
+                                <!-- Node 2: AI Validation Scan -->
+                                <div class="pl-flow-node">
+                                    <div class="pl-flow-node-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                        AI Validation Scan
+                                    </div>
+                                    <div class="pl-flow-node-body">
+                                        <div class="prompt-chips-list" style="flex-direction: column; gap: 0.3rem;">
+                                            <div class="prompt-chip" style="margin: 0; font-size: 0.7rem; text-align: left; padding: 0.3rem 0.5rem; width: 100%;">Coverage Check</div>
+                                            <div class="prompt-chip" style="margin: 0; font-size: 0.7rem; text-align: left; padding: 0.3rem 0.5rem; width: 100%;">Approval Compliance</div>
+                                            <div class="prompt-chip" style="margin: 0; font-size: 0.7rem; text-align: left; padding: 0.3rem 0.5rem; width: 100%;">P&L Verification</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Connector 2 -->
+                                <div class="pl-flow-connector">
+                                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </div>
+
+                                <!-- Node 3: Recommendations Panel -->
+                                <div class="pl-flow-node">
+                                    <div class="pl-flow-node-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                                        Recommendations
+                                    </div>
+                                    <div class="pl-flow-node-body">
+                                        <div class="ai-summary-block" style="font-size: 0.7rem; padding: 0.4rem; margin-bottom: 0.4rem; border-radius: 4px;">
+                                            <strong>Overall Health:</strong> 84% Score
+                                        </div>
+                                        <div class="mini-metric-grid" style="margin-top: 0; gap: 0.3rem;">
+                                            <div class="mini-metric-item" style="padding: 0.25rem 0.4rem;">
+                                                <span class="mini-metric-label" style="font-size: 0.58rem; line-height: 1.1;">Actionable Advice</span>
+                                                <span class="mini-metric-val" style="font-size: 0.65rem; color: var(--ai-accent); font-weight: 700; margin-top: 0.1rem;">Resolve Description</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- STRUCTURED PROPOSAL OPTIMIZATION FLOW SCREENSHOTS -->
+                        <div class="story-flow-steps">
+                            <!-- Step 1: Optimize Action Entry -->
+                            <div class="story-flow-step" style="margin-bottom: 2.5rem;">
+                                <h4 style="font-family: var(--font-body); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">Proposal Workspace Header Context</h4>
+                                <p class="story-body-text" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 800px;">
+                                    The operator triggers optimization directly from the proposal workspace header page using the contextual <strong>Optimize</strong> button, ensuring access to quality metrics without navigating away from the proposal.
+                                </p>
+                                <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: var(--transition-smooth);">
+                                    <img src="assets/stories/cropped/proposal_optimize_header.png" alt="Proposal Configuration Header with Optimize Button" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Score Composition & Validation Details -->
+                            <div class="story-flow-step" style="margin-bottom: 2.5rem;">
+                                <h4 style="font-family: var(--font-body); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">Proposal Score &amp; Optimization Console</h4>
+                                <p class="story-body-text" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 800px;">
+                                    The detailed optimization console presents the score composition breakdown (Coverage Analysis, Approval Rules, P&L Verification) side-by-side with suggestions and the active proposal description content.
+                                </p>
+                                <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: var(--transition-smooth);">
+                                    <img src="assets/stories/cropped/proposal_score_composition.png" alt="Proposal Score & Optimization Console Details" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                </div>
+                            </div>
+
+                            <!-- Step 3: AI Coprocessor Transformation -->
+                            <div class="story-flow-step" style="margin-bottom: 1rem;">
+                                <h4 style="font-family: var(--font-body); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">Description Enhancement Popover Workspace</h4>
+                                <p class="story-body-text" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 800px;">
+                                    Operators invoke <strong>Enhance with AI</strong> to transform incomplete proposal descriptions. The modal popover overlay compares current values and AI-generated configurations side-by-side, prompting direct user approval.
+                                </p>
+                                <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: var(--transition-smooth);">
+                                    <img src="assets/stories/cropped/proposal_enhance_popover.png" alt="Description Enhancement with AI Popover Workspace Modal" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                </div>
+                            </div>
+                        </div>        </div>
+
+                        <h4 style="margin-top: 3rem; margin-bottom: 1.2rem; font-family: var(--font-body); font-weight: 600;">Key Outcomes</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 3.5rem;">
+                            <div class="affinity-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                    <strong>Reduced Evaluation Overhead</strong><br>
+                                    Eliminated manual checks across pricing spreadsheets, compliance rules, and configuration logs.
+                                </p>
+                            </div>
+                            <div class="affinity-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                    <strong>Consolidated Insights Hub</strong><br>
+                                    Unified commercial, financial, and approval insights into a single AI-assisted evaluation panel.
+                                </p>
+                            </div>
+                            <div class="affinity-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                    <strong>Context-Grounded Copywriting</strong><br>
+                                    Enabled AI proposal descriptions grounded in actual configured products rather than hallucinated text.
+                                </p>
+                            </div>
+                            <div class="affinity-card" style="padding: 1.2rem; margin-bottom: 0;">
+                                <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                    <strong>Grounded Compliance</strong><br>
+                                    Improved overall proposal quality and compliance before submission while keeping the sales agent in control.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 4: AI Design Principles -->
+                    <section id="principles-c" class="story-section story-reveal">
+                        <h3 class="story-section-title">AI Design Principles</h3>
+                        <p class="story-body-text">
+                            Enterprise decision making requires high-governance interaction designs. We followed four key principles to establish trust:
+                        </p>
+
+                        <!-- Small Cards Grid -->
+                        <div class="principles-small-cards">
+                            <!-- Card 1 -->
+                            <div class="principle-small-card">
+                                <span class="principle-small-title" style="color: var(--ai-accent); display: block;">Contextual</span>
+                                <span class="principle-small-desc">
+                                    AI appears where commercial decisions are made, avoiding isolated sidebars or generic chatbot interfaces.
+                                </span>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="principle-small-card">
+                                <span class="principle-small-title" style="color: var(--ai-accent); display: block;">Explainable</span>
+                                <span class="principle-small-desc">
+                                    Recommendations always include reasoning and margin deltas instead of showing opaque progress scores.
+                                </span>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="principle-small-card">
+                                <span class="principle-small-title" style="color: var(--ai-accent); display: block;">Action-Oriented</span>
+                                <span class="principle-small-desc">
+                                    Every recommendation can be applied with a single click to instantly resolve description or pricing issues.
+                                </span>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="principle-small-card">
+                                <span class="principle-small-title" style="color: var(--ai-accent); display: block;">Human-in-Control</span>
+                                <span class="principle-small-desc">
+                                    Users always review, edit and approve AI-generated content or pricing overrides before customer submission.
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 5: Final Reflection -->
+                    <section id="reflection-c" class="story-section story-reveal">
+                        <h3 class="story-section-title">Designing AI for Enterprise Decision Making</h3>
+                        
+                        <div class="story-body-text">
+                            <blockquote style="font-family: var(--font-body); font-style: italic; border-left: 3px solid var(--ai-accent); padding-left: 1.5rem; margin: 1.5rem 0; font-size: 1.05rem; line-height: 1.6; color: var(--text-primary);">
+                                Across both explorations, the objective was not to replace human expertise but to augment it. Rather than introducing generic chat interfaces, AI was embedded directly into enterprise workflows—helping users analyze complex commercial data, surface meaningful insights and make informed business decisions within the context of their existing tools.
+                            </blockquote>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Common Footer -->
+    <footer id="contact" class="modern-footer">
+        <div class="footer-container">
+            <div class="footer-brand-section">
+                <a href="index.html" class="logo">SHUBHARTHI ROY</a>
+                <p class="footer-tagline">Collaborative craft for complex enterprise products. Designing balance across user patterns, technology rules, and strategy.</p>
+                <a href="assets/Shubharthi_Roy_Resume.pdf" class="btn btn-secondary btn-sm" download style="margin-top: 1rem; margin-bottom: 1.5rem; padding: 0.5rem 1rem; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 4px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    Download Resume
+                </a>
+                <div class="footer-social-icons">
+                    <a href="mailto:shubharthi.official@gmail.com" class="social-icon-btn" aria-label="Email Shubharthi">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/shubharthi" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links-grid">
+                <div class="footer-link-group">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#creative">Creative Pursuits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-group">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-details">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:shubharthi.official@gmail.com">shubharthi.official@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+919007735284">+91 900-773-5284</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-bottom-row">
+            <div class="copyright">&copy; 2026 Shubharthi Roy. All rights reserved.</div>
+            <div class="location-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loc-icon">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Pune, Maharashtra, India
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Links -->
+    <script src="js/app.js"></script>
+    <script src="js/story.js?v=1.2"></script>
+
+
+</body>
+</html>

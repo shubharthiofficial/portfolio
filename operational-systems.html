@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designing Operational Systems | Shubharthi Roy | Senior UX Designer</title>
+    <meta name="description" content="Portfolio of Shubharthi Roy, Senior UX Designer specializing in Enterprise Product Design, Systems Thinking, AI-powered experiences, and B2B Sales-to-Order workflows.">
+    <meta name="author" content="Shubharthi Roy">
+    
+    <!-- Favicon Branding -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    
+    <script>
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/story.css">
+    <link rel="stylesheet" href="css/operations.css">
+    <style>
+        /* Responsive Evolution Timeline Styles */
+        @media (max-width: 768px) {
+            .evolution-timeline-horizontal {
+                flex-direction: column !important;
+                gap: 2.2rem !important;
+            }
+            .evolution-timeline-horizontal > div[style*="position: absolute"] {
+                display: none !important;
+            }
+            .evolution-step {
+                width: 100% !important;
+            }
+            .order-steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .order-steps-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="story-detail-page ops-case-study">
+    <script>
+        const unlockTimeStr = sessionStorage.getItem('portfolio_unlocked_time');
+        const UNLOCK_DURATION = 10 * 60 * 1000; // 10 minutes in ms
+        let isUnlocked = false;
+        if (unlockTimeStr) {
+            const unlockTime = parseInt(unlockTimeStr, 10);
+            if (Date.now() - unlockTime < UNLOCK_DURATION) {
+                isUnlocked = true;
+            }
+        }
+        if (!isUnlocked) {
+            sessionStorage.removeItem('portfolio_unlocked_time');
+            window.location.replace('work.html?lock=operational-systems');
+        }
+    </script>
+
+    <!-- Custom Cursor Nodes -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-circle"></div>
+
+    <header>
+        <a href="index.html" class="logo">SHUBHARTHI ROY</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work">Featured Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="assets/Shubharthi_Roy_Resume.pdf" class="nav-resume-btn" download style="color: var(--accent-gold); font-weight: 700;">Resume</a></li>
+            </ul>
+            <button class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+                <!-- Sun Icon (Active in Dark mode to switch to Light) -->
+                <svg class="sun-icon" viewBox="0 0 24 24">
+                    <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zM7.05 18.01c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06z"/>
+                </svg>
+                <!-- Moon Icon (Active in Light mode to switch to Dark) -->
+                <svg class="moon-icon" viewBox="0 0 24 24" style="display: none;">
+                    <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.6-.1 1.2.3 1.3.9.1.6-.2 1.2-.8 1.4-3.6 1.3-6 4.7-6 8.5 0 4.4 3.6 8 8 8 3.8 0 7.2-2.4 8.5-6 .2-.6.8-.9 1.4-.8.6.1 1 .7.9 1.3-.9 4.7-5 8.2-9.8 8.2z"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="category-main-content">
+        
+        <!-- Category Hero -->
+        <div class="category-hero-section" style="position: relative; overflow: hidden; border-bottom: 1px solid var(--border-color); padding-bottom: 3rem;">
+            <!-- SVG Network Mesh Background -->
+            <svg class="ops-hero-bg-mesh" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; right: -100px; top: 0; width: 60%; height: 100%; opacity: 0.15; pointer-events: none; z-index: 1;">
+                <path class="mesh-edge" d="M150 150 L350 250 L600 200 L850 250 L1050 150" stroke="currentColor" stroke-width="1.5"/>
+                <path class="mesh-edge" d="M150 150 L100 400 L300 500 L600 400 L900 500 L1100 400 L1050 150" stroke="currentColor" stroke-width="1.5"/>
+                <path class="mesh-edge" d="M350 250 L300 500 L600 650 L900 500 L850 250" stroke="currentColor" stroke-width="1.5"/>
+                <path class="mesh-edge" d="M600 200 L600 400 M600 400 L600 650" stroke="currentColor" stroke-width="1.5"/>
+                
+                <circle class="mesh-node" cx="150" cy="150" r="5" fill="var(--accent-gold)"/>
+                <circle class="mesh-node" cx="350" cy="250" r="5" fill="var(--accent-gold)"/>
+                <circle class="mesh-node" cx="600" cy="200" r="6" fill="var(--accent-gold)"/>
+                <circle class="mesh-node" cx="850" cy="250" r="5" fill="var(--accent-gold)"/>
+                <circle class="mesh-node" cx="1050" cy="150" r="5" fill="var(--accent-gold)"/>
+                
+                <circle class="mesh-node" cx="100" cy="400" r="5" fill="var(--accent-gold)"/>
+                <circle class="mesh-node" cx="300" cy="500" r="5" fill="var(--accent-gold)"/>
+                <circle class="mesh-node" cx="600" cy="400" r="7" fill="var(--accent-gold)"/>
+                <circle class="mesh-node" cx="900" cy="500" r="5" fill="var(--accent-gold)"/>
+                <circle class="mesh-node" cx="1100" cy="400" r="5" fill="var(--accent-gold)"/>
+            </svg>
+
+            <div style="position: relative; z-index: 2; max-width: 850px;">
+                <a href="work.html" class="back-link">
+                    <svg viewBox="0 0 14 14"><path d="M10 3.5L13.5 7L10 10.5M13.5 7H0.5" stroke-linecap="round"/></svg>
+                    Back to Featured Work
+                </a>
+                <span class="drawer-badge" style="color: var(--accent-gold); margin-bottom: 0.5rem; display: block;">Category 02</span>
+                <h1 class="story-hero-title">Designing Operational Systems at Scale</h1>
+                <h2 class="story-hero-subtitle" style="margin-bottom: 2rem; font-weight: normal; margin-top: 0.5rem; line-height: 1.5;">
+                    Designing an enterprise operations platform that enables production support teams to monitor, investigate and execute critical workflows at scale.
+                </h2>
+            </div>
+        </div>
+
+        <div class="story-container">
+            
+            <!-- Sticky Case Outline Sidebar -->
+            <aside class="story-sidebar" style="top: 8rem;">
+                <div class="sidebar-title">Case Outline</div>
+                <ul class="sticky-nav-list">
+                    <li class="sticky-nav-item active"><a href="#overview-s">Platform Overview</a></li>
+                    <li class="sticky-nav-item"><a href="#mass-ops-s">Mass Operations</a></li>
+                    <li class="sticky-nav-item"><a href="#order-tracking-s">Order Tracking</a></li>
+                    <li class="sticky-nav-item"><a href="#data-patch-s">Data Patch Framework</a></li>
+                    <li class="sticky-nav-item"><a href="#evolution-s">Platform Evolution</a></li>
+                    <li class="sticky-nav-item"><a href="#principles-s">Design Principles</a></li>
+                    <li class="sticky-nav-item"><a href="#takeaways-s">Key Takeaways</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Narrative Scroll -->
+            <div class="story-main-scroll">
+
+                <!-- SECTION 1: Platform Overview -->
+                <section id="overview-s" class="story-section story-reveal" style="opacity: 1; transform: none; transition: none;">
+                    
+                    <!-- My Contribution Meta row -->
+                    <div class="story-intro-block" style="margin-bottom: 3.5rem;">
+                        <div class="story-meta-row">
+                            <div class="drawer-meta-item">
+                                <div class="meta-label">Product Context</div>
+                                <div class="meta-val">
+                                    <strong>Backoffice Operations Hub</strong><br>
+                                    A centralized operations platform for L3 support.
+                                </div>
+                            </div>
+                            <div class="drawer-meta-item">
+                                <div class="meta-label">My Contribution</div>
+                                <div class="meta-val">
+                                    Subsystem UX Strategy • Topology Mapping<br>
+                                    Interactive Layout Prototypes &amp; Specifications
+                                </div>
+                            </div>
+                            <div class="drawer-meta-item">
+                                <div class="meta-label">Target Audience</div>
+                                <div class="meta-val">
+                                    Production Support Teams<br>
+                                    Database Administrators
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Mockup (Visual Evidence) -->
+                    <div class="dashboard-mockup-wrapper" style="margin-bottom: 4rem; cursor: pointer;">
+                        <img src="assets/backoffice-welcome-dashboard.png" alt="Backoffice Operations Hub Live Dashboard" style="width: 100%; height: auto; border-radius: 12px; border: 1.5px solid var(--border-color); box-shadow: 0 12px 40px rgba(0,0,0,0.05); display: block;" class="annotated-screen-img">
+                    </div>
+
+                    <h3 class="story-section-title">Platform Overview</h3>
+                    
+                    <div class="challenge-grid" style="grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem; margin-bottom: 2rem;">
+                        <div class="insight-card" style="padding: 1.5rem;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">What is Operations Hub?</span>
+                            <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5;">
+                                A centralized workspace consolidating 9 fragmented legacy tools into a single dashboard. Enables support engineers to safely monitor systems, investigate fallouts, and execute production updates.
+                            </p>
+                        </div>
+                        <div class="insight-card" style="padding: 1.5rem;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">Why it Exists</span>
+                            <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5;">
+                                Legacy processes forced support agents to switch between CLI logs and database terminals, causing high diagnostic search latency, human query errors, and delayed resolution times.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- User Opportunities Summary (Restructured to be fully horizontal side-by-side) -->
+                    <div class="affinity-board" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; margin-bottom: 3rem;">
+                        <div class="affinity-column" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
+                            <div class="affinity-column-title" style="font-family: var(--font-body); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-accent); margin-bottom: 1.2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Observed Legacy Friction</div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div class="affinity-card" style="margin-bottom: 0; padding: 1.2rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px;">
+                                    <p class="affinity-card-text" style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                        <strong>Tool Hopping:</strong><br>
+                                        Support engineers had to log into 9 separate systems to trace and resolve a single failed order.
+                                    </p>
+                                </div>
+                                <div class="affinity-card" style="margin-bottom: 0; padding: 1.2rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px;">
+                                    <p class="affinity-card-text" style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                        <strong>Buried Errors:</strong><br>
+                                        Failure details sat inside raw logs, completely isolated from order management dashboards.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="affinity-column" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
+                            <div class="affinity-column-title" style="font-family: var(--font-body); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-accent); margin-bottom: 1.2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Derived UX Strategy</div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div class="affinity-card" style="margin-bottom: 0; padding: 1.2rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px;">
+                                    <p class="affinity-card-text" style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                        <strong>Unified Search:</strong><br>
+                                        A single query bar to locate transaction contexts across all databases instantly.
+                                    </p>
+                                </div>
+                                <div class="affinity-card" style="margin-bottom: 0; padding: 1.2rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px;">
+                                    <p class="affinity-card-text" style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
+                                        <strong>Lifecycle Flows:</strong><br>
+                                        Showing error callouts directly on interactive flowcharts to replace raw CLI logs.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Swivel-Chair Problem Section (Compact & Scannable) -->
+                    <h4 style="margin-top: 3rem; margin-bottom: 1rem; font-family: var(--font-body); font-weight: 600;">The Swivel-Chair Problem</h4>
+                    <p class="story-body-text">
+                        Prior to this platform, support teams operated with extremely low context. Operators suffered from "swivel-chair" behaviors, constantly switching logins and systems to trace a single order's progression.
+                    </p>
+                    <div class="friction-timeline" style="margin-bottom: 3rem;">
+                        <div class="friction-step">
+                            <div class="friction-step-title">Order Fallout</div>
+                            <p class="friction-step-desc">System halts execution silently with no proactive notification.</p>
+                        </div>
+                        <div class="friction-step">
+                            <div class="friction-step-title">Tool Switching</div>
+                            <p class="friction-step-desc">Operators search legacy databases and check Camunda tasks separately.</p>
+                        </div>
+                        <div class="friction-step">
+                            <div class="friction-step-title">Manual Tracing</div>
+                            <p class="friction-step-desc">Operators dig into Kibana indices, manually correlating process IDs.</p>
+                        </div>
+                        <div class="friction-step">
+                            <div class="friction-step-title">Database Patches</div>
+                            <p class="friction-step-desc">Once identified, raw SQL patches are executed with zero validation rules.</p>
+                        </div>
+                    </div>
+
+                    <!-- Architecture Spoke Diagram -->
+                    <h4 style="margin-top: 3rem; margin-bottom: 1rem; font-family: var(--font-body); font-weight: 600;">Product Scope &amp; Radial Architecture</h4>
+                    <p class="story-body-text">
+                        The radial interface maps out the 9 consolidated modules integrated under a shared navigation core:
+                    </p>
+                    <div class="hub-spoke-container" style="margin-top: 2rem; margin-bottom: 4rem;">
+                        <svg class="spoke-line-svg">
+                            <line x1="400" y1="225" x2="400" y2="70" stroke="var(--border-color)" stroke-width="1.5"/>
+                            <line x1="400" y1="225" x2="650" y2="125" stroke="var(--border-color)" stroke-width="1.5"/>
+                            <line x1="400" y1="225" x2="720" y2="225" stroke="var(--border-color)" stroke-width="1.5"/>
+                            <line x1="400" y1="225" x2="650" y2="325" stroke="var(--border-color)" stroke-width="1.5"/>
+                            <line x1="400" y1="225" x2="400" y2="380" stroke="var(--border-color)" stroke-width="1.5"/>
+                            <line x1="400" y1="225" x2="150" y2="325" stroke="var(--border-color)" stroke-width="1.5"/>
+                            <line x1="400" y1="225" x2="80" y2="225" stroke="var(--border-color)" stroke-width="1.5"/>
+                            <line x1="400" y1="225" x2="150" y2="125" stroke="var(--border-color)" stroke-width="1.5"/>
+                        </svg>
+                        <div class="hub-center">
+                            <span class="hub-title">Unified Operations Hub</span>
+                        </div>
+                        <div class="spoke-item spoke-1">Order Tracking</div>
+                        <div class="spoke-item spoke-2">Flow Summary</div>
+                        <div class="spoke-item spoke-3">Process Monitor</div>
+                        <div class="spoke-item spoke-4">Mass Execution</div>
+                        <div class="spoke-item spoke-5">Scheduler</div>
+                        <div class="spoke-item spoke-6">DLQ Management</div>
+                        <div class="spoke-item spoke-7">Data Fixes</div>
+                        <div class="spoke-item spoke-8">AI Diagnostics</div>
+                    </div>
+
+                    <!-- Platform IA Tree -->
+                    <h4 style="margin-top: 3rem; margin-bottom: 1rem; font-family: var(--font-body); font-weight: 600;">Platform Layered Architecture Map</h4>
+                    <p class="story-body-text">
+                        Platform thinking means designing structure patterns, not single pages. The platform IA establishes how modules connect, defining global capabilities (Universal Search, Audits) as cross-cutting services.
+                    </p>
+                    <div style="background: var(--bg-secondary); border: 1.5px solid var(--border-color); border-radius: 12px; padding: 2.5rem; margin-top: 2rem; margin-bottom: 3rem;">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <!-- Level 1: Portal Hub -->
+                            <div style="text-align: center; border: 1.5px solid var(--gold-accent); padding: 0.8rem; border-radius: 6px; font-weight: 700;">
+                                Operations Console Portal Core (Unified Global Navigation)
+                            </div>
+                            
+                            <!-- Level 2: Shared services -->
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center; font-size: 0.82rem;">
+                                <div style="border: 1px solid var(--border-color); padding: 0.5rem; background: var(--bg-primary);">Search Core</div>
+                                <div style="border: 1px solid var(--border-color); padding: 0.5rem; background: var(--bg-primary);">Audit Logs</div>
+                                <div style="border: 1px solid var(--border-color); padding: 0.5rem; background: var(--bg-primary);">RBAC &amp; Profiles</div>
+                            </div>
+                            
+                            <!-- Level 3: Modules -->
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; font-size: 0.8rem; font-weight: 600;">
+                                <div style="border: 1px solid var(--border-color); padding: 0.8rem; background: var(--bg-card);">Order &amp; Flow Tracking</div>
+                                <div style="border: 1px solid var(--border-color); padding: 0.8rem; background: var(--bg-card);">Mass Executions</div>
+                                <div style="border: 1px solid var(--border-color); padding: 0.8rem; background: var(--bg-card);">DLQ monitoring</div>
+                                <div style="border: 1px solid var(--border-color); padding: 0.8rem; background: var(--bg-card);">Data Correction</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Memorable Decision (Product-level IA) -->
+                    <div class="challenge-grid" style="grid-template-columns: 1fr; margin-top: 2.5rem; margin-bottom: 2rem;">
+                        <div class="insight-card" style="padding: 1.2rem; border-left: 3px solid var(--accent-gold);">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block;">Memorable Decision</span>
+                            <h5 style="margin: 0.4rem 0 0.2rem 0; font-size: 1.05rem; font-weight: 600;">Why we chose investigation-path breadcrumbs instead of static system hierarchy</h5>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                                Dynamic process breadcrumbs mirror the transactional flow of the order (Checkout &rarr; Billing &rarr; Activation) rather than folder structures, keeping operators oriented inside the failure timeline.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: Mass Operations -->
+                <section id="mass-ops-s" class="story-section story-reveal">
+                    <h3 class="story-section-title">How did we design scalable enterprise bulk operations?</h3>
+                    
+                    <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 2.2rem; margin-top: 1.5rem; margin-bottom: 2rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <h4 style="margin-top: 0; font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">Problem</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin: 0.5rem 0 0 0;">
+                                    Production teams needed to perform high-volume operational actions—including bulk retries, scheduled executions, and large-scale updates across Product Inventory and Product Orders. Existing approaches relied on manual effort or engineering scripts, resulting in slow execution, limited operational control, and increased production risk.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">UX Contribution</h4>
+                                <ul style="font-size: 0.88rem; color: var(--text-secondary); padding-left: 1.2rem; margin: 0.5rem 0 0 0; display: flex; flex-direction: column; gap: 0.4rem;">
+                                    <li>Designed an intuitive workflow for executing high-volume operational changes, reducing the complexity of configuring bulk actions.</li>
+                                    <li>Introduced progressive filtering to help operators accurately identify the target population before executing mass updates.</li>
+                                    <li>Created consistent scheduling and execution experiences that improved confidence while performing production-scale operations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mass Operations Dashboard Screenshot (Visual Evidence) -->
+                    <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem; cursor: pointer;">
+                        <img src="assets/backoffice-mass-operations.png" alt="Backoffice Operations Hub — Mass Operations List &amp; Execution Console" style="width: 100%; height: auto; border-radius: 12px; border: 1.5px solid var(--border-color); box-shadow: 0 12px 40px rgba(0,0,0,0.05); display: block;" class="annotated-screen-img">
+                    </div>
+                    <p style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0; margin-bottom: 2.5rem; text-align: center; font-style: italic;">
+                        The unified Mass Operations dashboard console displaying execution metrics, progressive filters, active jobs list, and contextual trigger actions.
+                    </p>
+
+                    <!-- Side-by-Side Dialog Overlays (Visual Evidence) -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                        <div style="cursor: pointer;">
+                            <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                                <img src="assets/backoffice-mass-create-schedule.png" alt="Backoffice Operations Hub — Create New Schedule Dialog Overlay" style="width: 100%; height: auto; border-radius: 8px; border: 1.5px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: block;" class="annotated-screen-img">
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic; line-height: 1.4;">
+                                The recurring schedule creation wizard, allowing operators to configure automated execution times and scope query parameters.
+                            </p>
+                        </div>
+                        <div style="cursor: pointer;">
+                            <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                                <img src="assets/backoffice-mass-execute-context.png" alt="Backoffice Operations Hub — Execute New Mass Operation Dialog Overlay" style="width: 100%; height: auto; border-radius: 8px; border: 1.5px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: block;" class="annotated-screen-img">
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic; line-height: 1.4;">
+                                The dynamic run execution dialog, allowing operators to upload CSV batch files or configure manual execution inputs.
+                            </p>
+                        </div>
+                      </div>
+                    
+                    <div class="challenge-grid" style="grid-template-columns: 1fr; margin-bottom: 3rem;">
+                        <div class="insight-card" style="padding: 1.2rem; border-left: 3px solid var(--accent-gold);">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block;">Memorable Decision</span>
+                            <h5 style="margin: 0.4rem 0 0.2rem 0; font-size: 1.05rem; font-weight: 600;">Why we intentionally hid configuration options until they became relevant</h5>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                                Prevents accidental executions by locking the execution trigger until the operator explicitly confirms the target scope, ensuring every bulk run is a conscious decision.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="story-impact-box">
+                        <div class="story-impact-title">Key Outcomes &amp; Impact</div>
+                        <ul class="story-impact-list">
+                            <li>Consolidated 9 legacy support platforms into a unified bulk activities workspace.</li>
+                            <li>Reduced operational error rates by hiding trigger actions until scope targets are validated.</li>
+                            <li>Enabled operations teams to execute massive batch updates independently.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: Order Tracking -->
+                <section id="order-tracking-s" class="story-section story-reveal">
+                    <h3 class="story-section-title">How did we help production engineers investigate failed telecom orders?</h3>
+                    
+                    <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 2.2rem; margin-top: 1.5rem; margin-bottom: 2rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <h4 style="margin-top: 0; font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">Problem</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin: 0.5rem 0 0 0;">
+                                    Fulfillment processes are long-running and cross multiple API boundaries. Locating where an order stalled forced operators to dig through raw log dumps, resulting in a 30+ minute MTTR.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">UX Contribution</h4>
+                                <ul style="font-size: 0.88rem; color: var(--text-secondary); padding-left: 1.2rem; margin: 0.5rem 0 0 0; display: flex; flex-direction: column; gap: 0.4rem;">
+                                    <li>Designed visual order state node trees showing execution progress in real-time.</li>
+                                    <li>Built a progressive disclosure sidebar overlay to query logs directly in-context.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Order Tracking Screenshot (Visual Evidence) -->
+                    <div style="margin-bottom: 1.5rem; cursor: pointer;">
+                        <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                            <img src="assets/backoffice-order-tracking-main.png" alt="Backoffice Operations Hub — Order List Queue main dashboard screen" style="width: 100%; height: auto; border-radius: 12px; border: 1.5px solid var(--border-color); box-shadow: 0 12px 40px rgba(0,0,0,0.05); display: block;" class="annotated-screen-img">
+                        </div>
+                        <p style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic;">
+                            The main Order Tracking console displaying the active orders queue table, order status summaries, and track actions list.
+                        </p>
+                    </div>
+
+                    <!-- 2x2 Grid of Workflow Steps / Smaller Screenshots (Visual Evidence) -->
+                    <div class="order-steps-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2.5rem;">
+                        <!-- Step 01 -->
+                        <div style="cursor: pointer;">
+                            <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                                <img src="assets/backoffice-order-details-step.png" alt="Backoffice Operations Hub — Order Detailed Investigation Flow" style="width: 100%; height: auto; border-radius: 8px; border: 1.5px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: block;" class="annotated-screen-img">
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic; line-height: 1.4;">
+                                <strong>Step 01: Order Details Page</strong> — The detailed order investigation panel. Clicking the "More Details" link in the Flow Details section launches the full flowchart.
+                            </p>
+                        </div>
+                        
+                        <!-- Step 02 -->
+                        <div style="cursor: pointer;">
+                            <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                                <img src="assets/backoffice-order-flow-visualization.png" alt="Backoffice Operations Hub — Interactive Flow Diagram" style="width: 100%; height: auto; border-radius: 8px; border: 1.5px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: block;" class="annotated-screen-img">
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic; line-height: 1.4;">
+                                <strong>Step 02: Flow Diagram</strong> — The full-page overlay modal displaying the interactive BPMN flowchart diagram, with the failing step (Notify Billing) highlighted in red.
+                            </p>
+                        </div>
+                        
+                        <!-- Step 03 -->
+                        <div style="cursor: pointer;">
+                            <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                                <img src="assets/backoffice-order-incident-popover.png" alt="Backoffice Operations Hub — Incident Details Popover" style="width: 100%; height: auto; border-radius: 8px; border: 1.5px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: block;" class="annotated-screen-img">
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic; line-height: 1.4;">
+                                <strong>Step 03: Incident Details Popover</strong> — Selecting the failed step reveals a contextual popup detailing the timeout reason, Trace ID, and Error ID.
+                            </p>
+                        </div>
+                        
+                        <!-- Step 04 -->
+                        <div style="cursor: pointer;">
+                            <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                                <img src="assets/backoffice-order-json-context.png" alt="Backoffice Operations Hub — Flow Context Raw JSON View" style="width: 100%; height: auto; border-radius: 8px; border: 1.5px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: block;" class="annotated-screen-img">
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic; line-height: 1.4;">
+                                <strong>Step 04: Raw Context Log</strong> — The Context tab displays the raw, structured execution log data payload for advanced engineering forensics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="challenge-grid" style="grid-template-columns: 1fr; margin-bottom: 3rem;">
+                        <div class="insight-card" style="padding: 1.2rem; border-left: 3px solid var(--accent-gold);">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block;">Memorable Decision</span>
+                            <h5 style="margin: 0.4rem 0 0.2rem 0; font-size: 1.05rem; font-weight: 600;">Why we chose visual execution flows instead of sequential log tables</h5>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                                Support engineers diagnose by process stages (e.g. "Is inventory reserved?"), not timestamped text lines. Overlaying stack errors directly onto flowchart nodes allows L3 support to isolate API failures in seconds without reading raw logs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="story-impact-box">
+                        <div class="story-impact-title">Key Outcomes &amp; Impact</div>
+                        <ul class="story-impact-list">
+                            <li>Reduced cognitive load when identifying system failure points across thousands of API transactions.</li>
+                            <li>Standardized layout structures for visual order mapping and failure diagnostics.</li>
+                            <li>Improved coordination between frontline customer operations and developer engineering teams.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: Data Patch Framework -->
+                <section id="data-patch-s" class="story-section story-reveal">
+                    <h3 class="story-section-title">How did we replace engineering scripts with guided production workflows?</h3>
+                    
+                    <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 2.2rem; margin-top: 1.5rem; margin-bottom: 2rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <h4 style="margin-top: 0; font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">Problem</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin: 0.5rem 0 0 0;">
+                                    Correcting minor data anomalies (e.g. invalid date limits, service mismatches) forced support engineers to raise tickets for developers to write raw SQL scripts, delaying resolutions by days.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 0; font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">UX Contribution</h4>
+                                <ul style="font-size: 0.88rem; color: var(--text-secondary); padding-left: 1.2rem; margin: 0.5rem 0 0 0; display: flex; flex-direction: column; gap: 0.4rem;">
+                                    <li>Designed secure, step-guided Single and Bulk Patch workflows for support agents.</li>
+                                    <li>Architected the metadata-driven UI rendering engine to scale input controls.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="challenge-grid" style="grid-template-columns: 1fr; margin-bottom: 3rem;">
+                        <div class="insight-card" style="padding: 1.2rem; border-left: 3px solid var(--accent-gold);">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block;">Memorable Decision</span>
+                            <h5 style="margin: 0.4rem 0 0.2rem 0; font-size: 1.05rem; font-weight: 600;">Why we built one reusable form framework instead of designing dozens of individual screens</h5>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                                Because patch parameters vary wildly, designing custom views was unsustainable. The configuration-driven framework dynamically generates components based on schema metadata, allowing engineering to launch new patches with zero code changes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top: 3rem; margin-bottom: 1rem; font-family: var(--font-body); font-weight: 600;">Single Patch Workflow</h4>
+                    <p class="story-body-text">
+                        Provides a guided path: target Domain selection &rarr; Entity Type selector &rarr; ID search &rarr; dynamic input parameters generation &rarr; configuration review &rarr; execution approval. Only relevant controls appear in the view, reducing human error.
+                    </p>
+
+                    <!-- Single Patch Screenshot (Visual Evidence) -->
+                    <div class="dashboard-mockup-wrapper" style="margin-top: 2rem; margin-bottom: 0.5rem; cursor: pointer;">
+                        <img src="assets/datafix-single-patch.png" alt="Backoffice Operations Hub — Single Patch Workflow Console" style="width: 100%; height: auto; border-radius: 12px; border: 1.5px solid var(--border-color); box-shadow: 0 12px 40px rgba(0,0,0,0.05); display: block;" class="annotated-screen-img">
+                    </div>
+                    <p style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0; margin-bottom: 3rem; text-align: center; font-style: italic;">
+                        The step-guided Single Patch console displaying domain scopes, entity type selections, and exact ID search boundaries.
+                    </p>
+
+                    <h4 style="margin-top: 3rem; margin-bottom: 1rem; font-family: var(--font-body); font-weight: 600;">Bulk Patch Workflow</h4>
+                    <p class="story-body-text">
+                        Uses a progressive refinement model. Instead of picking a single record, operators select configuration variables first, and then filter target populations based on Product, Offer, Status, or Date limits.
+                    </p>
+
+                    <!-- Bulk Patch Initial Screen (Visual Evidence) -->
+                    <div style="cursor: pointer; margin-top: 2rem; margin-bottom: 1.5rem;">
+                        <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                            <img src="assets/datafix-bulk-patch.png" alt="Backoffice Operations Hub — Bulk Patch Configuration Console" style="width: 100%; height: auto; border-radius: 12px; border: 1.5px solid var(--border-color); box-shadow: 0 12px 40px rgba(0,0,0,0.05); display: block;" class="annotated-screen-img">
+                        </div>
+                        <p style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic;">
+                            The initial Bulk Patch execution console displaying the expanded Update Details pane and Operation/Action dropdown selections.
+                        </p>
+                    </div>
+
+                    <!-- Side-by-Side Configured Bulk Patch & Date Picker (Visual Evidence) -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                        <div style="cursor: pointer;">
+                            <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                                <img src="assets/datafix-bulk-configured.png" alt="Backoffice Operations Hub — Configured Bulk Patch Select Population pane" style="width: 100%; height: auto; border-radius: 8px; border: 1.5px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: block;" class="annotated-screen-img">
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic; line-height: 1.4;">
+                                The configured Bulk Patch view showing the expanded Select Population parameters panel.
+                            </p>
+                        </div>
+                        <div style="cursor: pointer;">
+                            <div class="dashboard-mockup-wrapper" style="margin-bottom: 0.5rem;">
+                                <img src="assets/datafix-date-picker.png" alt="Backoffice Operations Hub — Calendar date picker popover overlay" style="width: 100%; height: auto; border-radius: 8px; border: 1.5px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: block;" class="annotated-screen-img">
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0; text-align: center; font-style: italic; line-height: 1.4;">
+                                The calendar date picker popover overlay, allowing operators to scope the start and end execution periods precisely.
+                            </p>
+                        </div>
+                    </div>
+                        <div class="story-impact-box">
+                            <div class="story-impact-title">Key Outcomes &amp; Impact</div>
+                            <ul class="story-impact-list">
+                                <li>Enabled safer data remediation for billing and provisioning records directly via support tools.</li>
+                                <li>Established reusable guidelines for mass bulk operations validation and preview check gates.</li>
+                                <li>Prevented accidental data entry errors through clear preview validation checkpoints.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                <!-- SECTION 5: Platform Evolution -->
+                <section id="evolution-s" class="story-section story-reveal">
+                    <h3 class="story-section-title">Platform Evolution</h3>
+                    <p class="story-body-text">
+                        The Operations Hub evolved alongside our product strategy over several years, scaling from an MVP order viewer into an automated operations manager:
+                    </p>
+
+                    <div class="evolution-timeline-horizontal" style="display: flex; gap: 1.25rem; position: relative; margin-top: 2rem; margin-bottom: 2.5rem;">
+                        <!-- Horizontal Track Line -->
+                        <div style="position: absolute; top: 8px; left: 10px; right: 10px; height: 2px; background: var(--border-color); z-index: 1;"></div>
+                        
+                        <!-- Node 1 -->
+                        <div class="evolution-step" style="flex: 1; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--bg-primary); border: 3px solid var(--accent-gold); margin-bottom: 0.75rem; margin-left: 6px;"></div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; width: 100%; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.01); display: flex; flex-direction: column; height: 100%;">
+                                <div class="evolution-verdict" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.25rem;">PI 31 — MVP</div>
+                                <h4 class="evolution-title" style="font-size: 0.88rem; font-weight: 600; margin: 0; color: var(--text-primary); line-height: 1.3;">Order Tracking</h4>
+                                <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; margin-bottom: 0; line-height: 1.4;">
+                                    Unified lookup search and visual flowcharts for failure diagnostics.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Node 2 -->
+                        <div class="evolution-step" style="flex: 1; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--bg-primary); border: 3px solid var(--accent-gold); margin-bottom: 0.75rem; margin-left: 6px;"></div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; width: 100%; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.01); display: flex; flex-direction: column; height: 100%;">
+                                <div class="evolution-verdict" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.25rem;">PI 32 — Expansion</div>
+                                <h4 class="evolution-title" style="font-size: 0.88rem; font-weight: 600; margin: 0; color: var(--text-primary); line-height: 1.3;">Mass Operations</h4>
+                                <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; margin-bottom: 0; line-height: 1.4;">
+                                    Designed bulk retry schedulers and runtime safety limits.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Node 3 -->
+                        <div class="evolution-step" style="flex: 1; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--bg-primary); border: 3px solid var(--accent-gold); margin-bottom: 0.75rem; margin-left: 6px;"></div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; width: 100%; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.01); display: flex; flex-direction: column; height: 100%;">
+                                <div class="evolution-verdict" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.25rem;">PI 33 — Metrics</div>
+                                <h4 class="evolution-title" style="font-size: 0.88rem; font-weight: 600; margin: 0; color: var(--text-primary); line-height: 1.3;">Performance KPIs</h4>
+                                <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; margin-bottom: 0; line-height: 1.4;">
+                                    Integrated analytics dashboards showing support SLA margins.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Node 4 -->
+                        <div class="evolution-step" style="flex: 1; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--bg-primary); border: 3px solid var(--accent-gold); margin-bottom: 0.75rem; margin-left: 6px;"></div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; width: 100%; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.01); display: flex; flex-direction: column; height: 100%;">
+                                <div class="evolution-verdict" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.25rem;">PI 34+ — Future Vision</div>
+                                <h4 class="evolution-title" style="font-size: 0.88rem; font-weight: 600; margin: 0; color: var(--text-primary); line-height: 1.3;">AI Diagnostics</h4>
+                                <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.4rem; margin-bottom: 0; line-height: 1.4;">
+                                    Introducing AI copilots to match tracelogs to historical errors.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: Design Principles -->
+                <section id="principles-s" class="story-section story-reveal">
+                    <h3 class="story-section-title">Design Principles Across the Platform</h3>
+                    <p class="story-body-text" style="margin-bottom: 2rem;">
+                        Although these modules address varying functional needs, they are unified under core platform UX decisions:
+                    </p>
+
+                    <div class="principles-flow-grid" style="margin-bottom: 3rem;">
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <span class="principle-num">01</span>
+                            </div>
+                            <h4 class="principle-title">Operational Safety</h4>
+                            <p class="principle-desc">Why we enforced mandatory validation checks, simulation testing, and multi-party reviews prior to execution.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <span class="principle-num">02</span>
+                            </div>
+                            <h4 class="principle-title">Progressive Disclosure</h4>
+                            <p class="principle-desc">Why we intentionally hid complex configuration variables until previous actions rendered them necessary.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <span class="principle-num">03</span>
+                            </div>
+                            <h4 class="principle-title">Scalable Workflows</h4>
+                            <p class="principle-desc">Why we deconstructed isolated database patches into guided, sequential wizard forms.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <span class="principle-num">04</span>
+                            </div>
+                            <h4 class="principle-title">Configuration-Driven UI</h4>
+                            <p class="principle-desc">Why we built one dynamic presentation layer parsing backend schema configs instead of multiple screens.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <span class="principle-num">05</span>
+                            </div>
+                            <h4 class="principle-title">Reusable Interaction Patterns</h4>
+                            <p class="principle-desc">Why we kept dropdowns, date pickers, and tables consistent across modules to improve learnability.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <span class="principle-num">06</span>
+                            </div>
+                            <h4 class="principle-title">Developer Enablement</h4>
+                            <p class="principle-desc">Why we provided developers with exhaustive UX rules to cut implementation cycles for future updates.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: Key Takeaways -->
+                <section id="takeaways-s" class="story-section story-reveal">
+                    <h3 class="story-section-title">What this project taught me</h3>
+                    
+                    <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; margin-top: 1.5rem; margin-bottom: 2rem;">
+                        <h4 style="margin-top: 0; margin-bottom: 1rem; font-family: var(--font-body); font-weight: 600;">Cross-Functional Collaboration</h4>
+                        <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.9rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 25px; height: 25px; border-radius: 50%; background: var(--gold-accent); color: white; display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 0.8rem;">1</div>
+                                <p style="margin: 0; color: var(--text-primary);"><strong>Product Management:</strong> Defined platform requirements, user personas, and roadmaps.</p>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 25px; height: 25px; border-radius: 50%; background: var(--gold-accent); color: white; display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 0.8rem;">2</div>
+                                <p style="margin: 0; color: var(--text-primary);"><strong>Solution Architecture:</strong> Co-designed transaction state logic flows and database schema models.</p>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 25px; height: 25px; border-radius: 50%; background: var(--gold-accent); color: white; display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 0.8rem;">3</div>
+                                <p style="margin: 0; color: var(--text-primary);"><strong>Engineering:</strong> Implemented configuration-driven guidelines and reusable widgets.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reflection-card">
+                        <p class="reflection-card-desc" style="font-size: 1.05rem; line-height: 1.6; font-style: italic; margin-bottom: 1rem;">
+                            Designing the Operations Hub taught me that enterprise UX is not simply about interface simplification. In high-scale data operations, hiding technical depth can lead to dangerous errors.
+                        </p>
+                        <p class="reflection-card-desc" style="font-size: 1.05rem; line-height: 1.6; font-style: italic;">
+                            Instead of dumbing down the environment, our role as UX Architects is to reveal system relationships clearly, design robust validation safeguards, and build configuration-driven frameworks that help developers scale and operators act with confidence.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Common Footer -->
+    <footer id="contact" class="modern-footer">
+        <div class="footer-container">
+            <div class="footer-brand-section">
+                <a href="index.html" class="logo">SHUBHARTHI ROY</a>
+                <p class="footer-tagline">Collaborative craft for complex enterprise products. Designing balance across user patterns, technology rules, and strategy.</p>
+                <a href="assets/Shubharthi_Roy_Resume.pdf" class="btn btn-secondary btn-sm" download style="margin-top: 1rem; margin-bottom: 1.5rem; padding: 0.5rem 1rem; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 4px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    Download Resume
+                </a>
+                <div class="footer-social-icons">
+                    <a href="mailto:shubharthi.official@gmail.com" class="social-icon-btn" aria-label="Email Shubharthi">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/shubharthi" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-link-group">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#creative">Creative Pursuits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-group">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-details">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:shubharthi.official@gmail.com">shubharthi.official@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+919007735284">+91 900-773-5284</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-bottom-row">
+            <div class="copyright">&copy; 2026 Shubharthi Roy. All rights reserved.</div>
+            <div class="location-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loc-icon">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Pune, Maharashtra, India
+            </div>
+        </div>
+    </footer>
+
+    <!-- Premium Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Enlarged screenshot mockup">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- Scripts Links -->
+    <script src="js/app.js"></script>
+    <script src="js/operations.js"></script>
+</body>
+</html>

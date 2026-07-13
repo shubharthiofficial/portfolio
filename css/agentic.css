@@ -1,0 +1,591 @@
+/* ==========================================================================
+   AI & Design Innovation Case Study Stylesheet
+   Design Language: Minimal, High Whitespace, Premium Editorial (Apple/Stripe)
+   ========================================================================== */
+
+:root {
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Section Formatting & Spacing --- */
+.story-section {
+    padding: 3.5rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+}
+
+.story-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.story-section-title {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.story-body-text p {
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+/* --- Visual Media Containers --- */
+.spec-media-container {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Section 1: The Challenge (Orbital Designer Layout)
+   ========================================================================== */
+.challenge-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .challenge-split-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+/* Designer Orbital Diagram */
+.designer-orbital-canvas {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.orbital-center {
+    width: 68px;
+    height: 68px;
+    background: rgba(239, 131, 84, 0.1);
+    border: 1.5px solid var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    box-shadow: 0 0 25px rgba(239, 131, 84, 0.15);
+}
+
+.orbital-center svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-gold);
+    margin-bottom: 4px;
+}
+
+.orbital-center span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+}
+
+/* Orbital Rings */
+.orbital-ring {
+    position: absolute;
+    border: 1px dashed var(--card-border);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.ring-inner { width: 150px; height: 150px; }
+.ring-outer { width: 250px; height: 250px; }
+
+/* Orbital Nodes */
+.orbital-node {
+    position: absolute;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--card-border);
+    border-radius: 30px;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    z-index: 2;
+    transition: var(--transition-smooth);
+}
+
+.orbital-node svg {
+    width: 12px;
+    height: 12px;
+    color: var(--accent-gold);
+}
+
+.orbital-node:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-gold);
+    color: var(--text-primary);
+}
+
+/* Node Positions */
+.node-ds { top: 10%; left: 4%; }
+.node-doc { top: 10%; right: 4%; }
+.node-lib { bottom: 10%; left: 4%; }
+.node-stake { bottom: 10%; right: 4%; }
+.node-figma { top: 46%; left: 2%; }
+.node-ai { top: 46%; right: 2%; border-color: rgba(239, 131, 84, 0.4); background: rgba(239, 131, 84, 0.03); }
+
+@media (max-width: 600px) {
+    .designer-orbital-canvas {
+        height: auto;
+        padding: 2.5rem 1rem;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .orbital-ring { display: none; }
+    .orbital-center { margin-bottom: 12px; }
+    .orbital-node {
+        position: static;
+        width: 80%;
+        max-width: 240px;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   Section 2: Our Approach (Connected Process Flow)
+   ========================================================================== */
+.process-flow-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.process-card {
+    flex: 1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.process-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-gold);
+}
+
+.process-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.process-card-header svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-gold);
+}
+
+.process-card-header h4 {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.process-icon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.process-icon-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.process-icon-item svg {
+    width: 14px;
+    height: 14px;
+    color: var(--card-border);
+}
+
+/* Connectors between process cards */
+.process-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--card-border);
+    width: 24px;
+}
+
+.process-connector svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 900px) {
+    .process-flow-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .process-connector {
+        width: 100%;
+        height: 24px;
+        transform: rotate(90deg);
+    }
+}
+
+/* ==========================================================================
+   Section 3: How It Works (Hero Showcase Workflow)
+   ========================================================================== */
+.hero-workflow-section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 3.5rem 2rem;
+    margin-bottom: 3.5rem;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.02);
+}
+
+.workflow-flow-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+.workflow-node {
+    width: 100%;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+}
+
+.workflow-node:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.workflow-node-num {
+    width: 26px;
+    height: 26px;
+    background: rgba(239, 131, 84, 0.1);
+    color: var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.workflow-node svg {
+    width: 18px;
+    height: 18px;
+    color: var(--accent-gold);
+    flex-shrink: 0;
+}
+
+.workflow-node span {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.workflow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--card-border);
+    height: 20px;
+}
+
+.workflow-arrow svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ==========================================================================
+   Section 4: Current Progress (Modern Checklist Timeline)
+   ========================================================================== */
+.modern-timeline {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    margin-bottom: 2rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.timeline-list::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 4.5px;
+    width: 1px;
+    background: var(--card-border);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.timeline-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.timeline-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--card-border);
+    position: absolute;
+    left: -19.5px;
+    z-index: 2;
+    transition: var(--transition-smooth);
+}
+
+.timeline-indicator.checked {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 10px rgba(239, 131, 84, 0.4);
+}
+
+.timeline-indicator.current {
+    background: var(--bg-primary);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 8px rgba(239, 131, 84, 0.3);
+}
+
+.timeline-item-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.timeline-item-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+}
+
+.status-done {
+    color: var(--accent-gold);
+    background: rgba(239, 131, 84, 0.08);
+}
+
+.status-current {
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--card-border);
+}
+
+.status-next {
+    color: var(--text-tertiary);
+    background: transparent;
+    border: 1px solid var(--card-border);
+}
+
+/* ==========================================================================
+   Section 5: Key Learnings (Insight Cards Grid)
+   ========================================================================== */
+.learnings-insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.learning-insight-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+}
+
+.learning-insight-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-gold);
+}
+
+.learning-card-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--bg-tertiary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-gold);
+}
+
+.learning-card-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.learning-insight-card p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* ==========================================================================
+   Section 6: What's Next (Two Feature Cards)
+   ========================================================================== */
+.whats-next-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .whats-next-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.feature-next-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.01);
+}
+
+.feature-next-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-gold);
+}
+
+.feature-card-top {
+    margin-bottom: 2rem;
+}
+
+.feature-status-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.75rem;
+    border-radius: 30px;
+    margin-bottom: 1.25rem;
+}
+
+.badge-active {
+    color: var(--accent-gold);
+    background: rgba(239, 131, 84, 0.08);
+}
+
+.badge-prod {
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--card-border);
+}
+
+.feature-card-title {
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.feature-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+.feature-cta-btn {
+    align-self: flex-start;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border: none;
+    padding: 0.7rem 1.6rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-decoration: none;
+    text-align: center;
+}
+
+.feature-cta-btn:hover {
+    background: var(--accent-gold);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(239, 131, 84, 0.2);
+}
