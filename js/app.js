@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPasswordProtection();
     initPageExitTransitions();
     initFloatingActionButtons();
+    initMobileNav();
 
     // Check if redirect query parameter exists on page load
     const urlParams = new URLSearchParams(window.location.search);
@@ -850,6 +851,52 @@ function initFloatingActionButtons() {
         leftContainer.appendChild(backBtn);
         document.body.appendChild(leftContainer);
     }
+}
+
+/* ==========================================
+   10. Mobile Responsive Navigation & Hamburger
+   ========================================== */
+function initMobileNav() {
+    const toggleBtn = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (!toggleBtn || !navLinks) return;
+    
+    toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.contains('active');
+        
+        toggleBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        toggleBtn.setAttribute('aria-expanded', !isOpen);
+        
+        if (!isOpen) {
+            document.body.style.overflow = 'hidden'; // Prevent body scroll when menu open
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close mobile menu when a nav link is clicked
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Close menu when clicking outside of nav-links
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+            toggleBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 
