@@ -206,23 +206,28 @@
 
 .category-card {
     position: relative;
-    background-color: var(--bg-secondary);
-    border: 1.5px solid rgba(229, 184, 66, 0.35);
+    background: linear-gradient(135deg, #ef8354 0%, #d46c43 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 14px;
     overflow: hidden;
     height: 340px;
     cursor: pointer;
-    transition: var(--transition-smooth);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(239, 131, 84, 0.18);
 }
 
 [data-theme="light"] .category-card {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 8px 25px rgba(239, 131, 84, 0.22);
 }
 
 .category-card:hover {
-    transform: translateY(-8px);
-    background-color: var(--card-hover-bg);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(239, 131, 84, 0.38);
+}
+
+.category-card:active {
+    transform: translateY(-4px) scale(0.98);
+    box-shadow: 0 12px 24px rgba(239, 131, 84, 0.25);
 }
 
 .category-card-inner {
@@ -230,7 +235,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: relative;
     z-index: 2;
 }
@@ -244,7 +249,7 @@
 .category-card-num {
     font-family: monospace;
     font-size: 0.9rem;
-    color: var(--text-tertiary);
+    color: rgba(255, 255, 255, 0.75);
     font-weight: bold;
 }
 
@@ -252,14 +257,14 @@
     font-family: var(--font-body);
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: #ffffff;
     line-height: 1.25;
     letter-spacing: -0.5px;
 }
 
 .category-card-desc {
     font-size: 0.98rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.92);
     line-height: 1.5;
     margin-bottom: auto;
     margin-top: 1.5rem;
@@ -269,11 +274,11 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--text-primary);
-    font-weight: 600;
+    color: #ffffff;
+    font-weight: 700;
     font-size: 0.95rem;
     text-decoration: none;
-    margin-top: 2rem;
+    margin-top: auto;
     transition: var(--transition-snappy);
 }
 
@@ -284,7 +289,7 @@
 }
 
 .category-card:hover .cta-arrow {
-    transform: translateX(4px);
+    transform: translateX(6px);
 }
 
 /* Card Active Glow effect */
@@ -297,18 +302,12 @@
     pointer-events: none;
     border-radius: 14px;
     border: 1.5px solid transparent;
-    transition: var(--transition-smooth);
+    transition: border-color 0.3s ease;
     z-index: 1;
 }
 
-.category-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-gold);
-}
-
 .category-card:hover .card-glow-border {
-    border-color: var(--accent-gold);
-    box-shadow: 0 0 25px rgba(229, 184, 66, 0.25);
+    border-color: rgba(255, 255, 255, 0.45);
 }
 
 /* --- Impact Dashboard & Categories Section Compact Overrides --- */

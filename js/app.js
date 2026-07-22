@@ -465,6 +465,7 @@ function initPasswordProtection() {
     protectedElements.forEach(el => {
         el.addEventListener('click', (e) => {
             e.preventDefault();
+            e.stopPropagation();
             const targetUrl = el.getAttribute('href') || el.getAttribute('data-protected-link');
             
             if (isCaseStudyUnlocked()) {
@@ -532,6 +533,7 @@ function showPasswordModal(targetUrl) {
     card.classList.remove('pwd-shake');
 
     // Display overlay
+    document.body.style.overflow = 'hidden';
     setTimeout(() => overlay.classList.add('active'), 10);
     input.focus();
 
@@ -541,6 +543,8 @@ function showPasswordModal(targetUrl) {
         if (val === 'tuli') {
             sessionStorage.setItem('portfolio_unlocked_time', Date.now().toString());
             overlay.classList.remove('active');
+            document.body.classList.remove('hovering-link');
+            document.body.style.overflow = '';
             setTimeout(() => {
                 window.location.href = targetUrl;
             }, 300);
@@ -557,6 +561,8 @@ function showPasswordModal(targetUrl) {
 
     function handleCancel() {
         overlay.classList.remove('active');
+        document.body.classList.remove('hovering-link');
+        document.body.style.overflow = '';
     }
 
     submitBtn.onclick = handleSubmit;
@@ -594,10 +600,14 @@ function injectPasswordStyles() {
             align-items: center;
             z-index: 9999;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
         .pwd-modal-overlay.active {
             opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
         }
         .pwd-modal-card {
             background: var(--bg-primary);
@@ -814,7 +824,7 @@ function initFloatingActionButtons() {
         
         // Match both normal server route and absolute file path from local folder
         if (path.includes('sales-to-order.html') || path.includes('operational-systems.html') || path.includes('agentic-workflows.html')) {
-            backUrl = 'work.html';
+            backUrl = 'index.html#work';
             backText = 'Back to Featured Work';
         }
         
