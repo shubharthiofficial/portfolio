@@ -55,12 +55,6 @@ function initTabsController() {
                 }
             }
             
-            // Scroll to the main container start
-            const mainContent = document.querySelector('.category-main-content');
-            if (mainContent) {
-                mainContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-
             // Clean up and rebuild Intersection Observers for the newly activated tab
             if (activeSectionObserver) {
                 activeSectionObserver.disconnect();

@@ -732,9 +732,14 @@ body.story-detail-page {
 }
 
 .segment-tab-btn.active {
-    background: #ffffff;
+    background: #ef8354;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(239, 131, 84, 0.25);
+}
+
+.segment-tab-btn:hover:not(.active):not(.upcoming-tab) {
+    background: rgba(0, 0, 0, 0.05);
     color: #1a1e24;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .segment-tab-btn.upcoming-tab {
@@ -774,10 +779,15 @@ body.story-detail-page {
     color: #8c9ba5;
 }
 
+[data-theme="dark"] .segment-tab-btn:hover:not(.active):not(.upcoming-tab) {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
 [data-theme="dark"] .segment-tab-btn.active {
-    background: #1d2127;
-    color: #f6f8fa;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background: #ef8354;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(239, 131, 84, 0.35);
 }
 
 /* --- Flowchart block-diagram structures --- */
