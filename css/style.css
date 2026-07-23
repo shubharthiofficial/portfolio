@@ -334,12 +334,12 @@ section {
 
 /* --- Hero Section --- */
 .hero {
-    min-height: 100vh;
+    min-height: 82vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 10rem;
-    padding-bottom: 4rem;
+    padding-top: 8rem;
+    padding-bottom: 2.5rem;
 }
 
 .hero-subtitle {
@@ -892,7 +892,7 @@ section {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 4rem;
+    margin-bottom: 2.8rem;
 }
 
 .timeline-dot {
@@ -1376,12 +1376,12 @@ footer {
 
 /* --- Client Logo Ticker Section --- */
 .client-ticker-section {
-    padding: 3rem 0;
+    padding: 1.75rem 0;
     width: 100%;
     overflow: hidden;
     border-top: 1px solid var(--card-border);
     border-bottom: 1px solid var(--card-border);
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .ticker-title {
@@ -1390,7 +1390,7 @@ footer {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--text-tertiary);
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
     font-weight: 700;
     text-align: center;
 }
@@ -1510,7 +1510,7 @@ footer {
 /* --- Enterprise Design Practice --- */
 .enterprise-practice-section {
     margin-top: 0.5rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
     border-top: 1px solid var(--card-border);
     border-bottom: 1px solid var(--card-border);
     padding: 2.5rem 0;

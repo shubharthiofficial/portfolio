@@ -449,3 +449,258 @@
     opacity: 1;
     transform: translate(-50%, -2px) scale(1);
 }
+
+/* --- Design Impact Diagram --- */
+.design-impact-wrapper {
+    background: var(--bg-secondary);
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.impact-flow-container-v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flow-step {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.flow-node {
+    background: var(--bg-primary);
+    border: 1.5px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.7rem 1.8rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    min-width: 250px;
+    transition: var(--transition-snappy);
+}
+
+[data-theme="dark"] .flow-node {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.flow-node:hover {
+    border-color: var(--accent-gold);
+}
+
+.node-primary {
+    border-color: var(--accent-gold);
+}
+
+.node-secondary {
+    border-color: var(--accent-terracotta);
+}
+
+.flow-connector-v {
+    width: 40px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    margin: 0.2rem 0;
+}
+
+.flow-connector-v svg,
+.flow-connector-fork svg,
+.flow-connector-merge svg {
+    width: 100%;
+    height: 100%;
+}
+
+.validation-panel-node {
+    background: var(--bg-primary);
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.1rem 1.8rem;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] .validation-panel-node {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.validation-panel-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-terracotta);
+    color: #fff;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.validation-panel-title {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+
+.validation-panel-desc {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+}
+
+.flow-connector-fork {
+    width: 280px;
+    height: 40px;
+    margin: 0.2rem 0;
+}
+
+.apps-validation-columns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    gap: 3rem;
+}
+
+.app-validation-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-validation-col .flow-node {
+    width: 100%;
+    min-width: unset;
+}
+
+.app-feedback-tag {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+}
+
+.flow-connector-merge {
+    width: 280px;
+    height: 40px;
+    margin: 0.2rem 0;
+}
+
+.outcomes-group-container {
+    width: 100%;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 1.8rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.outcomes-section-header {
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.outcomes-header-title {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-tertiary);
+    font-weight: 700;
+}
+
+.experience-outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.outcome-pill-card {
+    background: var(--bg-primary);
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 0.8rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: var(--transition-smooth);
+}
+
+[data-theme="dark"] .outcome-pill-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.outcome-pill-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.outcome-pill-title {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.outcome-pill-subtitle {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+    .experience-outcomes-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .apps-validation-columns {
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+    .flow-connector-fork, .flow-connector-merge {
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+    .apps-validation-columns {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .flow-connector-fork, .flow-connector-merge {
+        display: none;
+    }
+    .flow-connector-v {
+        height: 25px;
+    }
+    .app-validation-col {
+        width: 100%;
+    }
+}
+

@@ -25,7 +25,7 @@
     display: grid;
     grid-template-columns: 1.35fr 0.65fr;
     gap: 4.5rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .about-hero-left {
@@ -35,8 +35,8 @@
 
 .about-portrait-wrap {
     width: 100%;
-    max-width: 300px;
-    margin-left: auto;
+    max-width: 320px;
+    margin-left: 0;
 }
 
 .portrait-frame {
