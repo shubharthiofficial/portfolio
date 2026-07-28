@@ -332,6 +332,7 @@ section {
 }
 
 .section-title {
+    font-family: var(--font-serif-hero) !important;
     font-size: clamp(2rem, 4vw, 3.2rem);
     margin-bottom: 3.5rem;
     max-width: 800px;
