@@ -204,6 +204,10 @@ function initLightbox() {
     document.addEventListener('click', (e) => {
         const targetImg = e.target.closest('.comparison-image-container img, .story-section img');
         if (targetImg && !e.target.closest('#lightbox-modal')) {
+            const wrap = targetImg.closest('.protected-screenshot-wrap');
+            if (wrap && !wrap.classList.contains('is-unlocked')) {
+                return;
+            }
             modal.classList.add('active');
             modalImg.src = targetImg.src;
             captionText.innerText = targetImg.alt || '';

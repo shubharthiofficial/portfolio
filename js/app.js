@@ -9,19 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initAISandbox();
     initCaseStudies();
-    initPasswordProtection();
+    initConfidentialityProtection();
     initPageExitTransitions();
     initFloatingActionButtons();
     initMobileNav();
-
-    // Check if redirect query parameter exists on page load
-    const urlParams = new URLSearchParams(window.location.search);
-    const lockVal = urlParams.get('lock');
-    if (lockVal === 'sales-to-order' || lockVal === 'operational-systems' || lockVal === 'agentic-workflows') {
-        // Clean URL parameter without reloading
-        window.history.replaceState({}, document.title, window.location.pathname);
-        showPasswordModal(lockVal + '.html');
-    }
+    initContributionAccordion();
 
     // Smooth scroll to hash on page load if present
     if (window.location.hash) {
@@ -39,12 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
    1. Custom Cursor
    ========================================== */
 function initCustomCursor() {
-    const dot = document.createElement('div');
-    const circle = document.createElement('div');
-    dot.className = 'custom-cursor-dot';
-    circle.className = 'custom-cursor-circle';
-    document.body.appendChild(dot);
-    document.body.appendChild(circle);
+    let dot = document.querySelector('.custom-cursor-dot');
+    let circle = document.querySelector('.custom-cursor-circle');
+    
+    if (!dot) {
+        dot = document.createElement('div');
+        dot.className = 'custom-cursor-dot';
+        document.body.appendChild(dot);
+    }
+    if (!circle) {
+        circle = document.createElement('div');
+        circle.className = 'custom-cursor-circle';
+        document.body.appendChild(circle);
+    }
 
     let mouseX = 0, mouseY = 0;
     let circleX = 0, circleY = 0;
@@ -56,6 +55,18 @@ function initCustomCursor() {
         
         dot.style.left = `${mouseX}px`;
         dot.style.top = `${mouseY}px`;
+        dot.style.opacity = '1';
+        circle.style.opacity = '1';
+    });
+
+    document.addEventListener('mouseleave', () => {
+        dot.style.opacity = '0';
+        circle.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        dot.style.opacity = '1';
+        circle.style.opacity = '1';
     });
 
     // Smooth cursor trailing
@@ -71,25 +82,26 @@ function initCustomCursor() {
     }
     tick();
 
-    // Hover states for links, buttons, and case study cards
-    const interactiveElements = document.querySelectorAll('a, button, .theme-toggle-btn, .case-btn, .ai-tab-btn, .mock-report-action-btn, input, textarea, select, [role="button"]');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
+    // Event Delegation for hover states (supports dynamic elements, modals & category cards)
+    document.addEventListener('mouseover', (e) => {
+        const target = e.target;
+        if (!target) return;
+        if (target.closest('a, button, input, select, textarea, [role="button"], .theme-toggle-btn, .confidentiality-pwd-link, .screenshot-lock-overlay, .lock-icon-circle')) {
             document.body.classList.add('hovering-link');
-        });
-        el.addEventListener('mouseleave', () => {
-            document.body.classList.remove('hovering-link');
-        });
+        } else if (target.closest('.case-card, .art-card, .category-card, .protected-screenshot-wrap')) {
+            document.body.classList.add('hovering-card');
+        }
     });
 
-    const caseCards = document.querySelectorAll('.case-card, .art-card, .category-card, .pl-flow-node, .practice-item');
-    caseCards.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            document.body.classList.add('hovering-card');
-        });
-        el.addEventListener('mouseleave', () => {
+    document.addEventListener('mouseout', (e) => {
+        const target = e.target;
+        if (!target) return;
+        if (target.closest('a, button, input, select, textarea, [role="button"], .theme-toggle-btn, .confidentiality-pwd-link, .screenshot-lock-overlay, .lock-icon-circle')) {
+            document.body.classList.remove('hovering-link');
+        }
+        if (target.closest('.case-card, .art-card, .category-card, .protected-screenshot-wrap')) {
             document.body.classList.remove('hovering-card');
-        });
+        }
     });
 }
 
@@ -434,124 +446,116 @@ function initCaseStudies() {
 }
 
 /* ==========================================
-   6. Case Study Password Protection
+   6. Case Study Confidentiality & Screenshot Protection
    ========================================== */
-function isCaseStudyUnlocked() {
-    const unlockTimeStr = sessionStorage.getItem('portfolio_unlocked_time');
-    if (!unlockTimeStr) return false;
-    
-    const unlockTime = parseInt(unlockTimeStr, 10);
-    const now = Date.now();
-    const UNLOCK_DURATION = 10 * 60 * 1000; // 10 minutes in ms
-    
-    if (now - unlockTime < UNLOCK_DURATION) {
-        return true;
-    } else {
-        sessionStorage.removeItem('portfolio_unlocked_time');
-        return false;
+let isSessionUnlocked = false;
+
+function isScreenshotsUnlocked() {
+    return isSessionUnlocked;
+}
+
+function unlockAllScreenshots() {
+    isSessionUnlocked = true;
+
+    // Unblur all protected screenshot elements with smooth transition
+    const wraps = document.querySelectorAll('.protected-screenshot-wrap');
+    wraps.forEach(wrap => {
+        wrap.classList.add('is-unlocked');
+    });
+
+    // Hide top orange confidentiality notice bar completely
+    const noticeBar = document.querySelector('.confidentiality-notice-bar');
+    if (noticeBar) {
+        noticeBar.classList.add('is-hidden');
+        noticeBar.style.display = 'none';
     }
 }
 
-function initPasswordProtection() {
-    const protectedElements = document.querySelectorAll(
-        'a[href="sales-to-order.html"], [data-protected-link="sales-to-order.html"],' +
-        'a[href="operational-systems.html"], [data-protected-link="operational-systems.html"],' +
-        'a[href="agentic-workflows.html"], [data-protected-link="agentic-workflows.html"]'
-    );
-    
-    // Inject custom CSS styling matching the platform theme
-    injectPasswordStyles();
+function initConfidentialityProtection() {
+    const isUnlocked = isScreenshotsUnlocked();
 
-    protectedElements.forEach(el => {
-        el.addEventListener('click', (e) => {
+    if (isUnlocked) {
+        unlockAllScreenshots();
+    }
+
+    // Bind reveal link click
+    const link = document.getElementById('reveal-screenshots-link');
+    if (link) {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
-            e.stopPropagation();
-            const targetUrl = el.getAttribute('href') || el.getAttribute('data-protected-link');
-            
-            if (isCaseStudyUnlocked()) {
-                document.body.classList.add('page-exit');
-                setTimeout(() => {
-                    window.location.href = targetUrl;
-                }, 300);
-            } else {
-                showPasswordModal(targetUrl);
+            if (!isScreenshotsUnlocked()) {
+                showPasswordModal();
             }
         });
+    }
+
+    // Bind locked overlays click
+    document.addEventListener('click', (e) => {
+        const lockOverlay = e.target.closest('.screenshot-lock-overlay');
+        if (lockOverlay) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!isScreenshotsUnlocked()) {
+                showPasswordModal();
+            }
+        }
     });
 }
 
-function showPasswordModal(targetUrl) {
+function showPasswordModal() {
     let overlay = document.querySelector('.pwd-modal-overlay');
     if (!overlay) {
         overlay = document.createElement('div');
         overlay.className = 'pwd-modal-overlay';
+        overlay.id = 'pwd-modal-overlay';
         overlay.innerHTML = `
             <div class="pwd-modal-card">
+                <button type="button" class="pwd-close-btn" id="pwd-close-x" aria-label="Close modal">&times;</button>
                 <div class="pwd-lock-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                     </svg>
                 </div>
-                <h3 class="pwd-title">Protected Case Study</h3>
-                <p class="pwd-desc">This case study contains proprietary B2B work. Please enter the password to view.</p>
+                <h3 class="pwd-title">Unlock Production Screenshots</h3>
+                <p class="pwd-desc">Enter the password to reveal all protected screenshots in this case study.</p>
                 <div class="pwd-input-wrap">
                     <input type="password" id="case-study-pwd-input" placeholder="Enter password" autocomplete="off" />
                     <div class="pwd-error-msg" id="pwd-error-hint">Incorrect password. Please try again.</div>
                 </div>
                 <div class="pwd-action-buttons">
-                    <button class="pwd-btn pwd-btn-cancel" id="pwd-cancel-btn">Cancel</button>
-                    <button class="pwd-btn pwd-btn-submit" id="pwd-submit-btn">Unlock</button>
+                    <button type="button" class="pwd-btn pwd-btn-cancel" id="pwd-cancel-btn">Cancel</button>
+                    <button type="button" class="pwd-btn pwd-btn-submit" id="pwd-submit-btn">Unlock</button>
                 </div>
             </div>
         `;
         document.body.appendChild(overlay);
     }
 
-    // Bind custom cursor hover states dynamically for the overlay elements
-    const pwdInteractiveEls = overlay.querySelectorAll('.pwd-btn, #case-study-pwd-input');
-    pwdInteractiveEls.forEach(el => {
-        el.onmouseenter = () => document.body.classList.add('hovering-link');
-        el.onmouseleave = () => {
-            document.body.classList.remove('hovering-link');
-            // Safely verify if mouse left link
-            if (el.tagName === 'BUTTON' || el.tagName === 'INPUT') {
-                document.body.classList.remove('hovering-link');
-            }
-        };
-    });
-
     const input = overlay.querySelector('#case-study-pwd-input');
     const submitBtn = overlay.querySelector('#pwd-submit-btn');
     const cancelBtn = overlay.querySelector('#pwd-cancel-btn');
+    const closeXBtn = overlay.querySelector('#pwd-close-x');
     const errorHint = overlay.querySelector('#pwd-error-hint');
     const card = overlay.querySelector('.pwd-modal-card');
 
-    // Reset modal states
     input.value = '';
     errorHint.style.display = 'none';
     card.classList.remove('pwd-shake');
 
-    // Display overlay
     document.body.style.overflow = 'hidden';
     setTimeout(() => overlay.classList.add('active'), 10);
     input.focus();
 
-    // Click trigger and keydown event bindings
     function handleSubmit() {
         const val = input.value.trim();
-        if (val === 'tuli') {
-            sessionStorage.setItem('portfolio_unlocked_time', Date.now().toString());
+        if (val.toLowerCase() === 'tuli') {
+            unlockAllScreenshots();
             overlay.classList.remove('active');
-            document.body.classList.remove('hovering-link');
             document.body.style.overflow = '';
-            setTimeout(() => {
-                window.location.href = targetUrl;
-            }, 300);
         } else {
-            // Apply shake micro-animation feedback
             card.classList.remove('pwd-shake');
-            void card.offsetWidth; // Trigger redraw
+            void card.offsetWidth;
             card.classList.add('pwd-shake');
             errorHint.style.display = 'block';
             input.value = '';
@@ -561,12 +565,12 @@ function showPasswordModal(targetUrl) {
 
     function handleCancel() {
         overlay.classList.remove('active');
-        document.body.classList.remove('hovering-link');
         document.body.style.overflow = '';
     }
 
     submitBtn.onclick = handleSubmit;
     cancelBtn.onclick = handleCancel;
+    if (closeXBtn) closeXBtn.onclick = handleCancel;
     overlay.onclick = (e) => {
         if (e.target === overlay) handleCancel();
     };
@@ -578,149 +582,6 @@ function showPasswordModal(targetUrl) {
             handleCancel();
         }
     };
-}
-
-function injectPasswordStyles() {
-    if (document.getElementById('pwd-modal-styles')) return;
-
-    const styleEl = document.createElement('style');
-    styleEl.id = 'pwd-modal-styles';
-    styleEl.textContent = `
-        .pwd-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(18, 22, 30, 0.4);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .pwd-modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-        .pwd-modal-card {
-            background: var(--bg-primary);
-            border: 1px solid var(--card-border);
-            padding: 2.5rem;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 420px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            transform: scale(0.9);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .pwd-modal-overlay.active .pwd-modal-card {
-            transform: scale(1);
-        }
-        .pwd-lock-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(239, 131, 84, 0.1);
-            color: var(--accent-gold);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 1.5rem;
-        }
-        .pwd-title {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-        .pwd-desc {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-            margin-bottom: 1.8rem;
-        }
-        .pwd-input-wrap {
-            margin-bottom: 1.8rem;
-            text-align: left;
-        }
-        #case-study-pwd-input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border: 1.5px solid var(--card-border);
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        #case-study-pwd-input:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 0 3px rgba(239, 131, 84, 0.15);
-        }
-        .pwd-error-msg {
-            color: #ff5f56;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-            display: none;
-            font-family: var(--font-body);
-        }
-        .pwd-action-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-        .pwd-btn {
-            flex: 1;
-            padding: 0.8rem;
-            border-radius: 8px;
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-            border: none;
-        }
-        .pwd-btn-cancel {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-        }
-        .pwd-btn-cancel:hover {
-            background: rgba(0, 0, 0, 0.05);
-        }
-        [data-theme="dark"] .pwd-btn-cancel:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .pwd-btn-submit {
-            background: var(--accent-gold);
-            color: #ffffff;
-        }
-        .pwd-btn-submit:hover {
-            filter: brightness(1.1);
-        }
-        .pwd-btn:active {
-            transform: scale(0.98);
-        }
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20%, 60% { transform: translateX(-6px); }
-            40%, 80% { transform: translateX(6px); }
-        }
-        .pwd-shake {
-            animation: shake 0.35s ease-in-out;
-        }
-    `;
-    document.head.appendChild(styleEl);
 }
 
 /* ==========================================
@@ -905,6 +766,35 @@ function initMobileNav() {
             navLinks.classList.remove('active');
             toggleBtn.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
+        }
+    });
+}
+
+function initContributionAccordion() {
+    const toggleBtn = document.getElementById('contribution-toggle-btn');
+    const drawer = document.getElementById('contribution-content-drawer');
+    if (!toggleBtn || !drawer) return;
+
+    toggleBtn.addEventListener('click', () => {
+        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', !isExpanded);
+        const chevron = toggleBtn.querySelector('.toggle-chevron-icon');
+        const textLabel = toggleBtn.querySelector('.toggle-text-label');
+
+        if (isExpanded) {
+            drawer.classList.remove('is-expanded');
+            drawer.style.maxHeight = '0';
+            drawer.style.opacity = '0';
+            drawer.style.marginTop = '0';
+            if (chevron) chevron.style.transform = 'rotate(0deg)';
+            if (textLabel) textLabel.textContent = 'Expand details';
+        } else {
+            drawer.classList.add('is-expanded');
+            drawer.style.maxHeight = `${drawer.scrollHeight + 40}px`;
+            drawer.style.opacity = '1';
+            drawer.style.marginTop = '1rem';
+            if (chevron) chevron.style.transform = 'rotate(180deg)';
+            if (textLabel) textLabel.textContent = 'Collapse details';
         }
     });
 }

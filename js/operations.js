@@ -138,6 +138,10 @@
                 modalImg.style.display = 'none';
                 captionText.innerHTML = `<span style="font-family: monospace; font-size: 0.9rem; color: #a5b4fc;">${pathText}</span>`;
             } else if (targetImg && !e.target.closest('#lightbox-modal')) {
+                const wrap = targetImg.closest('.protected-screenshot-wrap');
+                if (wrap && !wrap.classList.contains('is-unlocked')) {
+                    return;
+                }
                 modal.classList.add('active');
                 modalImg.src = targetImg.src;
                 modalImg.style.display = 'block';

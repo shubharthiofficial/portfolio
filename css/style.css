@@ -126,7 +126,7 @@ p {
     position: fixed;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 100001;
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
@@ -139,7 +139,7 @@ p {
     position: fixed;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 9998;
+    z-index: 100000;
     transform: translate(-50%, -50%);
     transition: transform 0.08s ease-out, width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
 }
@@ -183,19 +183,28 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 4%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: background 0.4s ease, border-bottom 0.4s ease;
+}
+
+.header-main-nav {
+    width: 100%;
+    padding: 1.25rem 4%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     background: rgba(11, 13, 16, 0.7);
     border-bottom: 1px solid var(--card-border);
     transition: background 0.4s ease, border-bottom 0.4s ease;
+    box-sizing: border-box;
 }
 
-[data-theme="light"] header {
+[data-theme="light"] .header-main-nav {
     background: rgba(250, 249, 246, 0.75);
 }
 
@@ -1953,4 +1962,362 @@ footer {
     .mobile-nav-toggle.active .hamburger-bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
+}
+
+/* ==========================================
+   Confidentiality & Screenshot Protection
+   ========================================== */
+
+/* Confidentiality Notice Bar */
+/* Sticky End-to-End Orange Confidentiality Notice Banner */
+.confidentiality-notice-bar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: #ef8354;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 4%;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(239, 131, 84, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.confidentiality-notice-bar.is-hidden {
+    display: none !important;
+}
+
+.confidentiality-notice-text {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.confidentiality-pwd-link {
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    margin-top: 0.2rem;
+}
+
+.confidentiality-pwd-link svg {
+    flex-shrink: 0;
+}
+
+.confidentiality-pwd-link:hover {
+    opacity: 0.85;
+}
+
+.confidentiality-pwd-link.is-unlocked {
+    opacity: 0.9;
+    text-decoration: none;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Protected Screenshot Container */
+.protected-screenshot-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    display: block;
+    margin: 0;
+}
+
+.protected-screenshot-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: blur(12px);
+    transform: scale(1.03);
+    transition: filter 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+}
+
+.screenshot-lock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.25);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0.5rem;
+}
+
+.lock-icon-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: none !important;
+    color: #ef8354;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+}
+
+[data-theme="light"] .lock-icon-circle {
+    background: rgba(255, 255, 255, 0.95);
+    border: none !important;
+    color: #ef8354;
+}
+
+.screenshot-lock-overlay:hover .lock-icon-circle {
+    transform: scale(1.15);
+}
+
+.lock-icon-circle svg {
+    color: #ef8354;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* Tooltip on Hover (Positioned below the circle to avoid top clipping) */
+.lock-tooltip {
+    position: absolute;
+    top: calc(100% + 8px);
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    background: rgba(15, 23, 42, 0.95);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.3rem 0.65rem;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 20;
+}
+
+.lock-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent rgba(15, 23, 42, 0.95) transparent;
+}
+
+.screenshot-lock-overlay:hover .lock-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Unlocked State */
+.protected-screenshot-wrap.is-unlocked .protected-screenshot-img {
+    filter: blur(0px) !important;
+    transform: scale(1) !important;
+}
+
+.protected-screenshot-wrap.is-unlocked .screenshot-lock-overlay {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Password Modal Popover */
+.pwd-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    padding: 1rem;
+}
+
+.pwd-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.pwd-modal-card {
+    background: var(--bg-primary);
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem 2.25rem;
+    max-width: 420px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    transform: scale(0.95);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: center;
+}
+
+.pwd-modal-overlay.active .pwd-modal-card {
+    transform: scale(1);
+}
+
+.pwd-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.pwd-close-btn:hover {
+    color: var(--text-primary);
+}
+
+.pwd-lock-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(230, 168, 0, 0.1);
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem auto;
+}
+
+.pwd-title {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.pwd-desc {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.pwd-input-wrap {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+#case-study-pwd-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1.5px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#case-study-pwd-input:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(230, 168, 0, 0.15);
+}
+
+.pwd-error-msg {
+    color: var(--accent-terracotta);
+    font-size: 0.78rem;
+    margin-top: 0.4rem;
+    display: none;
+    font-weight: 600;
+}
+
+.pwd-action-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.pwd-btn {
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pwd-btn-cancel {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.pwd-btn-cancel:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.pwd-btn-submit {
+    background: var(--accent-gold);
+    border: 1px solid var(--accent-gold);
+    color: #000000;
+    font-weight: 700;
+}
+
+.pwd-btn-submit:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+@keyframes pwdShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+.pwd-shake {
+    animation: pwdShake 0.4s ease-in-out;
 }

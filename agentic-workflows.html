@@ -33,21 +33,6 @@
     </script>
 </head>
 <body class="story-detail-page">
-    <script>
-        const unlockTimeStr = sessionStorage.getItem('portfolio_unlocked_time');
-        const UNLOCK_DURATION = 10 * 60 * 1000; // 10 minutes in ms
-        let isUnlocked = false;
-        if (unlockTimeStr) {
-            const unlockTime = parseInt(unlockTimeStr, 10);
-            if (Date.now() - unlockTime < UNLOCK_DURATION) {
-                isUnlocked = true;
-            }
-        }
-        if (!isUnlocked) {
-            sessionStorage.removeItem('portfolio_unlocked_time');
-            window.location.replace('index.html?lock=agentic-workflows');
-        }
-    </script>
 
     <!-- Custom Cursor Nodes -->
     <div class="custom-cursor-dot"></div>
@@ -55,7 +40,8 @@
 
     <!-- Navigation Header -->
     <header>
-        <a href="index.html" class="logo">SHUBHARTHI ROY</a>
+        <div class="header-main-nav">
+<a href="index.html" class="logo">SHUBHARTHI ROY</a>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -80,6 +66,15 @@
                 <span class="hamburger-bar"></span>
             </button>
         </nav>
+        </div>
+    <!-- Sticky End-to-End Confidentiality Notice Banner -->
+    <div class="confidentiality-notice-bar" id="confidentiality-notice-bar">
+        <div class="confidentiality-notice-text">
+            Some production screenshots are protected to comply with client confidentiality and NDA obligations. Design thinking, workflows, and supporting content remain fully accessible.
+            <br>
+            <a href="#" class="confidentiality-pwd-link" id="reveal-screenshots-link"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -1px; margin-right: 4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Enter password to reveal screenshots</a>
+        </div>
+    </div>
     </header>
 
     <main class="category-main-content">
@@ -482,7 +477,7 @@
                         <div class="project-meta-grid" style="margin-top: 0;">
                             <div class="project-meta-item">
                                 <span class="meta-label">Role</span>
-                                <span class="meta-value">UX Design Specialist / AI Experience Lead</span>
+                                <span class="meta-value">Senior Product Design Specialist / AI Experience Lead</span>
                             </div>
                             <div class="project-meta-item">
                                 <span class="meta-label">Timeline</span>
@@ -616,7 +611,18 @@
                                     The operator initiates deal evaluation within the main P&L Report workspace, analyzing multiple deal simulations (Proposal, Simulation 1, and Simulation 2) side-by-side to assess baseline margins and cash flow metrics.
                                 </p>
                                 <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: var(--transition-smooth);">
-                                    <img src="assets/stories/cropped/pl_scenario_report.png" alt="P&L Scenario Summary Table Grid" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/pl_scenario_report.png" alt="P&L Scenario Summary Table Grid" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                             </div>
 
@@ -631,14 +637,36 @@
                                     <div class="flow-column">
                                         <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-tertiary); letter-spacing: 0.5px; margin-bottom: 0.5rem; text-align: left;">AI Recommendation &amp; Rationales</div>
                                         <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); display: flex; justify-content: center; align-items: center; min-height: 400px;">
-                                            <img src="assets/stories/cropped/ai_analysis_recommendation.png" alt="AI Agent Recommendation & Rationales Chat View" style="max-width: 100%; max-height: 520px; width: auto; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                            <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/ai_analysis_recommendation.png" alt="AI Agent Recommendation & Rationales Chat View" style="max-width: 100%; max-height: 520px; width: auto; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                         </div>
                                     </div>
                                     <!-- Column 2: Side-by-Side Comparison -->
                                     <div class="flow-column">
                                         <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-tertiary); letter-spacing: 0.5px; margin-bottom: 0.5rem; text-align: left;">Detailed Side-by-Side Matrix</div>
                                         <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); display: flex; justify-content: center; align-items: center; min-height: 400px;">
-                                            <img src="assets/stories/cropped/ai_side_by_side_matrix.png" alt="AI Side-by-side Parameters Comparison Table Grid" style="max-width: 100%; max-height: 520px; width: auto; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                            <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/ai_side_by_side_matrix.png" alt="AI Side-by-side Parameters Comparison Table Grid" style="max-width: 100%; max-height: 520px; width: auto; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                         </div>
                                     </div>
                                 </div>
@@ -804,7 +832,18 @@
                                     The operator triggers optimization directly from the proposal workspace header page using the contextual <strong>Optimize</strong> button, ensuring access to quality metrics without navigating away from the proposal.
                                 </p>
                                 <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: var(--transition-smooth);">
-                                    <img src="assets/stories/cropped/proposal_optimize_header.png" alt="Proposal Configuration Header with Optimize Button" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/proposal_optimize_header.png" alt="Proposal Configuration Header with Optimize Button" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                             </div>
 
@@ -815,7 +854,18 @@
                                     The detailed optimization console presents the score composition breakdown (Coverage Analysis, Approval Rules, P&L Verification) side-by-side with suggestions and the active proposal description content.
                                 </p>
                                 <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: var(--transition-smooth);">
-                                    <img src="assets/stories/cropped/proposal_score_composition.png" alt="Proposal Score & Optimization Console Details" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/proposal_score_composition.png" alt="Proposal Score & Optimization Console Details" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                             </div>
 
@@ -826,7 +876,18 @@
                                     Operators invoke <strong>Enhance with AI</strong> to transform incomplete proposal descriptions. The modal popover overlay compares current values and AI-generated configurations side-by-side, prompting direct user approval.
                                 </p>
                                 <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: var(--transition-smooth);">
-                                    <img src="assets/stories/cropped/proposal_enhance_popover.png" alt="Description Enhancement with AI Popover Workspace Modal" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/proposal_enhance_popover.png" alt="Description Enhancement with AI Popover Workspace Modal" style="width: 100%; height: auto; display: block; border-radius: 4px; cursor: zoom-in;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                             </div>
                         </div>        </div>

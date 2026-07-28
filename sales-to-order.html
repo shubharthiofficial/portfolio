@@ -31,21 +31,6 @@
     </script>
 </head>
 <body class="story-detail-page">
-    <script>
-        const unlockTimeStr = sessionStorage.getItem('portfolio_unlocked_time');
-        const UNLOCK_DURATION = 10 * 60 * 1000; // 10 minutes in ms
-        let isUnlocked = false;
-        if (unlockTimeStr) {
-            const unlockTime = parseInt(unlockTimeStr, 10);
-            if (Date.now() - unlockTime < UNLOCK_DURATION) {
-                isUnlocked = true;
-            }
-        }
-        if (!isUnlocked) {
-            sessionStorage.removeItem('portfolio_unlocked_time');
-            window.location.replace('index.html?lock=sales-to-order');
-        }
-    </script>
 
     <!-- Custom Cursor Nodes -->
     <div class="custom-cursor-dot"></div>
@@ -53,7 +38,8 @@
 
     <!-- Navigation Header -->
     <header>
-        <a href="index.html" class="logo">SHUBHARTHI ROY</a>
+        <div class="header-main-nav">
+<a href="index.html" class="logo">SHUBHARTHI ROY</a>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -78,6 +64,15 @@
                 <span class="hamburger-bar"></span>
             </button>
         </nav>
+        </div>
+    <!-- Sticky End-to-End Confidentiality Notice Banner -->
+    <div class="confidentiality-notice-bar" id="confidentiality-notice-bar">
+        <div class="confidentiality-notice-text">
+            Some production screenshots are protected to comply with client confidentiality and NDA obligations. Design thinking, workflows, and supporting content remain fully accessible.
+            <br>
+            <a href="#" class="confidentiality-pwd-link" id="reveal-screenshots-link"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -1px; margin-right: 4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Enter password to reveal screenshots</a>
+        </div>
+    </div>
     </header>
 
     <main class="category-main-content">
@@ -96,7 +91,7 @@
             <div class="project-meta-summary" style="display: flex; gap: 2rem; justify-content: space-between; margin-bottom: 2.5rem; border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); padding: 1.5rem 0; flex-wrap: wrap;">
                 <div class="meta-item" style="flex: 1 1 auto; min-width: 140px;">
                     <span class="meta-label" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-tertiary); margin-bottom: 0.25rem;">Role</span>
-                    <span class="meta-value" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); white-space: nowrap;">UX Design Specialist</span>
+                    <span class="meta-value" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); white-space: nowrap;">Senior Product Design Specialist</span>
                 </div>
                 <div class="meta-item" style="flex: 0 1 auto; min-width: 80px;">
                     <span class="meta-label" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-tertiary); margin-bottom: 0.25rem;">Timeline</span>
@@ -365,7 +360,18 @@
                         <!-- Hero Image for Part 1 -->
                         <div class="story-hero-image-wrapper" style="margin-top: 2rem; margin-bottom: 2.5rem; text-align: left;">
                             <div class="comparison-image-container" style="max-width: 100%; border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                                <img src="assets/stories/business_validation/cropped/validation_hero_spec.png" alt="Validation messages popover and collapsed header specs" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                                <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/business_validation/cropped/validation_hero_spec.png" alt="Validation messages popover and collapsed header specs" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                             </div>
                             <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0.75rem; text-align: left;">
                                 Specification mapping the expandable validation popover panel (left) to the collapsed status indicator (right).
@@ -593,7 +599,18 @@
                         <!-- Hero Image for Part 2 -->
                         <div class="story-hero-image-wrapper" style="margin-top: 2rem; margin-bottom: 2.5rem; text-align: left;">
                             <div class="comparison-image-container" style="max-width: 100%; border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                                <img src="assets/stories/async_notifications/cropped/async_hero_spec.png" alt="Asynchronous process notification state types specs" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                                <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/async_notifications/cropped/async_hero_spec.png" alt="Asynchronous process notification state types specs" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                             </div>
                             <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0.75rem; text-align: left;">
                                 Specification mapping the persistent banners and toast messages for all four async notification states (Success, Failure, Partial, and Warnings).
@@ -646,7 +663,18 @@
                             <div class="comparison-side">
                                 <span class="comparison-label" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.5px;">Step 1: Process Completed Successfully</span>
                                 <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 6px; overflow: hidden; background: var(--bg-secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-top: 0.8rem;">
-                                    <img src="assets/stories/async_notifications/cropped/async_flow_step_1.png" alt="Async Process Completed Successfully Toast B2B COM screen" style="width: 100%; display: block;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/async_notifications/cropped/async_flow_step_1.png" alt="Async Process Completed Successfully Toast B2B COM screen" style="width: 100%; display: block;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                                 <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.8rem; line-height: 1.5;">
                                     When a background action (e.g. pricing) completes without errors, a temporary success toast notification appears in the upper right.
@@ -662,7 +690,18 @@
                             <div class="comparison-side">
                                 <span class="comparison-label" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.5px;">Step 2: Completed with Validation Issues</span>
                                 <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 6px; overflow: hidden; background: var(--bg-secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-top: 0.8rem;">
-                                    <img src="assets/stories/async_notifications/cropped/async_flow_step_2.png" alt="Async Process Completed with Validation Issues Alert B2B COM screen" style="width: 100%; display: block;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/async_notifications/cropped/async_flow_step_2.png" alt="Async Process Completed with Validation Issues Alert B2B COM screen" style="width: 100%; display: block;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                                 <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.8rem; line-height: 1.5;">
                                     If validation errors occur, a persistent warning alert is pinned to the header with an action link to view details.
@@ -678,7 +717,18 @@
                             <div class="comparison-side">
                                 <span class="comparison-label" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.5px;">Step 3: Centralized Process Monitoring</span>
                                 <div class="comparison-image-container" style="border: 1px solid var(--card-border); border-radius: 6px; overflow: hidden; background: var(--bg-secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-top: 0.8rem;">
-                                    <img src="assets/stories/async_notifications/cropped/async_flow_step_3.png" alt="Process Monitoring console overlay display screen" style="width: 100%; display: block;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/async_notifications/cropped/async_flow_step_3.png" alt="Process Monitoring console overlay display screen" style="width: 100%; display: block;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                                 <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.8rem; line-height: 1.5;">
                                     Clicking "View Process Monitoring" launches the central console listing task IDs, execution times, and status logs.
@@ -694,7 +744,18 @@
                                 The global B2B checkout header features a persistent process monitoring button that adapts its badge indicators in real-time to reflect the status of background calculations.
                             </p>
                             <div class="comparison-image-container" style="max-width: 100%; border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                                <img src="assets/stories/async_notifications/cropped/async_status_indications.png" alt="Header process monitoring button badge states" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                                <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/async_notifications/cropped/async_status_indications.png" alt="Header process monitoring button badge states" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                             </div>
                             <p class="story-body-text" style="font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0.75rem; text-align: left;">
                                 Specification mapping the four real-time process monitoring states: In-Progress (blue clock), Completed (green check), Failure/Partially Completed (red exclamation), and Validation Issues (orange warning).
@@ -830,20 +891,53 @@
                                 <div class="legacy-gallery" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
                                     <div>
                                         <div class="comparison-image-container" style="cursor: pointer;">
-                                            <img src="assets/stories/cropped/page_1_img_1.png" alt="Legacy category selection step">
+                                            <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/page_1_img_1.png" alt="Legacy category selection step">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                         </div>
                                         <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Step 1: Modal-based high-level category selection</span>
                                     </div>
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
                                         <div>
                                             <div class="comparison-image-container" style="cursor: pointer;">
-                                                <img src="assets/stories/cropped/page_2_img_1.png" alt="Legacy sub-category selection step">
+                                                <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/page_2_img_1.png" alt="Legacy sub-category selection step">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                             </div>
                                             <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Step 2: Sub-category viewport</span>
                                         </div>
                                         <div>
                                             <div class="comparison-image-container" style="cursor: pointer;">
-                                                <img src="assets/stories/cropped/legacy_step3.png" alt="Legacy filter and discover step">
+                                                <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/legacy_step3.png" alt="Legacy filter and discover step">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                             </div>
                                             <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Step 3: Sequential filter &amp; browse</span>
                                         </div>
@@ -923,7 +1017,18 @@
                             <div>
                                 <div class="comparison-label">Redesigned Navigation Tabs</div>
                                 <div class="comparison-image-container" style="cursor: pointer; max-width: 100%;">
-                                    <img src="assets/stories/cropped/redesigned_header.png" alt="Redesigned sub-category tab navigation layout" style="width: 100%;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/redesigned_header.png" alt="Redesigned sub-category tab navigation layout" style="width: 100%;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                                 <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Sub-category Tabs: Horizontal carousel replacing deep hierarchy selection page</span>
                             </div>
@@ -931,7 +1036,18 @@
                             <div>
                                 <div class="comparison-label">Sales Contextual Checkout Canvas</div>
                                 <div class="comparison-image-container" style="cursor: pointer; max-width: 100%;">
-                                    <img src="assets/stories/cropped/page_4_img_1.png" alt="Sales platform contextual discovery layout" style="width: 100%;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/page_4_img_1.png" alt="Sales platform contextual discovery layout" style="width: 100%;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                                 <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Single-pane Contextual Discovery: Sales platform persistent right-hand drawer viewport</span>
                             </div>
@@ -1206,14 +1322,36 @@
                             <div>
                                 <div class="comparison-label">Serviceability Success State</div>
                                 <div class="comparison-image-container" style="cursor: pointer;">
-                                    <img src="assets/stories/cropped/serviceability_success.png" alt="Serviceability verification success state">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/serviceability_success.png" alt="Serviceability verification success state">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                                 <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Success: Dynamic catalog exposure after address validation</span>
                             </div>
                             <div>
                                 <div class="comparison-label">Serviceability Warning State</div>
                                 <div class="comparison-image-container" style="cursor: pointer;">
-                                    <img src="assets/stories/cropped/serviceability_warning.png" alt="Serviceability verification warning state">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/serviceability_warning.png" alt="Serviceability verification warning state">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                                 <span style="font-size: 0.72rem; color: var(--text-tertiary); display: block; margin-top: 0.3rem; text-align: center;">Warning: No eligible products surfaced for selected location</span>
                             </div>
@@ -1260,7 +1398,18 @@
                                     </p>
                                 </div>
                                 <div class="comparison-image-container" style="cursor: pointer; margin: 0; max-height: 120px; overflow: hidden; display: flex; align-items: center;">
-                                    <img src="assets/stories/cropped/ecosystem_offer_list.png" alt="Offer List Structure configuration grid" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/ecosystem_offer_list.png" alt="Offer List Structure configuration grid" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                             </div>
                             
@@ -1273,7 +1422,18 @@
                                     </p>
                                 </div>
                                 <div class="comparison-image-container" style="cursor: pointer; margin: 0; max-height: 120px; overflow: hidden; display: flex; align-items: center;">
-                                    <img src="assets/stories/cropped/ecosystem_delivery.png" alt="Installation and Delivery workflow details" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/ecosystem_delivery.png" alt="Installation and Delivery workflow details" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                             </div>
                             
@@ -1286,7 +1446,18 @@
                                     </p>
                                 </div>
                                 <div class="comparison-image-container" style="cursor: pointer; margin: 0; max-height: 120px; overflow: hidden; display: flex; align-items: center;">
-                                    <img src="assets/stories/cropped/ecosystem_billing.png" alt="Billing account details and invoices" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/ecosystem_billing.png" alt="Billing account details and invoices" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                             </div>
                             
@@ -1299,7 +1470,18 @@
                                     </p>
                                 </div>
                                 <div class="comparison-image-container" style="cursor: pointer; margin: 0; max-height: 120px; overflow: hidden; display: flex; align-items: center;">
-                                    <img src="assets/stories/cropped/ecosystem_inventory.png" alt="Active products and services lifecycle state" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+                                    <div class="protected-screenshot-wrap">
+    <img class="protected-screenshot-img" src="assets/stories/cropped/ecosystem_inventory.png" alt="Active products and services lifecycle state" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
+    <div class="screenshot-lock-overlay">
+        <div class="lock-icon-circle" aria-label="Protected Screenshot - Click to enter password">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <div class="lock-tooltip">Click to unlock screenshots</div>
+        </div>
+    </div>
+</div>
                                 </div>
                             </div>
                             
