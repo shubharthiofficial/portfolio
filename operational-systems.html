@@ -56,21 +56,6 @@
     </script>
 </head>
 <body class="story-detail-page ops-case-study">
-    <script>
-        const unlockTimeStr = sessionStorage.getItem('portfolio_unlocked_time');
-        const UNLOCK_DURATION = 10 * 60 * 1000; // 10 minutes in ms
-        let isUnlocked = false;
-        if (unlockTimeStr) {
-            const unlockTime = parseInt(unlockTimeStr, 10);
-            if (Date.now() - unlockTime < UNLOCK_DURATION) {
-                isUnlocked = true;
-            }
-        }
-        if (!isUnlocked) {
-            sessionStorage.removeItem('portfolio_unlocked_time');
-            window.location.replace('index.html?lock=operational-systems');
-        }
-    </script>
 
     <!-- Custom Cursor Nodes -->
     <div class="custom-cursor-dot"></div>
