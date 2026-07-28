@@ -27,7 +27,8 @@
     --cursor-color: rgba(255, 255, 255, 0.15);
     --cursor-border: #ffffff;
     
-    --font-heading: 'Lora', Georgia, serif;
+    --font-serif-hero: 'Lora', Georgia, serif;
+    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -361,6 +362,7 @@ section {
 }
 
 .hero-title {
+    font-family: var(--font-serif-hero) !important;
     font-size: clamp(1.8rem, 4vw, 3.4rem);
     font-weight: 500;
     line-height: 1.1;
@@ -401,14 +403,15 @@ section {
 }
 
 .btn-primary {
-    background-color: var(--accent-gold);
-    color: #ffffff;
+    background-color: #ef8354;
+    border-color: #ef8354;
+    color: #ffffff !important;
 }
 
 .btn-primary:hover {
-    background-color: #d66f40; /* Darker Mandarin */
-    border-color: #d66f40;
-    color: #ffffff;
+    background-color: #e0561b; /* Rich accessible orange */
+    border-color: #e0561b;
+    color: #ffffff !important;
     transform: translateY(-2px);
 }
 
@@ -2301,14 +2304,16 @@ footer {
 }
 
 .pwd-btn-submit {
-    background: var(--accent-gold);
-    border: 1px solid var(--accent-gold);
-    color: #000000;
+    background-color: #ef8354 !important;
+    border: 1px solid #ef8354 !important;
+    color: #ffffff !important;
     font-weight: 700;
 }
 
 .pwd-btn-submit:hover {
-    opacity: 0.9;
+    background-color: #e0561b !important;
+    border-color: #e0561b !important;
+    color: #ffffff !important;
     transform: translateY(-1px);
 }
 
