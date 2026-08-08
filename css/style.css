@@ -1891,15 +1891,28 @@ footer {
 
 @media (max-width: 768px) {
     header {
-        padding: 1rem 6%;
+        padding: 0;
+    }
+
+    .header-main-nav {
+        padding: 0.85rem 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .mobile-nav-toggle {
-        display: flex; /* Show on mobile */
+        display: flex !important; /* Show on mobile */
+        z-index: 1001;
+        margin-left: auto;
     }
 
     nav {
         gap: 1.2rem;
+        display: flex;
+        align-items: center;
     }
 
     .nav-links {
