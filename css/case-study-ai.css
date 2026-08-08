@@ -1,0 +1,465 @@
+/* 
+   Portfolio V2 - Case Study AI & 1-Screen Hero Layout Stylesheet
+   Includes: Hero Summary Grid (Problem/Solution/Role/Outcome), Ask AI Modal, and Narrative Cards
+*/
+
+/* --- 1-Screen Hero Summary Grid --- */
+.hero-summary-fold {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin: 2rem 0 2.5rem 0;
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.hero-summary-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0.85rem 1.1rem;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    position: relative;
+    transform: none !important;
+    transition: none !important;
+}
+
+.hero-summary-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.hero-summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1.1rem;
+    width: 24px;
+    height: 3px;
+    background: var(--accent-gold);
+    border-radius: 2px;
+}
+
+.hero-summary-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-gold);
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.hero-summary-text {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.hero-summary-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* --- Ask AI Trigger Button --- */
+.ask-ai-trigger-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    margin: 0;
+    z-index: 10;
+    width: max-content;
+}
+
+.btn-ask-ai {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 1.35rem;
+    background: #0b0f19;
+    border: 1.5px solid var(--accent-gold);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-cred);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.btn-ask-ai:hover {
+    background: #141b2d;
+    border-color: #ffd166;
+    box-shadow: 0 8px 25px rgba(252, 163, 17, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn-ask-ai svg {
+    color: var(--accent-gold);
+    width: 16px;
+    height: 16px;
+}
+
+/* --- AI Modal Window --- */
+.ai-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.ai-modal-backdrop.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ai-modal-window {
+    width: 92%;
+    max-width: 720px;
+    max-height: 85vh;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(252, 163, 17, 0.15);
+    transform: scale(0.94) translateY(20px);
+    transition: transform 0.35s var(--ease-cred);
+}
+
+.ai-modal-backdrop.is-active .ai-modal-window {
+    transform: scale(1) translateY(0);
+}
+
+.ai-modal-header {
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--card-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-modal-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.ai-sparkle-icon {
+    color: var(--accent-gold);
+}
+
+.ai-modal-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.ai-modal-subtitle {
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+}
+
+.ai-modal-close-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ai-modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.ai-modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ai-doc-icon {
+    color: var(--accent-gold);
+}
+
+/* Executive Briefing Summary Box */
+.ai-summary-box {
+    background: rgba(10, 17, 32, 0.6);
+    border: 1px solid rgba(252, 163, 17, 0.2);
+    border-radius: 14px;
+    padding: 1.35rem 1.5rem;
+}
+
+.ai-summary-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-gold);
+    margin-bottom: 0.85rem;
+    display: block;
+}
+
+.ai-summary-paragraph {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+}
+
+.ai-executive-tags-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 600px) {
+    .ai-executive-tags-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ai-executive-tag-pill {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.ai-tag-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-gold);
+}
+
+.ai-tag-val {
+    font-size: 0.82rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Question Pills (Continue Exploring) */
+.ai-questions-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-gold);
+    margin-bottom: 0.65rem;
+}
+
+.ai-question-pills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.ai-question-pill {
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    padding: 0.38rem 0.85rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.25s var(--ease-cred);
+    text-align: left;
+    font-weight: 500;
+}
+
+.ai-question-pill:hover {
+    border-color: rgba(252, 163, 17, 0.4);
+    color: var(--accent-gold);
+    background: rgba(252, 163, 17, 0.1);
+    transform: translateY(-1px);
+}
+
+/* ChatGPT Style Thread */
+.ai-chat-thread {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.ai-msg {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    animation: fadeInMsg 0.3s ease-out forwards;
+}
+
+@keyframes fadeInMsg {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ai-msg.user-q {
+    align-self: flex-end;
+}
+
+.ai-msg-bubble {
+    padding: 0.9rem 1.15rem;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.ai-msg.user-q .ai-msg-bubble {
+    background: var(--accent-gold);
+    color: #000000;
+    font-weight: 600;
+    border-bottom-right-radius: 4px;
+}
+
+.ai-msg.ai-a {
+    align-self: flex-start;
+}
+
+.ai-msg.ai-a .ai-msg-bubble {
+    background: rgba(10, 17, 32, 0.8);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    border-bottom-left-radius: 4px;
+}
+
+/* --- Section Sequence Layout: Problem -> Decision -> Screen -> Outcome --- */
+.narrative-block {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2.25rem 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.narrative-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .narrative-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.narrative-card-problem {
+    background: rgba(220, 53, 69, 0.08);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.narrative-card-decision {
+    background: rgba(252, 163, 17, 0.08);
+    border: 1px solid rgba(252, 163, 17, 0.25);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.narrative-card-outcome {
+    background: rgba(40, 167, 69, 0.08);
+    border: 1px solid rgba(40, 167, 69, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 2rem;
+}
+
+.narrative-card-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.narrative-card-problem .narrative-card-title { color: #ff6b6b; }
+.narrative-card-context .narrative-card-title { color: #4dabf7; }
+.narrative-card-decision .narrative-card-title { color: var(--accent-gold); }
+.narrative-card-outcome .narrative-card-title { color: #51cf66; }
+.narrative-card-learnings .narrative-card-title { color: var(--accent-gold); }
+
+.narrative-card-text {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+/* --- Progressive Accordion (Case Study 01 Standardized Component) --- */
+details.progressive-accordion {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: 12px !important;
+    padding: 1.25rem 1.5rem !important;
+    cursor: pointer;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+details.progressive-accordion:hover {
+    border-color: rgba(252, 163, 17, 0.4) !important;
+}
+
+details.progressive-accordion summary {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    user-select: none;
+}
+
+details.progressive-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+details.progressive-accordion summary::marker {
+    display: none;
+}

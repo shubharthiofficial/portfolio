@@ -5,27 +5,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
-/* --- Root variables (Dark Mode by Default) --- */
-:root {
-    --bg-primary: #2d3142;       /* Space Cadet deep dark slate blue */
-    --bg-secondary: #222533;     /* Slightly darker blue-gray for cards */
-    --bg-tertiary: #191b24;      /* Deepest dark background */
-    --card-border: rgba(255, 255, 255, 0.08);
+/* --- Root variables (Dark Mode System Default) --- */
+:root, [data-theme="light"], [data-theme="dark"] {
+    --bg-primary: #111315;       /* Deep Charcoal #111315 background layer */
+    --bg-secondary: #14213d;     /* Oxford Blue for cards and containers */
+    --bg-tertiary: #0a1120;      /* Dark Oxford Blue for section contrast */
+    --card-border: rgba(229, 229, 229, 0.12);
     
-    --text-primary: #ffffff;     /* Crisp white for headings */
-    --text-secondary: #bfc0c0;   /* Silver/gray for descriptions */
-    --text-tertiary: #8493a8;    /* Slate-gray secondary */
+    --text-primary: #ffffff;     /* Crisp Pure White for headings */
+    --text-secondary: #e5e5e5;   /* High-contrast platinum light gray for body & copy */
+    --text-tertiary: #b0bac9;    /* Crisp slate silver for muted labels */
     
-    /* Accents from the palette */
-    --accent-gold: #ef8354;      /* Mandarin Orange for accents */
-    --accent-blue: #bfc0c0;      /* Silver */
-    --accent-terracotta: #ef8354;/* Mandarin Orange */
-    --accent-gradient: linear-gradient(135deg, #ef8354, #bfc0c0);
-    --card-hover-shadow: rgba(191, 192, 192, 0.08);
-    --card-hover-bg: #32374b;
+    /* Accents from Coolors palette */
+    --accent-gold: #fca311;      /* Vibrant Orange/Gold accent */
+    --accent-blue: #14213d;      /* Oxford Blue */
+    --accent-terracotta: #fca311;/* Orange/Gold */
+    --accent-gradient: linear-gradient(135deg, #fca311, #ffffff);
+    --card-hover-shadow: rgba(252, 163, 17, 0.15);
+    --card-hover-bg: #1c2b4d;
     
-    --cursor-color: rgba(255, 255, 255, 0.15);
-    --cursor-border: #ffffff;
+    --cursor-color: rgba(252, 163, 17, 0.2);
+    --cursor-border: #fca311;
     
     --font-serif-hero: 'Lora', Georgia, serif;
     --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -33,28 +33,6 @@
     
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-snappy: all 0.2s ease-out;
-}
-
-/* --- Light Mode overrides --- */
-[data-theme="light"] {
-    --bg-primary: #ffffff;       /* Pure white page background */
-    --bg-secondary: #f8f9fa;     /* Crisp off-white for cards */
-    --bg-tertiary: #f1f3f5;      /* Soft modern light gray */
-    --card-border: rgba(45, 49, 66, 0.08);
-    
-    --text-primary: #2d3142;     /* Space Cadet deep slate text */
-    --text-secondary: #4f5d75;   /* YInMn slate blue body text */
-    --text-tertiary: #8493a8;
-    
-    --accent-gold: #ef8354;      /* Mandarin Orange accent */
-    --accent-blue: #4f5d75;      /* Slate Blue */
-    --accent-terracotta: #ef8354;
-    --accent-gradient: linear-gradient(135deg, #ef8354, #4f5d75);
-    --card-hover-shadow: rgba(79, 93, 117, 0.12);
-    --card-hover-bg: #eaecef;
-    
-    --cursor-color: rgba(239, 131, 84, 0.1);
-    --cursor-border: #ef8354;
 }
 
 /* --- Reset & Global --- */
@@ -205,9 +183,7 @@ header {
     box-sizing: border-box;
 }
 
-[data-theme="light"] .header-main-nav {
-    background: rgba(250, 249, 246, 0.75);
-}
+
 
 .logo {
     font-family: var(--font-body);
@@ -345,12 +321,14 @@ section {
 
 /* --- Hero Section --- */
 .hero {
-    min-height: 82vh;
+    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 8rem;
-    padding-bottom: 2.5rem;
+    padding-top: 80px;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
 }
 
 .hero-subtitle {
@@ -404,15 +382,16 @@ section {
 }
 
 .btn-primary {
-    background-color: #ef8354;
-    border-color: #ef8354;
-    color: #ffffff !important;
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: #000000 !important;
+    font-weight: 700;
 }
 
 .btn-primary:hover {
-    background-color: #e0561b; /* Rich accessible orange */
-    border-color: #e0561b;
-    color: #ffffff !important;
+    background-color: #e5930e; /* Slightly deeper gold on hover */
+    border-color: #e5930e;
+    color: #000000 !important;
     transform: translateY(-2px);
 }
 
@@ -1389,12 +1368,12 @@ footer {
 
 /* --- Client Logo Ticker Section --- */
 .client-ticker-section {
-    padding: 1.75rem 0;
+    padding: 1.25rem 0;
     width: 100%;
     overflow: hidden;
-    border-top: 1px solid var(--card-border);
-    border-bottom: 1px solid var(--card-border);
-    margin-bottom: 3rem;
+    border-top: none;
+    border-bottom: none;
+    margin-bottom: 1.5rem;
 }
 
 .ticker-title {
@@ -2052,109 +2031,14 @@ footer {
     width: 100%;
     height: auto;
     display: block;
-    filter: blur(12px);
-    transform: scale(1.03);
-    transition: filter 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    user-select: none;
+    filter: none !important;
+    transform: none !important;
+    user-select: auto;
 }
 
 .screenshot-lock-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(15, 23, 42, 0.25);
-    backdrop-filter: blur(2px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    padding: 0.5rem;
-}
-
-.lock-icon-circle {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.95);
-    border: none !important;
-    color: #ef8354;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    position: relative;
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
-}
-
-[data-theme="light"] .lock-icon-circle {
-    background: rgba(255, 255, 255, 0.95);
-    border: none !important;
-    color: #ef8354;
-}
-
-.screenshot-lock-overlay:hover .lock-icon-circle {
-    transform: scale(1.15);
-}
-
-.lock-icon-circle svg {
-    color: #ef8354;
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
-}
-
-/* Tooltip on Hover (Positioned below the circle to avoid top clipping) */
-.lock-tooltip {
-    position: absolute;
-    top: calc(100% + 8px);
-    bottom: auto;
-    left: 50%;
-    transform: translateX(-50%) translateY(-4px);
-    background: rgba(15, 23, 42, 0.95);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0.3rem 0.65rem;
-    border-radius: 5px;
-    font-family: var(--font-body);
-    font-size: 0.72rem;
-    font-weight: 600;
-    white-space: nowrap;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 20;
-}
-
-.lock-tooltip::after {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 4px;
-    border-style: solid;
-    border-color: transparent transparent rgba(15, 23, 42, 0.95) transparent;
-}
-
-.screenshot-lock-overlay:hover .lock-tooltip {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-/* Unlocked State */
-.protected-screenshot-wrap.is-unlocked .protected-screenshot-img {
-    filter: blur(0px) !important;
-    transform: scale(1) !important;
-}
-
-.protected-screenshot-wrap.is-unlocked .screenshot-lock-overlay {
-    opacity: 0 !important;
+    display: none !important;
+}nt;
     pointer-events: none !important;
 }
 
@@ -2305,14 +2189,16 @@ footer {
 }
 
 .pwd-btn-submit {
-    background-color: #ef8354 !important;
-    border: 1px solid #ef8354 !important;
-    color: #ffffff !important;
+    background-color: var(--accent-gold) !important;
+    border: 1px solid var(--accent-gold) !important;
+    color: #000000 !important;
     font-weight: 700;
 }
 
 .pwd-btn-submit:hover {
-    background-color: #e0561b !important;
+    background-color: #e5930e !important;
+    border-color: #e5930e !important;
+}
     border-color: #e0561b !important;
     color: #ffffff !important;
     transform: translateY(-1px);

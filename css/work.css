@@ -349,14 +349,14 @@ a.category-card:active {
 
 .category-card {
     position: relative;
-    background: linear-gradient(135deg, #ef8354 0%, #d46c43 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, #14213d 0%, #0a1120 100%);
+    border: 1px solid var(--card-border);
     border-radius: 14px;
     overflow: hidden;
     height: 325px;
     cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 10px 30px rgba(239, 131, 84, 0.18);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     text-decoration: none !important;
 }
 

@@ -109,33 +109,8 @@ function initCustomCursor() {
    2. Theme Toggle
    ========================================== */
 function initThemeToggle() {
-    const toggleBtn = document.querySelector('.theme-toggle-btn');
-    const sunIcon = toggleBtn.querySelector('.sun-icon');
-    const moonIcon = toggleBtn.querySelector('.moon-icon');
-    
-    // Check saved theme
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    updateToggleIcons(currentTheme);
-
-    toggleBtn.addEventListener('click', () => {
-        const theme = document.documentElement.getAttribute('data-theme');
-        const nextTheme = theme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', nextTheme);
-        localStorage.setItem('theme', nextTheme);
-        updateToggleIcons(nextTheme);
-    });
-
-    function updateToggleIcons(theme) {
-        if (theme === 'light') {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        } else {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        }
-    }
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
 }
 
 /* ==========================================

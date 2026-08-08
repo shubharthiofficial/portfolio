@@ -42,60 +42,70 @@
        2. Sticky Left Navigation Tracker
        ========================================== */
     function initStickyNavTracker() {
-        const sections = document.querySelectorAll('.story-section');
         const navItems = document.querySelectorAll('.sticky-nav-item');
-
         if (!navItems.length) return;
+
+        // Map nav links directly to target section elements in DOM
+        const navMap = [];
+        navItems.forEach(item => {
+            const link = item.querySelector('a');
+            if (link) {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        navMap.push({ item, target });
+                    }
+                }
+            }
+        });
+
+        if (!navMap.length) return;
 
         if (activeScrollHandler) {
             window.removeEventListener('scroll', activeScrollHandler);
         }
 
-        const observerOptions = {
-            root: null,
-            threshold: 0.1,
-            rootMargin: '-10% 0px -50% 0px' // Focus upper-middle viewport
-        };
-
-        activeSectionObserver = new IntersectionObserver((entries) => {
-            // Bypass observer standard checks if we are already scrolled near the bottom of the page
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-            const windowHeight = window.innerHeight;
-            const docHeight = document.documentElement.scrollHeight;
-            if (scrollTop + windowHeight >= docHeight - 80) return;
-
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const activeId = entry.target.getAttribute('id');
-                    
-                    navItems.forEach(item => {
-                        const link = item.querySelector('a');
-                        if (link && link.getAttribute('href') === `#${activeId}`) {
-                            navItems.forEach(i => i.classList.remove('active'));
-                            item.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(sec => activeSectionObserver.observe(sec));
-
-        // Scroll to bottom trigger fallback (for Reflection)
         activeScrollHandler = () => {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
             const windowHeight = window.innerHeight;
             const docHeight = document.documentElement.scrollHeight;
-            
-            if (scrollTop + windowHeight >= docHeight - 80) {
-                const lastItem = navItems[navItems.length - 1];
-                if (lastItem && !lastItem.classList.contains('active')) {
-                    navItems.forEach(i => i.classList.remove('active'));
-                    lastItem.classList.add('active');
+            const headerOffset = 180; // Distance from top of viewport for trigger point
+
+            let currentActive = null;
+
+            // Check if reached bottom of page
+            if (scrollPosition + windowHeight >= docHeight - 40) {
+                currentActive = navMap[navMap.length - 1].item;
+            } else {
+                // Find section whose top is closest above or at current scroll trigger threshold
+                for (let i = navMap.length - 1; i >= 0; i--) {
+                    const { item, target } = navMap[i];
+                    const rect = target.getBoundingClientRect();
+                    const top = rect.top + window.scrollY;
+
+                    if (scrollPosition + headerOffset >= top) {
+                        currentActive = item;
+                        break;
+                    }
                 }
             }
+
+            if (!currentActive && navMap.length > 0) {
+                currentActive = navMap[0].item;
+            }
+
+            navItems.forEach(item => {
+                if (item === currentActive) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
         };
-        window.addEventListener('scroll', activeScrollHandler);
+
+        window.addEventListener('scroll', activeScrollHandler, { passive: true });
+        activeScrollHandler();
     }
 
     /* ==========================================
@@ -123,42 +133,51 @@
         const modal = document.getElementById('lightbox-modal');
         if (!modal) return;
         const modalImg = document.getElementById('lightbox-img');
-        const captionText = document.getElementById('lightbox-caption');
-        const closeBtn = document.querySelector('.lightbox-close');
+        const closeBtn = modal.querySelector('.lightbox-close');
 
         document.addEventListener('click', (e) => {
-            const placeholder = e.target.closest('.image-placeholder-block');
-            const targetImg = e.target.closest('.dashboard-mockup img, .annotated-screen-img, img');
+            const targetImg = e.target.closest('img');
             
-            if (placeholder && !e.target.closest('#lightbox-modal')) {
-                const textNode = placeholder.querySelector('p');
-                const pathText = textNode ? textNode.textContent.trim() : 'Image Asset';
+            // Only trigger for content/screenshot images outside lightbox modal
+            if (targetImg && !e.target.closest('#lightbox-modal')) {
                 modal.classList.add('active');
-                modalImg.src = '';
-                modalImg.style.display = 'none';
-                captionText.innerHTML = `<span style="font-family: monospace; font-size: 0.9rem; color: #a5b4fc;">${pathText}</span>`;
-            } else if (targetImg && !e.target.closest('#lightbox-modal')) {
-                const wrap = targetImg.closest('.protected-screenshot-wrap');
-                if (wrap && !wrap.classList.contains('is-unlocked')) {
-                    return;
+                if (modalImg) {
+                    modalImg.src = targetImg.src;
+                    modalImg.alt = targetImg.alt || 'Enlarged Screenshot View';
                 }
-                modal.classList.add('active');
-                modalImg.src = targetImg.src;
-                modalImg.style.display = 'block';
-                captionText.textContent = targetImg.alt || 'Visual Asset Preview';
+                document.body.style.overflow = 'hidden';
             }
         });
 
+        const closeModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
         if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
+            closeBtn.addEventListener('click', closeModal);
         }
 
         modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
+            if (e.target === modal || e.target.classList.contains('lightbox-container')) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
             }
         });
     }
+
+    // 5. Progressive Accordion Toggle Listener
+    document.querySelectorAll('details.progressive-accordion').forEach(details => {
+        details.addEventListener('toggle', () => {
+            const label = details.querySelector('.accordion-toggle-label');
+            if (label) {
+                label.textContent = details.open ? '- Collapse Details' : '+ Expand Details';
+            }
+        });
+    });
 })();

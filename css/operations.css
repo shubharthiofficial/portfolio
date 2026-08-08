@@ -87,7 +87,7 @@
 .mockup-dot.green { background: #27c93f; }
 
 .mockup-title-bar {
-    color: #8c9ba5;
+    color: #b0bac9;
     font-family: var(--font-body);
     font-size: 0.82rem;
     letter-spacing: 0.5px;
@@ -109,7 +109,7 @@
 }
 
 .sidebar-item {
-    color: #8c9ba5;
+    color: #b0bac9;
     font-family: var(--font-body);
     font-size: 0.85rem;
     display: flex;

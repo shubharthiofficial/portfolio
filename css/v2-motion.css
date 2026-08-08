@@ -1,0 +1,633 @@
+/* 
+   Portfolio V2 - CRED-inspired Refined Motion & Layout Stylesheet (Refinement Pass)
+   Principles: High scanability, tight rhythm, single-row connected journeys, compressed copy, premium light/dark styling.
+*/
+
+/* --- Enhanced Root Motion Tokens --- */
+:root {
+    --ease-cred: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-reveal: 0.75s;
+    --duration-fast: 0.25s;
+    --v2-card-bg-glass: rgba(20, 33, 61, 0.7);
+    --v2-card-border-glow: rgba(252, 163, 17, 0.35);
+    --v2-card-shadow-elevated: 0 16px 36px -12px rgba(0, 0, 0, 0.7), 0 0 20px rgba(252, 163, 17, 0.1);
+}
+
+}
+
+/* --- Section Rhythm & Spacing --- */
+.v2-section {
+    padding: 4rem 0;
+    position: relative;
+    width: 100%;
+}
+
+.v2-section-compact {
+    padding: 2.25rem 0;
+}
+
+.v2-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.v2-section-header {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.v2-section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+}
+
+.v2-section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--accent-gold);
+    box-shadow: 0 0 6px var(--accent-gold);
+}
+
+.v2-section-title {
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.v2-section-title span {
+    color: var(--accent-gold);
+}
+
+.v2-section-desc {
+    margin-top: 0.65rem;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    color: var(--text-secondary);
+    max-width: 720px;
+    line-height: 1.55;
+}
+
+/* --- CRED-Inspired Reveal Animations --- */
+.reveal-text, .reveal-up {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(2px);
+    transition: opacity var(--duration-reveal) var(--ease-cred),
+                transform var(--duration-reveal) var(--ease-cred),
+                filter var(--duration-reveal) var(--ease-cred);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-text.is-in-view, .reveal-up.is-in-view,
+.reveal-text.active, .reveal-up.active,
+.reveal-text.revealed, .reveal-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+.delay-1 { transition-delay: 0.08s; }
+.delay-2 { transition-delay: 0.16s; }
+.delay-3 { transition-delay: 0.24s; }
+.delay-4 { transition-delay: 0.32s; }
+.delay-5 { transition-delay: 0.4s; }
+
+/* --- 1. HERO SECTION (VERTICALLY CENTERED, EXACT FULL VIEWPORT FOLD) --- */
+.hero.v2-section {
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+@media (max-height: 720px) {
+    .hero.v2-section {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 4rem;
+    }
+}
+
+.hero.v2-section .v2-container {
+    width: 100%;
+}
+
+.hero-title {
+    margin-bottom: 0.85rem;
+    font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+    line-height: 1.15;
+}
+
+.hero-description {
+    margin-bottom: 1.25rem;
+    max-width: 780px;
+    font-size: 1.05rem;
+    line-height: 1.55;
+}
+
+.hero-metrics-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin: 1.25rem 0 1.5rem 0;
+}
+
+.hero-metric-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.95rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease, transform 0.3s var(--ease-cred), color 0.3s ease;
+}
+
+.hero-metric-pill:hover {
+    border-color: var(--v2-card-border-glow);
+    transform: translateY(-2px);
+    color: var(--text-primary);
+}
+
+.hero-metric-pill svg {
+    width: 14px;
+    height: 14px;
+    color: var(--accent-gold);
+}
+
+.hero-buttons {
+    margin-top: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- TRUSTED BY SECTION (SUBTLE SOCIAL PROOF - NO BORDER LINES & CLEAN LOGOS) --- */
+.client-ticker-section.v2-section {
+    padding: 1.25rem 0;
+    border-top: none;
+    border-bottom: none;
+}
+
+.client-ticker-section .ticker-title {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.65rem;
+    opacity: 0.85;
+}
+
+.client-ticker-section .ticker-logo {
+    max-height: 24px;
+    width: auto;
+    filter: opacity(0.9) brightness(1.05);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.client-ticker-section .ticker-logo:hover {
+    filter: opacity(1) brightness(1.2);
+}
+
+/* --- FEATURED CASE STUDY CARDS --- */
+.v2-work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.v2-case-card {
+    position: relative;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2.25rem 1.85rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.4s var(--ease-cred),
+                border-color 0.4s ease,
+                box-shadow 0.4s ease,
+                background-color 0.4s ease;
+    backdrop-filter: blur(12px);
+}
+
+.v2-case-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.v2-case-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--v2-card-border-glow);
+    box-shadow: var(--v2-card-shadow-elevated);
+    background-color: var(--card-hover-bg);
+}
+
+.v2-case-card:hover::before {
+    opacity: 1;
+}
+
+.v2-case-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.v2-case-num {
+    font-family: var(--font-serif-hero);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+}
+
+.v2-case-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    background: rgba(252, 163, 17, 0.12);
+    color: var(--accent-gold);
+    font-weight: 600;
+    border: 1px solid rgba(252, 163, 17, 0.25);
+}
+
+.v2-case-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-primary);
+    margin-bottom: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.v2-case-card:hover .v2-case-title {
+    color: var(--accent-gold);
+}
+
+.v2-case-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+}
+
+.v2-case-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--card-border);
+    gap: 0.75rem;
+}
+
+.v2-case-highlight {
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.v2-case-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: transform 0.3s var(--ease-cred);
+}
+
+.v2-case-cta svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    transition: transform 0.3s var(--ease-cred);
+}
+
+.v2-case-card:hover .v2-case-cta {
+    transform: translateX(4px);
+}
+
+/* --- 5. ENTERPRISE LIFECYCLE (CONNECTED SINGLE-ROW JOURNEY) --- */
+.v2-lifecycle-single-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+@media (max-width: 992px) {
+    .v2-lifecycle-single-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .v2-lifecycle-single-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.v2-journey-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: none !important;
+    transition: none !important;
+}
+
+.v2-journey-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.v2-journey-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.35rem;
+}
+
+.v2-journey-step-num {
+    font-family: var(--font-serif-hero);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+}
+
+.v2-journey-arrow {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    opacity: 0.6;
+}
+
+.v2-journey-title {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.v2-journey-roles {
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.85rem;
+    font-weight: 500;
+}
+
+.v2-journey-flow-badge {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.55rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* --- 6. ENTERPRISE DESIGN CAPABILITIES (CLEAN SINGLE ROW) --- */
+.v2-capabilities-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 992px) {
+    .v2-capabilities-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .v2-capabilities-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.v2-capability-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    transition: transform 0.35s var(--ease-cred), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.v2-capability-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--v2-card-border-glow);
+    box-shadow: var(--v2-card-shadow-elevated);
+}
+
+.v2-capability-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.v2-capability-desc {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* --- 7. HOW I CONTRIBUTE (RESTRUCTURED FOR SCANNABILITY) --- */
+.v2-contribute-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 992px) {
+    .v2-contribute-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .v2-contribute-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.v2-contribute-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.4rem 1.25rem;
+    transition: border-color 0.3s ease, transform 0.3s var(--ease-cred);
+}
+
+.v2-contribute-item:hover {
+    border-color: var(--v2-card-border-glow);
+    transform: translateY(-3px);
+}
+
+.v2-contribute-stage {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-gold);
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.v2-contribute-heading {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.v2-contribute-detail {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* --- 8. DESIGN VALIDATION & IMPACT (ENHANCED PROMINENCE) --- */
+.v2-validation-wrapper {
+    max-width: 1100px;
+    margin: 1.5rem auto 0 auto;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+/* --- 10. HOW I WORK (CONNECTED WORKFLOW PROCESS) --- */
+.v2-workflow-connected-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .v2-workflow-connected-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .v2-workflow-connected-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.v2-workflow-step-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.1rem 0.9rem;
+    position: relative;
+    transition: transform 0.3s var(--ease-cred), border-color 0.3s ease;
+}
+
+.v2-workflow-step-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--v2-card-border-glow);
+}
+
+.v2-workflow-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 0.35rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.v2-workflow-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.v2-workflow-desc {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+}
+
+/* --- 11. FOOTER SIMPLIFIED --- */
+.v2-footer-simple {
+    padding: 3rem 0 2rem 0;
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--card-border);
+}
+
+.v2-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.v2-footer-brand .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.v2-footer-tagline {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin-top: 0.4rem;
+}

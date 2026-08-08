@@ -108,64 +108,62 @@ function initScrollReveals() {
    3. Sticky Left Navigation Tracker
    ========================================== */
 function initStickyNavTracker() {
-    // Select elements inside the active tab only to avoid cross-tab overlap triggers
-    const activeTab = document.querySelector('.tab-content-block.active');
-    if (!activeTab) return;
-
-    const sections = activeTab.querySelectorAll('.story-section');
-    const navItems = activeTab.querySelectorAll('.sticky-nav-item');
-
+    const navItems = document.querySelectorAll('.sticky-nav-item');
     if (!navItems.length) return;
+
+    const navMap = [];
+    navItems.forEach(item => {
+        const link = item.querySelector('a');
+        if (link) {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const target = document.querySelector(href);
+                if (target) {
+                    navMap.push({ item, target });
+                }
+            }
+        }
+    });
+
+    if (!navMap.length) return;
 
     if (activeScrollHandler) {
         window.removeEventListener('scroll', activeScrollHandler);
     }
 
-    const observerOptions = {
-        root: null,
-        threshold: 0.1,
-        rootMargin: '-10% 0px -50% 0px' // Wider active scanning area
-    };
-
-    activeSectionObserver = new IntersectionObserver((entries) => {
-        // Bypass observer standard checks if we are already scrolled near the bottom of the page
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const windowHeight = window.innerHeight;
-        const docHeight = document.documentElement.scrollHeight;
-        if (scrollTop + windowHeight >= docHeight - 80) return;
-
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const activeId = entry.target.getAttribute('id');
-                
-                navItems.forEach(item => {
-                    const link = item.querySelector('a');
-                    if (link && link.getAttribute('href') === `#${activeId}`) {
-                        navItems.forEach(i => i.classList.remove('active'));
-                        item.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(sec => activeSectionObserver.observe(sec));
-
-    // Scroll to bottom trigger fallback (for short final sections like Reflection)
     activeScrollHandler = () => {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
         const windowHeight = window.innerHeight;
         const docHeight = document.documentElement.scrollHeight;
-        
-        if (scrollTop + windowHeight >= docHeight - 80) {
-            const lastItem = navItems[navItems.length - 1];
-            if (lastItem && !lastItem.classList.contains('active')) {
-                navItems.forEach(i => i.classList.remove('active'));
-                lastItem.classList.add('active');
+        const navThreshold = 120; // 120px threshold so section highlights right when scroll reaches top of section
+
+        let currentActive = null;
+
+        if (scrollPosition + windowHeight >= docHeight - 30) {
+            currentActive = navMap[navMap.length - 1].item;
+        } else {
+            for (let i = navMap.length - 1; i >= 0; i--) {
+                const { item, target } = navMap[i];
+                const rect = target.getBoundingClientRect();
+                // Highlight ONLY when scroll top has reached or passed the section top
+                if (rect.top <= navThreshold && rect.bottom > 0) {
+                    currentActive = item;
+                    break;
+                }
             }
         }
+
+        navItems.forEach(item => {
+            if (item === currentActive) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
     };
-    window.addEventListener('scroll', activeScrollHandler);
+
+    window.addEventListener('scroll', activeScrollHandler, { passive: true });
+    activeScrollHandler();
 }
 
 /* ==========================================
@@ -196,21 +194,36 @@ function initStoryCursorHooks() {
 function initLightbox() {
     const modal = document.getElementById('lightbox-modal');
     const modalImg = document.getElementById('lightbox-img');
-    const captionText = document.getElementById('lightbox-caption');
-    const closeBtn = document.querySelector('.lightbox-close');
+    const closeBtn = document.getElementById('lightbox-close') || document.querySelector('.lightbox-close');
 
     if (!modal || !modalImg) return;
 
     document.addEventListener('click', (e) => {
-        const targetImg = e.target.closest('.comparison-image-container img, .story-section img');
-        if (targetImg && !e.target.closest('#lightbox-modal')) {
-            const wrap = targetImg.closest('.protected-screenshot-wrap');
-            if (wrap && !wrap.classList.contains('is-unlocked')) {
-                return;
+        if (e.target.closest('#lightbox-modal') || e.target.closest('a') || e.target.closest('button') || e.target.closest('.logo') || e.target.closest('.sun-icon') || e.target.closest('.moon-icon')) {
+            return;
+        }
+
+        const imgEl = e.target.closest('img');
+        const frameEl = e.target.closest('.slide-frame, .protected-screenshot-wrap');
+
+        let src = '';
+        let alt = '';
+
+        if (imgEl && !imgEl.closest('#lightbox-modal')) {
+            src = imgEl.src;
+            alt = imgEl.alt;
+        } else if (frameEl) {
+            const childImg = frameEl.querySelector('img');
+            if (childImg) {
+                src = childImg.src;
+                alt = childImg.alt;
             }
+        }
+
+        if (src) {
+            modalImg.src = src;
+            modalImg.alt = alt || 'Enlarged Screenshot View';
             modal.classList.add('active');
-            modalImg.src = targetImg.src;
-            captionText.innerText = targetImg.alt || '';
             document.body.style.overflow = 'hidden';
         }
     });
@@ -220,17 +233,19 @@ function initLightbox() {
         document.body.style.overflow = '';
         setTimeout(() => {
             modalImg.src = '';
-        }, 350);
+        }, 300);
     };
 
     if (closeBtn) {
         closeBtn.addEventListener('click', closeModal);
     }
+
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+        if (e.target === modal || e.target.classList.contains('lightbox-overlay') || e.target.classList.contains('lightbox-container')) {
             closeModal();
         }
     });
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
             closeModal();

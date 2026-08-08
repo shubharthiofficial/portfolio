@@ -16,8 +16,8 @@ body.story-detail-page {
     margin: 0 auto;
     padding: 0;
     display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 4rem;
+    grid-template-columns: 250px 1fr;
+    gap: 3.5rem;
     position: relative;
 }
 
@@ -69,7 +69,8 @@ body.story-detail-page {
     position: sticky;
     top: 10rem;
     height: fit-content;
-    padding-right: 1.5rem;
+    padding-right: 1rem;
+    z-index: 10;
 }
 
 @media (max-width: 1024px) {
@@ -82,7 +83,7 @@ body.story-detail-page {
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #8c9ba5;
+    color: #b0bac9;
     margin-bottom: 1.5rem;
     font-weight: 700;
 }
@@ -92,13 +93,13 @@ body.story-detail-page {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-left: 1.5px solid rgba(0, 0, 0, 0.05);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.1);
     padding-left: 0;
 }
 
 .sticky-nav-item a {
     text-decoration: none;
-    color: #8c9ba5;
+    color: #b0bac9;
     font-size: 0.88rem;
     font-weight: 500;
     padding-left: 1.2rem;
@@ -107,12 +108,15 @@ body.story-detail-page {
     margin-left: -1.5px;
     border-left: 1.5px solid transparent;
     transition: var(--transition-snappy);
+    white-space: normal;
+    line-height: 1.4;
+    word-break: break-word;
 }
 
 .sticky-nav-item.active a {
-    color: #1a1e24;
+    color: var(--text-primary, #ffffff);
     font-weight: 600;
-    border-left-color: #b37e00; /* Muted gold highlight */
+    border-left-color: var(--accent-gold, #fca311);
 }
 
 /* --- Main Story Content --- */
@@ -422,9 +426,16 @@ body.story-detail-page {
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.spec-media-container img {
+.spec-media-container img,
+.protected-screenshot-img,
+.protected-screenshot-wrap img {
     width: 100%;
+    height: auto;
     display: block;
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
     transition: var(--transition-smooth);
 }
 
@@ -699,7 +710,7 @@ body.story-detail-page {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 8%;
-    padding-top: 12.5rem;
+    padding-top: 6.5rem;
 }
 
 .category-hero-section {
@@ -996,26 +1007,41 @@ body.story-detail-page {
     }
 }
 
-/* --- Premium Lightbox Modal --- */
+/* --- Premium Lightbox Modal (3/4th Screen View) --- */
+.protected-screenshot-wrap img,
+.story-section img,
+.narrative-block img,
+.order-steps-grid img {
+    cursor: pointer;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.protected-screenshot-wrap img:hover,
+.story-section img:hover,
+.narrative-block img:hover,
+.order-steps-grid img:hover {
+    transform: scale(1.01);
+    filter: brightness(1.04);
+}
+
 .lightbox-modal {
     display: flex;
     visibility: hidden;
     pointer-events: none;
     position: fixed;
-    z-index: 2000; /* Ensure overlay floats above all content and headers */
+    z-index: 10000;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    background-color: rgba(18, 22, 30, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(6, 9, 15, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     opacity: 0;
-    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     align-items: center;
     justify-content: center;
-    flex-direction: column;
 }
 
 .lightbox-modal.active {
@@ -1024,15 +1050,25 @@ body.story-detail-page {
     opacity: 1;
 }
 
+.lightbox-container {
+    width: 75vw;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 .lightbox-content {
-    margin: auto;
-    display: block;
-    max-width: 85%;
+    width: 100%;
+    height: 100%;
+    max-width: 75vw;
     max-height: 75vh;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    transform: scale(0.95);
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    transform: scale(0.96);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1042,13 +1078,28 @@ body.story-detail-page {
 
 .lightbox-close {
     position: absolute;
-    top: 2rem;
-    right: 3rem;
-    color: #8c9ba5;
-    font-size: 2.5rem;
-    font-weight: 300;
+    top: 1.75rem;
+    right: 2.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    z-index: 10001;
+}
+
+.lightbox-close:hover {
+    background: rgba(252, 163, 17, 0.2);
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    transform: scale(1.08);
 }
 
 .lightbox-close:hover {
@@ -1123,4 +1174,168 @@ body.story-detail-page {
 
 .story-impact-list li:last-child {
     margin-bottom: 0;
+}
+
+/* --- V1 Conceptual Workflow Diagram Component --- */
+.v1-flow-diagram-container {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.v1-flow-diagram-title-wrap {
+    margin-bottom: 1.25rem;
+}
+
+.v1-flow-diagram-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-gold);
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.v1-flow-diagram-heading {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.flow-row-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.35rem;
+}
+
+.flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flow-row.grey-row {
+    opacity: 0.8;
+    padding: 0.5rem 0;
+}
+
+.flow-node {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    padding: 0.65rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-align: center;
+    white-space: normal;
+    flex: 1 1 auto;
+    max-width: 220px;
+    line-height: 1.4;
+}
+
+.flow-node strong {
+    color: var(--text-primary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.15rem;
+}
+
+.flow-node.coral {
+    background: rgba(252, 163, 17, 0.08);
+    border: 1px solid var(--accent-gold);
+    color: var(--text-primary);
+    max-width: 230px;
+}
+
+.flow-arrow {
+    font-size: 0.95rem;
+    color: var(--text-tertiary);
+    opacity: 0.5;
+    flex: 0 0 auto;
+    padding: 0 0.35rem;
+}
+
+.flow-arrow.coral-arrow {
+    color: var(--accent-gold);
+    opacity: 0.9;
+}
+
+.flow-diagonal-transition {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 12%;
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    opacity: 0.6;
+    margin: -0.2rem 0;
+}
+
+.flow-dashed-box {
+    border: 2px dashed var(--accent-gold);
+    border-radius: 10px;
+    padding: 1.35rem 0.85rem;
+    position: relative;
+    background: rgba(252, 163, 17, 0.03);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flow-dashed-box .case-study-label {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-gold);
+    color: #000000;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(252, 163, 17, 0.3);
+}
+
+.flow-legend {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+@media (max-width: 800px) {
+    .flow-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .flow-row.grey-row {
+        padding: 0;
+    }
+    .flow-node {
+        max-width: 100%;
+        width: 100%;
+    }
+    .flow-arrow {
+        transform: rotate(90deg);
+        margin: 0.2rem 0;
+        padding: 0;
+    }
+    .flow-diagonal-transition {
+        display: none;
+    }
+    .flow-dashed-box {
+        padding: 1.5rem 1rem !important;
+    }
 }
