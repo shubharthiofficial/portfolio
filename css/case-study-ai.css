@@ -534,3 +534,91 @@ details.progressive-accordion summary::marker {
         gap: 1rem !important;
     }
 }
+
+/* --- Process Flow Rows Mobile Grid Responsiveness --- */
+.process-flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.process-flow-card {
+    flex: 1;
+    min-width: 110px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.process-flow-card.accent {
+    background: rgba(252, 163, 17, 0.12);
+    border-color: var(--accent-gold);
+}
+
+.process-flow-arrow {
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    .story-container {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+
+    .story-main-scroll,
+    .category-main-content,
+    .story-detail-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .process-flow-row {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.65rem !important;
+        width: 100% !important;
+    }
+    
+    .process-flow-arrow {
+        display: none !important;
+    }
+    
+    .process-flow-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 0.75rem 0.4rem !important;
+    }
+
+    .protected-screenshot-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-flow-row {
+        grid-template-columns: 1fr !important;
+    }
+}

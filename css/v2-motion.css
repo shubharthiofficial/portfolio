@@ -50,6 +50,10 @@
     margin-bottom: 0.5rem;
 }
 
+.hero .v2-section-eyebrow {
+    margin-bottom: 1.25rem;
+}
+
 .v2-section-eyebrow::before {
     content: '';
     display: inline-block;
@@ -148,7 +152,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem 1rem;
-    margin: 1.25rem 0 1.5rem 0;
+    margin: 1.75rem 0 3.25rem 0 !important;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem !important;
 }
 
 .hero-metric-pill {
