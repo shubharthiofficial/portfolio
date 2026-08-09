@@ -589,3 +589,8 @@
     color: #ffffff;
     box-shadow: 0 4px 15px rgba(239, 131, 84, 0.2);
 }
+
+/* Hide zoom hint tags globally */
+.slide-zoom-hint {
+    display: none !important;
+}

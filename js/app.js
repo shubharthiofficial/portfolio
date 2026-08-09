@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initFloatingActionButtons();
     initMobileNav();
     initContributionAccordion();
+    initResearchCarousel();
+    initConceptCarousel();
+    initUniversalLightbox();
 
     // Smooth scroll to hash on page load if present
     if (window.location.hash) {
@@ -770,6 +773,342 @@ function initContributionAccordion() {
             drawer.style.marginTop = '1rem';
             if (chevron) chevron.style.transform = 'rotate(180deg)';
             if (textLabel) textLabel.textContent = 'Collapse details';
+        }
+    });
+}
+
+/* ========================================================================= */
+/* INTERACTIVE RESEARCH SLIDE CAROUSEL                                       */
+/* ========================================================================= */
+function initResearchCarousel() {
+    const prevBtn = document.getElementById('research-prev-btn');
+    const nextBtn = document.getElementById('research-next-btn');
+    const counterEl = document.getElementById('research-slide-counter');
+    const slides = document.querySelectorAll('.research-carousel-slide');
+    const dotsContainer = document.getElementById('research-carousel-dots');
+
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // Create dots
+    if (dotsContainer && !dotsContainer.children.length) {
+        slides.forEach((_, idx) => {
+            const dot = document.createElement('div');
+            dot.className = `research-carousel-dot ${idx === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => goToSlide(idx));
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    function updateCarousel() {
+        slides.forEach((slide, idx) => {
+            if (idx === currentIndex) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        if (counterEl) {
+            counterEl.textContent = `${currentIndex + 1} OF ${totalSlides}`;
+        }
+
+        if (dotsContainer) {
+            const dots = dotsContainer.querySelectorAll('.research-carousel-dot');
+            dots.forEach((dot, idx) => {
+                if (idx === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+    }
+
+    function goToSlide(index) {
+        if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+        updateCarousel();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        const carousel = document.querySelector('.research-carousel-container');
+        if (!carousel) return;
+        const rect = carousel.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
+        
+        if (isInView && !document.querySelector('.ai-modal-backdrop.is-active')) {
+            if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+            if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+        }
+    });
+}
+
+function initConceptCarousel() {
+    const prevBtn = document.getElementById('concept-prev-btn');
+    const nextBtn = document.getElementById('concept-next-btn');
+    const counterEl = document.getElementById('concept-slide-counter');
+    const slides = document.querySelectorAll('.concept-carousel-slide');
+
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function updateCarousel() {
+        slides.forEach((slide, idx) => {
+            if (idx === currentIndex) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        if (counterEl) {
+            counterEl.textContent = `${currentIndex + 1} OF ${totalSlides}`;
+        }
+    }
+
+    function goToSlide(index) {
+        if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+        updateCarousel();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+}
+
+/* ========================================================================= */
+/* UNIVERSAL INTERACTIVE LIGHTBOX & ZOOM ENGINE                              */
+/* ========================================================================= */
+let artifactZoom = 1;
+let panX = 0;
+let panY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+function updateLightboxTransform() {
+    const modalImg = document.getElementById('lightbox-modal-img');
+    if (!modalImg) return;
+    modalImg.style.transform = `translate(${panX}px, ${panY}px) scale(${artifactZoom})`;
+}
+
+function openArtifactLightbox(imgSrc, title) {
+    let modal = document.getElementById('artifact-lightbox-modal');
+    if (!modal) {
+        initUniversalLightbox();
+        modal = document.getElementById('artifact-lightbox-modal');
+    }
+    let modalImg = document.getElementById('lightbox-modal-img');
+    let modalTitle = document.getElementById('lightbox-modal-title');
+    
+    if (!modal || !modalImg) return;
+
+    modalImg.src = imgSrc;
+    modalImg.alt = title || 'Screenshot View';
+    if (modalTitle) modalTitle.textContent = title || 'Screenshot View';
+
+    artifactZoom = 1;
+    panX = 0;
+    panY = 0;
+    updateLightboxTransform();
+
+    modal.style.display = 'flex';
+    modal.style.opacity = '1';
+    modal.style.pointerEvents = 'auto';
+    modal.style.visibility = 'visible';
+    modal.classList.add('is-active');
+
+    document.body.style.overflow = 'hidden';
+}
+
+function closeArtifactLightbox() {
+    const modal = document.getElementById('artifact-lightbox-modal');
+    if (!modal) return;
+
+    modal.classList.remove('is-active');
+    modal.style.opacity = '0';
+    modal.style.pointerEvents = 'none';
+    setTimeout(() => {
+        if (!modal.classList.contains('is-active')) {
+            modal.style.display = 'none';
+        }
+    }, 200);
+    document.body.style.overflow = '';
+}
+
+function zoomArtifactLightbox(delta) {
+    artifactZoom = Math.min(Math.max(0.8, artifactZoom + delta), 5.0);
+    if (artifactZoom === 1) {
+        panX = 0;
+        panY = 0;
+    }
+    updateLightboxTransform();
+}
+
+function resetArtifactLightboxZoom() {
+    artifactZoom = 1;
+    panX = 0;
+    panY = 0;
+    updateLightboxTransform();
+}
+
+function initUniversalLightbox() {
+    // Inject modal container if missing
+    let modal = document.getElementById('artifact-lightbox-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'artifact-lightbox-modal';
+        modal.className = 'lightbox-overlay';
+        modal.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(5, 8, 15, 0.88); backdrop-filter: blur(12px); z-index: 999999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;';
+        modal.innerHTML = `
+            <div style="width: 90vw; height: 86vh; max-width: 1400px; max-height: 900px; background: var(--bg-secondary, #0d1117); border: 1px solid var(--card-border, rgba(255, 255, 255, 0.1)); border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,0.8);">
+                <div style="padding: 0.85rem 1.35rem; background: var(--bg-tertiary, #161b22); border-bottom: 1px solid var(--card-border, rgba(255, 255, 255, 0.1)); display: flex; justify-content: space-between; align-items: center; z-index: 10;">
+                    <div style="display: flex; align-items: center; gap: 0.6rem; overflow: hidden;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold, #fca311)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        <span id="lightbox-modal-title" style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary, #ffffff); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Screenshot View</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <button type="button" id="lb-zoom-in" style="background: var(--bg-tertiary, #161b22); border: 1px solid var(--card-border, rgba(255,255,255,0.15)); color: var(--text-primary, #fff); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 600;" title="Zoom In">+</button>
+                        <button type="button" id="lb-zoom-out" style="background: var(--bg-tertiary, #161b22); border: 1px solid var(--card-border, rgba(255,255,255,0.15)); color: var(--text-primary, #fff); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 600;" title="Zoom Out">&minus;</button>
+                        <button type="button" id="lb-reset" style="background: var(--bg-tertiary, #161b22); border: 1px solid var(--card-border, rgba(255,255,255,0.15)); color: var(--text-secondary, #a0aec0); padding: 0.4rem 0.75rem; border-radius: 8px; cursor: pointer; font-size: 0.78rem; font-weight: 600;" title="Reset Zoom">Reset</button>
+                        <button type="button" id="lb-close" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); color: #f87171; width: 34px; height: 34px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 600;" title="Close (Esc)">&times;</button>
+                    </div>
+                </div>
+                <div id="lightbox-modal-viewport" style="flex: 1; position: relative; overflow: hidden; background: #04060a; display: flex; align-items: center; justify-content: center; cursor: grab; user-select: none;">
+                    <img id="lightbox-modal-img" src="" alt="" style="max-width: 95%; max-height: 95%; object-fit: contain; transition: transform 0.15s ease-out; transform-origin: center center; will-change: transform;">
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+
+    const zoomInBtn = document.getElementById('lb-zoom-in');
+    const zoomOutBtn = document.getElementById('lb-zoom-out');
+    const resetBtn = document.getElementById('lb-reset');
+    const closeBtn = document.getElementById('lb-close');
+    const viewport = document.getElementById('lightbox-modal-viewport');
+    const modalImg = document.getElementById('lightbox-modal-img');
+
+    if (zoomInBtn) zoomInBtn.addEventListener('click', () => zoomArtifactLightbox(0.4));
+    if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => zoomArtifactLightbox(-0.4));
+    if (resetBtn) resetBtn.addEventListener('click', resetArtifactLightboxZoom);
+    if (closeBtn) closeBtn.addEventListener('click', closeArtifactLightbox);
+
+    if (viewport) {
+        viewport.addEventListener('wheel', (e) => {
+            if (!modal.classList.contains('is-active')) return;
+            e.preventDefault();
+            const delta = e.deltaY < 0 ? 0.35 : -0.35;
+            zoomArtifactLightbox(delta);
+        }, { passive: false });
+
+        viewport.addEventListener('mousedown', (e) => {
+            if (e.target.closest('button')) return;
+            isDragging = true;
+            startX = e.clientX - panX;
+            startY = e.clientY - panY;
+            viewport.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            panX = e.clientX - startX;
+            panY = e.clientY - startY;
+            updateLightboxTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                if (viewport) viewport.style.cursor = 'grab';
+            }
+        });
+    }
+
+    if (modalImg) {
+        modalImg.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (artifactZoom === 1) {
+                artifactZoom = 2.5;
+            } else if (artifactZoom === 2.5) {
+                artifactZoom = 4.5;
+            } else {
+                artifactZoom = 1;
+                panX = 0;
+                panY = 0;
+            }
+            updateLightboxTransform();
+        });
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeArtifactLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (modal.classList.contains('is-active')) {
+            if (e.key === 'Escape') closeArtifactLightbox();
+            if (e.key === '+' || e.key === '=') zoomArtifactLightbox(0.4);
+            if (e.key === '-' || e.key === '_') zoomArtifactLightbox(-0.4);
+            if (e.key === '0') resetArtifactLightboxZoom();
+        }
+    });
+
+    // Global image click delegate listener
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('#artifact-lightbox-modal') || 
+            e.target.closest('#full-deck-modal') || 
+            e.target.closest('a') || 
+            e.target.closest('button') || 
+            e.target.closest('.logo') || 
+            e.target.closest('.sun-icon') || 
+            e.target.closest('.moon-icon') ||
+            e.target.closest('.research-carousel-btn') ||
+            e.target.closest('.research-carousel-dot') ||
+            e.target.closest('.concept-carousel-controls')) {
+            return;
+        }
+
+        const imgEl = e.target.closest('img');
+        const frameEl = e.target.closest('.slide-frame, .protected-screenshot-wrap, .zoomable-artifact-wrapper');
+
+        let src = '';
+        let alt = '';
+
+        if (imgEl && !imgEl.closest('#artifact-lightbox-modal')) {
+            src = imgEl.src;
+            alt = imgEl.alt;
+        } else if (frameEl) {
+            const childImg = frameEl.querySelector('img');
+            if (childImg) {
+                src = childImg.src;
+                alt = childImg.alt;
+            }
+        }
+
+        if (src) {
+            openArtifactLightbox(src, alt);
         }
     });
 }

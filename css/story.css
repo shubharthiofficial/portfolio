@@ -1402,3 +1402,8 @@ body.story-detail-page {
         gap: 1rem !important;
     }
 }
+
+/* Hide zoom hint tags globally */
+.slide-zoom-hint {
+    display: none !important;
+}

@@ -1069,3 +1069,8 @@
         gap: 1.5rem;
     }
 }
+
+/* Hide zoom hint tags globally */
+.slide-zoom-hint {
+    display: none !important;
+}

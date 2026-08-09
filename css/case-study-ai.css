@@ -375,7 +375,8 @@
 .narrative-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    align-items: stretch;
     margin-bottom: 2rem;
 }
 
@@ -383,6 +384,14 @@
     .narrative-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.narrative-grid > div {
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .narrative-card-problem {
@@ -404,6 +413,9 @@
     border: 1px solid rgba(40, 167, 69, 0.2);
     border-radius: 12px;
     padding: 1.25rem;
+}
+
+section > .narrative-card-outcome {
     margin-top: 2rem;
 }
 
@@ -411,11 +423,15 @@
     font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.5rem;
+    letter-spacing: 1.3px;
+    margin-bottom: 0.6rem;
     display: flex;
     align-items: center;
     gap: 0.45rem;
+}
+
+.narrative-card-title svg {
+    flex-shrink: 0;
 }
 
 .narrative-card-problem .narrative-card-title { color: #ff6b6b; }
@@ -426,8 +442,10 @@
 
 .narrative-card-text {
     font-size: 0.92rem;
-    line-height: 1.55;
+    line-height: 1.6;
     color: var(--text-secondary);
+    margin: 0;
+    flex: 1;
 }
 
 /* --- Progressive Accordion (Case Study 01 Standardized Component) --- */
@@ -548,11 +566,15 @@ details.progressive-accordion summary::marker {
 
 .process-flow-card {
     flex: 1;
-    min-width: 110px;
+    min-width: 0;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--bg-secondary);
     border: 1px solid var(--card-border);
     border-radius: 8px;
-    padding: 0.75rem 0.5rem;
+    padding: 0.75rem 0.6rem;
     text-align: center;
     box-sizing: border-box;
 }
@@ -567,6 +589,9 @@ details.progressive-accordion summary::marker {
     font-size: 1.1rem;
     font-weight: 700;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -621,4 +646,255 @@ details.progressive-accordion summary::marker {
     .process-flow-row {
         grid-template-columns: 1fr !important;
     }
+}
+
+/* --- Research & Concept Slide Carousel Styling --- */
+.research-carousel-container,
+.concept-carousel-container {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    position: relative;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.4);
+}
+
+.research-carousel-header,
+.concept-carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.research-carousel-counter,
+.concept-carousel-counter {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgba(252, 163, 17, 0.1);
+    border: 1px solid rgba(252, 163, 17, 0.3);
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+}
+
+/* CONSTANT OUTER FRAME HEIGHT WITH BLACK BACKGROUND */
+.research-carousel-viewport,
+.concept-carousel-viewport {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000000;
+    border: 1px solid var(--card-border);
+}
+
+.research-carousel-slide,
+.concept-carousel-slide {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #000000;
+    animation: fadeInSlide 0.35s ease-in-out forwards;
+}
+
+.research-carousel-slide.active,
+.concept-carousel-slide.active {
+    display: flex;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.research-slide-img-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    cursor: zoom-in;
+    background: #000000;
+}
+
+.research-slide-img-wrap img {
+    max-width: 100%;
+    max-height: 380px;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.research-slide-info {
+    padding: 1rem 1.35rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--card-border);
+}
+
+.research-slide-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.research-slide-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.research-carousel-controls,
+.concept-carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.research-carousel-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s var(--ease-cred);
+}
+
+.research-carousel-btn:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: rgba(252, 163, 17, 0.08);
+}
+
+.research-carousel-dots {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.research-carousel-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.research-carousel-dot.active {
+    background: var(--accent-gold);
+    width: 24px;
+    border-radius: 100px;
+}
+
+/* Full Deck Modal */
+.full-deck-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.full-deck-modal-backdrop.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.full-deck-modal-window {
+    width: 94%;
+    max-width: 1100px;
+    max-height: 90vh;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+.full-deck-modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* =========================================================
+   UNIVERSAL ARTIFACT LIGHTBOX MODAL STYLING
+   ========================================================= */
+#artifact-lightbox-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(5, 8, 15, 0.94) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    z-index: 9999999 !important;
+    display: none;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-in-out;
+}
+
+#artifact-lightbox-modal.is-active {
+    display: flex !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Concept Carousel Styles */
+.concept-carousel-slide {
+    display: none;
+    flex-direction: column;
+    animation: fadeInSlide 0.35s ease-in-out forwards;
+}
+
+.concept-carousel-slide.active {
+    display: flex;
+}
+
+/* Hide zoom hint tags globally */
+.slide-zoom-hint {
+    display: none !important;
 }

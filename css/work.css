@@ -962,3 +962,8 @@ a.category-card:active {
     }
 }
 
+
+/* Hide zoom hint tags globally */
+.slide-zoom-hint {
+    display: none !important;
+}

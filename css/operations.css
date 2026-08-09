@@ -686,3 +686,8 @@
         left: 10px;
     }
 }
+
+/* Hide zoom hint tags globally */
+.slide-zoom-hint {
+    display: none !important;
+}

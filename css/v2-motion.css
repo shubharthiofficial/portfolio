@@ -642,3 +642,8 @@
     max-width: 500px;
     margin-top: 0.4rem;
 }
+
+/* Hide zoom hint tags globally */
+.slide-zoom-hint {
+    display: none !important;
+}

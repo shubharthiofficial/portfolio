@@ -130,45 +130,7 @@
        4. Lightbox Modal Controller
        ========================================== */
     function initOpsLightbox() {
-        const modal = document.getElementById('lightbox-modal');
-        if (!modal) return;
-        const modalImg = document.getElementById('lightbox-img');
-        const closeBtn = modal.querySelector('.lightbox-close');
-
-        document.addEventListener('click', (e) => {
-            const targetImg = e.target.closest('img');
-            
-            // Only trigger for content/screenshot images outside lightbox modal
-            if (targetImg && !e.target.closest('#lightbox-modal')) {
-                modal.classList.add('active');
-                if (modalImg) {
-                    modalImg.src = targetImg.src;
-                    modalImg.alt = targetImg.alt || 'Enlarged Screenshot View';
-                }
-                document.body.style.overflow = 'hidden';
-            }
-        });
-
-        const closeModal = () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closeModal);
-        }
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal || e.target.classList.contains('lightbox-container')) {
-                closeModal();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
-            }
-        });
+        // Delegated to initUniversalLightbox() in app.js
     }
 
     // 5. Progressive Accordion Toggle Listener

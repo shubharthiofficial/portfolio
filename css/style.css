@@ -2226,3 +2226,8 @@ footer {
 .pwd-shake {
     animation: pwdShake 0.4s ease-in-out;
 }
+
+/* Hide zoom hint tags globally */
+.slide-zoom-hint {
+    display: none !important;
+}
