@@ -292,7 +292,7 @@ function initCaseStudies() {
             title: 'B2B CPQ & Order Management',
             client: 'Amdocs (Optus & Elisa)',
             role: 'Lead Experience Strategist',
-            period: 'Nov 2022 - Present',
+            period: 'Nov 2022 - Jul 2026',
             challenge: 'The enterprise CPQ (Configure, Price, Quote) checkout process was highly disjointed. Sales representatives were forced to navigate through multiple nested validation tabs and complex telecom bundling rules. Order submission fallout was high, leading to significant support costs and delayed processing.',
             body: `
                 <h3>The Challenge</h3>
