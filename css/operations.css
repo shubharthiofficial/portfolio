@@ -691,3 +691,48 @@
 .slide-zoom-hint {
     display: none !important;
 }
+
+/* =========================================================
+   LIGHT MODE OVERRIDES (OPERATIONS.CSS)
+   ========================================================= */
+[data-theme="light"] .radial-center-hub {
+    background: #ffffff;
+    border-color: var(--accent-gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .module-card {
+    background: #ffffff;
+    border-color: rgba(20, 33, 61, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .mockup-header {
+    background: #faf8f5 !important;
+    border-bottom-color: rgba(20, 33, 61, 0.1) !important;
+}
+
+[data-theme="light"] .mockup-window {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .flow-node {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .fallout-node-popover {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .architecture-map-wrap,
+[data-theme="light"] .flow-tracer-container {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}

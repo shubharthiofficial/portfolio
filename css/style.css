@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 /* --- Root variables (Dark Mode System Default) --- */
-:root, [data-theme="light"], [data-theme="dark"] {
+:root, [data-theme="dark"] {
     --bg-primary: #111315;       /* Deep Charcoal #111315 background layer */
     --bg-secondary: #14213d;     /* Oxford Blue for cards and containers */
     --bg-tertiary: #0a1120;      /* Dark Oxford Blue for section contrast */
@@ -33,6 +33,28 @@
     
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-snappy: all 0.2s ease-out;
+}
+
+/* --- Light Mode Tokens --- */
+[data-theme="light"] {
+    --bg-primary: #f7f6f2;       /* Warm editorial off-white / alabaster */
+    --bg-secondary: #ffffff;     /* Clean crisp white for primary cards */
+    --bg-tertiary: #efece6;      /* Soft warm neutral surface for sections/containers */
+    --card-border: rgba(20, 33, 61, 0.1); /* Subtle neutral border */
+    
+    --text-primary: #11161d;     /* Deep charcoal / dark navy for crisp primary typography */
+    --text-secondary: #4a5568;   /* Muted slate gray for long-form reading */
+    --text-tertiary: #6c7789;    /* Crisp slate silver for labels and metadata */
+    
+    --accent-gold: #d97706;      /* Warm amber orange with high light-mode contrast */
+    --accent-blue: #efece6;
+    --accent-terracotta: #d97706;
+    --accent-gradient: linear-gradient(135deg, #d97706, #11161d);
+    --card-hover-shadow: rgba(217, 119, 6, 0.12);
+    --card-hover-bg: #f5f2eb;
+    
+    --cursor-color: rgba(217, 119, 6, 0.15);
+    --cursor-border: #d97706;
 }
 
 /* --- Reset & Global --- */
@@ -177,10 +199,15 @@ header {
     align-items: center;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    background: rgba(11, 13, 16, 0.7);
+    background: rgba(11, 13, 16, 0.85);
     border-bottom: 1px solid var(--card-border);
     transition: background 0.4s ease, border-bottom 0.4s ease;
     box-sizing: border-box;
+}
+
+[data-theme="light"] .header-main-nav {
+    background: rgba(247, 246, 242, 0.92) !important;
+    border-bottom-color: var(--card-border) !important;
 }
 
 
@@ -2230,4 +2257,138 @@ footer {
 /* Hide zoom hint tags globally */
 .slide-zoom-hint {
     display: none !important;
+}
+
+/* =========================================================
+   LIGHT MODE COMPONENT OVERRIDES (STYLE.CSS)
+   ========================================================= */
+[data-theme="light"] header {
+    background: rgba(247, 246, 242, 0.88);
+    border-bottom: 1px solid var(--card-border);
+}
+
+[data-theme="light"] .theme-toggle-btn {
+    background-color: var(--bg-tertiary);
+    border-color: var(--card-border);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+[data-theme="light"] .custom-cursor-dot {
+    background-color: var(--accent-gold);
+}
+
+[data-theme="light"] .custom-cursor-circle {
+    border-color: var(--cursor-border);
+}
+
+[data-theme="light"] .metric-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .ticker-track {
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    background: var(--bg-tertiary);
+}
+
+[data-theme="light"] .ticker-logo {
+    filter: none !important;
+    opacity: 0.9 !important;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme="light"] .ticker-logo:hover {
+    opacity: 1 !important;
+    transform: scale(1.06);
+}
+
+[data-theme="light"] .timeline::before {
+    background-color: rgba(20, 33, 61, 0.15) !important;
+}
+
+[data-theme="light"] .timeline-dot {
+    background-color: var(--bg-primary) !important;
+    border: 3px solid var(--accent-gold) !important;
+}
+
+[data-theme="light"] .timeline-item:hover .timeline-dot {
+    background-color: var(--accent-gold) !important;
+}
+
+[data-theme="light"] footer {
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--card-border);
+}
+
+[data-theme="light"] .ai-modal-backdrop {
+    background: rgba(20, 24, 31, 0.65);
+    backdrop-filter: blur(12px);
+}
+
+[data-theme="light"] .ai-modal-window {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="light"] .ai-modal-header {
+    background: #faf8f5 !important;
+    border-bottom-color: rgba(20, 33, 61, 0.1) !important;
+}
+
+[data-theme="light"] .ai-modal-body {
+    background: #ffffff !important;
+}
+
+/* =========================================================
+   UNIVERSAL ORANGE CTA BUTTON TEXT COLOR (WHITE)
+   ========================================================= */
+.btn-primary,
+.v2-btn-primary,
+.pwd-btn-submit,
+.segment-tab-btn.active,
+.action-btn-primary,
+.cta-btn-primary,
+.btn-ask-ai-submit,
+[style*="background: var(--accent-gold)"],
+[style*="background:#fca311"],
+[style*="background:#ef8354"],
+[style*="background:#d97706"],
+[style*="background: #fca311"],
+[style*="background: #ef8354"],
+[style*="background: #d97706"],
+[style*="background-color: var(--accent-gold)"],
+[style*="background-color:#fca311"],
+[style*="background-color:#ef8354"],
+[style*="background-color:#d97706"],
+[style*="background-color: #fca311"],
+[style*="background-color: #ef8354"],
+[style*="background-color: #d97706"] {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+[data-theme="light"] .logo {
+    color: #11161d !important;
+}
+
+[data-theme="light"] .nav-links a {
+    color: #4a5568 !important;
+}
+
+[data-theme="light"] .nav-links a:hover {
+    color: #11161d !important;
+}
+
+[data-theme="light"] .theme-toggle-btn {
+    background-color: #efece6 !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    color: #11161d !important;
 }

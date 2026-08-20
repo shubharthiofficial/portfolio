@@ -19,10 +19,10 @@
         document.documentElement.setAttribute('data-theme', theme);
     </script>
     <!-- CSS Links -->
-    <link rel="stylesheet" href="css/style.css?v=25.0">
-    <link rel="stylesheet" href="css/story.css?v=25.0">
-    <link rel="stylesheet" href="css/v2-motion.css?v=25.0">
-    <link rel="stylesheet" href="css/case-study-ai.css?v=25.0">
+    <link rel="stylesheet" href="css/style.css?v=29.0">
+    <link rel="stylesheet" href="css/story.css?v=29.0">
+    <link rel="stylesheet" href="css/v2-motion.css?v=29.0">
+    <link rel="stylesheet" href="css/case-study-ai.css?v=29.0">
 
     <!-- Microsoft Clarity Tracking Code -->
     <script type="text/javascript">
@@ -49,6 +49,10 @@
                     <li><a href="index.html#work">Selected Works</a></li>
                     <li><a href="index.html#about">About</a></li>
                 </ul>
+                <button class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
                 <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span class="hamburger-bar"></span>
                     <span class="hamburger-bar"></span>
@@ -637,7 +641,7 @@
                     </div>
 
                     <!-- 4. DISCOVERY ARTIFACT (2-COLUMN LAYOUT: IMAGE GLIMPSE LEFT + TEXT RIGHT) -->
-                    <div class="discovery-artifact-container" style="background: rgba(20, 33, 61, 0.4); border: 1px solid var(--card-border); border-radius: 14px; padding: 1.75rem; margin-bottom: 2rem;">
+                    <div class="discovery-artifact-container" style="border: 1px solid var(--card-border); border-radius: 14px; padding: 1.75rem; margin-bottom: 2rem;">
                         
                         <div style="margin-bottom: 1.25rem;">
                             <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">
@@ -669,7 +673,7 @@
                             </div>
 
                             <!-- RIGHT COLUMN: TEXT INSIGHT PANEL (WHAT THIS MAPPING UNCOVERED) -->
-                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.25rem 1.4rem;">
+                            <div class="discovery-artifact-insight" style="border: 1px solid var(--card-border); border-radius: 10px; padding: 1.25rem 1.4rem;">
                                 <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.85rem 0; display: flex; align-items: center; gap: 0.5rem;">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                                     What this mapping uncovered
@@ -1028,7 +1032,7 @@
     </footer>
 <script>
         window.CASE_STUDY_AI_DATA = {
-            title: "Context-Aware Project Guide",
+            title: "Executive Summary",
             subtitle: "Intelligent briefing engine answering at both global and story level.",
             executiveSummaryParagraph: "Enterprise sales operators faced severe friction across B2B catalog offer discovery, complex validation rules, and commercial quote generation. In legacy workflows, operators navigated 5-level nested catalog structures and suffered from blocking modal errors late in checkout. As Senior Product Designer, I led UX strategy and interaction design while collaborating closely with Product Managers, Engineering teams, and Domain Experts across 3 cross-functional product teams. I architected a unified, non-blocking validation framework with real-time header indicators and created a flat, tabbed offer discovery workspace. This simplified workflow eliminated modal checkout blocks, introduced reusable design system patterns across 4 core applications, and cut commercial offer selection overhead from 5 nested clicks to a single contextual click.",
             executiveTags: [
@@ -1121,9 +1125,9 @@
     </script>
 
     <!-- JS Scripts -->
-    <script src="js/app.js?v=25.0"></script>
-    <script src="js/cred-motion.js?v=25.0"></script>
-    <script src="js/story.js?v=25.0"></script>
-    <script src="js/case-study-ai.js?v=25.0"></script>
+    <script src="js/app.js?v=29.0"></script>
+    <script src="js/cred-motion.js?v=29.0"></script>
+    <script src="js/story.js?v=29.0"></script>
+    <script src="js/case-study-ai.js?v=29.0"></script>
 </body>
 </html>

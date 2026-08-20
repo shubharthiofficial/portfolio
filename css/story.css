@@ -29,11 +29,18 @@ body.story-detail-page {
 }
 
 /* --- Header Override --- */
-.story-detail-page header {
+[data-theme="dark"] .story-detail-page header {
     background: rgba(17, 19, 21, 0.85);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--card-border);
+}
+
+[data-theme="light"] .story-detail-page header {
+    background: rgba(247, 246, 242, 0.92) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid var(--card-border) !important;
 }
 
 .back-link {
@@ -1406,4 +1413,105 @@ body.story-detail-page {
 /* Hide zoom hint tags globally */
 .slide-zoom-hint {
     display: none !important;
+}
+
+/* =========================================================
+   LIGHT MODE OVERRIDES FOR CASE STUDY PAGES (STORY.CSS)
+   ========================================================= */
+[data-theme="light"] body.story-detail-page {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .story-detail-page header {
+    background: rgba(247, 246, 242, 0.88);
+    border-bottom: 1px solid var(--card-border);
+}
+
+[data-theme="light"] .back-link {
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .back-link:hover {
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .sticky-nav-item.active a {
+    color: var(--accent-gold);
+    border-left-color: var(--accent-gold);
+}
+
+[data-theme="light"] .story-sidebar .sidebar-title {
+    color: var(--text-tertiary);
+}
+
+[data-theme="light"] .sticky-nav-item a {
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .challenge-card,
+[data-theme="light"] .solution-card,
+[data-theme="light"] .systems-illustration-wrap,
+[data-theme="light"] .impact-card,
+[data-theme="light"] .reflection-card,
+[data-theme="light"] .narrative-block,
+[data-theme="light"] .discovery-artifact-container,
+[data-theme="light"] .discovery-artifact-card {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .insight-card {
+    background: #fffdfa !important;
+    border-color: rgba(217, 119, 6, 0.2) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="light"] .insight-quote {
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .spec-media-container {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .flowchart-container {
+    background: #faf8f5 !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+}
+
+[data-theme="light"] .discovery-artifact-insight,
+[data-theme="light"] .narrative-block div[style*="background"],
+[data-theme="light"] .discovery-artifact-container div[style*="background"] {
+    background: #faf8f5 !important;
+    border-color: rgba(20, 33, 61, 0.08) !important;
+}
+
+[data-theme="light"] .flowchart-node {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .narrative-card-problem,
+[data-theme="light"] .narrative-card-context,
+[data-theme="light"] .narrative-card-decision {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .narrative-card-outcome {
+    background: #f0fdf4 !important;
+    border-color: rgba(16, 185, 129, 0.25) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="light"] .narrative-card-learnings {
+    background: #fffdfa !important;
+    border-color: rgba(217, 119, 6, 0.25) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03) !important;
 }

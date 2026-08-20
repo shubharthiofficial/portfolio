@@ -20,7 +20,7 @@ function initExecutiveGuide() {
         modalBackdrop.id = 'cs-ai-modal-backdrop';
         modalBackdrop.className = 'ai-modal-backdrop';
         modalBackdrop.innerHTML = `
-            <div class="ai-modal-window" style="max-width: 780px; max-height: 85vh;">
+            <div class="ai-modal-window" style="width: 90%; max-width: 1050px; max-height: 85vh;">
                 <div class="ai-modal-header" style="padding: 1.25rem 1.75rem; border-bottom: 1px solid var(--card-border);">
                     <div class="ai-modal-title-wrap">
                         <svg class="ai-doc-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2">
@@ -31,8 +31,7 @@ function initExecutiveGuide() {
                         </svg>
                         <div>
                             <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
-                                <div class="ai-modal-title" style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">Context-Aware Project Guide</div>
-                                <span id="cs-ai-context-badge" style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); background: rgba(252, 163, 17, 0.15); padding: 0.2rem 0.6rem; border-radius: 100px; border: 1px solid rgba(252, 163, 17, 0.3);">Global Briefing</span>
+                                <div class="ai-modal-title" style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary);">Executive Summary</div>
                             </div>
                             <div class="ai-modal-subtitle" id="cs-ai-subtitle" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.25rem;">
                                 ${data.subtitle || 'Understand this project in under two minutes.'}
@@ -96,7 +95,7 @@ function initExecutiveGuide() {
                     </span>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
                         ${(data.storyOverviews || []).map(so => `
-                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.85rem 1rem;">
+                            <div class="ai-overview-card" style="border: 1px solid var(--card-border); border-radius: 8px; padding: 0.85rem 1rem;">
                                 <h5 style="font-size: 0.85rem; font-weight: 600; color: var(--accent-gold); margin: 0 0 0.35rem 0;">${so.title}</h5>
                                 <p style="font-size: 0.82rem; line-height: 1.45; color: var(--text-secondary); margin: 0;">${so.desc}</p>
                             </div>

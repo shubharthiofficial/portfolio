@@ -898,3 +898,112 @@ details.progressive-accordion summary::marker {
 .slide-zoom-hint {
     display: none !important;
 }
+
+/* =========================================================
+   LIGHT MODE OVERRIDES (CASE-STUDY-AI.CSS)
+   ========================================================= */
+[data-theme="light"] .hero-summary-fold {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .hero-summary-card {
+    background: #faf8f5 !important;
+    border-color: rgba(20, 33, 61, 0.08) !important;
+}
+
+[data-theme="light"] .btn-ask-ai {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .btn-ask-ai:hover {
+    border-color: var(--accent-gold) !important;
+    color: var(--accent-gold) !important;
+}
+
+[data-theme="light"] .research-carousel-container,
+[data-theme="light"] .concept-carousel-container {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .research-carousel-header,
+[data-theme="light"] .concept-carousel-header {
+    background: #faf8f5 !important;
+    border-bottom-color: rgba(20, 33, 61, 0.08) !important;
+}
+
+[data-theme="light"] .research-slide-info {
+    background: #faf8f5 !important;
+    border-top-color: rgba(20, 33, 61, 0.08) !important;
+}
+
+[data-theme="light"] .research-carousel-btn {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .research-carousel-btn:hover {
+    border-color: var(--accent-gold) !important;
+    color: var(--accent-gold) !important;
+}
+
+[data-theme="light"] .research-takeaway-card,
+[data-theme="light"] .ux-principle-card,
+[data-theme="light"] .process-flow-card,
+[data-theme="light"] .outcome-card-ai {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .ai-modal-window,
+[data-theme="light"] .executive-guide-modal-window {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="light"] .ai-modal-header,
+[data-theme="light"] .executive-guide-modal-header {
+    background: #faf8f5 !important;
+    border-bottom-color: rgba(20, 33, 61, 0.1) !important;
+}
+
+[data-theme="light"] .ai-modal-body {
+    background: #ffffff !important;
+}
+
+[data-theme="light"] .ai-summary-box {
+    background: #faf8f5 !important;
+    border: 1px solid rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+}
+
+[data-theme="light"] .ai-overview-card {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="light"] .ai-executive-tag-pill {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+}
+
+[data-theme="light"] .ai-question-pill-btn {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    color: #11161d !important;
+}
+
+[data-theme="light"] .ai-question-pill-btn:hover {
+    border-color: var(--accent-gold) !important;
+    background: #faf8f5 !important;
+}

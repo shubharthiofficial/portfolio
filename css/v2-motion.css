@@ -647,3 +647,26 @@
 .slide-zoom-hint {
     display: none !important;
 }
+
+/* =========================================================
+   LIGHT MODE OVERRIDES (V2-MOTION.CSS)
+   ========================================================= */
+[data-theme="light"] .v2-case-card {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .v2-case-card:hover {
+    background-color: #faf8f5 !important;
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 12px 32px rgba(217, 119, 6, 0.15) !important;
+}
+
+[data-theme="light"] .v2-step-card,
+[data-theme="light"] .v2-philosophy-card,
+[data-theme="light"] .v2-metric-card {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}

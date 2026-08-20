@@ -594,3 +594,29 @@
 .slide-zoom-hint {
     display: none !important;
 }
+
+/* =========================================================
+   LIGHT MODE OVERRIDES (AGENTIC.CSS)
+   ========================================================= */
+[data-theme="light"] .designer-orbital-canvas {
+    background: #ffffff;
+    border-color: rgba(20, 33, 61, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .orbital-node {
+    background: #ffffff;
+    border-color: rgba(20, 33, 61, 0.12);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .feature-card {
+    background: #ffffff;
+    border-color: rgba(20, 33, 61, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .feature-cta-btn {
+    background: var(--text-primary);
+    color: #ffffff;
+}

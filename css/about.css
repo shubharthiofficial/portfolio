@@ -255,3 +255,47 @@
 .slide-zoom-hint {
     display: none !important;
 }
+
+/* =========================================================
+   LIGHT MODE OVERRIDES (ABOUT.CSS)
+   ========================================================= */
+[data-theme="light"] .portrait-frame {
+    background-color: #ffffff;
+    border-color: rgba(20, 33, 61, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .timeline-item {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+[data-theme="light"] .timeline-company {
+    color: #11161d !important;
+}
+
+[data-theme="light"] .timeline-role {
+    color: #d97706 !important;
+    font-weight: 600 !important;
+}
+
+[data-theme="light"] .timeline-date {
+    color: #4a5568 !important;
+    font-weight: 600 !important;
+}
+
+[data-theme="light"] .timeline-bullets li {
+    color: #4a5568 !important;
+}
+
+[data-theme="light"] .art-card {
+    background: #ffffff;
+    border: 1px solid rgba(20, 33, 61, 0.1);
+}
+
+[data-theme="light"] .how-work-card {
+    background: #ffffff;
+    border: 1px solid rgba(20, 33, 61, 0.1);
+}

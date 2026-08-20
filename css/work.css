@@ -967,3 +967,58 @@ a.category-card:active {
 .slide-zoom-hint {
     display: none !important;
 }
+
+/* =========================================================
+   LIGHT MODE OVERRIDES (WORK.CSS)
+   ========================================================= */
+[data-theme="light"] .category-card {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .category-card-title {
+    color: #11161d !important;
+}
+
+[data-theme="light"] .category-card-desc {
+    color: #4a5568 !important;
+}
+
+[data-theme="light"] .category-card-num {
+    color: #d97706 !important;
+}
+
+[data-theme="light"] .category-cta {
+    color: #11161d !important;
+}
+
+[data-theme="light"] .category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(217, 119, 6, 0.18) !important;
+    border-color: var(--accent-gold) !important;
+}
+
+[data-theme="light"] .flow-node {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.12) !important;
+    color: #11161d !important;
+}
+
+[data-theme="light"] .outcome-card {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .featured-ecosystem-card {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .impact-metric-card {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}

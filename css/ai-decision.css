@@ -1074,3 +1074,31 @@
 .slide-zoom-hint {
     display: none !important;
 }
+
+/* =========================================================
+   LIGHT MODE OVERRIDES (AI-DECISION.CSS)
+   ========================================================= */
+[data-theme="light"] .sf-matrix-card,
+[data-theme="light"] .sf-drawer-card,
+[data-theme="light"] .sf-viewport-window,
+[data-theme="light"] .sf-scenario-card,
+[data-theme="light"] .sf-score-card {
+    background: #ffffff !important;
+    border-color: rgba(20, 33, 61, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .sf-viewport-header {
+    background: #faf8f5 !important;
+    border-bottom-color: rgba(20, 33, 61, 0.1) !important;
+}
+
+[data-theme="light"] .ai-recommendation-box {
+    background: #fffdfa !important;
+    border-color: rgba(217, 119, 6, 0.2) !important;
+}
+
+[data-theme="light"] .sf-metric-table th {
+    background: #faf8f5 !important;
+    border-bottom-color: rgba(20, 33, 61, 0.1) !important;
+}
