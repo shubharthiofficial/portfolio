@@ -30,14 +30,14 @@ body.story-detail-page {
 
 /* --- Header Override --- */
 [data-theme="dark"] .story-detail-page header {
-    background: rgba(17, 19, 21, 0.85);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: linear-gradient(270deg, rgba(8, 13, 26, 0.98) 0%, rgba(20, 33, 61, 0.9) 50%, rgba(17, 19, 21, 0.82) 100%) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--card-border);
 }
 
 [data-theme="light"] .story-detail-page header {
-    background: rgba(247, 246, 242, 0.92) !important;
+    background: linear-gradient(270deg, rgba(225, 218, 206, 0.95) 0%, rgba(240, 235, 225, 0.92) 50%, rgba(255, 255, 255, 0.95) 100%) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     border-bottom: 1px solid var(--card-border) !important;

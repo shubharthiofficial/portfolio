@@ -131,9 +131,104 @@
     }
 }
 
-.hero.v2-section .v2-container {
-    width: 100%;
+/* --- HERO ADDITIONS: THROBBING STATUS PILL & BACKGROUND GEOMETRIC ART --- */
+
+/* 1. Senior Availability Status Pill */
+.hero-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    margin-bottom: 1.25rem;
+    padding: 0.42rem 1.05rem;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.22) 0%, rgba(20, 33, 61, 0.55) 60%, rgba(20, 33, 61, 0.25) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 100px;
+    letter-spacing: 0.2px;
+    backdrop-filter: blur(10px);
 }
+
+[data-theme="light"] .hero-status-pill {
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.16) 0%, rgba(247, 246, 242, 0.85) 60%, rgba(255, 255, 255, 0.95) 100%) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    color: #1e293b !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03) !important;
+}
+
+.status-throb-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10b981;
+    display: inline-block;
+    animation: throbPulse 2.2s infinite ease-in-out;
+}
+
+@keyframes throbPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    50% {
+        transform: scale(1.35);
+        box-shadow: 0 0 0 7px rgba(16, 185, 129, 0);
+    }
+}
+
+/* 2. Background Geometric Visual Overlay (Complexity to Clarity) */
+.hero-bg-geometric {
+    position: absolute;
+    right: -2%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 65vw;
+    max-width: 900px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0.75;
+}
+
+.hero-bg-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* SVG Vector Styles - Dark Mode Art Direction */
+.geom-stroke { stroke: rgba(255, 255, 255, 0.08); stroke-width: 1; fill: none; }
+.geom-stroke-dash { stroke: rgba(255, 255, 255, 0.06); stroke-dasharray: 4 4; stroke-width: 1; fill: none; }
+.geom-dim { opacity: 0.35; }
+.geom-mid { opacity: 0.65; }
+.geom-accent { stroke: rgba(252, 163, 17, 0.25); stroke-width: 1.2; fill: none; }
+.geom-dot { fill: rgba(252, 163, 17, 0.4); }
+
+.geom-curve-line { stroke: rgba(252, 163, 17, 0.18); stroke-width: 1.2; fill: none; }
+.geom-circle-outer { stroke: rgba(255, 255, 255, 0.05); stroke-width: 1; fill: none; }
+.geom-circle-mid { stroke: rgba(20, 33, 61, 0.45); stroke-width: 1.2; fill: none; }
+.geom-circle-inner { stroke: rgba(252, 163, 17, 0.22); stroke-width: 1.2; fill: none; }
+.geom-circle-core { stroke: rgba(252, 163, 17, 0.35); stroke-width: 1.5; fill: none; }
+.geom-circle-top { stroke: rgba(255, 255, 255, 0.05); stroke-width: 1; fill: none; }
+.geom-circle-top-inner { stroke: rgba(252, 163, 17, 0.15); stroke-width: 1; fill: none; }
+.geom-aligned { stroke: rgba(255, 255, 255, 0.08); stroke-width: 1; fill: none; }
+
+/* SVG Vector Styles - Light Mode Dedicated Art Direction */
+[data-theme="light"] .geom-stroke { stroke: rgba(20, 33, 61, 0.1) !important; }
+[data-theme="light"] .geom-stroke-dash { stroke: rgba(20, 33, 61, 0.08) !important; }
+[data-theme="light"] .geom-accent { stroke: rgba(217, 119, 6, 0.3) !important; stroke-width: 1.2 !important; }
+[data-theme="light"] .geom-dot { fill: rgba(217, 119, 6, 0.5) !important; }
+
+[data-theme="light"] .geom-curve-line { stroke: rgba(217, 119, 6, 0.25) !important; }
+[data-theme="light"] .geom-circle-outer { stroke: rgba(20, 33, 61, 0.08) !important; }
+[data-theme="light"] .geom-circle-mid { stroke: rgba(20, 33, 61, 0.12) !important; }
+[data-theme="light"] .geom-circle-inner { stroke: rgba(217, 119, 6, 0.25) !important; }
+[data-theme="light"] .geom-circle-core { stroke: rgba(217, 119, 6, 0.4) !important; }
+[data-theme="light"] .geom-circle-top { stroke: rgba(20, 33, 61, 0.06) !important; }
+[data-theme="light"] .geom-circle-top-inner { stroke: rgba(217, 119, 6, 0.2) !important; }
+[data-theme="light"] .geom-aligned { stroke: rgba(20, 33, 61, 0.1) !important; }
 
 .hero-title {
     margin-bottom: 0.85rem;

@@ -197,16 +197,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    background: rgba(11, 13, 16, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: linear-gradient(270deg, rgba(8, 13, 26, 0.98) 0%, rgba(20, 33, 61, 0.9) 50%, rgba(17, 19, 21, 0.82) 100%) !important;
     border-bottom: 1px solid var(--card-border);
     transition: background 0.4s ease, border-bottom 0.4s ease;
     box-sizing: border-box;
 }
 
 [data-theme="light"] .header-main-nav {
-    background: rgba(247, 246, 242, 0.92) !important;
+    background: linear-gradient(270deg, rgba(225, 218, 206, 0.95) 0%, rgba(240, 235, 225, 0.92) 50%, rgba(255, 255, 255, 0.95) 100%) !important;
     border-bottom-color: var(--card-border) !important;
 }
 
@@ -2263,7 +2263,7 @@ footer {
    LIGHT MODE COMPONENT OVERRIDES (STYLE.CSS)
    ========================================================= */
 [data-theme="light"] header {
-    background: rgba(247, 246, 242, 0.88);
+    background: linear-gradient(270deg, rgba(225, 218, 206, 0.95) 0%, rgba(240, 235, 225, 0.92) 50%, rgba(255, 255, 255, 0.95) 100%) !important;
     border-bottom: 1px solid var(--card-border);
 }
 
@@ -2348,29 +2348,29 @@ footer {
 }
 
 /* =========================================================
-   UNIVERSAL ORANGE CTA BUTTON TEXT COLOR (WHITE)
+   LIGHT MODE ORANGE CTA BUTTON TEXT COLOR (WHITE)
    ========================================================= */
-.btn-primary,
-.v2-btn-primary,
-.pwd-btn-submit,
-.segment-tab-btn.active,
-.action-btn-primary,
-.cta-btn-primary,
-.btn-ask-ai-submit,
-[style*="background: var(--accent-gold)"],
-[style*="background:#fca311"],
-[style*="background:#ef8354"],
-[style*="background:#d97706"],
-[style*="background: #fca311"],
-[style*="background: #ef8354"],
-[style*="background: #d97706"],
-[style*="background-color: var(--accent-gold)"],
-[style*="background-color:#fca311"],
-[style*="background-color:#ef8354"],
-[style*="background-color:#d97706"],
-[style*="background-color: #fca311"],
-[style*="background-color: #ef8354"],
-[style*="background-color: #d97706"] {
+[data-theme="light"] .btn-primary,
+[data-theme="light"] .v2-btn-primary,
+[data-theme="light"] .pwd-btn-submit,
+[data-theme="light"] .segment-tab-btn.active,
+[data-theme="light"] .action-btn-primary,
+[data-theme="light"] .cta-btn-primary,
+[data-theme="light"] .btn-ask-ai-submit,
+[data-theme="light"] [style*="background: var(--accent-gold)"],
+[data-theme="light"] [style*="background:#fca311"],
+[data-theme="light"] [style*="background:#ef8354"],
+[data-theme="light"] [style*="background:#d97706"],
+[data-theme="light"] [style*="background: #fca311"],
+[data-theme="light"] [style*="background: #ef8354"],
+[data-theme="light"] [style*="background: #d97706"],
+[data-theme="light"] [style*="background-color: var(--accent-gold)"],
+[data-theme="light"] [style*="background-color:#fca311"],
+[data-theme="light"] [style*="background-color:#ef8354"],
+[data-theme="light"] [style*="background-color:#d97706"],
+[data-theme="light"] [style*="background-color: #fca311"],
+[data-theme="light"] [style*="background-color: #ef8354"],
+[data-theme="light"] [style*="background-color: #d97706"] {
     color: #ffffff !important;
     font-weight: 700 !important;
 }

@@ -24,10 +24,10 @@
         const theme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', theme);
     </script>
-    <link rel="stylesheet" href="css/style.css?v=29.0">
-    <link rel="stylesheet" href="css/about.css?v=29.0">
-    <link rel="stylesheet" href="css/work.css?v=29.0">
-    <link rel="stylesheet" href="css/v2-motion.css?v=29.0">
+    <link rel="stylesheet" href="css/style.css?v=36.0">
+    <link rel="stylesheet" href="css/about.css?v=36.0">
+    <link rel="stylesheet" href="css/work.css?v=36.0">
+    <link rel="stylesheet" href="css/v2-motion.css?v=36.0">
 
     <!-- Microsoft Clarity Tracking Code -->
     <script type="text/javascript">
@@ -69,10 +69,47 @@
  
     <main>
         
-        <!-- SECTION 1: HERO SECTION (REDUCED HEIGHT 15-20%) -->
+        <!-- SECTION 1: HERO SECTION -->
         <section class="hero v2-section">
-            <div class="v2-container">
+            <!-- SUBTLE BACKGROUND GEOMETRIC ART (COMPLEXITY TO CLARITY) -->
+            <div class="hero-bg-geometric" aria-hidden="true">
+                <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-bg-svg">
+                    <!-- Complexity Stage: Fragmented, rotated squares & offset lines -->
+                    <g class="geom-complexity">
+                        <rect x="60" y="80" width="75" height="75" transform="rotate(25 97 117)" class="geom-stroke geom-dim" />
+                        <rect x="130" y="170" width="55" height="55" transform="rotate(-15 157 197)" class="geom-stroke geom-mid" />
+                        <rect x="100" y="290" width="95" height="95" transform="rotate(40 147 337)" class="geom-stroke geom-accent" />
+                        <line x1="70" y1="120" x2="230" y2="210" class="geom-stroke-dash" />
+                        <line x1="150" y1="310" x2="310" y2="360" class="geom-stroke-dash" />
+                        <circle cx="120" cy="120" r="3" class="geom-dot" />
+                        <circle cx="150" cy="190" r="4" class="geom-dot" />
+                    </g>
+
+                    <!-- Transition & Structure Lines -->
+                    <g class="geom-structure">
+                        <path d="M190 120 C 270 100, 330 150, 430 180" class="geom-curve-line" />
+                        <path d="M230 220 C 310 200, 390 250, 470 260" class="geom-curve-line" />
+                        <rect x="290" y="140" width="65" height="65" transform="rotate(12 322 172)" class="geom-stroke geom-dim" />
+                    </g>
+
+                    <!-- Clarity Stage: Smooth Concentric Circles & Precision Rings -->
+                    <g class="geom-clarity">
+                        <circle cx="620" cy="300" r="270" class="geom-circle-outer" />
+                        <circle cx="620" cy="300" r="210" class="geom-circle-mid" />
+                        <circle cx="620" cy="300" r="150" class="geom-circle-inner" />
+                        <circle cx="620" cy="300" r="90" class="geom-circle-core" />
+                        
+                        <circle cx="500" cy="120" r="170" class="geom-circle-top" />
+                        <circle cx="500" cy="120" r="115" class="geom-circle-top-inner" />
+                        
+                        <rect x="580" y="260" width="80" height="80" class="geom-stroke geom-aligned" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="v2-container" style="position: relative; z-index: 1;">
                 <div class="v2-section-eyebrow reveal-text">Senior Experience Designer • Enterprise Product &amp; AI</div>
+
                 <h1 class="hero-title reveal-text delay-1">
                     Designing Clarity for <span class="accent-glow">Enterprise Complexity</span>
                 </h1>
@@ -532,7 +569,7 @@
     </footer>
 
     <!-- JS scripts -->
-    <script src="js/app.js?v=29.0"></script>
-    <script src="js/cred-motion.js?v=29.0"></script>
+    <script src="js/app.js?v=36.0"></script>
+    <script src="js/cred-motion.js?v=36.0"></script>
 </body>
 </html>
