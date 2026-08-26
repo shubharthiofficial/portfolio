@@ -19,10 +19,10 @@
         document.documentElement.setAttribute('data-theme', theme);
     </script>
     <!-- CSS Links -->
-    <link rel="stylesheet" href="css/style.css?v=36.0">
-    <link rel="stylesheet" href="css/story.css?v=36.0">
-    <link rel="stylesheet" href="css/v2-motion.css?v=36.0">
-    <link rel="stylesheet" href="css/case-study-ai.css?v=36.0">
+    <link rel="stylesheet" href="css/style.css?v=38.0">
+    <link rel="stylesheet" href="css/story.css?v=38.0">
+    <link rel="stylesheet" href="css/v2-motion.css?v=38.0">
+    <link rel="stylesheet" href="css/case-study-ai.css?v=38.0">
 
     <!-- Microsoft Clarity Tracking Code -->
     <script type="text/javascript">
@@ -352,13 +352,94 @@
                         </div>
                     </div>
 
-                    <!-- 5. PRODUCT SCREENS (CLEAN, UNBLURRED, NO OVERLAY BADGES) -->
-                    <div class="protected-screenshot-wrap" style="margin: 1.75rem 0;">
-                        <img class="protected-screenshot-img" src="assets/stories/cropped/redesigned_header.png?v=9.0" alt="Redesigned sub-category tab navigation layout" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+                    <!-- 5. PRODUCT SCREENS (LEGACY APPROACH, REDESIGNED WORKSPACE & SERVICEABILITY CHECKS) -->
+                    
+                    <!-- Part A: Legacy Approach & Previous Exploration (Past Reference Screens) -->
+                    <div style="margin: 2rem 0 1.5rem 0;">
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.5rem;">
+                            LEGACY APPROACH &amp; NAVIGATION FRICTION
+                        </span>
+                        <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.85rem 0;">
+                            Previous 5-Level Nested Catalog Structure
+                        </h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1.25rem;">
+                            In the legacy system, operators navigated multi-layered modal dialogs and nested dropdown trees across 5 separate steps to locate commercial offer bundles, increasing quote build latency and cognitive friction.
+                        </p>
+
+                        <!-- Legacy 3-Step Screenshot Grid -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 1.75rem;">
+                            <div class="protected-screenshot-wrap" style="position: relative;">
+                                <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem;">Legacy Step 1: Category Selection</div>
+                                <div class="zoomable-artifact-wrapper" onclick="openArtifactLightbox('assets/stories/cropped/page_1_img_1.png', 'Legacy Step 1: 5-Level Category Selection')">
+                                    <img class="protected-screenshot-img" src="assets/stories/cropped/page_1_img_1.png?v=37.0" alt="Legacy Step 1: 5-Level Category Selection" style="width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--card-border);">
+                                </div>
+                            </div>
+                            <div class="protected-screenshot-wrap" style="position: relative;">
+                                <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem;">Legacy Step 2: Sub-Category Tree</div>
+                                <div class="zoomable-artifact-wrapper" onclick="openArtifactLightbox('assets/stories/cropped/page_2_img_1.png', 'Legacy Step 2: Deep Nested Sub-Category Navigation')">
+                                    <img class="protected-screenshot-img" src="assets/stories/cropped/page_2_img_1.png?v=37.0" alt="Legacy Step 2: Deep Nested Sub-Category Navigation" style="width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--card-border);">
+                                </div>
+                            </div>
+                            <div class="protected-screenshot-wrap" style="position: relative;">
+                                <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem;">Legacy Step 3: Complex Item Filter</div>
+                                <div class="zoomable-artifact-wrapper" onclick="openArtifactLightbox('assets/stories/cropped/legacy_step3.png', 'Legacy Step 3: Modal Filter &amp; Item Selection')">
+                                    <img class="protected-screenshot-img" src="assets/stories/cropped/legacy_step3.png?v=37.0" alt="Legacy Step 3: Modal Filter &amp; Item Selection" style="width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--card-border);">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="protected-screenshot-wrap" style="margin: 1.75rem 0;">
-                        <img class="protected-screenshot-img" src="assets/stories/cropped/page_4_img_1.png?v=9.0" alt="Sales platform contextual discovery layout" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+                    <!-- Part B: Redesigned Flat Tabbed Workspace & Contextual Discovery -->
+                    <div style="margin: 2rem 0 1.5rem 0;">
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.5rem;">
+                            REDESIGNED FLAT DISCOVERY WORKSPACE
+                        </span>
+                        <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.85rem 0;">
+                            1-Click Intent-Driven Commercial Offer Selection
+                        </h4>
+
+                        <div class="protected-screenshot-wrap" style="margin: 1.25rem 0;">
+                            <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem;">Redesigned Sub-Category Tab Navigation</div>
+                            <div class="zoomable-artifact-wrapper" onclick="openArtifactLightbox('assets/stories/cropped/redesigned_header.png', 'Redesigned Sub-Category Tab Navigation')">
+                                <img class="protected-screenshot-img" src="assets/stories/cropped/redesigned_header.png?v=37.0" alt="Redesigned sub-category tab navigation layout" style="width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--card-border);">
+                            </div>
+                        </div>
+
+                        <div class="protected-screenshot-wrap" style="margin: 1.25rem 0;">
+                            <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem;">Contextual Bundle Preview &amp; 1-Click Offer Attachment</div>
+                            <div class="zoomable-artifact-wrapper" onclick="openArtifactLightbox('assets/stories/cropped/page_4_img_1.png', 'Sales Platform Contextual Discovery Layout')">
+                                <img class="protected-screenshot-img" src="assets/stories/cropped/page_4_img_1.png?v=37.0" alt="Sales platform contextual discovery layout" style="width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--card-border);">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Part C: Real-Time Location & Network Serviceability Verification Screens -->
+                    <div style="margin: 2rem 0 1.5rem 0;">
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.5rem;">
+                            AUTOMATED LOCATION SERVICEABILITY &amp; COVERAGE CHECKS
+                        </span>
+                        <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.85rem 0;">
+                            Real-Time Verification prior to Commercial Quote Attachment
+                        </h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1.25rem;">
+                            Integrated real-time location eligibility microservices directly into offer discovery views. Operators instantly verify bandwidth availability, equipment compatibility, and address serviceability states (Verified vs. Out-of-Coverage Warning) before adding complex commercial bundles to quotes.
+                        </p>
+
+                        <!-- Serviceability Success & Warning Side-by-Side Grid -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-bottom: 1.75rem;">
+                            <div class="protected-screenshot-wrap">
+                                <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem;">Serviceability Verified State</div>
+                                <div class="zoomable-artifact-wrapper" onclick="openArtifactLightbox('assets/stories/cropped/serviceability_success.png', 'Automated Serviceability Verification - Success State')">
+                                    <img class="protected-screenshot-img" src="assets/stories/cropped/serviceability_success.png?v=37.0" alt="Automated Serviceability Verification - Success State" style="width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--card-border);">
+                                </div>
+                            </div>
+                            <div class="protected-screenshot-wrap">
+                                <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem;">Serviceability Warning / Coverage Issue State</div>
+                                <div class="zoomable-artifact-wrapper" onclick="openArtifactLightbox('assets/stories/cropped/serviceability_warning.png', 'Automated Serviceability Verification - Warning &amp; Coverage Issue State')">
+                                    <img class="protected-screenshot-img" src="assets/stories/cropped/serviceability_warning.png?v=37.0" alt="Automated Serviceability Verification - Warning &amp; Coverage Issue State" style="width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--card-border);">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- 6. DESIGN PRINCIPLES (VISUAL CARDS) -->
@@ -1125,9 +1206,9 @@
     </script>
 
     <!-- JS Scripts -->
-    <script src="js/app.js?v=36.0"></script>
-    <script src="js/cred-motion.js?v=36.0"></script>
-    <script src="js/story.js?v=36.0"></script>
-    <script src="js/case-study-ai.js?v=36.0"></script>
+    <script src="js/app.js?v=38.0"></script>
+    <script src="js/cred-motion.js?v=38.0"></script>
+    <script src="js/story.js?v=38.0"></script>
+    <script src="js/case-study-ai.js?v=38.0"></script>
 </body>
 </html>
