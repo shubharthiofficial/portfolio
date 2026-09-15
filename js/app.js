@@ -146,17 +146,24 @@ function updateThemeIcons(theme) {
    ========================================== */
 function initScrollAnimations() {
     // Fade/Slide entrance transitions
-    const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
+    const elementsToReveal = document.querySelectorAll('.reveal-on-scroll, .reveal-text, .reveal-up');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                entry.target.classList.add('active', 'is-in-view', 'revealed');
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
 
-    elementsToReveal.forEach(el => revealObserver.observe(el));
+    elementsToReveal.forEach(el => {
+        revealObserver.observe(el);
+        // Safety check: if element is near viewport on initial load, activate immediately
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add('active', 'is-in-view', 'revealed');
+        }
+    });
 
     // Stats counter animation
     const statsContainer = document.querySelector('.metrics-container');
@@ -684,12 +691,15 @@ function initFloatingActionButtons() {
         backBtn.className = 'floating-btn back-fab';
         
         let backUrl = 'index.html';
-        let backText = 'Back to Home';
+        let backText = 'Back';
         
         // Match both normal server route and absolute file path from local folder
         if (path.includes('sales-to-order.html') || path.includes('operational-systems.html') || path.includes('agentic-workflows.html')) {
             backUrl = 'index.html#work';
-            backText = 'Back to Featured Work';
+            backText = 'Back';
+        } else if (path.includes('previous-works.html')) {
+            backUrl = 'index.html#previous-works-teaser';
+            backText = 'Back';
         }
         
         backBtn.setAttribute('href', backUrl);

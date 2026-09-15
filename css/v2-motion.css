@@ -93,6 +93,15 @@
                 transform var(--duration-reveal) var(--ease-cred),
                 filter var(--duration-reveal) var(--ease-cred);
     will-change: opacity, transform, filter;
+    animation: autoRevealFallback 0.1s forwards 1.5s;
+}
+
+@keyframes autoRevealFallback {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
 }
 
 .reveal-text.is-in-view, .reveal-up.is-in-view,
@@ -101,6 +110,7 @@
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
+    animation: none;
 }
 
 .delay-1 { transition-delay: 0.08s; }

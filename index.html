@@ -24,10 +24,10 @@
         const theme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', theme);
     </script>
-    <link rel="stylesheet" href="css/style.css?v=38.0">
-    <link rel="stylesheet" href="css/about.css?v=38.0">
-    <link rel="stylesheet" href="css/work.css?v=38.0">
-    <link rel="stylesheet" href="css/v2-motion.css?v=38.0">
+    <link rel="stylesheet" href="css/style.css?v=41.0">
+    <link rel="stylesheet" href="css/about.css?v=41.0">
+    <link rel="stylesheet" href="css/work.css?v=41.0">
+    <link rel="stylesheet" href="css/v2-motion.css?v=41.0">
 
     <!-- Microsoft Clarity Tracking Code -->
     <script type="text/javascript">
@@ -121,7 +121,7 @@
                 <div class="hero-metrics-row reveal-up delay-3">
                     <div class="hero-metric-pill">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        13+ Years Experience
+                        14 Years Experience
                     </div>
                     <div class="hero-metric-pill">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
@@ -218,6 +218,48 @@
             </div>
         </section>
 
+        <!-- SECTION 2B: PREVIOUS WORKS TEASER (SINGLE ENTRY POINT) -->
+        <section id="previous-works-teaser" class="v2-section" style="scroll-margin-top: 75px; background: var(--bg-tertiary); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+            <div class="v2-container">
+                
+                <!-- Single Unified Entry Point Card -->
+                <div class="reveal-up delay-1" style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 20px; padding: 2.5rem 2.25rem; display: flex; flex-direction: column; gap: 1.75rem; transition: border-color 0.25s ease;">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1.5rem;">
+                        <div style="max-width: 760px;">
+                            <div class="v2-section-eyebrow">Curated Career Archive</div>
+                            <h2 style="font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 700; color: var(--text-primary); margin: 0.35rem 0 0.75rem 0; line-height: 1.25;">
+                                Previous <span>Works</span>.
+                            </h2>
+                            <p style="font-size: 0.98rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                                Earlier projects that shaped how I approach complex digital experiences &mdash; across utilities, financial services and B2B commerce.
+                            </p>
+                        </div>
+                        <a href="previous-works.html" class="v2-case-cta" style="font-size: 0.95rem; font-weight: 700; text-decoration: none; padding-top: 0.4rem;">
+                            View Previous Works
+                            <svg viewBox="0 0 14 14" fill="none" width="14" height="14"><path d="M10 3.5L13.5 7L10 10.5M13.5 7H0.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Domain Chips / Summary Highlights -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; border-top: 1px solid var(--card-border); padding-top: 1.5rem;">
+                        <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 10px; padding: 1rem 1.15rem;">
+                            <div style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">United Utilities</div>
+                            <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Water Utility &bull; Onsite UX Lead</div>
+                        </div>
+                        <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 10px; padding: 1rem 1.15rem;">
+                            <div style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">STOXX</div>
+                            <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Financial Services &bull; Offshore UX Lead</div>
+                        </div>
+                        <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 10px; padding: 1rem 1.15rem;">
+                            <div style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Blackwoods</div>
+                            <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Industrial B2B &bull; Onsite UX Lead &amp; PM</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- SECTION 3: ABOUT (COMPRESSED BY ~30%, REPLACED PHILOSOPHY WITH ONE CONCISE SENTENCE) -->
         <section id="about" class="v2-section" style="scroll-margin-top: 75px; background: var(--bg-tertiary);">
             <div class="v2-container">
@@ -237,7 +279,7 @@
                         <div class="about-paragraphs reveal-up delay-3" style="gap: 1rem;">
                             <div>
                                 <div class="about-subheading">Professional Journey</div>
-                                <p>Over 13+ years, I've evolved from UX consulting into enterprise product design across telecommunications, finance, healthcare, and utilities—focusing on platforms where complex business processes become intuitive user experiences.</p>
+                                <p>Over 14 years, I've evolved from UX consulting into enterprise product design across telecommunications, finance, healthcare, and utilities—focusing on platforms where complex business processes become intuitive user experiences.</p>
                             </div>
                             <div>
                                 <div class="about-subheading">Current Focus</div>
@@ -569,7 +611,7 @@
     </footer>
 
     <!-- JS scripts -->
-    <script src="js/app.js?v=38.0"></script>
-    <script src="js/cred-motion.js?v=38.0"></script>
+    <script src="js/app.js?v=41.0"></script>
+    <script src="js/cred-motion.js?v=41.0"></script>
 </body>
 </html>
