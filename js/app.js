@@ -112,7 +112,7 @@ function initCustomCursor() {
    2. Theme Toggle
    ========================================== */
 function initThemeToggle() {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateThemeIcons(savedTheme);
 
@@ -120,8 +120,8 @@ function initThemeToggle() {
     toggleBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', nextTheme);
             localStorage.setItem('theme', nextTheme);
             updateThemeIcons(nextTheme);
@@ -745,40 +745,57 @@ function initMobileNav() {
     const navLinks = document.querySelector('.nav-links');
     
     if (!toggleBtn || !navLinks) return;
-    
-    toggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = navLinks.classList.contains('active');
+
+    function setMenuState(open) {
+        toggleBtn.classList.toggle('active', open);
+        navLinks.classList.toggle('active', open);
+        toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggleBtn.setAttribute('aria-label', open ? 'Close navigation menu' : 'Toggle navigation menu');
         
-        toggleBtn.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        toggleBtn.setAttribute('aria-expanded', !isOpen);
+        const label = toggleBtn.querySelector('.nav-toggle-label');
+        if (label) {
+            label.textContent = open ? 'CLOSE' : 'MENU';
+        }
         
-        if (!isOpen) {
+        if (open) {
             document.body.style.overflow = 'hidden'; // Prevent body scroll when menu open
         } else {
             document.body.style.overflow = '';
         }
+    }
+    
+    toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.contains('active');
+        setMenuState(!isOpen);
     });
     
     // Close mobile menu when a nav link is clicked
     const links = navLinks.querySelectorAll('a');
     links.forEach(link => {
         link.addEventListener('click', () => {
-            toggleBtn.classList.remove('active');
-            navLinks.classList.remove('active');
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
+            setMenuState(false);
         });
     });
     
     // Close menu when clicking outside of nav-links
     document.addEventListener('click', (e) => {
         if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
-            toggleBtn.classList.remove('active');
-            navLinks.classList.remove('active');
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
+            setMenuState(false);
+        }
+    });
+
+    // Close on Escape key for accessibility
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            setMenuState(false);
+        }
+    });
+
+    // Reset if viewport resized to desktop breakpoint
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            setMenuState(false);
         }
     });
 }

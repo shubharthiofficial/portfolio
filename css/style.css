@@ -5,8 +5,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
-/* --- Root variables (Dark Mode System Default) --- */
-:root, [data-theme="dark"] {
+/* --- Root variables (Light Mode System Default) --- */
+:root, [data-theme="light"] {
+    --bg-primary: #f7f6f2;       /* Warm editorial off-white / alabaster */
+    --bg-secondary: #ffffff;     /* Clean crisp white for primary cards */
+    --bg-tertiary: #efece6;      /* Soft warm neutral surface for sections/containers */
+    --card-border: rgba(20, 33, 61, 0.1); /* Subtle neutral border */
+    
+    --text-primary: #11161d;     /* Deep charcoal / dark navy for crisp primary typography */
+    --text-secondary: #4a5568;   /* Muted slate gray for long-form reading */
+    --text-tertiary: #6c7789;    /* Crisp slate silver for labels and metadata */
+    
+    --accent-gold: #d97706;      /* Warm amber orange with high light-mode contrast */
+    --accent-blue: #efece6;
+    --accent-terracotta: #d97706;
+    --accent-gradient: linear-gradient(135deg, #d97706, #11161d);
+    --card-hover-shadow: rgba(217, 119, 6, 0.12);
+    --card-hover-bg: #f5f2eb;
+    
+    --cursor-color: rgba(217, 119, 6, 0.15);
+    --cursor-border: #d97706;
+    
+    --font-serif-hero: 'Lora', Georgia, serif;
+    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-snappy: all 0.2s ease-out;
+}
+
+/* --- Dark Mode Tokens --- */
+[data-theme="dark"] {
     --bg-primary: #111315;       /* Deep Charcoal #111315 background layer */
     --bg-secondary: #14213d;     /* Oxford Blue for cards and containers */
     --bg-tertiary: #0a1120;      /* Dark Oxford Blue for section contrast */
@@ -26,35 +55,6 @@
     
     --cursor-color: rgba(252, 163, 17, 0.2);
     --cursor-border: #fca311;
-    
-    --font-serif-hero: 'Lora', Georgia, serif;
-    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    
-    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-snappy: all 0.2s ease-out;
-}
-
-/* --- Light Mode Tokens --- */
-[data-theme="light"] {
-    --bg-primary: #f7f6f2;       /* Warm editorial off-white / alabaster */
-    --bg-secondary: #ffffff;     /* Clean crisp white for primary cards */
-    --bg-tertiary: #efece6;      /* Soft warm neutral surface for sections/containers */
-    --card-border: rgba(20, 33, 61, 0.1); /* Subtle neutral border */
-    
-    --text-primary: #11161d;     /* Deep charcoal / dark navy for crisp primary typography */
-    --text-secondary: #4a5568;   /* Muted slate gray for long-form reading */
-    --text-tertiary: #6c7789;    /* Crisp slate silver for labels and metadata */
-    
-    --accent-gold: #d97706;      /* Warm amber orange with high light-mode contrast */
-    --accent-blue: #efece6;
-    --accent-terracotta: #d97706;
-    --accent-gradient: linear-gradient(135deg, #d97706, #11161d);
-    --card-hover-shadow: rgba(217, 119, 6, 0.12);
-    --card-hover-bg: #f5f2eb;
-    
-    --cursor-color: rgba(217, 119, 6, 0.15);
-    --cursor-border: #d97706;
 }
 
 /* --- Reset & Global --- */
@@ -987,6 +987,202 @@ section {
     color: var(--accent-terracotta);
 }
 
+/* --- Evolutionary Experience Narrative Timeline --- */
+.evolution-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-evolution-item {
+    position: relative;
+    margin-bottom: 2.25rem;
+}
+
+.timeline-evolution-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-evolution-item .timeline-dot {
+    position: absolute;
+    left: -3rem;
+    top: 2rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    border: 3px solid var(--accent-gold);
+    z-index: 2;
+    transition: var(--transition-smooth);
+}
+
+.timeline-evolution-item:hover .timeline-dot {
+    background-color: var(--accent-gold);
+    transform: scale(1.25);
+    box-shadow: 0 0 14px rgba(252, 163, 17, 0.4);
+}
+
+.timeline-evolution-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem 2.25rem;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-evolution-card:hover {
+    border-color: var(--card-border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+.timeline-evolution-header {
+    margin-bottom: 0.65rem;
+}
+
+.timeline-evolution-year {
+    display: inline-block;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-gold);
+    background: rgba(252, 163, 17, 0.1);
+    border: 1px solid rgba(252, 163, 17, 0.25);
+    padding: 0.25rem 0.8rem;
+    border-radius: 100px;
+}
+
+.timeline-evolution-title {
+    font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+}
+
+.timeline-evolution-meta {
+    margin-bottom: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.timeline-evolution-orgs {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.1px;
+}
+
+.timeline-evolution-roles {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--accent-gold);
+    letter-spacing: 0.1px;
+}
+
+.timeline-evolution-takeaway {
+    background: rgba(252, 163, 17, 0.05);
+    border-left: 3px solid var(--accent-gold);
+    border-radius: 0 10px 10px 0;
+    padding: 0.95rem 1.35rem;
+    margin: 1.25rem 0;
+}
+
+.timeline-evolution-takeaway strong {
+    display: block;
+    font-size: 0.96rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.55;
+    letter-spacing: -0.1px;
+}
+
+.timeline-evolution-narrative {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.68;
+    margin: 0;
+}
+
+/* Light Mode Overrides for Evolution Timeline */
+[data-theme="light"] .timeline-evolution-card {
+    background: #ffffff;
+    border-color: rgba(20, 33, 61, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .timeline-evolution-card:hover {
+    border-color: rgba(217, 119, 6, 0.4);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .timeline-evolution-item .timeline-dot {
+    background-color: #ffffff;
+    border-color: var(--accent-gold);
+}
+
+[data-theme="light"] .timeline-evolution-item:hover .timeline-dot {
+    background-color: var(--accent-gold);
+    box-shadow: 0 0 12px rgba(217, 119, 6, 0.4);
+}
+
+[data-theme="light"] .timeline-evolution-year {
+    background: rgba(217, 119, 6, 0.1);
+    border-color: rgba(217, 119, 6, 0.25);
+    color: var(--accent-gold);
+}
+
+[data-theme="light"] .timeline-evolution-title {
+    color: #11161d;
+}
+
+[data-theme="light"] .timeline-evolution-orgs {
+    color: #11161d;
+}
+
+[data-theme="light"] .timeline-evolution-roles {
+    color: #b45309;
+}
+
+[data-theme="light"] .timeline-evolution-takeaway {
+    background: rgba(217, 119, 6, 0.06);
+    border-left-color: var(--accent-gold);
+}
+
+[data-theme="light"] .timeline-evolution-takeaway strong {
+    color: #11161d;
+}
+
+[data-theme="light"] .timeline-evolution-narrative {
+    color: #4b5563;
+}
+
+@media (max-width: 600px) {
+    .evolution-timeline {
+        padding-left: 2rem;
+    }
+    .evolution-timeline::before {
+        left: 4px;
+    }
+    .timeline-evolution-item .timeline-dot {
+        left: -2rem;
+        top: 1.4rem;
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+    }
+    .timeline-evolution-card {
+        padding: 1.35rem 1.25rem;
+    }
+    .timeline-evolution-takeaway {
+        padding: 0.8rem 1rem;
+        margin: 1rem 0;
+    }
+}
+
 /* --- Creative Practice / Art Gallery --- */
 .art-gallery-wrap {
     overflow-x: auto;
@@ -1896,24 +2092,54 @@ footer {
    ========================================== */
 .mobile-nav-toggle {
     display: none; /* Hidden on desktop */
+    align-items: center;
+    gap: 0.5rem;
     background: none;
     border: none;
     cursor: pointer;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 16px;
-    padding: 0;
+    padding: 0.5rem 0.65rem;
+    min-height: 44px;
+    min-width: 44px;
     z-index: 1001;
     position: relative;
+    border-radius: 6px;
+    color: var(--text-primary);
+    transition: color 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.mobile-nav-toggle .hamburger-bar {
+.mobile-nav-toggle:hover {
+    color: var(--accent-gold);
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 18px;
+    height: 12px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hamburger-bar {
     width: 100%;
     height: 2px;
-    background-color: var(--text-primary);
+    background-color: currentColor;
+    border-radius: 1px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
+}
+
+.nav-toggle-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: currentColor;
+    line-height: 1;
+    transition: color 0.25s ease, opacity 0.2s ease, transform 0.2s ease;
+    user-select: none;
 }
 
 @media (max-width: 768px) {
@@ -1931,13 +2157,13 @@ footer {
     }
 
     .mobile-nav-toggle {
-        display: flex !important; /* Show on mobile */
+        display: inline-flex !important; /* Show on mobile */
         z-index: 1001;
         margin-left: auto;
     }
 
     nav {
-        gap: 1.2rem;
+        gap: 0.85rem;
         display: flex;
         align-items: center;
     }
@@ -1974,7 +2200,7 @@ footer {
 
     /* Transform hamburger into X when active */
     .mobile-nav-toggle.active .hamburger-bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+        transform: translateY(5px) rotate(45deg);
     }
 
     .mobile-nav-toggle.active .hamburger-bar:nth-child(2) {
@@ -1983,7 +2209,7 @@ footer {
     }
 
     .mobile-nav-toggle.active .hamburger-bar:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+        transform: translateY(-5px) rotate(-45deg);
     }
 }
 
