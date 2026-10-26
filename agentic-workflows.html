@@ -299,9 +299,9 @@
                 <div class="sidebar-title">Case Study Guide</div>
                 <ul class="sticky-nav-list">
                     <li class="sticky-nav-item active"><a href="#overview">Overview</a></li>
-                    <li class="sticky-nav-item"><a href="#story-01-research">Research for AI-Native CRM</a></li>
-                    <li class="sticky-nav-item"><a href="#story-02-integration">GenAI integration in CPQ</a></li>
-                    <li class="sticky-nav-item"><a href="#story-03-exploration">Agentic Workflow Exploration</a></li>
+                    <li class="sticky-nav-item"><a href="#story-01-spec-prototyping">Spec-Driven Platform Prototyping</a></li>
+                    <li class="sticky-nav-item"><a href="#story-02-research">Foundational AI Research</a></li>
+                    <li class="sticky-nav-item"><a href="#story-03-integration">Generative AI Platform Integration</a></li>
                     <li class="sticky-nav-item"><a href="#reflection">Reflection</a></li>
                 </ul>
             </aside>
@@ -339,26 +339,23 @@
                     
                     <!-- 3 CLEAN TRACK CARDS VISUAL -->
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin: 1.75rem 0 2rem 0;">
-                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.35rem;">
-                            <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1.2px; display: block; margin-bottom: 0.4rem;">STORY 01</span>
-                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem;">Research</h3>
-                            <p style="font-size: 0.88rem; line-height: 1.55; color: var(--text-secondary); margin: 0;">
-                                Understanding how AI-native enterprise products are evolving.
-                            </p>
+                        <!-- Overview Card 01 -->
+                        <div class="overview-card">
+                            <div class="card-number">01</div>
+                            <h3 class="card-title">Spec-Driven Prototyping</h3>
+                            <p class="card-desc">Moving from machine-readable specs in DESIGN.md to code-ready platform handoffs.</p>
                         </div>
-                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.35rem;">
-                            <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1.2px; display: block; margin-bottom: 0.4rem;">STORY 02</span>
-                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem;">Integration</h3>
-                            <p style="font-size: 0.88rem; line-height: 1.55; color: var(--text-secondary); margin: 0;">
-                                Applying Generative AI within an enterprise B2B telecom product.
-                            </p>
+                        <!-- Overview Card 02 -->
+                        <div class="overview-card">
+                            <div class="card-number">02</div>
+                            <h3 class="card-title">Foundational AI Research</h3>
+                            <p class="card-desc">Understanding how AI-native enterprise products and copilots are evolving.</p>
                         </div>
-                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.35rem;">
-                            <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1.2px; display: block; margin-bottom: 0.4rem;">STORY 03</span>
-                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem;">Exploration</h3>
-                            <p style="font-size: 0.88rem; line-height: 1.55; color: var(--text-secondary); margin: 0;">
-                                Rethinking how AI could support the UX design workflow itself.
-                            </p>
+                        <!-- Overview Card 03 -->
+                        <div class="overview-card">
+                            <div class="card-number">03</div>
+                            <h3 class="card-title">Platform Integration</h3>
+                            <p class="card-desc">Applying Generative AI capabilities within an enterprise B2B product.</p>
                         </div>
                     </div>
 
@@ -370,14 +367,250 @@
                 </section>
 
                 <!-- ========================================================================= -->
-                <!-- STORY 01 — COMPETITIVE RESEARCH                                           -->
+                <!-- STORY 01: SPEC-DRIVEN PLATFORM PROTOTYPING                               -->
                 <!-- ========================================================================= -->
-                <section id="story-01-research" class="narrative-block" style="padding: 2.5rem 2.25rem; margin-bottom: 3.5rem;">
+                <section id="story-01-spec-prototyping" class="story-section" style="margin-top: 3.5rem;">
+    <!-- Section Header -->
+    <div style="display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #b45309; background: #fef3c7; padding: 0.35rem 0.8rem; border-radius: 999px; margin-bottom: 0.85rem;">
+        STORY 01 • PLATFORM ARCHITECTURE & PIPELINE
+    </div>
+    <h2 style="font-size: 2rem; font-weight: 800; color: #1c1917; margin: 0 0 1rem 0; line-height: 1.25;">
+        Demonstration Before Description: Spec-Driven Platform Prototyping
+    </h2>
+    <p style="font-size: 1.15rem; line-height: 1.6; color: #44403c; max-width: 840px; margin-bottom: 2.5rem;">
+        When AI tools were introduced across our core design team, we skipped basic prompt generation. Instead, we built a machine-readable discovery pipeline. By connecting product requirements, design tokens, and functional prototypes to a single contract using <strong><code>DESIGN.md</code></strong>, we gave both designers and developers a shared source of truth.
+    </p>
+
+    <!-- Context: Friction vs. Pivot Cards -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+        <div style="background: #ffffff; border: 1px solid #fee2e2; border-left: 4px solid #ef4444; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);">
+            <div style="color: #b91c1c; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">
+                Where Naive Automation Failed
+            </div>
+            <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #57534e;">
+                Prompting AI models directly from user stories gave us shiny, consumer-style screens that fell apart in real enterprise workflows. The tools guessed at spacing, swapped critical data tables for cards, and ignored server delays. We were simply creating visual debt at record speed.
+            </p>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #d1fae5; border-left: 4px solid #10b981; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);">
+            <div style="color: #047857; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">
+                The Practical Fix: DESIGN.md
+            </div>
+            <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #57534e;">
+                We treated <strong><code>DESIGN.md</code></strong> as a binding contract. By pairing <em>token metadata</em> with <em>plain-English rules and constraints</em>, the file gives both our team and our AI agents clear boundaries before anyone starts building screens or writing code.
+            </p>
+        </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- END-TO-END PIPELINE FLOWCHART (LIGHT-MODE NATIVE & AIRY)       -->
+    <!-- ============================================================== -->
+    <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 16px; padding: 2.5rem 2rem; margin-bottom: 3.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);">
+        
+        <!-- Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e7e5e4; padding-bottom: 1.25rem; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+                <span style="font-size: 0.75rem; font-weight: 700; color: #b45309; text-transform: uppercase; letter-spacing: 0.08em;">End-to-End Platform Pipeline</span>
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: #1c1917; margin: 0.25rem 0 0 0;">
+                    From Raw Requirements to Code-Ready Handoff
+                </h3>
+            </div>
+            <span style="background: #fef3c7; color: #92400e; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.8rem; border-radius: 999px;">
+                Human-in-the-Loop Active
+            </span>
+        </div>
+
+        <div style="max-width: 720px; margin: 0 auto; display: flex; flex-direction: column;">
+            
+            <!-- STAGE 01 -->
+            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 10px; padding: 1.25rem 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: #78716c; text-transform: uppercase; letter-spacing: 0.05em;">Stage 01 • Business Intent</span>
+                    <span style="background: #f5f5f4; color: #57534e; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px;">JIRA Epics / PRD</span>
+                </div>
+                <div style="font-size: 1rem; font-weight: 700; color: #1c1917; margin: 0.4rem 0 0.2rem 0;">Unstructured Feature Stories &amp; Business Rules</div>
+                <p style="font-size: 0.85rem; color: #57534e; margin: 0; line-height: 1.5;">Pricing thresholds, compliance guardrails, and day-to-day operational goals.</p>
+            </div>
+
+            <!-- Down Arrow -->
+            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
+
+            <!-- HITL GATEWAY 1 -->
+            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-left: 4px solid #b45309; border-radius: 10px; padding: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                    <span style="font-size: 0.75rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em;">HITL Gateway 01 • Architectural Translation</span>
+                    <span style="background: #fef3c7; color: #92400e; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px;">DESIGN.md Spec</span>
+                </div>
+                <div style="font-size: 1.05rem; font-weight: 800; color: #1c1917; margin-bottom: 0.4rem;">Authoring the Shared Spec</div>
+                <p style="font-size: 0.85rem; color: #57534e; line-height: 1.5; margin-bottom: 0.75rem;">
+                    The designer translates broad goals into a structured document, locking down system boundaries before invoking any AI generation.
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                    <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 6px; padding: 0.65rem 0.75rem;">
+                        <div style="font-family: monospace; font-size: 0.75rem; color: #1c1917; font-weight: 700;">1. Token Front-Matter</div>
+                        <div style="font-size: 0.75rem; color: #78716c; margin-top: 0.2rem;">Semantic variables: compact table density, role colors, corner radius.</div>
+                    </div>
+                    <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 6px; padding: 0.65rem 0.75rem;">
+                        <div style="font-family: monospace; font-size: 0.75rem; color: #1c1917; font-weight: 700;">2. Markdown Rules</div>
+                        <div style="font-size: 0.75rem; color: #78716c; margin-top: 0.2rem;">Core states (empty, loading, fallout) and strict component constraints.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Down Arrow -->
+            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
+
+            <!-- STAGE 02 -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 10px; padding: 1.15rem;">
+                    <div style="font-size: 0.75rem; font-weight: 700; color: #78716c; text-transform: uppercase;">Track A: Code Prototype (Cursor)</div>
+                    <div style="font-size: 0.9rem; font-weight: 700; color: #1c1917; margin: 0.3rem 0 0.2rem 0;">Functional Browser Model</div>
+                    <div style="font-size: 0.8rem; color: #57534e; line-height: 1.4;">Reads <code>DESIGN.md</code> to spin up interactive HTML/JS with realistic loading delays.</div>
+                </div>
+                <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 10px; padding: 1.15rem;">
+                    <div style="font-size: 0.75rem; font-weight: 700; color: #78716c; text-transform: uppercase;">Track B: Design System Sync</div>
+                    <div style="font-size: 0.9rem; font-weight: 700; color: #1c1917; margin: 0.3rem 0 0.2rem 0;">Tokens &amp; Components</div>
+                    <div style="font-size: 0.8rem; color: #57534e; line-height: 1.4;">Binds layouts to approved library components, keeping agents from making up random styling.</div>
+                </div>
+            </div>
+
+            <!-- Down Arrow -->
+            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
+
+            <!-- HITL GATEWAY 2 -->
+            <div style="background: #ffffff; border: 2px dashed #d97706; border-radius: 10px; padding: 1.25rem; text-align: center;">
+                <span style="font-size: 0.7rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em;">HITL Gateway 02 • System Gatekeeper</span>
+                <div style="font-size: 1rem; font-weight: 800; color: #1c1917; margin-top: 0.2rem;">Does the Prototype Follow DESIGN.md?</div>
+                <div style="font-size: 0.8rem; color: #78716c; margin-top: 0.25rem;">Checks: Approved tokens, zero modal traps, and all four edge states accounted for.</div>
+            </div>
+
+            <!-- Branches -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.75rem;">
+                <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 0.85rem; text-align: center;">
+                    <div style="font-size: 0.75rem; font-weight: 800; color: #991b1b;">✕ NO: Pattern Drift</div>
+                    <div style="font-size: 0.75rem; color: #7f1d1d; margin-top: 0.2rem;">The designer tightens the spec constraints and re-runs the prompt.</div>
+                </div>
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.85rem; text-align: center;">
+                    <div style="font-size: 0.75rem; font-weight: 800; color: #166534;">✓ YES: Ready for Review</div>
+                    <div style="font-size: 0.75rem; color: #14532d; margin-top: 0.2rem;">The prototype moves straight to cross-functional alignment.</div>
+                </div>
+            </div>
+
+            <!-- Down Arrow -->
+            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
+
+            <!-- STAGE 03 -->
+            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 10px; padding: 1.25rem 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: #78716c; text-transform: uppercase;">Stage 03 • Collaborative Alignment</span>
+                    <span style="background: #f5f5f4; color: #57534e; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px;">HITL Gateway 03</span>
+                </div>
+                <div style="font-size: 1rem; font-weight: 700; color: #1c1917; margin: 0.3rem 0 0.2rem 0;">Demonstration Before Description</div>
+                <p style="font-size: 0.85rem; color: #57534e; margin: 0; line-height: 1.5;">
+                    Design, Product, and Backend Engineering walk through the live interactive POC together, verifying API contracts and resolving queue latency weeks before sprint planning.
+                </p>
+            </div>
+
+            <!-- Down Arrow -->
+            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
+
+            <!-- STAGE 04 -->
+            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-top: 4px solid #1c1917; border-radius: 10px; padding: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 800; color: #1c1917; text-transform: uppercase; letter-spacing: 0.05em;">Stage 04 • Code-Ready Handoff</span>
+                    <span style="background: #f5f5f4; color: #1c1917; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px;">Verify, Don't Rebuild</span>
+                </div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #1c1917; margin: 0.4rem 0 0.3rem 0;">Delivering Clean Component Assets</div>
+                <p style="font-size: 0.85rem; color: #57534e; line-height: 1.5; margin-bottom: 0.75rem;">
+                    Instead of handing off static redlines, the design team provides working, token-bound component files with state logic already built in.
+                </p>
+                <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 6px; padding: 0.75rem; font-size: 0.8rem; color: #44403c; line-height: 1.5;">
+                    <strong>The Developer's Job:</strong> Verify component properties, run accessibility checks, and hook up live endpoints. Rebuilding screens from scratch is completely off the table.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- REAL-WORLD UX ROADBLOCKS                   -->
+    <!-- ========================================== -->
+    <div style="margin-bottom: 3.5rem;">
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #1c1917; margin-bottom: 1.5rem;">
+            Real-World UX Roadblocks &amp; Resolutions
+        </h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+            
+            <!-- Roadblock 1 -->
+            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.75rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                    <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ef4444;"></span>
+                    <h4 style="font-size: 1.05rem; font-weight: 700; color: #1c1917; margin: 0;">The Happy Path Bias and Missing Edge States</h4>
+                </div>
+                <p style="font-size: 0.95rem; color: #57534e; line-height: 1.6; margin-bottom: 1rem;">
+                    <strong>The Friction:</strong> AI models instinctively design for perfect conditions. They build clean, instant success screens while skipping loading queues, partial batch failures, or approval holds. That left operators staring at blank screens with no recovery path when things went wrong.
+                </p>
+                <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 8px; padding: 0.9rem; font-size: 0.9rem; color: #1c1917; line-height: 1.5;">
+                    <strong>The Fix in DESIGN.md:</strong> We added a mandatory state matrix to the spec. Before any layout is generated, the prompt must explicitly define four states: in-flight polling, partial fallout, blocked approvals, and manual overrides.
+                </div>
+            </div>
+
+            <!-- Roadblock 2 -->
+            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.75rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                    <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ef4444;"></span>
+                    <h4 style="font-size: 1.05rem; font-weight: 700; color: #1c1917; margin: 0;">Context Loss and Nested Modal Traps</h4>
+                </div>
+                <p style="font-size: 0.95rem; color: #57534e; line-height: 1.6; margin-bottom: 1rem;">
+                    <strong>The Friction:</strong> For secondary actions, like editing discounts or triaging fallout items, AI tools routinely generated pop-up modals or full redirects. This broke spatial memory, wiped active table filters, and caused real fatigue for power users handling hundreds of records a day.
+                </p>
+                <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 8px; padding: 0.9rem; font-size: 0.9rem; color: #1c1917; line-height: 1.5;">
+                    <strong>The Fix in DESIGN.md:</strong> We set clear layout boundaries in the spec. Secondary tasks must stay within non-blocking side drawers or split panels, keeping the main table and filters visible at all times.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- METRICS GRID -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 3.5rem;">
+        <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
+            <div style="font-size: 2rem; font-weight: 800; color: #b45309;">50% Less</div>
+            <div style="font-size: 0.8rem; color: #78716c; font-weight: 700; text-transform: uppercase; margin-top: 0.25rem;">Sprint Cycle Time</div>
+            <div style="font-size: 0.85rem; color: #57534e; margin-top: 0.5rem;">Engineers inspect code-ready components instead of rebuilding UI from scratch.</div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
+            <div style="font-size: 2rem; font-weight: 800; color: #b45309;">Zero Drift</div>
+            <div style="font-size: 0.8rem; color: #78716c; font-weight: 700; text-transform: uppercase; margin-top: 0.25rem;">Design System Fidelity</div>
+            <div style="font-size: 0.85rem; color: #57534e; margin-top: 0.5rem;">Pre-bound token variables keep arbitrary spacing and rogue CSS out of delivery.</div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
+            <div style="font-size: 2rem; font-weight: 800; color: #b45309;">Early Proof</div>
+            <div style="font-size: 0.8rem; color: #78716c; font-weight: 700; text-transform: uppercase; margin-top: 0.25rem;">Edge Case Discovery</div>
+            <div style="font-size: 0.85rem; color: #57534e; margin-top: 0.5rem;">Surfaced API latency and exception logic weeks before sprint grooming.</div>
+        </div>
+    </div>
+
+    <!-- The Leadership Doctrine -->
+    <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 1.75rem;">
+        <div style="font-size: 0.8rem; font-weight: 700; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">The Core Doctrine</div>
+        <h4 style="font-size: 1.15rem; font-weight: 700; color: #92400e; margin: 0 0 0.5rem 0;">Demonstration Over Description: De-risking Platforms Before Code is Cut</h4>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #78350f; margin: 0;">
+            Written specs describe intentions, and static mockups show ideals. Only working, token-bound prototypes reveal operational reality. By co-authoring machine-readable contracts with engineering and delivering verified component assets, design de-risks platforms and keeps sprints moving quickly.
+        </p>
+    </div>
+</section>
+
+                <!-- ========================================================================= -->
+                <!-- STORY 02: FOUNDATIONAL AI RESEARCH                                       -->
+                <!-- ========================================================================= -->
+                <section id="story-02-research" class="narrative-block" style="padding: 2.5rem 2.25rem; margin-bottom: 3.5rem;">
                     <div class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">
-                        STORY 01 &bull; RESEARCH
+                        STORY 02 &bull; RESEARCH
                     </div>
                     <h2 class="v2-section-title" style="font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1.25rem;">
-                        Competitive Research
+                        Foundational AI Research
                     </h2>
 
                     <p style="font-size: 1.05rem; line-height: 1.65; color: var(--text-secondary); max-width: 820px; margin-bottom: 2rem;">
@@ -693,7 +926,7 @@
                             </p>
                         </div>
                     </div>
-                    <!-- STORY 01 OUTCOME SUMMARY CARD -->
+                    <!-- STORY 02 OUTCOME SUMMARY CARD -->
                     <div class="narrative-card-outcome" style="margin-top: 2rem; background: var(--bg-secondary); border: 1px solid var(--card-border); border-left: 3px solid var(--accent-gold); border-radius: 10px; padding: 1.15rem 1.35rem;">
                         <div class="narrative-card-title" style="font-size: 0.75rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1.2px; display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.45rem;">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -708,7 +941,7 @@
                 <!-- ========================================================================= -->
                 <!-- NEW SECTION: FROM RESEARCH TO PRODUCT CONCEPT                             -->
                 <!-- ========================================================================= -->
-                <section id="story-01-concept" class="narrative-block" style="padding: 2.5rem 2.25rem; margin-bottom: 3.5rem;">
+                <section id="story-02-concept" class="narrative-block" style="padding: 2.5rem 2.25rem; margin-bottom: 3.5rem;">
                     <div class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">
                         RESEARCH &rarr; PRODUCT THINKING
                     </div>
@@ -805,11 +1038,16 @@
                 </section>
 
                 <!-- ========================================================================= -->
-                <!-- STORY 02 — INTEGRATION                                                    -->
+                <!-- STORY 02: INTEGRATION                                                    -->
                 <!-- ========================================================================= -->
-                <section id="story-02-integration" class="narrative-block" style="padding: 2.5rem 2.25rem; margin-bottom: 3.5rem;">
+                
+
+                <!-- ========================================================================= -->
+                <!-- STORY 03: PLATFORM INTEGRATION                                           -->
+                <!-- ========================================================================= -->
+                <section id="story-03-integration" class="narrative-block" style="padding: 2.5rem 2.25rem; margin-bottom: 3.5rem;">
                     <div class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">
-                        STORY 02 &bull; INTEGRATION
+                        STORY 03 &bull; INTEGRATION
                     </div>
                     <h2 class="v2-section-title" style="font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1.25rem;">
                         Applying Generative AI to Enterprise B2B Products
@@ -941,81 +1179,7 @@
                         <div class="protected-screenshot-wrap" style="margin: 1.25rem 0;">
                             <img src="assets/stories/cropped/proposal_enhance_popover.png?v=9.0" alt="Description Enhancement with AI Popover Workspace Modal" style="width: 100%; height: auto; border-radius: 8px; display: block;" class="protected-screenshot-img">
                         </div>
-
-                    <!-- STORY 02 OUTCOME SUMMARY CARD -->
-                    <div class="narrative-card-outcome" style="margin-top: 2.5rem; background: var(--bg-secondary); border: 1px solid var(--card-border); border-left: 3px solid var(--accent-gold); border-radius: 10px; padding: 1.15rem 1.35rem;">
-                        <div class="narrative-card-title" style="font-size: 0.75rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1.2px; display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.45rem;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                            Outcome
-                        </div>
-                        <p class="narrative-card-text" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); margin: 0; font-weight: 500;">
-                            Designed Generative AI capabilities that support commercial decision making while integrating naturally into existing enterprise workflows.
-                        </p>
                     </div>
-                </section>
-
-                <!-- ========================================================================= -->
-                <!-- STORY 03 — EXPLORATION                                                    -->
-                <!-- ========================================================================= -->
-                <section id="story-03-exploration" class="narrative-block" style="padding: 2.5rem 2.25rem; margin-bottom: 3.5rem;">
-                    <div class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">
-                        STORY 03 &bull; EXPLORATION
-                    </div>
-                    <h2 class="v2-section-title" style="font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1.25rem;">
-                        Exploring AI-Assisted UX Workflows
-                    </h2>
-
-                    <!-- OBJECTIVE -->
-                    <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
-                        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 0.65rem;">Objective</h3>
-                        <p style="font-size: 0.98rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 0.85rem;">
-                            Beyond designing AI-powered products, I explored how AI could also support the UX design process itself.
-                        </p>
-                        <p style="font-size: 0.98rem; line-height: 1.65; color: var(--text-secondary); margin: 0;">
-                            The goal was to understand how structured knowledge and specialised AI workflows could help designers work more efficiently while keeping people responsible for critical design decisions.
-                        </p>
-                    </div>
-
-                    <!-- SIMPLIFIED WORKFLOW DIAGRAM -->
-                    <div style="margin: 2rem 0; padding: 1.35rem 1.5rem; background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 12px;">
-                        <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 1.1rem; text-align: center;">
-                            AI-Assisted Design Workflow
-                        </div>
-                        <div class="process-flow-row">
-                            <div class="process-flow-card">
-                                <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Design Request</span>
-                            </div>
-                            <div class="process-flow-arrow">&rarr;</div>
-
-                            <div class="process-flow-card">
-                                <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Product Context</span>
-                            </div>
-                            <div class="process-flow-arrow">&rarr;</div>
-
-                            <div class="process-flow-card">
-                                <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Design Knowledge</span>
-                            </div>
-                            <div class="process-flow-arrow">&rarr;</div>
-
-                            <div class="process-flow-card">
-                                <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Generate Suggestions</span>
-                            </div>
-                            <div class="process-flow-arrow">&rarr;</div>
-
-                            <div class="process-flow-card">
-                                <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Designer Review</span>
-                            </div>
-                            <div class="process-flow-arrow">&rarr;</div>
-
-                            <div class="process-flow-card accent">
-                                <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent-gold);">Final Design</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p style="font-size: 0.98rem; line-height: 1.65; color: var(--text-secondary); margin-top: 1.25rem;">
-                        Rather than relying on one large prompt, I explored how reusable product knowledge, design systems and structured guidance could improve the quality and consistency of AI-assisted design suggestions.
-                    </p>
 
                     <!-- STORY 03 OUTCOME SUMMARY CARD -->
                     <div class="narrative-card-outcome" style="margin-top: 2.5rem; background: var(--bg-secondary); border: 1px solid var(--card-border); border-left: 3px solid var(--accent-gold); border-radius: 10px; padding: 1.15rem 1.35rem;">
@@ -1024,7 +1188,7 @@
                             Outcome
                         </div>
                         <p class="narrative-card-text" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); margin: 0; font-weight: 500;">
-                            Developed a conceptual AI-assisted UX workflow demonstrating how structured knowledge and human oversight can improve AI-supported design.
+                            Designed Generative AI capabilities that support commercial decision making while integrating naturally into existing enterprise workflows.
                         </p>
                     </div>
                 </section>
@@ -1101,16 +1265,16 @@
             executiveSummaryParagraph: "Over the past two years, I explored Artificial Intelligence from three complementary perspectives to better understand its impact on enterprise UX.<br><br>First, I conducted a competitive study of AI-native CRM platforms to identify emerging interaction patterns and design principles shaping the next generation of enterprise software. Second, I worked on integrating Generative AI capabilities into an enterprise B2B telecom application, designing experiences that help users make faster, more informed business decisions without disrupting existing workflows. Finally, I explored how AI could assist the UX design process itself by experimenting with structured AI-assisted workflows that combine product knowledge, design systems and human oversight.<br><br>While each initiative addressed a different challenge, they all reinforced a common principle: AI is most effective when it augments human expertise rather than replacing it. This case study brings together those three explorations and the key lessons they revealed about designing trustworthy AI experiences for enterprise products.",
             storyOverviews: [
                 {
-                    title: "Research",
+                    title: "Spec-Driven Prototyping",
+                    desc: "Moving from machine-readable specs in DESIGN.md to code-ready platform handoffs."
+                },
+                {
+                    title: "Foundational AI Research",
                     desc: "Understanding AI-native enterprise products through competitive benchmarking, pattern analysis and UX principle synthesis."
                 },
                 {
-                    title: "Integration",
+                    title: "Platform Integration",
                     desc: "Designing and integrating Generative AI capabilities within a complex enterprise B2B telecom platform to improve decision making and productivity."
-                },
-                {
-                    title: "Exploration",
-                    desc: "Investigating how AI can assist the UX design process through structured workflows, reusable knowledge and human-centered collaboration."
                 }
             ],
             questions: {
