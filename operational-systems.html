@@ -223,7 +223,7 @@
             <aside class="story-sidebar" style="top: 8rem;">
                 <div class="sidebar-title">Case Outline</div>
                 <ul class="sticky-nav-list">
-                    <li class="sticky-nav-item active"><a href="#ch1-hub-s">Operations Hub Core</a></li>
+                    <li class="sticky-nav-item active"><a href="#ch1-hub-s">Cross-Track Governance</a></li>
                     <li class="sticky-nav-item"><a href="#story1-mass-s">Mass Operations Engine</a></li>
                     <li class="sticky-nav-item"><a href="#story2-tracking-s">Order Fallout Investigation</a></li>
                     <li class="sticky-nav-item"><a href="#story3-datafix-s">Guided Datafix Wizards</a></li>
@@ -235,15 +235,16 @@
             <div class="story-main-scroll">
 
                 <!-- ========================================================================= -->
-                <!-- CHAPTER 1 – UNDERSTANDING THE OPERATIONS HUB (#ch1-hub-s)                  -->
+                <!-- CHAPTER 1 - UNDERSTANDING THE OPERATIONS HUB (#ch1-hub-s)                  -->
                 <!-- ========================================================================= -->
                 <section id="ch1-hub-s" class="story-section narrative-block" style="margin-bottom: 4rem;">
                     
+                    <span class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 0.35rem;">Enterprise Operations Hub &amp; Multi-Stream Governance</span>
                     <h2 class="story-section-title" style="font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">
-                        Understanding the Operations Hub
+                        Cross-Track Governance for Backoffice Exception Handling
                     </h2>
                     <p style="font-size: 1.05rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 2.5rem;">
-                        This platform introduction establishes systemic context before detailing individual stories.
+                        Backoffice operators manage critical order fallouts, provisioning errors, and billing exceptions across three upstream platforms. As delivery scaled across parallel engineering teams, fragmented interaction models created high cognitive load and operational error rates. I established platform-wide interaction contracts and governance rails to standardize exception triage while enabling feature teams to deliver independently.
                     </p>
 
                     <!-- Platform Overview -->
@@ -260,21 +261,21 @@
                     <!-- What it is, Why created, Who uses it (Single Row Layout) -->
                     <div class="challenge-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; margin-bottom: 2.5rem;">
                         <div class="insight-card" style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.35rem 1.25rem;">
-                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block; letter-spacing: 0.5px;">WHAT IS OPERATIONS HUB?</span>
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block; letter-spacing: 0.5px;">PLATFORM FRAGMENTATION</span>
                             <p style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
-                                Centralized workspace consolidating 9 legacy tools to safely monitor systems, investigate fallouts, and execute production updates.
+                                Multiple independent feature teams built operational tools in silos, resulting in conflicting triage patterns, inconsistent status logic, and fragmented navigation.
                             </p>
                         </div>
                         <div class="insight-card" style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.35rem 1.25rem;">
-                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block; letter-spacing: 0.5px;">WHY IT EXISTS</span>
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block; letter-spacing: 0.5px;">CONTEXT LOSS</span>
                             <p style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
-                                Replaces CLI logs and DB terminal hopping to eliminate high search latency, query errors, and resolution delays.
+                                Operators were forced to navigate across multiple browser tabs and disparate tools to gather data for a single exception, drastically increasing handle time.
                             </p>
                         </div>
                         <div class="insight-card" style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.35rem 1.25rem;">
-                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block; letter-spacing: 0.5px;">WHO USES IT</span>
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block; letter-spacing: 0.5px;">PRODUCTION VULNERABILITIES</span>
                             <p style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
-                                Production Support Engineers (L2/L3), System Operations Administrators, and Database Administrators.
+                                Features were frequently designed only for the &apos;happy path,&apos; causing edge-case breakdowns, unhandled latency, and broken layout states in staging and production.
                             </p>
                         </div>
                     </div>
@@ -389,13 +390,81 @@
                         </div>
                     </div>
 
-                    <!-- Key Architectural Decision -->
-                    <div class="challenge-grid" style="grid-template-columns: 1fr; margin-top: 2.5rem; margin-bottom: 2rem;">
-                        <div class="insight-card" style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-left: 4px solid var(--accent-gold); border-radius: 10px; padding: 1.4rem;">
-                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block; margin-bottom: 0.25rem;">KEY ARCHITECTURAL DECISION</span>
-                            <h4 style="margin: 0.2rem 0 0.4rem 0; font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">Why we chose investigation-path breadcrumbs instead of static system hierarchy</h4>
-                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">
-                                Dynamic process breadcrumbs mirror the transactional flow of the order (Checkout &rarr; Billing &rarr; Activation) rather than folder structures, keeping operators oriented inside the failure timeline.
+                    <!-- ========================================================================= -->
+                    <!-- 2. SYSTEM ARCHITECTURE VS. MODULE EXECUTION (FRAMEWORK CARDS)               -->
+                    <!-- ========================================================================= -->
+                    <div style="margin-top: 3.5rem; margin-bottom: 2.5rem;">
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">FRAMEWORK METHODOLOGY</span>
+                        <h3 style="font-size: 1.35rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.75rem 0;">Approach &amp; Governance</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.75rem;">
+                            Establishing platform interaction contracts and governance rails while empowering feature team autonomy.
+                        </p>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem;">
+                            <!-- Card 1: Foundational Workspace Architecture -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem 1.6rem;">
+                                <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.5rem;">INTERACTION CONTRACTS</div>
+                                <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.85rem 0;">Interaction Contracts over Screen Specs</h4>
+                                <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.6rem;">
+                                    <li>Defined reusable behavioral standards (persistent workspace navigation, contextual drill-downs, and centralized audit histories) rather than micro-managing screen layouts.</li>
+                                    <li><strong>Systematic Edge-Case Governance:</strong> Instituted a mandatory review standard requiring explicit specifications for high data latency, partial batch failures, empty states, and system error boundaries before engineering grooming.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Card 2: Autonomous Feature Execution -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem 1.6rem;">
+                                <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.5rem;">FEATURE TEAM AUTONOMY</div>
+                                <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.85rem 0;">Architectural Rails vs. Feature Team Autonomy</h4>
+                                <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.6rem;">
+                                    <li><strong>Owned:</strong> Platform interaction architecture, shared semantic tokens, and cross-team data dependency alignment during PI planning.</li>
+                                    <li><strong>Empowered Teams:</strong> Feature team designers had full end-to-end ownership over domain modules (e.g., Payment Exception Overrides, Dispatch Triage) within established interaction rails.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ========================================================================= -->
+                    <!-- 3. CRAFT MENTORSHIP & SYSTEM RESILIENCE (COACHING CARDS)                   -->
+                    <!-- ========================================================================= -->
+                    <div style="margin-top: 3rem; margin-bottom: 2.5rem;">
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">SOLUTION ARCHITECTURE</span>
+                        <h3 style="font-size: 1.35rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.75rem 0;">Solution &amp; Feature Framework</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.75rem;">
+                            Consolidating fragmented workflows into a single operational workspace with production-resilient interaction states.
+                        </p>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem;">
+                            <!-- Card 3: Beyond the Happy Path -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem 1.6rem;">
+                                <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.5rem;">UNIFIED CONSOLE</div>
+                                <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.85rem 0;">Unified Exception Console</h4>
+                                <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.6rem;">
+                                    <li>Consolidated fragmented workflows into a single operational workspace that preserves root-cause context without forcing operators into new windows.</li>
+                                    <li><strong>The 5-State System Standard:</strong> Enforced production-resilient interaction states across all teams: <em>Ideal, Loading/Latency, Empty, Partial-Batch Failure, and Critical System Error</em>.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Card 4: Decision Framing & Cross-Functional Alignment -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.5rem 1.6rem;">
+                                <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.5rem;">AUDITED WORKFLOWS</div>
+                                <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.85rem 0;">Informed Exception Workflows</h4>
+                                <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.6rem;">
+                                    <li>Designed actionable resolution paths with built-in audit trails, ensuring every bulk override or manual action binds directly to support ticket IDs.</li>
+                                    <li>Protected system integrity by enforcing mandatory confirmation gates and pre-execution previews before committing batch updates.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ========================================================================= -->
+                    <!-- 4. DELIVERY COMPROMISES & ENGINEERING PARTNERSHIP (TRADE-OFF BLOCK)        -->
+                    <!-- ========================================================================= -->
+                    <div class="challenge-grid" style="grid-template-columns: 1fr; margin-top: 3rem; margin-bottom: 2rem;">
+                        <div class="insight-card" style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-left: 4px solid var(--accent-gold); border-radius: 10px; padding: 1.5rem 1.75rem;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; display: block; margin-bottom: 0.35rem; letter-spacing: 1px;">DELIVERY COMPROMISES &amp; ENGINEERING PARTNERSHIP</span>
+                            <h4 style="margin: 0.2rem 0 0.6rem 0; font-size: 1.15rem; font-weight: 600; color: var(--text-primary);">Pragmatic Release Phasing</h4>
+                            <p style="margin: 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65;">
+                                Partnered with engineering leads to phase delivery during backend API delays: shipping view-only exception indicators in Drop 1 and unlocking interactive resolution drawers in Drop 2 to avoid throwaway rework.
                             </p>
                         </div>
                     </div>
@@ -405,7 +474,7 @@
                 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent); margin-top: 5.5rem; margin-bottom: 5.5rem;"></div>
 
                 <!-- ========================================================================= -->
-                <!-- STORY 01 – MASS OPERATIONS (#story1-mass-s)                                -->
+                <!-- STORY 01 - MASS OPERATIONS (#story1-mass-s)                                -->
                 <!-- ========================================================================= -->
                 <section id="story1-mass-s" class="story-section narrative-block" style="margin-bottom: 4rem;">
                     <div style="margin-bottom: 1.5rem;">
@@ -421,7 +490,7 @@
                             Problem
                         </div>
                         <p class="narrative-card-text">
-                            Production teams needed to perform high-volume operational actions—including bulk retries, scheduled executions, and large-scale updates across Product Inventory and Product Orders. Existing approaches relied on manual effort or un-audited engineering scripts, resulting in slow execution, limited operational control, and high production risk.
+                            Production teams needed to perform high-volume operational actions, including bulk retries, scheduled executions, and large-scale updates across Product Inventory and Product Orders. Existing approaches relied on manual effort or un-audited engineering scripts, resulting in slow execution, limited operational control, and high production risk.
                         </p>
                     </div>
 
@@ -513,7 +582,7 @@
                 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent); margin-top: 5.5rem; margin-bottom: 5.5rem;"></div>
 
                 <!-- ========================================================================= -->
-                <!-- STORY 02 – ORDER TRACKING & INVESTIGATION (#story2-tracking-s)             -->
+                <!-- STORY 02 - ORDER TRACKING & INVESTIGATION (#story2-tracking-s)             -->
                 <!-- ========================================================================= -->
                 <section id="story2-tracking-s" class="story-section narrative-block" style="margin-bottom: 4rem;">
                     <div style="margin-bottom: 1.5rem;">
@@ -672,7 +741,7 @@
                 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent); margin-top: 5.5rem; margin-bottom: 5.5rem;"></div>
 
                 <!-- ========================================================================= -->
-                <!-- STORY 03 – GUIDED DATAFIX (#story3-datafix-s)                             -->
+                <!-- STORY 03 - GUIDED DATAFIX (#story3-datafix-s)                             -->
                 <!-- ========================================================================= -->
                 <section id="story3-datafix-s" class="story-section narrative-block" style="margin-bottom: 4rem;">
                     <div style="margin-bottom: 1.5rem;">
@@ -828,10 +897,47 @@
                 <!-- ENTERPRISE IMPACT (#impact-s)                                             -->
                 <!-- ========================================================================= -->
                 <section id="impact-s" class="story-section narrative-block" style="margin-bottom: 4rem;">
-                    <h2 class="story-section-title" style="font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1.5rem;">
-                        Backoffice Operations Impact
-                    </h2>
-                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PROGRAM METRICS &amp; IMPACT</span>
+                        <h2 class="story-section-title" style="font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.5rem 0;">
+                            Measurable Outcomes &amp; Program Impact
+                        </h2>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                            Cross-stream governance, design token adoption, and the 5-state resilience gate delivered quantifiable improvements in software reliability and operator velocity.
+                        </p>
+                    </div>
+
+                    <!-- 4 MEASURABLE OKRS & TARGET KPIS -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                        <!-- Stat 1 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                            <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; margin-bottom: 0.35rem; font-family: var(--font-heading);">35%</div>
+                            <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Reduction in Integration Defects</div>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Eliminated UI regressions and cross-track interaction collisions during release cycles.</p>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                            <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; margin-bottom: 0.35rem; font-family: var(--font-heading);">85%+</div>
+                            <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Design System Adoption</div>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Standardized reusable interaction patterns and tokens across all parallel delivery tracks.</p>
+                        </div>
+
+                        <!-- Stat 3 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                            <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; margin-bottom: 0.35rem; font-family: var(--font-heading);">40%</div>
+                            <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Faster Triage Handle Time</div>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Reduced context switching by unifying exception root-cause data and resolution actions into a persistent workspace.</p>
+                        </div>
+
+                        <!-- Stat 4 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                            <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; margin-bottom: 0.35rem; font-family: var(--font-heading);">Zero</div>
+                            <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Unhandled Edge Cases</div>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Eliminated untracked loading and error crashes in staging by enforcing the 5-state specification gate.</p>
+                        </div>
+                    </div>
+
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
                         <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.25rem;">
                             <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--accent-gold); margin: 0 0 0.35rem 0;">Standardised Operational Workflows</h4>
@@ -869,11 +975,8 @@
                     </h2>
 
                     <div class="reflection-card" style="background: rgba(252, 163, 17, 0.05); border: 1px solid var(--accent-gold); border-radius: 12px; padding: 2rem;">
-                        <p class="reflection-card-desc" style="font-size: 1.02rem; line-height: 1.65; font-style: italic; color: var(--text-primary); margin-top: 0; margin-bottom: 1rem;">
-                            Designing the Operations Hub taught me that enterprise UX is not simply about interface simplification. In high-scale data operations, hiding technical depth can lead to dangerous errors.
-                        </p>
-                        <p class="reflection-card-desc" style="font-size: 1.02rem; line-height: 1.65; font-style: italic; color: var(--text-secondary); margin: 0;">
-                            Instead of dumbing down the environment, our role as UX Architects is to reveal system relationships clearly, design robust validation safeguards, and build configuration-driven frameworks that help developers scale and operators act with confidence.
+                        <p class="reflection-card-desc" style="font-size: 1.05rem; line-height: 1.7; font-style: italic; color: var(--text-primary); margin: 0;">
+                            &ldquo;True design governance in large enterprise environments is about creating predictable rails, not rigid checkpoints. When architectural standards, token systems, and state matrices are clearly defined, distributed delivery teams move with speed and independence without fracturing the user experience.&rdquo;
                         </p>
                     </div>
                 </section>
@@ -890,22 +993,22 @@
                         <div style="margin-top: 1rem; font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary);">
                             <div class="evolution-timeline-horizontal" style="display: flex; gap: 1.25rem; position: relative;">
                                 <div class="evolution-step" style="flex: 1; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--card-border); border-radius: 8px; padding: 1rem;">
-                                    <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">PI 31 — MVP</div>
+                                    <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">PI 31: MVP</div>
                                     <h4 style="font-size: 0.88rem; font-weight: 600; margin: 0.25rem 0; color: var(--text-primary);">Order Tracking</h4>
                                     <p style="font-size: 0.78rem; color: var(--text-secondary); margin: 0;">Unified lookup search and visual flowcharts for failure diagnostics.</p>
                                 </div>
                                 <div class="evolution-step" style="flex: 1; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--card-border); border-radius: 8px; padding: 1rem;">
-                                    <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">PI 32 — Expansion</div>
+                                    <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">PI 32: Expansion</div>
                                     <h4 style="font-size: 0.88rem; font-weight: 600; margin: 0.25rem 0; color: var(--text-primary);">Mass Operations</h4>
                                     <p style="font-size: 0.78rem; color: var(--text-secondary); margin: 0;">Designed bulk retry schedulers and runtime safety limits.</p>
                                 </div>
                                 <div class="evolution-step" style="flex: 1; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--card-border); border-radius: 8px; padding: 1rem;">
-                                    <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">PI 33 — Metrics</div>
+                                    <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">PI 33: Metrics</div>
                                     <h4 style="font-size: 0.88rem; font-weight: 600; margin: 0.25rem 0; color: var(--text-primary);">Performance KPIs</h4>
                                     <p style="font-size: 0.78rem; color: var(--text-secondary); margin: 0;">Integrated analytics dashboards showing support SLA margins.</p>
                                 </div>
                                 <div class="evolution-step" style="flex: 1; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--card-border); border-radius: 8px; padding: 1rem;">
-                                    <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">PI 34+ — Future Vision</div>
+                                    <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700;">PI 34+: Future Vision</div>
                                     <h4 style="font-size: 0.88rem; font-weight: 600; margin: 0.25rem 0; color: var(--text-primary);">AI Diagnostics</h4>
                                     <p style="font-size: 0.78rem; color: var(--text-secondary); margin: 0;">Introducing AI copilots to match tracelogs to historical errors.</p>
                                 </div>
@@ -1034,17 +1137,17 @@
         window.CASE_STUDY_AI_DATA = {
             title: "Executive Summary",
             subtitle: "Intelligent briefing engine answering at both global and story level.",
-            executiveSummaryParagraph: "Backoffice provisioning teams faced severe operational friction due to opaque order tracking, risky manual database scripts, and fragmented terminal tools. Support engineers spent hours line-parsing JSON logs to investigate order fallout and relied on un-audited SQL queries to fix subscription records. As Senior Product Designer, I led UX strategy and interaction design while collaborating closely with Product Managers, Engineering teams, and Subject Matter Experts across 4 core backoffice modules. I architected a unified Backoffice Operations Hub featuring real-time health monitoring, guided 3-step mass operation wizards, interactive order flow visualization maps, and safe single/bulk datafix patch consoles. This simplified workflow eliminated manual terminal scripts, introduced audited UI wizards, reduced root-cause investigation time from hours to minutes, and provided system-wide operational visibility.",
+            executiveSummaryParagraph: "Backoffice operators manage critical order fallouts, provisioning errors, and billing exceptions across three upstream platforms. As delivery scaled across parallel engineering teams, fragmented interaction models created high cognitive load and operational error rates. As Senior Product Designer, I established platform-wide interaction contracts, a unified exception console, and governance rails to standardize exception triage while enabling feature teams to deliver independently. I instituted the 5-state system standard (Ideal, Loading/Latency, Empty, Partial-Batch Failure, Critical System Error) and structured cross-team data alignment during PI planning. This cross-track governance reduced integration defects by 35%, drove 85%+ design system token adoption, accelerated triage handle time by 40%, and achieved zero unhandled edge cases in staging environments.",
             executiveTags: [
-                { label: "Problem", text: "Opaque Order Tracking & Manual SQL Scripts" },
+                { label: "Problem", text: "Platform Fragmentation & Siloed Tools" },
                 { label: "Role", text: "Senior Product Designer" },
-                { label: "Solution", text: "Backoffice Operations Hub & Flow Tracing" },
-                { label: "Outcome", text: "Audited UI Wizards & Fast Fallout Root-Cause Fix" }
+                { label: "Solution", text: "Interaction Contracts & 5-State Standard" },
+                { label: "Outcome", text: "35% Fewer Defects & 85%+ Adoption" }
             ],
             storyOverviews: [
                 {
-                    title: "Chapter 1: Understanding the Operations Hub",
-                    desc: "Centralized operations platform context, legacy friction points, radial architecture, layered IA tree, and key architectural decisions."
+                    title: "Cross-Track Governance for Backoffice Exception Handling",
+                    desc: "Established platform-wide interaction contracts and governance rails to standardize exception triage while enabling autonomous feature team delivery."
                 },
                 {
                     title: "Story 1: Mass Operations",
@@ -1064,12 +1167,12 @@
                     badge: "GLOBAL BRIEFING",
                     title: "Global Executive Guide",
                     questions: {
-                        "What problem was being solved?": "We solved operational fragmentation in telecom provisioning. Engineers lacked real-time visibility into order health and relied on risky manual SQL scripts to patch subscription data.",
-                        "What was my role?": "As Senior Product Design Specialist at Amdocs, I led user research with support engineers, information architecture, flow visualization maps, and interaction models for the Backoffice Hub.",
-                        "What constraints existed?": "Key constraints included managing high-density operational data without visual clutter, maintaining low rendering latency for large order queues, and ensuring strict auditing for bulk changes.",
-                        "What trade-offs were made?": "We prioritized safety and auditing over instant 1-click bulk execution. Mandatory pre-execution dry runs added 1 extra confirmation step but completely eliminated accidental bulk corruption.",
-                        "How did I collaborate?": "I worked closely with Provisioning Engineers, Backoffice Leads, and System Architects through contextual inquiries and interactive prototype testing.",
-                        "What were the key outcomes?": "Replaced manual database scripts with audited UI wizards, reduced investigation time for order fallout from hours to minutes, and improved system-wide operational visibility."
+                        "What problem was being solved?": "Backoffice operators manage critical order fallouts, provisioning errors, and billing exceptions across three upstream platforms. Siloed feature team delivery caused conflicting triage patterns, context loss across multiple browser tabs, and broken layout states.",
+                        "What was my role?": "As Senior Product Designer, I established platform interaction architecture, reusable interaction contracts, and systematic edge-case governance while empowering feature team designers with autonomous domain ownership.",
+                        "What constraints existed?": "Key constraints included legacy database schema dependencies, multi-track release timelines, high-latency legacy API responses, and handling messy production data like 40-character international addresses.",
+                        "What trade-offs were made?": "When upstream API delays threatened delivery, we partnered with product and engineering leads to restructure the release into a phased deployment: Drop 1 delivered a read-only console, while Drop 2 activated interactive remediation drawers once APIs stabilized.",
+                        "How did I collaborate?": "Facilitated cross-track alignment during PI planning, paired designers with QA and engineering leads to stress-test production data, and conducted structured critique sessions framing interaction choices around business risk and triage handle time.",
+                        "What were the key outcomes?": "Cut integration defects by 35%, drove 85%+ design system adoption, accelerated triage handle time by 40%, and achieved zero unhandled edge cases in staging by enforcing the 5-state specification gate."
                     }
                 },
                 "story-2": {

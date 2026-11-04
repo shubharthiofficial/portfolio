@@ -205,8 +205,8 @@
                 <ul class="sticky-nav-list">
                     <li class="sticky-nav-item active"><a href="#intro-s">Sales to Order Platform</a></li>
                     <li class="sticky-nav-item"><a href="#framework-1">Offer Discovery Complexity</a></li>
-                    <li class="sticky-nav-item"><a href="#framework-2">Enterprise Validation Safeguards</a></li>
-                    <li class="sticky-nav-item"><a href="#framework-3">Cross-App Async Notifications</a></li>
+                    <li class="sticky-nav-item"><a href="#framework-2">Validation Architecture</a></li>
+                    <li class="sticky-nav-item"><a href="#framework-3">Async Workflow Governance</a></li>
                     <li class="sticky-nav-item"><a href="#key-takeaways">Commercial Platform Impact</a></li>
                 </ul>
             </aside>
@@ -507,14 +507,17 @@
                 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent); margin-top: 5.5rem; margin-bottom: 5.5rem;"></div>
 
                 <!-- ========================================================================= -->
-                <!-- STORY 2: MAKING ENTERPRISE VALIDATION ACTIONABLE -->
+                <!-- STORY 2: CROSS-PRODUCT BUSINESS VALIDATION & ERROR-HANDLING FRAMEWORK -->
                 <!-- ========================================================================= -->
                 <section id="framework-2" class="narrative-block" style="margin-bottom: 3.5rem; padding: 2.75rem 2.25rem;">
                     <div style="margin-bottom: 1.75rem;">
-                        <span class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 0.35rem;">STORY 02</span>
-                        <h2 class="v2-section-title" style="font-size: 1.8rem; margin: 0;">
-                            Making Enterprise Validation Actionable
+                        <span class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 0.35rem;">02 / Cross-Product Validation Architecture</span>
+                        <h2 class="v2-section-title" style="font-size: 1.8rem; margin: 0 0 1rem 0;">
+                            Cross-Product Business Validation &amp; Error-Handling Framework
                         </h2>
+                        <p style="font-size: 1.05rem; line-height: 1.65; color: var(--text-secondary); max-width: 820px; margin: 0;">
+                            When multi-play B2B deals span non-linear quoting (B2B Sales) and linear fulfillment (B2B COM), inconsistent error patterns lead directly to order fallout and operator fatigue. Rather than allowing individual feature pods to build ad-hoc alerts, I architected a unified validation framework that standardizes severity contracts, consolidates multi-issue noise, and provides a persistent triage center.
+                        </p>
                     </div>
 
                     <!-- 1. PROBLEM -->
@@ -550,65 +553,142 @@
                         </p>
                     </div>
 
-                    <!-- 4. CONCEPTUAL FRAMEWORK DIAGRAM (FROM V1) -->
+                    <!-- 4. CONCEPTUAL FRAMEWORK DIAGRAM: 4-STAGE LINEAR VALIDATION MODEL -->
                     <div class="v1-flow-diagram-container">
-                        <div class="v1-flow-diagram-title-wrap">
-                            <span class="v1-flow-diagram-eyebrow">BUSINESS VALIDATION WORKFLOW</span>
-                            <h4 class="v1-flow-diagram-heading">Non-Blocking Validation &amp; Error Resolution Flow</h4>
+                        <div class="v1-flow-diagram-title-wrap" style="text-align: center; margin-bottom: 2rem;">
+                            <span class="v1-flow-diagram-eyebrow">VALIDATION ARCHITECTURE WORKFLOW</span>
+                            <h4 class="v1-flow-diagram-heading">4-Stage Linear Validation &amp; Error Triage Model</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-secondary); max-width: 620px; margin: 0.35rem auto 0 auto; line-height: 1.5;">
+                                Streamlined progression from boundary triggers to non-blocking triage and automated resolution.
+                            </p>
                         </div>
                         
-                        <div class="flow-row-container">
-                            <!-- Row 1: Triggers (Grey) -->
-                            <div class="flow-row grey-row">
-                                <div class="flow-node"><strong>Operator Input</strong><br>Enters data or clicks Next Step</div>
-                                <div class="flow-arrow">&rarr;</div>
-                                <div class="flow-node"><strong>Auto-Validation</strong><br>Runs pricing &amp; compatibility check</div>
-                                <div class="flow-arrow">&rarr;</div>
-                                <div class="flow-node"><strong>Route Feedback</strong><br>Sends results to header indicator</div>
-                            </div>
-
-                            <div class="flow-diagonal-transition">&#8601;</div>
-
-                            <!-- Row 2: Validation Core Processing (Coral Scope inside dashed border) -->
-                            <div class="flow-dashed-box">
-                                <span class="case-study-label">Validation Engine Core</span>
-                                <div class="flow-row">
-                                    <div class="flow-node coral"><strong>Check Business Rules</strong><br>Evaluates pricing &amp; offer rules</div>
-                                    <div class="flow-arrow coral-arrow">&rarr;</div>
-                                    <div class="flow-node coral"><strong>Sort Error Severity</strong><br>Separates Blocking Errors from Warnings</div>
-                                    <div class="flow-arrow coral-arrow">&rarr;</div>
-                                    <div class="flow-node coral"><strong>Group Issues</strong><br>Organizes items by form section</div>
+                        <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                            
+                            <!-- Stage 1: Trigger Event -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">1</span>
+                                        <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0;">Trigger Event</h5>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-tertiary); background: var(--bg-tertiary); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid var(--card-border);">Dual Trigger Model</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Automated Gates</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Triggers on boundary actions: Step Transition, Apply, or Submit Order.</div>
+                                    </div>
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Manual Validation</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">On-demand "Run Business Validation" menu CTA for 50+ line-item quotes.</div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="flow-diagonal-transition">&#8601;</div>
-
-                            <!-- Row 3: UI Feedback & Resolution (Grey) -->
-                            <div class="flow-row grey-row" style="justify-content: flex-start; gap: 0.5rem;">
-                                <div class="flow-node"><strong>Header Indicator</strong><br>Shows live error count badge</div>
-                                <div class="flow-arrow" style="flex: 0 0 auto;">&rarr;</div>
-                                <div class="flow-node"><strong>Jump-to-Field Link</strong><br>Scrolls directly to broken input</div>
-                                <div class="flow-arrow" style="flex: 0 0 auto;">&rarr;</div>
-                                <div class="flow-node"><strong>Inline Fix</strong><br>Unlocks next step after field fix</div>
-                                <div style="flex: 2 1 auto; max-width: none;"></div>
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 20px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             </div>
+
+                            <!-- Stage 2: Evaluation & Aggregation Engine -->
+                            <div style="background: var(--bg-secondary); border: 1.5px dashed var(--accent-gold); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.04);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">2</span>
+                                        <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0;">Evaluation &amp; Aggregation Engine</h5>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent-gold); background: rgba(217, 119, 6, 0.1); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid rgba(217, 119, 6, 0.25);">Core Processing</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">3-Tier Severity Check</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Evaluates and categorizes into Information (Blue), Warning (Amber), and Error (Red).</div>
+                                    </div>
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Consolidated Summary Bar</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Bundles multi-issue noise into a single-line summary with highest-severity badge + dynamic count.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 20px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+
+                            <!-- Stage 3: Multi-Issue Triage (Validation Popover) -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">3</span>
+                                        <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0;">Multi-Issue Triage (Validation Popover)</h5>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-tertiary); background: var(--bg-tertiary); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid var(--card-border);">Triage Console</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem;">
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Floating Container</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Minimizable overlay panel; never freezes or traps the operator.</div>
+                                    </div>
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Tabbed Filtering</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Quick triage tabs: [ All | 3 Errors | 1 Warning | 1 Info ].</div>
+                                    </div>
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">"Go back to review"</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Deep-linking action auto-scrolls viewport to invalid input field.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 20px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+
+                            <!-- Stage 4: Resolution & Clean State -->
+                            <div style="background: rgba(46, 196, 182, 0.05); border: 1.5px solid #2ec4b6; border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 16px rgba(46, 196, 182, 0.08);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(46, 196, 182, 0.15); color: #2ec4b6; font-size: 0.75rem; font-weight: 700;">4</span>
+                                        <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0;">Resolution &amp; Clean State</h5>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #059669; background: rgba(16, 185, 129, 0.15); padding: 0.2rem 0.55rem; border-radius: 4px;">&check; Clean State</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; justify-content: space-between; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.75rem 1rem;">
+                                    <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 500;">
+                                        Field Fixed &amp; Saved
+                                    </div>
+                                    <div style="color: var(--accent-gold); font-size: 0.95rem;">&rarr;</div>
+                                    <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 500;">
+                                        Issue Auto-Clears from List
+                                    </div>
+                                    <div style="color: var(--accent-gold); font-size: 0.95rem;">&rarr;</div>
+                                    <div style="font-size: 0.85rem; color: #059669; font-weight: 600;">
+                                        Progression Unblocked
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <!-- Legend Block -->
-                        <div class="flow-legend">
-                            <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
-                                <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--bg-secondary); border: 1px solid var(--card-border); opacity: 0.8; flex-shrink: 0; margin-top: 2px;"></div>
-                                <div>
-                                    <div style="font-weight: 600; color: var(--text-primary);">External User &amp; UI Actions</div>
-                                    <div style="color: var(--text-tertiary); font-size: 0.75rem; margin-top: 0.1rem;">Triggers in Sales/Commerce and manual resolutions.</div>
-                                </div>
+                        <div class="flow-legend" style="justify-content: center; gap: 1.5rem; margin-top: 1.5rem; border-top: 1px solid var(--card-border); padding-top: 1.25rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 10px; height: 10px; border-radius: 2px; background: var(--bg-secondary); border: 1px solid var(--card-border);"></div>
+                                <span style="font-size: 0.78rem; color: var(--text-secondary);">User &amp; UI Triggers</span>
                             </div>
-                            <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
-                                <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-gold); flex-shrink: 0; margin-top: 2px;"></div>
-                                <div>
-                                    <div style="font-weight: 600; color: var(--text-primary);">Validation Engine Core</div>
-                                    <div style="color: var(--accent-gold); font-size: 0.75rem; margin-top: 0.1rem;">Background rule parsing, classification, and routing.</div>
-                                </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 10px; height: 10px; border-radius: 2px; background: var(--accent-gold);"></div>
+                                <span style="font-size: 0.78rem; color: var(--text-secondary);">Evaluation Engine &amp; Triage Core</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 10px; height: 10px; border-radius: 2px; background: #2ec4b6;"></div>
+                                <span style="font-size: 0.78rem; color: var(--text-secondary);">Resolution &amp; Unblocked State</span>
                             </div>
                         </div>
                     </div>
@@ -618,46 +698,73 @@
                         <img class="protected-screenshot-img" src="assets/stories/business_validation/cropped/validation_hero_spec.png?v=9.0" alt="Validation messages popover and collapsed header specs" style="width: 100%; height: auto; display: block; border-radius: 8px;">
                     </div>
 
-                    <!-- 6. DESIGN PRINCIPLES (VISUAL CARDS) -->
+                    <!-- 6. KEY ARCHITECTURE PILLARS & PRINCIPLES -->
                     <div style="margin: 2rem 0 1.5rem 0;">
-                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.75rem;">Key Design Principles</span>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1rem 1.15rem;">
-                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PRINCIPLE 01</span>
-                                <h4 style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.3rem 0;">Non-Blocking Feedback</h4>
-                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Alert operators instantly without freezing active form UI inputs.</p>
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.75rem;">Key Architecture Pillars &amp; Principles</span>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+                            
+                            <!-- Card 1: 3-Tier Severity Taxonomy -->
+                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1.15rem 1.25rem;">
+                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PILLAR 01</span>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">3-Tier Severity Taxonomy</h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 0.5rem 0; line-height: 1.45;">Standardized behavioral contracts across pods:</p>
+                                <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; display: flex; flex-direction: column; gap: 0.35rem;">
+                                    <li><strong style="color: #3b82f6;">Information (Blue):</strong> Operational notices; dismissible via 'X'.</li>
+                                    <li><strong style="color: #f59e0b;">Warnings / Alerts (Amber):</strong> Non-blocking dependencies (e.g., dual-technician requirement for separate sites); requires explicit 'OK' acknowledgment.</li>
+                                    <li><strong style="color: #ef4444;">Errors (Red):</strong> Hard business rule violations (e.g., missing mobile port-in number); non-dismissible, strictly blocks progression.</li>
+                                </ul>
                             </div>
-                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1rem 1.15rem;">
-                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PRINCIPLE 02</span>
-                                <h4 style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.3rem 0;">Preserve User Context</h4>
-                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Inline scroll-to-field resolution instead of modal step resets.</p>
+
+                            <!-- Card 2: Aggregated Notification Bar -->
+                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1.15rem 1.25rem;">
+                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PILLAR 02</span>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Aggregated Notification Bar</h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 0.5rem 0; line-height: 1.45;">Replaced stacked, viewport-consuming error banners with a single-line summary card:</p>
+                                <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; display: flex; flex-direction: column; gap: 0.35rem;">
+                                    <li>Displays highest-severity badge + dynamic count (e.g., <em>"2 Errors, 1 Warning, 1 Info found"</em>).</li>
+                                    <li>Features a single <strong>"Show all"</strong> trigger to open the dedicated triage console without cluttering the active form canvas.</li>
+                                </ul>
                             </div>
-                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1rem 1.15rem;">
-                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PRINCIPLE 03</span>
-                                <h4 style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.3rem 0;">Severity-Based Routing</h4>
-                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Distinguish critical errors from informational warnings.</p>
+
+                            <!-- Card 3: The Validation Popover & Triage Center -->
+                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1.15rem 1.25rem;">
+                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PILLAR 03</span>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Validation Popover &amp; Triage Center</h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 0.5rem 0; line-height: 1.45;">A floating, minimizable triage panel for multi-issue resolution:</p>
+                                <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; display: flex; flex-direction: column; gap: 0.35rem;">
+                                    <li>Categorized tabbed filters: <code>All</code>, <code>Errors</code>, <code>Warnings</code>, <code>Info</code>.</li>
+                                    <li>Deep-linking action (<strong>"Go back to review"</strong>) that auto-scrolls the viewport directly to the invalid input field.</li>
+                                    <li>Clear-on-save: Errors automatically drop off the list upon successful resolution and re-validation.</li>
+                                </ul>
                             </div>
+
+                            <!-- Card 4: Dual Trigger Model -->
+                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1.15rem 1.25rem;">
+                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PILLAR 04</span>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Dual Trigger Model</h4>
+                                <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; display: flex; flex-direction: column; gap: 0.45rem;">
+                                    <li><strong style="color: var(--text-primary);">Automated Gates:</strong> Triggers on boundary actions (<code>Next Step</code>, <code>Apply</code>, <code>Submit Order</code>).</li>
+                                    <li><strong style="color: var(--text-primary);">On-Demand Validation:</strong> Dedicated <strong>"Run Business Validation"</strong> action inside the header menu, allowing sales reps with 50+ line-item quotes to test rule integrity without advancing steps.</li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- 7. OUTCOME -->
+                    <!-- 7. LEADERSHIP & IMPACT -->
                     <div class="narrative-card-outcome" style="background: rgba(46, 196, 182, 0.05); border: 1px solid rgba(46, 196, 182, 0.25); border-radius: 12px; padding: 1.5rem 1.75rem; margin-bottom: 1.5rem;">
                         <div class="narrative-card-title" style="color: #2ec4b6; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                            Outcome &amp; Impact
+                            Leadership &amp; Impact Takeaways
                         </div>
                         <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
                             <li style="display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.95rem; line-height: 1.55; color: var(--text-primary);">
                                 <span style="color: #2ec4b6; font-weight: 700; font-size: 0.95rem;">✓</span>
-                                <span><strong>Zero Modal Blocking:</strong> Eliminated modal checkout blocks, allowing agents to resolve pricing &amp; compatibility rules inline.</span>
+                                <span><strong>Design Governance:</strong> Authored and published the master behavioral specification, enabling feature designers across Sales and COM pods to build compliant forms independently.</span>
                             </li>
                             <li style="display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.95rem; line-height: 1.55; color: var(--text-primary);">
                                 <span style="color: #2ec4b6; font-weight: 700; font-size: 0.95rem;">✓</span>
-                                <span><strong>Cross-Product Design Standard:</strong> Established a reusable validation design system pattern adopted across 4 core products.</span>
-                            </li>
-                            <li style="display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.95rem; line-height: 1.55; color: var(--text-primary);">
-                                <span style="color: #2ec4b6; font-weight: 700; font-size: 0.95rem;">✓</span>
-                                <span><strong>Contextual Error Guidance:</strong> Guided sales operators directly to broken payload fields with 1-click scroll resolution.</span>
+                                <span><strong>Ergonomics &amp; Rework:</strong> Eliminated viewport clutter and modal trapping, reducing order fallout by 30%+ and cutting frontend validation defect tickets by 35%.</span>
                             </li>
                         </ul>
                     </div>
@@ -680,15 +787,17 @@
                 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent); margin-top: 5.5rem; margin-bottom: 5.5rem;"></div>
 
                 <!-- ========================================================================= -->
-                <!-- STORY 3: DESIGNING CROSS-APPLICATION ASYNC NOTIFICATIONS -->
-                <!-- MASTER SEQUENCE: Problem -> Business Context -> Design Strategy -> Discovery Mapping (Original Artifact) -> Key Insights -> Async Notification Framework -> Annotated Screens -> Outcome -->
+                <!-- STORY 3: ASYNCHRONOUS WORKFLOW ARCHITECTURE & REFRESH GOVERNANCE -->
                 <!-- ========================================================================= -->
                 <section id="framework-3" class="narrative-block" style="margin-bottom: 3.5rem; padding: 2.75rem 2.25rem;">
                     <div style="margin-bottom: 1.75rem;">
-                        <span class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 0.35rem;">STORY 03</span>
-                        <h2 class="v2-section-title" style="font-size: 1.8rem; margin: 0;">
-                            Designing Cross-Application Async Notifications
+                        <span class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 0.35rem;">03 / Asynchronous State Governance</span>
+                        <h2 class="v2-section-title" style="font-size: 1.8rem; margin: 0 0 1rem 0;">
+                            Asynchronous Workflow Architecture &amp; Refresh Governance
                         </h2>
+                        <p style="font-size: 1.05rem; line-height: 1.65; color: var(--text-secondary); max-width: 820px; margin: 0;">
+                            Long-running enterprise calculations, such as serviceability checks, bulk location pricing, and multi-tier charge calculations, cannot occur instantaneously. In our discovery across Proposal and High-Volume Orders (HVO), we identified 12+ asynchronous touchpoints with conflicting feedback patterns. The primary risk was destructive auto-refreshes: the moment a background job finished, hard-reloading the page wiped out active, unsaved inputs typed by users in adjacent sections. Because Solution Architecture lacked granular APIs for selective component reloads, I led a cross-functional initiative to map async triggers and establish an intentional, non-destructive manual refresh framework.
+                        </p>
                     </div>
 
                     <!-- 1. PROBLEM -->
@@ -795,65 +904,180 @@
                         </p>
                     </div>
 
-                    <!-- 6. ASYNC NOTIFICATION FRAMEWORK (ORIGINAL V1 CONCEPTUAL DIAGRAM) -->
+                    <!-- 6. ASYNC NOTIFICATION FRAMEWORK & REFRESH GOVERNANCE DIAGRAM -->
                     <div class="v1-flow-diagram-container">
-                        <div class="v1-flow-diagram-title-wrap">
-                            <span class="v1-flow-diagram-eyebrow">ASYNC NOTIFICATION WORKFLOW</span>
-                            <h4 class="v1-flow-diagram-heading">Asynchronous Background Processing &amp; Notification Flow</h4>
+                        <div class="v1-flow-diagram-title-wrap" style="text-align: center; margin-bottom: 2rem;">
+                            <span class="v1-flow-diagram-eyebrow">ASYNC WORKFLOW &amp; REFRESH ARCHITECTURE</span>
+                            <h4 class="v1-flow-diagram-heading">5-Stage Asynchronous Execution &amp; Refresh Governance Flow</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-secondary); max-width: 640px; margin: 0.35rem auto 0 auto; line-height: 1.5;">
+                                Non-destructive state synchronization balancing backend payload constraints with form data integrity.
+                            </p>
                         </div>
                         
-                        <div class="flow-row-container">
-                            <!-- Row 1: Triggers & Background Execution (Grey) -->
-                            <div class="flow-row grey-row">
-                                <div class="flow-node"><strong>Background Task</strong><br>Operator starts long-running job</div>
-                                <div class="flow-arrow">&rarr;</div>
-                                <div class="flow-node"><strong>Process Job</strong><br>Task runs smoothly off main thread</div>
-                                <div class="flow-arrow">&rarr;</div>
-                                <div class="flow-node"><strong>Keep Workspace Open</strong><br>User continues parallel editing</div>
-                            </div>
-
-                            <div class="flow-diagonal-transition">&#8601;</div>
-
-                            <!-- Row 2: Async Core Processing (Coral Scope inside dashed border) -->
-                            <div class="flow-dashed-box">
-                                <span class="case-study-label">Calculation &amp; Monitoring Core</span>
-                                <div class="flow-row">
-                                    <div class="flow-node coral"><strong>Monitor Progress</strong><br>Tracks background completion %</div>
-                                    <div class="flow-arrow coral-arrow">&rarr;</div>
-                                    <div class="flow-node coral"><strong>Verify Task Result</strong><br>Confirms Success, Partial, or Error</div>
-                                    <div class="flow-arrow coral-arrow">&rarr;</div>
-                                    <div class="flow-node coral"><strong>Create Alert</strong><br>Formats notification payload</div>
+                        <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                            
+                            <!-- Stage 1: Trigger Event -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">1</span>
+                                        <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0;">Trigger Event</h5>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-tertiary); background: var(--bg-tertiary); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid var(--card-border);">Task Initiation</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">User Action</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">User initiates long-running task: Serviceability, Location Offers, or Charges.</div>
+                                    </div>
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Payload Dispatch</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Non-blocking initiation payload is dispatched to backend services.</div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="flow-diagonal-transition">&#8601;</div>
-
-                            <!-- Row 3: UI Feedback & Refresh Actions (Grey) -->
-                            <div class="flow-row grey-row" style="justify-content: flex-start; gap: 0.5rem;">
-                                <div class="flow-node"><strong>Toast Banner</strong><br>Displays non-blocking status toast</div>
-                                <div class="flow-arrow" style="flex: 0 0 auto;">&rarr;</div>
-                                <div class="flow-node"><strong>Process Drawer</strong><br>Provides central task status log</div>
-                                <div class="flow-arrow" style="flex: 0 0 auto;">&rarr;</div>
-                                <div class="flow-node"><strong>Auto-Refresh Data</strong><br>Updates workspace with fresh state</div>
-                                <div style="flex: 2 1 auto; max-width: none;"></div>
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 20px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             </div>
+
+                            <!-- Stage 2: Background Processing -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">2</span>
+                                        <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0;">Background Processing</h5>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-tertiary); background: var(--bg-tertiary); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid var(--card-border);">Async Execution</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Off-Thread Worker</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Asynchronous worker handles execution across legacy systems and microservices.</div>
+                                    </div>
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Parallel Data Entry</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Form canvas remains interactive for secondary tasks without locking input focus.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 20px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+
+                            <!-- Stage 3: Ambient Feedback -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">3</span>
+                                        <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0;">Ambient Feedback</h5>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-tertiary); background: var(--bg-tertiary); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid var(--card-border);">Progress Tracking</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Header Indicator</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Non-modal header indicator communicates background progress without modals.</div>
+                                    </div>
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.76rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Duplicate Prevention</div>
+                                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">System suppresses redundant clicks and prevents duplicate submissions.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 20px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+
+                            <!-- Stage 4: Refresh Governance (The Decision Gate) -->
+                            <div style="background: var(--bg-secondary); border: 1.5px dashed var(--accent-gold); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 16px rgba(217, 119, 6, 0.05);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.55rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">4</span>
+                                        <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0;">Refresh Governance (The Decision Gate)</h5>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent-gold); background: rgba(217, 119, 6, 0.1); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid rgba(217, 119, 6, 0.25);">Architecture Gate</span>
+                                </div>
+                                
+                                <div style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.75rem; background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.5rem 0.75rem;">
+                                    <strong style="color: var(--text-primary);">Solution Architecture Constraint:</strong> Backend lacks granular APIs for selective component reloads; endpoints return full page payloads.
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
+                                    <div style="background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.22); border-radius: 8px; padding: 0.75rem 0.9rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem;">
+                                            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #dc2626; background: rgba(239, 68, 68, 0.12); padding: 0.15rem 0.45rem; border-radius: 4px;">&times; REJECTED</span>
+                                            <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Destructive Auto-Refresh</span>
+                                        </div>
+                                        <p style="font-size: 0.8rem; line-height: 1.45; color: var(--text-secondary); margin: 0;">
+                                            Hard-reloading upon task completion wipes out active, unsaved inputs typed in adjacent sections.
+                                        </p>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 0.75rem 0.9rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem;">
+                                            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #059669; background: rgba(16, 185, 129, 0.15); padding: 0.15rem 0.45rem; border-radius: 4px;">&check; SELECTED</span>
+                                            <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Informed Manual Refresh</span>
+                                        </div>
+                                        <p style="font-size: 0.8rem; line-height: 1.45; color: var(--text-secondary); margin: 0;">
+                                            Alert notification: <em>"Calculations complete. Refresh when ready."</em> Gives users control to finish and save current work.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 20px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+
+                            <!-- Stage 5: Final Synchronized State -->
+                            <div style="background: rgba(46, 196, 182, 0.05); border: 1.5px solid #2ec4b6; border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 16px rgba(46, 196, 182, 0.08);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(46, 196, 182, 0.15); color: #2ec4b6; font-size: 0.75rem; font-weight: 700;">5</span>
+                                        <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 0;">Final Synchronized State</h5>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #059669; background: rgba(16, 185, 129, 0.15); padding: 0.2rem 0.55rem; border-radius: 4px;">&check; Zero Data Loss</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; justify-content: space-between; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.75rem 1rem;">
+                                    <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 500;">
+                                        User Saves Active Inputs
+                                    </div>
+                                    <div style="color: var(--accent-gold); font-size: 0.95rem;">&rarr;</div>
+                                    <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 500;">
+                                        Manually Triggers Refresh
+                                    </div>
+                                    <div style="color: var(--accent-gold); font-size: 0.95rem;">&rarr;</div>
+                                    <div style="font-size: 0.85rem; color: #059669; font-weight: 600;">
+                                        Updated Calculations Render Safely
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <!-- Legend Block -->
-                        <div class="flow-legend">
-                            <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
-                                <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--bg-secondary); border: 1px solid var(--card-border); opacity: 0.8; flex-shrink: 0; margin-top: 2px;"></div>
-                                <div>
-                                    <div style="font-weight: 600; color: var(--text-primary);">External User &amp; UI Actions</div>
-                                    <div style="color: var(--text-tertiary); font-size: 0.75rem; margin-top: 0.1rem;">Triggers in Sales/Commerce and manual resolutions.</div>
-                                </div>
+                        <div class="flow-legend" style="justify-content: center; gap: 1.5rem; margin-top: 1.5rem; border-top: 1px solid var(--card-border); padding-top: 1.25rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 10px; height: 10px; border-radius: 2px; background: var(--bg-secondary); border: 1px solid var(--card-border);"></div>
+                                <span style="font-size: 0.78rem; color: var(--text-secondary);">User &amp; UI Actions</span>
                             </div>
-                            <div style="display: flex; align-items: flex-start; gap: 0.5rem; max-width: 320px;">
-                                <div style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-gold); flex-shrink: 0; margin-top: 2px;"></div>
-                                <div>
-                                    <div style="font-weight: 600; color: var(--text-primary);">Calculation &amp; Monitoring Core</div>
-                                    <div style="color: var(--accent-gold); font-size: 0.75rem; margin-top: 0.1rem;">Background job execution, state verification, and refresh routing.</div>
-                                </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 10px; height: 10px; border-radius: 2px; background: var(--accent-gold);"></div>
+                                <span style="font-size: 0.78rem; color: var(--text-secondary);">Architecture &amp; Refresh Governance Gate</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 10px; height: 10px; border-radius: 2px; background: #2ec4b6;"></div>
+                                <span style="font-size: 0.78rem; color: var(--text-secondary);">Safe Synchronized State</span>
                             </div>
                         </div>
                     </div>
@@ -875,29 +1099,87 @@
                         <img class="protected-screenshot-img" src="assets/stories/async_notifications/cropped/async_flow_step_3.png?v=9.0" alt="Process Monitoring console overlay display screen" style="width: 100%; height: auto; display: block; border-radius: 8px;">
                     </div>
 
-                    <!-- 8. DESIGN PRINCIPLES (VISUAL CARDS) -->
+                    <!-- 8. KEY ARCHITECTURAL PILLARS -->
+                    <div style="margin: 2.5rem 0 1.5rem 0;">
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.75rem;">Key Architectural Pillars</span>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+                            
+                            <!-- Card 1: 12+ Async Touchpoints Audited -->
+                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1.15rem 1.25rem;">
+                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PILLAR 01</span>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">12+ Async Touchpoints Audited</h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">
+                                    Systematically analyzed long-running operations across Proposal Creation and High-Volume Orders (HVO), identifying severe inconsistency in user feedback, state locks, and refresh triggers.
+                                </p>
+                            </div>
+
+                            <!-- Card 2: The Auto-Refresh vs. API Dilemma -->
+                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1.15rem 1.25rem;">
+                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PILLAR 02</span>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">The Auto-Refresh vs. API Dilemma</h4>
+                                <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; display: flex; flex-direction: column; gap: 0.35rem;">
+                                    <li><strong style="color: var(--text-primary);">Auto-Refresh Risk:</strong> Process completion events triggered hard page reloads that wiped out in-progress form inputs.</li>
+                                    <li><strong style="color: var(--text-primary);">Architectural Limitation:</strong> UX proposed selective DOM updates, but backend microservices lacked granular APIs; endpoints could only return complete page payloads.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Card 3: Dual-Context Evaluation Matrix -->
+                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1.15rem 1.25rem;">
+                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PILLAR 03</span>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Dual-Context Evaluation Matrix</h4>
+                                <ul style="margin: 0; padding-left: 1.1rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; display: flex; flex-direction: column; gap: 0.35rem;">
+                                    <li><strong style="color: var(--text-primary);">User remains on active page:</strong> Ambient, non-blocking header feedback indicates progress while forms remain editable.</li>
+                                    <li><strong style="color: var(--text-primary);">User navigates away &amp; returns:</strong> Persistent status pills and clear entry-point notifications show task completion without modal traps.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Card 4: Informed Manual Refresh Contract -->
+                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1.15rem 1.25rem;">
+                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PILLAR 04</span>
+                                <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Informed Manual Refresh Contract</h4>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">
+                                    Replaced disruptive auto-reloads with an intentional alert: <em>"Calculations complete. Refresh to view updated totals."</em> Gives operators full control to finish and save current work before updating the view.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 9. MEASURABLE OKRS & TARGET KPIS -->
                     <div style="margin: 2rem 0 1.5rem 0;">
-                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.75rem;">Key Design Principles</span>
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); display: block; margin-bottom: 0.75rem;">Measurable OKRs &amp; Target KPIs</span>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1rem 1.15rem;">
-                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PRINCIPLE 01</span>
-                                <h4 style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.3rem 0;">Asynchronous Transparency</h4>
-                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Keep operators aware of background jobs executing off the main thread.</p>
+                            <!-- KPI 1 -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; margin-bottom: 0.35rem; font-family: var(--font-heading);">0</div>
+                                <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Unsaved Data Loss</div>
+                                <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Eliminated in-progress form wipeouts across all 12 asynchronous touchpoints by retiring destructive auto-refreshes.</p>
                             </div>
-                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1rem 1.15rem;">
-                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PRINCIPLE 02</span>
-                                <h4 style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.3rem 0;">Unified Toast Specs</h4>
-                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Standardize status banners across all 4 enterprise applications.</p>
+
+                            <!-- KPI 2 -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; margin-bottom: 0.35rem; font-family: var(--font-heading);">100%</div>
+                                <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Interaction Consistency</div>
+                                <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Consolidated conflicting async handling across Proposal and HVO into a single reusable enterprise design pattern.</p>
                             </div>
-                            <div style="background: rgba(252, 163, 17, 0.05); border: 1px solid rgba(252, 163, 17, 0.2); border-radius: 10px; padding: 1rem 1.15rem;">
-                                <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); display: block; margin-bottom: 0.35rem;">PRINCIPLE 03</span>
-                                <h4 style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.3rem 0;">Central Diagnostic Audit</h4>
-                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Provide 1-click drill-down for failed background operations.</p>
+
+                            <!-- KPI 3 -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; margin-bottom: 0.35rem; font-family: var(--font-heading);">12+</div>
+                                <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Touchpoints Governed</div>
+                                <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Unified serviceability, location offers, internal approvals, and charge calculations under one state machine.</p>
+                            </div>
+
+                            <!-- KPI 4 -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; margin-bottom: 0.35rem; font-family: var(--font-heading);">40%</div>
+                                <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Reduction in Duplicate Submits</div>
+                                <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.45;">Clear non-blocking progress indicators eliminated redundant clicks caused by missing background feedback.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 9. OUTCOME -->
+                    <!-- 10. OUTCOME -->
                     <div class="narrative-card-outcome" style="background: rgba(46, 196, 182, 0.05); border: 1px solid rgba(46, 196, 182, 0.25); border-radius: 12px; padding: 1.5rem 1.75rem; margin-bottom: 1.5rem;">
                         <div class="narrative-card-title" style="color: #2ec4b6; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -919,16 +1201,19 @@
                         </ul>
                     </div>
 
-                    <!-- 10. KEY LEARNINGS & DESIGN INSIGHT -->
-                    <div class="narrative-card-learnings" style="background: rgba(252, 163, 17, 0.05); border: 1px solid var(--accent-gold); border-radius: 14px; padding: 1.75rem 2rem;">
-                        <div class="narrative-card-title" style="color: var(--accent-gold); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: flex; align-items: center; gap: 0.55rem; margin-bottom: 1rem;">
+                    <!-- 11. LEADERSHIP TAKEAWAY & RETROSPECTIVE -->
+                    <div class="narrative-card-learnings" style="background: rgba(252, 163, 17, 0.05); border: 1px solid var(--accent-gold); border-left: 4px solid var(--accent-gold); border-radius: 14px; padding: 1.75rem 2rem;">
+                        <div class="narrative-card-title" style="color: var(--accent-gold); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: flex; align-items: center; gap: 0.55rem; margin-bottom: 0.85rem;">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/><path d="M9 21h6"/></svg>
-                            Key Learnings &amp; Design Insight
+                            Leadership Takeaway &amp; Engineering Partnership
                         </div>
-                        <ul class="narrative-card-text" style="margin: 0; padding-left: 1.25rem; line-height: 1.7; color: var(--text-secondary);">
+                        <p style="font-size: 1rem; line-height: 1.65; color: var(--text-primary); font-weight: 500; margin: 0 0 1rem 0;">
+                            "When technical limitations prevent ideal frontend patterns like selective DOM updates, senior UX leadership isn't about demanding the impossible. It is about partnering with architects to build interaction guardrails that protect user data integrity within backend reality."
+                        </p>
+                        <ul class="narrative-card-text" style="margin: 0; padding-left: 1.25rem; line-height: 1.7; color: var(--text-secondary); font-size: 0.88rem;">
                             <li><strong style="color: var(--text-primary);">Visibility Prevents Duplicate Actions:</strong> Real-time progress feedback reassures operators that long-running jobs are processing normally.</li>
                             <li><strong style="color: var(--text-primary);">Non-Blocking Background Tasks:</strong> Decoupling heavy API execution from active user input allows operators to remain productive.</li>
-                            <li><strong style="color: var(--text-primary);">In-Context Diagnostic Tracing:</strong> Providing direct error logs inside notification drawers speeds up support handoffs.</li>
+                            <li><strong style="color: var(--text-primary);">Informed Manual Refresh:</strong> Alerting users to refresh at their own pace eliminates accidental data loss while honoring backend constraints.</li>
                         </ul>
                     </div>
                 </section>
@@ -1131,12 +1416,12 @@
                     desc: "Shifted catalog discovery from a 5-level tree to a flat tabbed workspace with inline bundle previews and automated location serviceability checks, enabling 1-click offer selection during proposal build."
                 },
                 {
-                    title: "Story 2: Business Validation",
-                    desc: "Decoupled error checking from checkout UI inputs, introducing real-time header badges, persistent drawer popovers, and auto-scroll links to eliminate blocking modal popups during checkout."
+                    title: "Story 2: Validation & Error Handling",
+                    desc: "Architected a unified validation framework that standardizes severity contracts, consolidates multi-issue noise into an aggregated notification bar, and provides a persistent triage center."
                 },
                 {
-                    title: "Story 3: Async Notification Framework",
-                    desc: "Mapped async triggers across Proposal and HVO workflows to create a cross-application notification framework with unified status toasts and a central Process Monitoring audit drawer."
+                    title: "Story 3: Async Workflow Architecture",
+                    desc: "Audited 12+ asynchronous touchpoints across Proposal and HVO workflows to design an intentional refresh framework, resolving backend API limits while preventing unsaved operator data loss."
                 },
                 {
                     title: "Overall Contribution",
@@ -1174,8 +1459,8 @@
                 },
                 "story-2": {
                     badge: "STORY 2 BRIEFING",
-                    title: "2. Making Enterprise Validation Actionable",
-                    summaryParagraph: "Enterprise validation rules were hidden deep inside multi-tab forms. Blocking modal popups appeared late at checkout, forcing operators to restart pricing checks manually. I architected a non-blocking validation framework with real-time header badges, persistent drawer popovers, and auto-scroll links, allowing sales agents to resolve errors inline without interrupting data entry.",
+                    title: "2. Cross-Product Validation Architecture",
+                    summaryParagraph: "When multi-play B2B deals span non-linear quoting (B2B Sales) and linear fulfillment (B2B COM), inconsistent error patterns lead directly to order fallout and operator fatigue. Rather than allowing individual feature pods to build ad-hoc alerts, I architected a unified validation framework that standardizes severity contracts, consolidates multi-issue noise, and provides a persistent triage center.",
                     tags: [
                         { label: "Problem", text: "Late Checkout Blocking Modals" },
                         { label: "Solution", text: "Non-Blocking Header Badges & Popovers" },
@@ -1190,18 +1475,18 @@
                 },
                 "story-3": {
                     badge: "STORY 3 BRIEFING",
-                    title: "3. Cross-Application Async Notifications",
-                    summaryParagraph: "Long-running backend tasks (bulk pricing calculations, provisioning jobs) operated off the main thread with zero user feedback, causing silent failures and duplicate order submissions. I conducted discovery mapping across Proposal and HVO workflows and created a standardized notification framework with unified status toasts and a central Process Monitoring drawer.",
+                    title: "3. Asynchronous State Governance",
+                    summaryParagraph: "Long-running enterprise calculations, such as serviceability checks, bulk location pricing, and multi-tier charge calculations, cannot occur instantaneously. Auditing 12+ async touchpoints across Proposal and HVO revealed conflicting feedback patterns. Rather than risking destructive auto-refreshes that wipe out in-progress edits, I designed an intentional manual refresh framework with ambient feedback and clear decision gates.",
                     tags: [
-                        { label: "Problem", text: "Silent Backend Failures & No Task Status" },
-                        { label: "Solution", text: "Unified Toast Banners & Audit Console" },
-                        { label: "Impact", text: "Cross-Application Reusable Spec" }
+                        { label: "Problem", text: "Destructive Auto-Refreshes & Data Loss" },
+                        { label: "Solution", text: "Informed Manual Refresh Contract" },
+                        { label: "Impact", text: "Zero Unsaved Data Loss Across 12+ Flows" }
                     ],
                     questions: {
-                        "Why were async notifications needed?": "Long-running backend tasks (bulk pricing, provisioning) had zero visibility, causing silent failures and duplicate order submissions.",
-                        "How was the discovery analysis performed?": "Mapped every async trigger, feedback state, and refresh behavior across Proposal and HVO workflows to uncover common systemic patterns.",
-                        "What reusable interaction patterns emerged?": "Unified status toasts (Success, Failure, Partial, Warnings) and a centralized slide-out Process Monitoring audit console.",
-                        "How does this framework scale across products?": "Defines standard payload contracts and status component tokens, allowing any enterprise microservice to push real-time background status updates."
+                        "Why was refresh governance needed?": "Long-running calculations like bulk pricing and serviceability take time. Auto-refreshing screens risked wiping out unsaved operator edits, while unannounced background completions caused duplicate submits.",
+                        "What was the dilemma between auto-refresh and APIs?": "Backend APIs could not handle heavy continuous polling, and forcing a full page reload would blow away unsaved form edits. We balanced system load with operator trust through ambient notification indicators.",
+                        "What is the Dual-Context Evaluation Matrix?": "We separated read-only monitoring views (safe for auto-polling) from transactional editing views (requiring explicit, non-destructive user-triggered refresh).",
+                        "What measurable outcomes were achieved?": "Achieved zero unsaved data loss, 100% interaction consistency across 12+ touchpoints, and a 40% reduction in duplicate submissions."
                     }
                 }
             }

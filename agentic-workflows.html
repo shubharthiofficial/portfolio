@@ -333,7 +333,7 @@
                         </div>
                         <div>
                             <span style="display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--accent-gold); margin-bottom: 0.35rem;">Team</span>
-                            <span style="font-size: 0.88rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;">Senior Product Designer &bull; AI Architect &bull; AI Product Manager &bull; Product Owner</span>
+                            <span style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.45; display: block;">Senior Product Designer &bull; AI Architect &bull; AI Product Manager &bull; Product Owner</span>
                         </div>
                     </div>
                     
@@ -369,238 +369,357 @@
                 <!-- ========================================================================= -->
                 <!-- STORY 01: SPEC-DRIVEN PLATFORM PROTOTYPING                               -->
                 <!-- ========================================================================= -->
-                <section id="story-01-spec-prototyping" class="story-section" style="margin-top: 3.5rem;">
-    <!-- Section Header -->
-    <div style="display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #b45309; background: #fef3c7; padding: 0.35rem 0.8rem; border-radius: 999px; margin-bottom: 0.85rem;">
-        STORY 01 • PLATFORM ARCHITECTURE & PIPELINE
-    </div>
-    <h2 style="font-size: 2rem; font-weight: 800; color: #1c1917; margin: 0 0 1rem 0; line-height: 1.25;">
-        Demonstration Before Description: Spec-Driven Platform Prototyping
-    </h2>
-    <p style="font-size: 1.15rem; line-height: 1.6; color: #44403c; max-width: 840px; margin-bottom: 2.5rem;">
-        When AI tools were introduced across our core design team, we skipped basic prompt generation. Instead, we built a machine-readable discovery pipeline. By connecting product requirements, design tokens, and functional prototypes to a single contract using <strong><code>DESIGN.md</code></strong>, we gave both designers and developers a shared source of truth.
-    </p>
-
-    <!-- Context: Friction vs. Pivot Cards -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-        <div style="background: #ffffff; border: 1px solid #fee2e2; border-left: 4px solid #ef4444; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);">
-            <div style="color: #b91c1c; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">
-                Where Naive Automation Failed
-            </div>
-            <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #57534e;">
-                Prompting AI models directly from user stories gave us shiny, consumer-style screens that fell apart in real enterprise workflows. The tools guessed at spacing, swapped critical data tables for cards, and ignored server delays. We were simply creating visual debt at record speed.
-            </p>
-        </div>
-
-        <div style="background: #ffffff; border: 1px solid #d1fae5; border-left: 4px solid #10b981; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);">
-            <div style="color: #047857; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">
-                The Practical Fix: DESIGN.md
-            </div>
-            <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #57534e;">
-                We treated <strong><code>DESIGN.md</code></strong> as a binding contract. By pairing <em>token metadata</em> with <em>plain-English rules and constraints</em>, the file gives both our team and our AI agents clear boundaries before anyone starts building screens or writing code.
-            </p>
-        </div>
-    </div>
-
-    <!-- ============================================================== -->
-    <!-- END-TO-END PIPELINE FLOWCHART (LIGHT-MODE NATIVE & AIRY)       -->
-    <!-- ============================================================== -->
-    <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 16px; padding: 2.5rem 2rem; margin-bottom: 3.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);">
-        
-        <!-- Header -->
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e7e5e4; padding-bottom: 1.25rem; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
-            <div>
-                <span style="font-size: 0.75rem; font-weight: 700; color: #b45309; text-transform: uppercase; letter-spacing: 0.08em;">End-to-End Platform Pipeline</span>
-                <h3 style="font-size: 1.35rem; font-weight: 800; color: #1c1917; margin: 0.25rem 0 0 0;">
-                    From Raw Requirements to Code-Ready Handoff
-                </h3>
-            </div>
-            <span style="background: #fef3c7; color: #92400e; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.8rem; border-radius: 999px;">
-                Human-in-the-Loop Active
-            </span>
-        </div>
-
-        <div style="max-width: 720px; margin: 0 auto; display: flex; flex-direction: column;">
-            
-            <!-- STAGE 01 -->
-            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 10px; padding: 1.25rem 1.5rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 0.75rem; font-weight: 700; color: #78716c; text-transform: uppercase; letter-spacing: 0.05em;">Stage 01 • Business Intent</span>
-                    <span style="background: #f5f5f4; color: #57534e; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px;">JIRA Epics / PRD</span>
-                </div>
-                <div style="font-size: 1rem; font-weight: 700; color: #1c1917; margin: 0.4rem 0 0.2rem 0;">Unstructured Feature Stories &amp; Business Rules</div>
-                <p style="font-size: 0.85rem; color: #57534e; margin: 0; line-height: 1.5;">Pricing thresholds, compliance guardrails, and day-to-day operational goals.</p>
-            </div>
-
-            <!-- Down Arrow -->
-            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
-
-            <!-- HITL GATEWAY 1 -->
-            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-left: 4px solid #b45309; border-radius: 10px; padding: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                    <span style="font-size: 0.75rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em;">HITL Gateway 01 • Architectural Translation</span>
-                    <span style="background: #fef3c7; color: #92400e; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px;">DESIGN.md Spec</span>
-                </div>
-                <div style="font-size: 1.05rem; font-weight: 800; color: #1c1917; margin-bottom: 0.4rem;">Authoring the Shared Spec</div>
-                <p style="font-size: 0.85rem; color: #57534e; line-height: 1.5; margin-bottom: 0.75rem;">
-                    The designer translates broad goals into a structured document, locking down system boundaries before invoking any AI generation.
-                </p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-                    <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 6px; padding: 0.65rem 0.75rem;">
-                        <div style="font-family: monospace; font-size: 0.75rem; color: #1c1917; font-weight: 700;">1. Token Front-Matter</div>
-                        <div style="font-size: 0.75rem; color: #78716c; margin-top: 0.2rem;">Semantic variables: compact table density, role colors, corner radius.</div>
+                <section id="story-01-spec-prototyping" class="narrative-block" style="padding: 2.5rem 2.25rem; margin-bottom: 3.5rem;">
+                    <div class="v2-section-eyebrow" style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem;">
+                        STORY 01 &bull; THE UX AGENT WITHIN AN ORCHESTRATED PIPELINE
                     </div>
-                    <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 6px; padding: 0.65rem 0.75rem;">
-                        <div style="font-family: monospace; font-size: 0.75rem; color: #1c1917; font-weight: 700;">2. Markdown Rules</div>
-                        <div style="font-size: 0.75rem; color: #78716c; margin-top: 0.2rem;">Core states (empty, loading, fallout) and strict component constraints.</div>
+                    
+                    <h2 class="v2-section-title" style="font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1.25rem;">
+                        Moving from Prompts to Guardrails: Orchestrating the UX Agent
+                    </h2>
+                    
+                    <p class="v2-body-lead" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); max-width: 820px; margin-bottom: 2rem;">
+                        When our organization began integrating specialized AI agents across product management, system architecture, and engineering, the biggest risk was creating isolated silos. Prompting an AI model with plain-English user stories routinely generated consumer-style cards, ignored enterprise layout density, and overlooked backend latency. My focus as Senior UX Specialist was ensuring the <strong>UX Agent</strong> was bound to strict layout contracts (<code>DESIGN.md</code>) and grounded by human review gates before touching production code.
+                    </p>
+
+                    <!-- Context & Friction Grid -->
+                    <div class="narrative-grid" style="margin-bottom: 2.5rem;">
+                        <div class="narrative-card-problem" style="border-left: 3px solid #ef4444;">
+                            <div class="narrative-card-title" style="color: #ef4444;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                Where Naive Generation Breaks Down
+                            </div>
+                            <p class="narrative-card-text">
+                                Unconstrained design agents naturally lean toward consumer interfaces: vast whitespace, oversized cards, and nested modal pop-ups. In high-volume operations, this breaks spatial memory, hides crucial data, and collapses when dealing with slow database responses or partial failures.
+                            </p>
+                        </div>
+
+                        <div class="narrative-card-decision" style="border-left: 3px solid var(--accent-gold);">
+                            <div class="narrative-card-title" style="color: var(--accent-gold);">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                                The Practical Fix: Multi-Agent Governance
+                            </div>
+                            <p class="narrative-card-text">
+                                We embedded the UX Agent between upstream product requirements and downstream code generation. By binding the agent to machine-readable rules in <code>DESIGN.md</code> and requiring human-in-the-loop review at direction gates, we converted speculative concept generation into a reliable discovery pipeline.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Down Arrow -->
-            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
+                    <!-- The Consolidated Pipeline Diagram Container (Vertical Flow) -->
+                    <div style="margin: 2.5rem 0 3rem 0; padding: 2rem 1.75rem; background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 16px;">
+                        <div style="margin-bottom: 1.75rem; text-align: center;">
+                            <span style="display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--accent-gold); margin-bottom: 0.35rem;">Architecture Blueprint</span>
+                            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
+                                The UX Agent within the Multi-Agent Delivery Pipeline
+                            </h3>
+                            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--text-secondary); max-width: 680px; margin: 0 auto;">
+                                A sequential workflow illustrating upstream business intent, UX research and macro-concept exploration, design lead review, technical architecture binding, 5-state validation, and synchronized developer handoff.
+                            </p>
+                        </div>
 
-            <!-- STAGE 02 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 10px; padding: 1.15rem;">
-                    <div style="font-size: 0.75rem; font-weight: 700; color: #78716c; text-transform: uppercase;">Track A: Code Prototype (Cursor)</div>
-                    <div style="font-size: 0.9rem; font-weight: 700; color: #1c1917; margin: 0.3rem 0 0.2rem 0;">Functional Browser Model</div>
-                    <div style="font-size: 0.8rem; color: #57534e; line-height: 1.4;">Reads <code>DESIGN.md</code> to spin up interactive HTML/JS with realistic loading delays.</div>
-                </div>
-                <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 10px; padding: 1.15rem;">
-                    <div style="font-size: 0.75rem; font-weight: 700; color: #78716c; text-transform: uppercase;">Track B: Design System Sync</div>
-                    <div style="font-size: 0.9rem; font-weight: 700; color: #1c1917; margin: 0.3rem 0 0.2rem 0;">Tokens &amp; Components</div>
-                    <div style="font-size: 0.8rem; color: #57534e; line-height: 1.4;">Binds layouts to approved library components, keeping agents from making up random styling.</div>
-                </div>
-            </div>
+                        <!-- VERTICAL FLOW STACK -->
+                        <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                            
+                            <!-- Trigger Node -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 20px; padding: 0.65rem 1.5rem; display: flex; align-items: center; gap: 0.65rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-gold);"></span>
+                                <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.5px;">Trigger:</span>
+                                <span style="font-size: 0.85rem; color: var(--text-secondary);">Product Roadmap &amp; Feature Intent</span>
+                            </div>
 
-            <!-- Down Arrow -->
-            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 22px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
 
-            <!-- HITL GATEWAY 2 -->
-            <div style="background: #ffffff; border: 2px dashed #d97706; border-radius: 10px; padding: 1.25rem; text-align: center;">
-                <span style="font-size: 0.7rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em;">HITL Gateway 02 • System Gatekeeper</span>
-                <div style="font-size: 1rem; font-weight: 800; color: #1c1917; margin-top: 0.2rem;">Does the Prototype Follow DESIGN.md?</div>
-                <div style="font-size: 0.8rem; color: #78716c; margin-top: 0.25rem;">Checks: Approved tokens, zero modal traps, and all four edge states accounted for.</div>
-            </div>
+                            <!-- Stage 1 Card: Upstream Start (PDM / Business Agent) -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.45rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">1</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin: 0;">Upstream Start: PDM / Business Agent</h4>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-tertiary); background: var(--bg-tertiary); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid var(--card-border);">Stage 1: Intent</span>
+                                </div>
+                                <p style="font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); margin: 0;">
+                                    Provides core business rules, commercial objectives, success criteria, and feature intent. Establishes the operational problem space before design discovery or technical scoping begins.
+                                </p>
+                            </div>
 
-            <!-- Branches -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.75rem;">
-                <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 0.85rem; text-align: center;">
-                    <div style="font-size: 0.75rem; font-weight: 800; color: #991b1b;">✕ NO: Pattern Drift</div>
-                    <div style="font-size: 0.75rem; color: #7f1d1d; margin-top: 0.2rem;">The designer tightens the spec constraints and re-runs the prompt.</div>
-                </div>
-                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.85rem; text-align: center;">
-                    <div style="font-size: 0.75rem; font-weight: 800; color: #166534;">✓ YES: Ready for Review</div>
-                    <div style="font-size: 0.75rem; color: #14532d; margin-top: 0.2rem;">The prototype moves straight to cross-functional alignment.</div>
-                </div>
-            </div>
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 22px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
 
-            <!-- Down Arrow -->
-            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
+                            <!-- Stage 2 Card: UX Agent (Part 1 - Discovery & Concepts) -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.45rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">2</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin: 0;">UX Agent (Part 1: Discovery &amp; Concepts)</h4>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-tertiary); background: var(--bg-tertiary); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid var(--card-border);">Stage 2: Exploration</span>
+                                </div>
+                                <p style="font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                                    Synthesizes qualitative user needs and drafts early structural concepts bound to <code>DESIGN.md</code> tokens before technical implementation begins.
+                                </p>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin-top: 0.65rem;">
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Skill 1: Research &amp; Discovery</div>
+                                        <div style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.45;">Synthesizes user friction logs and jobs-to-be-done (JTBD), filtering noise and purging policy violations.</div>
+                                    </div>
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Skill 2: Macro-Concepts</div>
+                                        <div style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.45;">Explores 2 to 3 layout approaches: split-pane master-detail versus contextual side drawer or modal-free views.</div>
+                                    </div>
+                                </div>
+                            </div>
 
-            <!-- STAGE 03 -->
-            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 10px; padding: 1.25rem 1.5rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 0.75rem; font-weight: 700; color: #78716c; text-transform: uppercase;">Stage 03 • Collaborative Alignment</span>
-                    <span style="background: #f5f5f4; color: #57534e; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px;">HITL Gateway 03</span>
-                </div>
-                <div style="font-size: 1rem; font-weight: 700; color: #1c1917; margin: 0.3rem 0 0.2rem 0;">Demonstration Before Description</div>
-                <p style="font-size: 0.85rem; color: #57534e; margin: 0; line-height: 1.5;">
-                    Design, Product, and Backend Engineering walk through the live interactive POC together, verifying API contracts and resolving queue latency weeks before sprint planning.
-                </p>
-            </div>
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 22px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
 
-            <!-- Down Arrow -->
-            <div style="text-align: center; color: #b45309; font-size: 1.2rem; margin: 1rem 0; line-height: 1;">↓</div>
+                            <!-- Human-In-The-Loop Review Gate (Design Lead Review) -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-gold); border-radius: 12px; padding: 1.15rem 1.35rem; width: 100%; max-width: 660px; box-shadow: 0 4px 16px rgba(217, 119, 6, 0.08);">
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 0.45rem; margin-bottom: 0.3rem;">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    <span style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold);">Human-In-The-Loop Gate &bull; Design Lead Review</span>
+                                </div>
+                                <div style="font-size: 0.98rem; font-weight: 600; color: var(--text-primary); text-align: center; margin-bottom: 0.85rem;">
+                                    Does the macro layout balance operator ergonomics and operational flow?
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem;">
+                                    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 0.75rem 0.9rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem;">
+                                            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #059669; background: rgba(16, 185, 129, 0.15); padding: 0.15rem 0.45rem; border-radius: 4px;">&check; LOCKED</span>
+                                            <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Winning Direction</span>
+                                        </div>
+                                        <p style="font-size: 0.82rem; line-height: 1.45; color: var(--text-secondary); margin: 0;">
+                                            Designer reviews and locks the winning direction, unlocking Architecture Agent engagement.
+                                        </p>
+                                    </div>
+                                    <div style="background: rgba(217, 119, 6, 0.08); border: 1px solid rgba(217, 119, 6, 0.25); border-radius: 8px; padding: 0.75rem 0.9rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem;">
+                                            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent-gold); background: rgba(217, 119, 6, 0.15); padding: 0.15rem 0.45rem; border-radius: 4px;">&circlearrowleft; REVISE</span>
+                                            <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Refine Constraints</span>
+                                        </div>
+                                        <p style="font-size: 0.82rem; line-height: 1.45; color: var(--text-secondary); margin: 0;">
+                                            Adjust ergonomics, update rules in <code>DESIGN.md</code>, and re-run macro exploration.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-            <!-- STAGE 04 -->
-            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-top: 4px solid #1c1917; border-radius: 10px; padding: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 0.75rem; font-weight: 800; color: #1c1917; text-transform: uppercase; letter-spacing: 0.05em;">Stage 04 • Code-Ready Handoff</span>
-                    <span style="background: #f5f5f4; color: #1c1917; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px;">Verify, Don't Rebuild</span>
-                </div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #1c1917; margin: 0.4rem 0 0.3rem 0;">Delivering Clean Component Assets</div>
-                <p style="font-size: 0.85rem; color: #57534e; line-height: 1.5; margin-bottom: 0.75rem;">
-                    Instead of handing off static redlines, the design team provides working, token-bound component files with state logic already built in.
-                </p>
-                <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 6px; padding: 0.75rem; font-size: 0.8rem; color: #44403c; line-height: 1.5;">
-                    <strong>The Developer's Job:</strong> Verify component properties, run accessibility checks, and hook up live endpoints. Rebuilding screens from scratch is completely off the table.
-                </div>
-            </div>
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 22px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
 
-        </div>
-    </div>
+                            <!-- Stage 3 Card: Architecture Agent Engagement -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.45rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">3</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin: 0;">Architecture Agent Engagement</h4>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent-gold); background: rgba(217, 119, 6, 0.1); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid rgba(217, 119, 6, 0.25);">Engages Post-UX Lock</span>
+                                </div>
+                                <p style="font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); margin-bottom: 0.65rem;">
+                                    Steps in only after the UX approach is finalized. Translates the approved layout into a strict technical contract before detailing proceeds.
+                                </p>
+                                <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.7rem 0.95rem;">
+                                    <div style="font-size: 0.74rem; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">Technical Contract Mapping</div>
+                                    <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">
+                                        Maps API endpoints, data models, schema contracts, and synchronous versus asynchronous payload rules to support realistic data rendering.
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- ========================================== -->
-    <!-- REAL-WORLD UX ROADBLOCKS                   -->
-    <!-- ========================================== -->
-    <div style="margin-bottom: 3.5rem;">
-        <h3 style="font-size: 1.35rem; font-weight: 800; color: #1c1917; margin-bottom: 1.5rem;">
-            Real-World UX Roadblocks &amp; Resolutions
-        </h3>
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 22px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
-            
-            <!-- Roadblock 1 -->
-            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.75rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                    <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ef4444;"></span>
-                    <h4 style="font-size: 1.05rem; font-weight: 700; color: #1c1917; margin: 0;">The Happy Path Bias and Missing Edge States</h4>
-                </div>
-                <p style="font-size: 0.95rem; color: #57534e; line-height: 1.6; margin-bottom: 1rem;">
-                    <strong>The Friction:</strong> AI models instinctively design for perfect conditions. They build clean, instant success screens while skipping loading queues, partial batch failures, or approval holds. That left operators staring at blank screens with no recovery path when things went wrong.
-                </p>
-                <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 8px; padding: 0.9rem; font-size: 0.9rem; color: #1c1917; line-height: 1.5;">
-                    <strong>The Fix in DESIGN.md:</strong> We added a mandatory state matrix to the spec. Before any layout is generated, the prompt must explicitly define four states: in-flight polling, partial fallout, blocked approvals, and manual overrides.
-                </div>
-            </div>
+                            <!-- Stage 4 Card: UX Agent (Part 2 - Detailing & Validation) -->
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.45rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.55rem;">
+                                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700;">4</span>
+                                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin: 0;">UX Agent (Part 2: Detailing &amp; Validation)</h4>
+                                    </div>
+                                    <span style="font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-tertiary); background: var(--bg-tertiary); padding: 0.2rem 0.55rem; border-radius: 4px; border: 1px solid var(--card-border);">Stage 4: Validation</span>
+                                </div>
+                                <p style="font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                                    Builds out exhaustive operational states aligned with the Architecture Agent's technical contract, followed by automated compliance auditing.
+                                </p>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin-top: 0.65rem;">
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Skill 3: Detailed Design</div>
+                                        <div style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.45;">Builds out the complete 5-state matrix (empty, async latency queues, partial batch errors, default, and success) aligned with payload rules.</div>
+                                    </div>
+                                    <div style="background: var(--bg-tertiary); border: 1px solid var(--card-border); border-radius: 8px; padding: 0.65rem 0.85rem;">
+                                        <div style="font-size: 0.74rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem;">Skill 4: Usability &amp; A11y Testing</div>
+                                        <div style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.45;">Automated WCAG 2.1 AA text contrast validation and design token linters, flagging detached styles before code handoff.</div>
+                                    </div>
+                                </div>
+                            </div>
 
-            <!-- Roadblock 2 -->
-            <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.75rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                    <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ef4444;"></span>
-                    <h4 style="font-size: 1.05rem; font-weight: 700; color: #1c1917; margin: 0;">Context Loss and Nested Modal Traps</h4>
-                </div>
-                <p style="font-size: 0.95rem; color: #57534e; line-height: 1.6; margin-bottom: 1rem;">
-                    <strong>The Friction:</strong> For secondary actions, like editing discounts or triaging fallout items, AI tools routinely generated pop-up modals or full redirects. This broke spatial memory, wiped active table filters, and caused real fatigue for power users handling hundreds of records a day.
-                </p>
-                <div style="background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 8px; padding: 0.9rem; font-size: 0.9rem; color: #1c1917; line-height: 1.5;">
-                    <strong>The Fix in DESIGN.md:</strong> We set clear layout boundaries in the spec. Secondary tasks must stay within non-blocking side drawers or split panels, keeping the main table and filters visible at all times.
-                </div>
-            </div>
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 22px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
 
-        </div>
-    </div>
+                            <!-- Automated Quality Gate -->
+                            <div style="background: var(--bg-secondary); border: 1px dashed var(--accent-gold); border-radius: 12px; padding: 1.15rem 1.35rem; width: 100%; max-width: 660px;">
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-bottom: 0.3rem;">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2.2"><polygon points="12 2 22 12 12 22 2 12"/></svg>
+                                    <span style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold);">Automated Quality Gate &bull; Linter &amp; Token Audit</span>
+                                </div>
+                                <div style="font-size: 0.98rem; font-weight: 600; color: var(--text-primary); text-align: center; margin-bottom: 0.85rem;">
+                                    Design Tokens &amp; WCAG 2.1 AA Passed?
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem;">
+                                    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 0.75rem 0.9rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem;">
+                                            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #059669; background: rgba(16, 185, 129, 0.15); padding: 0.15rem 0.45rem; border-radius: 4px;">&check; PASS</span>
+                                            <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Zero-Drift Spec</span>
+                                        </div>
+                                        <p style="font-size: 0.82rem; line-height: 1.45; color: var(--text-secondary); margin: 0;">
+                                            100% token binding and 4.5:1 text contrast confirmed. Cleared for handoff.
+                                        </p>
+                                    </div>
+                                    <div style="background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.22); border-radius: 8px; padding: 0.75rem 0.9rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem;">
+                                            <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #dc2626; background: rgba(239, 68, 68, 0.12); padding: 0.15rem 0.45rem; border-radius: 4px;">&times; FAIL</span>
+                                            <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Token Drift Detected</span>
+                                        </div>
+                                        <p style="font-size: 0.82rem; line-height: 1.45; color: var(--text-secondary); margin: 0;">
+                                            Auto-remediate: Re-bind raw values to semantic design tokens.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- METRICS GRID -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 3.5rem;">
-        <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
-            <div style="font-size: 2rem; font-weight: 800; color: #b45309;">50% Less</div>
-            <div style="font-size: 0.8rem; color: #78716c; font-weight: 700; text-transform: uppercase; margin-top: 0.25rem;">Sprint Cycle Time</div>
-            <div style="font-size: 0.85rem; color: #57534e; margin-top: 0.5rem;">Engineers inspect code-ready components instead of rebuilding UI from scratch.</div>
-        </div>
-        <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
-            <div style="font-size: 2rem; font-weight: 800; color: #b45309;">Zero Drift</div>
-            <div style="font-size: 0.8rem; color: #78716c; font-weight: 700; text-transform: uppercase; margin-top: 0.25rem;">Design System Fidelity</div>
-            <div style="font-size: 0.85rem; color: #57534e; margin-top: 0.5rem;">Pre-bound token variables keep arbitrary spacing and rogue CSS out of delivery.</div>
-        </div>
-        <div style="background: #ffffff; border: 1px solid #e7e5e4; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
-            <div style="font-size: 2rem; font-weight: 800; color: #b45309;">Early Proof</div>
-            <div style="font-size: 0.8rem; color: #78716c; font-weight: 700; text-transform: uppercase; margin-top: 0.25rem;">Edge Case Discovery</div>
-            <div style="font-size: 0.85rem; color: #57534e; margin-top: 0.5rem;">Surfaced API latency and exception logic weeks before sprint grooming.</div>
-        </div>
-    </div>
+                            <!-- Connector Arrow -->
+                            <div style="display: flex; flex-direction: column; align-items: center; margin: 0.35rem 0;">
+                                <div style="width: 2px; height: 22px; background: var(--card-border);"></div>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
 
-    <!-- The Leadership Doctrine -->
-    <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 1.75rem;">
-        <div style="font-size: 0.8rem; font-weight: 700; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">The Core Doctrine</div>
-        <h4 style="font-size: 1.15rem; font-weight: 700; color: #92400e; margin: 0 0 0.5rem 0;">Demonstration Over Description: De-risking Platforms Before Code is Cut</h4>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: #78350f; margin: 0;">
-            Written specs describe intentions, and static mockups show ideals. Only working, token-bound prototypes reveal operational reality. By co-authoring machine-readable contracts with engineering and delivering verified component assets, design de-risks platforms and keeps sprints moving quickly.
-        </p>
-    </div>
-</section>
+                            <!-- Output Delivery Node (Handoff) -->
+                            <div style="background: var(--bg-secondary); border: 2px solid var(--accent-gold); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 660px; text-align: center; box-shadow: 0 4px 16px rgba(217, 119, 6, 0.08);">
+                                <span style="display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 0.3rem;">OUTPUT DELIVERY &bull; VERIFY, DON'T REBUILD</span>
+                                <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.4rem 0;">
+                                    Dev &amp; Backend Agents Takeover
+                                </h4>
+                                <p style="font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); margin: 0 auto; max-width: 540px;">
+                                    Dev and Backend Agents take over together, scaffolding the verified frontend components and connecting backend services for the engineering team.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Scannable Step Breakdown -->
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem; margin: 2.5rem 0 0 0;">
+                        <!-- Step 1 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.4rem 0; font-size: 1.05rem; font-weight: 700; color: var(--text-primary);">
+                                        Upstream Start: PDM / Business Agent
+                                    </h4>
+                                    <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary);">
+                                        Before wireframes or system specs are written, the <strong>PDM / Business Agent</strong> establishes feature intent, business rules, operational KPIs, and commercial constraints. This grounds the initiative in tangible user value and commercial parameters before design exploration begins.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.4rem 0; font-size: 1.05rem; font-weight: 700; color: var(--text-primary);">
+                                        UX Agent Part 1: Research &amp; Macro-Concepts
+                                    </h4>
+                                    <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary);">
+                                        The <strong>UX Agent</strong> launches by executing <em>Skill 1: Research &amp; Discovery</em> to synthesize user friction logs and jobs-to-be-done while filtering out noisy or policy-violating requests. It then runs <em>Skill 2: Macro-Concepts</em> to explore 2 to 3 high-level structural layouts (such as split-pane master-detail views versus contextual side drawers), strictly bound by <code>DESIGN.md</code> tokens.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.4rem 0; font-size: 1.05rem; font-weight: 700; color: var(--text-primary);">
+                                        Human-in-the-Loop Review Gate
+                                    </h4>
+                                    <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary);">
+                                        A design lead inspects the candidate macro-concepts in interactive browser canvases. Rather than accepting an unedited machine suggestion, the designer evaluates operational ergonomics, combines winning patterns (such as Table Shell A with Contextual Drawer B), and officially locks the winning structural direction.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">4</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.4rem 0; font-size: 1.05rem; font-weight: 700; color: var(--text-primary);">
+                                        Architecture Agent: Technical Contract Mapping
+                                    </h4>
+                                    <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary);">
+                                        The <strong>Architecture Agent</strong> steps in only after the UX direction is finalized. It evaluates data flow against the locked layout, mapping API endpoints, data models, entity relationships, and synchronous versus asynchronous payload rules to guarantee technical feasibility.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">5</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.4rem 0; font-size: 1.05rem; font-weight: 700; color: var(--text-primary);">
+                                        UX Agent Part 2: 5-State Matrix &amp; Accessibility Audits
+                                    </h4>
+                                    <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary);">
+                                        Armed with the technical contract, the <strong>UX Agent</strong> returns to run <em>Skill 3: Detailed Design</em>, building out the complete 5-state matrix: empty states, async latency queues, partial batch failures, default states, and success notifications. It then runs <em>Skill 4: Usability &amp; A11y Testing</em> to execute automated WCAG 2.1 AA text contrast and design token linters, catching detached styles before delivery.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 6 -->
+                        <div style="background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.25rem 1.5rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(217, 119, 6, 0.12); color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">6</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.4rem 0; font-size: 1.05rem; font-weight: 700; color: var(--text-primary);">
+                                        Engineering Handoff: Dev &amp; Backend Agents Takeover
+                                    </h4>
+                                    <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary);">
+                                        <strong>Dev and Backend Agents</strong> take over together, scaffolding the verified frontend components and connecting backend services for the engineering team. Because both the UI layout and technical contract were pre-validated against design tokens and schema contracts, engineers verify instead of rebuilding from scratch.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 <!-- ========================================================================= -->
                 <!-- STORY 02: FOUNDATIONAL AI RESEARCH                                       -->
